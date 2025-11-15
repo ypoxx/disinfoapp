@@ -6,6 +6,8 @@ import { modules } from '@/data/modules';
 import { quizzes } from '@/data/quizzes';
 import { basicsLessonContent } from '@/data/lessons/basicsLesson';
 import { tacticsLessonContent } from '@/data/lessons/tacticsLesson';
+import { psychologyLessonContent } from '@/data/lessons/psychologyLesson';
+import { verificationLessonContent } from '@/data/lessons/verificationLesson';
 import { LessonContent } from '@/components/learning/LessonContent';
 import { LessonNavigation } from '@/components/learning/LessonNavigation';
 import { QuizEngine } from '@/components/quiz/QuizEngine';
@@ -35,6 +37,10 @@ export function QuizPage() {
         return basicsLessonContent;
       case 'tactics':
         return tacticsLessonContent;
+      case 'psychology':
+        return psychologyLessonContent;
+      case 'verification':
+        return verificationLessonContent;
       default:
         return null;
     }

@@ -1,7 +1,7 @@
 {
   "name": "disinfoapp",
   "private": true,
-  "version": "0.2.0",
+  "version": "2.0.0",
   "type": "module",
   "description": "Progressive Web App zur Erkennung und Bekämpfung von Desinformation",
   "scripts": {

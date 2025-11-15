@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, BookOpen, BarChart3 } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Smartphone } from 'lucide-react';
 
 interface NavigationProps {
   mobile?: boolean;
@@ -10,6 +10,7 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
   const navItems = [
     { to: '/', icon: Home, label: 'Start' },
     { to: '/modules', icon: BookOpen, label: 'Lernmodule' },
+    { to: '/simulator', icon: Smartphone, label: 'Simulator' },
     { to: '/progress', icon: BarChart3, label: 'Fortschritt' },
   ];
 

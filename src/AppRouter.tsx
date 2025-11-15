@@ -4,6 +4,7 @@ import { HomePage } from './features/home/HomePage';
 import { LearningModules } from './features/lessons/LearningModules';
 import { QuizPage } from './features/lessons/QuizPage';
 import { ProgressPage } from './features/progress/ProgressPage';
+import { SimulatorPage } from './features/simulator/SimulatorPage';
 
 export function AppRouter() {
   return (
@@ -13,6 +14,7 @@ export function AppRouter() {
         <Route path="modules" element={<LearningModules />} />
         <Route path="modules/:moduleId" element={<QuizPage />} />
         <Route path="progress" element={<ProgressPage />} />
+        <Route path="simulator" element={<SimulatorPage />} />
       </Route>
     </Routes>
   );

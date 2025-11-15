@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Brain, Target, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { DailyChallengeCard } from '@/components/challenges/DailyChallengeCard';
 
 export function HomePage() {
   const features = [
@@ -61,12 +62,22 @@ export function HomePage() {
         </div>
       </motion.div>
 
-      {/* Features Grid */}
+      {/* Daily Challenge */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+        className="mt-12"
+      >
+        <DailyChallengeCard />
+      </motion.div>
+
+      {/* Features Grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4"
       >
         {features.map((feature, index) => (
           <motion.div

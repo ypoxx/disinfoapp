@@ -14,6 +14,7 @@ import { QuizEngine } from '@/components/quiz/QuizEngine';
 import { QuizResults } from '@/components/quiz/QuizResults';
 import { Button, Card } from '@/components/shared/UIComponents';
 import { useProgressStore } from '@/stores/progressStore';
+import { useAchievementStore } from '@/stores/achievementStore';
 
 type ViewState = 'intro' | 'lesson' | 'quiz' | 'results';
 
@@ -25,7 +26,8 @@ export function QuizPage() {
   const [quizScore, setQuizScore] = useState(0);
   const [quizTimeSpent, setQuizTimeSpent] = useState(0);
 
-  const { completeModule, addXP, updateStreak } = useProgressStore();
+  const { completeModule, addXP, updateStreak, xp, streak, modulesCompleted, totalTimeSpent } = useProgressStore();
+  const { checkAchievements, updateProgress } = useAchievementStore();
 
   const module = modules.find((m) => m.id === moduleId);
   const quiz = moduleId ? quizzes[moduleId] : undefined;
@@ -94,6 +96,35 @@ export function QuizPage() {
       completeModule(moduleId, score, timeSpent);
       addXP(totalXP);
       updateStreak();
+
+      // Check for achievements
+      setTimeout(() => {
+        const newXP = xp + totalXP;
+        const newLevel = Math.floor(Math.sqrt(newXP / 100)) + 1;
+        const newModulesCompleted = modulesCompleted + 1;
+        const newTotalTimeSpent = totalTimeSpent + timeSpent;
+
+        checkAchievements({
+          modulesCompleted: newModulesCompleted,
+          xp: newXP,
+          streak: streak.current,
+          totalTimeSpent: newTotalTimeSpent,
+          level: newLevel,
+        });
+
+        // Check perfectionist achievement
+        if (score === 100) {
+          updateProgress('perfectionist', 1);
+        }
+
+        // Check speed learner
+        if (timeSpent < 600) { // 10 minutes
+          updateProgress('speed-learner', 1);
+        }
+      }, 500);
+    } else if (quiz.passingScore && moduleId) {
+      // Failed quiz - check comeback kid achievement on retry
+      updateProgress('comeback-kid', 0);
     }
   };
 
@@ -101,6 +132,8 @@ export function QuizPage() {
     setViewState('quiz');
     setQuizScore(0);
     setQuizTimeSpent(0);
+    // Unlock comeback kid achievement for retrying after failure
+    updateProgress('comeback-kid', 1);
   };
 
   const currentLessonStep = lessonContent.steps[currentStep];

@@ -10,124 +10,11 @@ import {
   Flag,
   Search,
   ExternalLink,
+  Brain,
 } from 'lucide-react';
-
-interface Post {
-  id: string;
-  author: string;
-  authorImage: string;
-  verified: boolean;
-  content: string;
-  image?: string;
-  likes: number;
-  shares: number;
-  comments: number;
-  timestamp: string;
-  isDisinfo: boolean;
-  redFlags: string[];
-  explanation: string;
-}
-
-const samplePosts: Post[] = [
-  {
-    id: '1',
-    author: 'News Alert Daily',
-    authorImage: '🗞️',
-    verified: false,
-    content:
-      '🚨 BREAKING: Neue Studie zeigt, dass 90% der Menschen dieses einfache Hausmittel nicht kennen! Ärzte hassen diesen Trick! Teilen bevor es gelöscht wird! #Gesundheit #Wissen',
-    likes: 15234,
-    shares: 8921,
-    comments: 432,
-    timestamp: 'vor 2 Stunden',
-    isDisinfo: true,
-    redFlags: [
-      'Clickbait-Sprache ("Ärzte hassen...")',
-      'Dringlichkeit ("Teilen bevor es gelöscht wird")',
-      'Übertriebene Zahlen ohne Quelle',
-      'Keine konkrete Information',
-      'Keine seriöse Quelle',
-    ],
-    explanation:
-      'Klassisches Clickbait-Muster mit emotionaler Manipulation und falscher Dringlichkeit. Keine verifizierbaren Fakten oder seriöse Quellenangaben.',
-  },
-  {
-    id: '2',
-    author: 'Prof. Dr. Maria Schmidt',
-    authorImage: '👩‍🔬',
-    verified: true,
-    content:
-      'Unsere neue Studie zu Klimaanpassung wurde heute in Nature veröffentlicht. Die Ergebnisse zeigen bedeutende regionale Unterschiede. Link zur Vollversion: nature.com/artikel...',
-    likes: 892,
-    shares: 234,
-    comments: 67,
-    timestamp: 'vor 5 Stunden',
-    isDisinfo: false,
-    redFlags: [],
-    explanation:
-      'Seriöser wissenschaftlicher Post: Verifizierter Account, Referenz zu peer-reviewter Publikation, konkrete Quellenangabe, sachliche Sprache.',
-  },
-  {
-    id: '3',
-    author: 'WAHR_HEIT_2024',
-    authorImage: '👁️',
-    verified: false,
-    content:
-      'Sie wollen NICHT, dass du das siehst!!! Die WAHRHEIT über [aktuelles Thema]! 99% der Mainstream-Medien verschweigen das! TEILEN TEILEN TEILEN!!!',
-    likes: 45123,
-    shares: 23456,
-    comments: 1234,
-    timestamp: 'vor 1 Tag',
-    isDisinfo: true,
-    redFlags: [
-      'Verschwörungsrhetorik ("Sie wollen nicht...")',
-      'Übermäßige Großschreibung und Ausrufezeichen',
-      'Pauschale Anschuldigungen gegen Medien',
-      'Keine konkreten Fakten oder Quellen',
-      'Aufforderung zum unreflektierten Teilen',
-    ],
-    explanation:
-      'Typisches Desinformationsmuster mit Verschwörungsrhetorik, emotionaler Manipulation und Aufforderung zur viralen Verbreitung ohne Prüfung.',
-  },
-  {
-    id: '4',
-    author: 'Tagesschau',
-    authorImage: '📺',
-    verified: true,
-    content:
-      'Bundestag beschließt neues Gesetz zur Digitalisierung der Verwaltung. Die Reform soll bis 2025 umgesetzt werden. Mehr Details in unserem Artikel (Link)',
-    likes: 3421,
-    shares: 891,
-    comments: 234,
-    timestamp: 'vor 3 Stunden',
-    isDisinfo: false,
-    redFlags: [],
-    explanation:
-      'Seriöse Nachricht: Verifizierter Medienaccount, konkrete Fakten, sachliche Sprache, Quellenangabe, keine emotionale Manipulation.',
-  },
-  {
-    id: '5',
-    author: 'Gesundheits_Guru_88',
-    authorImage: '🌿',
-    verified: false,
-    content:
-      'Wissenschaftlich BEWIESEN: Diese 3 Lebensmittel heilen JEDE Krankheit! Big Pharma hasst mich für diese Enthüllung! (Link zu dubioser Website)',
-    likes: 28934,
-    shares: 15678,
-    comments: 3421,
-    timestamp: 'vor 6 Stunden',
-    isDisinfo: true,
-    redFlags: [
-      'Wunderheilungs-Behauptungen',
-      'Verschwörung gegen "Big Pharma"',
-      'Pseudowissenschaftliche Sprache',
-      'Übertreibungen ("JEDE Krankheit")',
-      'Link zu unseriöser Quelle',
-    ],
-    explanation:
-      'Gefährliche Gesundheitsdesinformation mit wissenschaftlich unhaltbaren Behauptungen und Verschwörungsrhetorik.',
-  },
-];
+import { simulatorPosts, type SimulatorPost } from '@/data/simulator/posts';
+import { TechniqueTagList } from '@/components/techniques/TechniqueTag';
+import { Link } from 'react-router-dom';
 
 interface SimulatorProps {
   onComplete?: (score: number) => void;
@@ -140,9 +27,10 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
   }>({});
   const [showExplanation, setShowExplanation] = useState(false);
   const [showRedFlags, setShowRedFlags] = useState(false);
+  const [showTechniques, setShowTechniques] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  const currentPost = samplePosts[currentPostIndex];
+  const currentPost = simulatorPosts[currentPostIndex];
   const isAnswered = selectedPosts[currentPost.id] !== undefined;
 
   const handleAnswer = (answer: 'disinfo' | 'legit') => {
@@ -156,18 +44,19 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
   const handleNext = () => {
     setShowExplanation(false);
     setShowRedFlags(false);
+    setShowTechniques(false);
 
-    if (currentPostIndex < samplePosts.length - 1) {
+    if (currentPostIndex < simulatorPosts.length - 1) {
       setCurrentPostIndex((prev) => prev + 1);
     } else {
       // Calculate score
       const correct = Object.entries(selectedPosts).filter(([postId, answer]) => {
-        const post = samplePosts.find((p) => p.id === postId);
+        const post = simulatorPosts.find((p) => p.id === postId);
         if (!post) return false;
         return (answer === 'disinfo' && post.isDisinfo) || (answer === 'legit' && !post.isDisinfo);
       }).length;
 
-      const score = Math.round((correct / samplePosts.length) * 100);
+      const score = Math.round((correct / simulatorPosts.length) * 100);
       setCompleted(true);
       onComplete?.(score);
     }
@@ -178,12 +67,13 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
     setSelectedPosts({});
     setShowExplanation(false);
     setShowRedFlags(false);
+    setShowTechniques(false);
     setCompleted(false);
   };
 
   const getCorrectAnswers = () => {
     return Object.entries(selectedPosts).filter(([postId, answer]) => {
-      const post = samplePosts.find((p) => p.id === postId);
+      const post = simulatorPosts.find((p) => p.id === postId);
       if (!post) return false;
       return (answer === 'disinfo' && post.isDisinfo) || (answer === 'legit' && !post.isDisinfo);
     }).length;
@@ -191,7 +81,15 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
 
   if (completed) {
     const correct = getCorrectAnswers();
-    const score = Math.round((correct / samplePosts.length) * 100);
+    const score = Math.round((correct / simulatorPosts.length) * 100);
+
+    // Count unique techniques encountered
+    const encounteredTechniques = new Set<string>();
+    simulatorPosts.forEach((post) => {
+      if (selectedPosts[post.id]) {
+        post.techniques.forEach((t) => encounteredTechniques.add(t));
+      }
+    });
 
     return (
       <motion.div
@@ -202,21 +100,49 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
         <h2 className="text-3xl font-bold mb-4">Simulation abgeschlossen!</h2>
         <div className="text-6xl font-bold mb-4 text-primary">{score}%</div>
         <p className="text-lg mb-2">
-          Du hast {correct} von {samplePosts.length} Posts richtig eingeschätzt.
+          Du hast {correct} von {simulatorPosts.length} Posts richtig eingeschätzt.
         </p>
-        <p className="text-muted-foreground mb-8">
+        <p className="text-muted-foreground mb-4">
           {score >= 80
             ? '🎉 Ausgezeichnet! Du kannst Desinformation gut erkennen.'
             : score >= 60
             ? '👍 Gut gemacht! Mit etwas Übung wirst du noch besser.'
             : '💪 Nicht aufgeben! Probiere die Lernmodule aus, um deine Fähigkeiten zu verbessern.'}
         </p>
-        <button
-          onClick={handleRestart}
-          className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-        >
-          Nochmal spielen
-        </button>
+
+        {/* Techniques Summary */}
+        <div className="mb-8 p-4 bg-muted/50 rounded-lg text-left">
+          <div className="flex items-center gap-2 mb-3">
+            <Brain className="h-5 w-5 text-primary" />
+            <h3 className="font-semibold">Entdeckte Techniken</h3>
+          </div>
+          <p className="text-sm text-muted-foreground mb-3">
+            Du hast {encounteredTechniques.size} verschiedene Manipulations-Techniken kennengelernt!
+          </p>
+          <Link
+            to="/techniques"
+            className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            <Brain className="h-4 w-4" />
+            Alle Techniken im Explorer ansehen →
+          </Link>
+        </div>
+
+        <div className="flex gap-3">
+          <button
+            onClick={handleRestart}
+            className="flex-1 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            Nochmal spielen
+          </button>
+          <Link
+            to="/techniques"
+            className="flex-1 px-6 py-3 bg-muted text-foreground rounded-lg hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
+          >
+            <Brain className="h-5 w-5" />
+            Techniken lernen
+          </Link>
+        </div>
       </motion.div>
     );
   }
@@ -227,17 +153,15 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
       <div className="mb-6">
         <div className="flex justify-between text-sm mb-2">
           <span>
-            Post {currentPostIndex + 1} von {samplePosts.length}
+            Post {currentPostIndex + 1} von {simulatorPosts.length}
           </span>
-          <span>
-            {getCorrectAnswers()} richtig
-          </span>
+          <span>{getCorrectAnswers()} richtig</span>
         </div>
         <div className="h-2 bg-secondary rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-primary"
             initial={{ width: 0 }}
-            animate={{ width: `${((currentPostIndex + 1) / samplePosts.length) * 100}%` }}
+            animate={{ width: `${((currentPostIndex + 1) / simulatorPosts.length) * 100}%` }}
             transition={{ duration: 0.3 }}
           />
         </div>
@@ -351,6 +275,38 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
                 )}
               </motion.div>
             )}
+
+            <button
+              onClick={() => setShowTechniques(!showTechniques)}
+              className="w-full text-left px-4 py-2 bg-background hover:bg-accent rounded-lg transition-colors flex items-center justify-between"
+            >
+              <span className="flex items-center gap-2">
+                <Brain className="h-4 w-4" />
+                Verwendete Techniken ({currentPost.techniques.length})
+              </span>
+              {showTechniques ? <X className="h-4 w-4" /> : <ExternalLink className="h-4 w-4" />}
+            </button>
+            {showTechniques && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                className="px-4 py-3 bg-background rounded-lg"
+              >
+                {currentPost.techniques.length > 0 ? (
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Dieser Post nutzt folgende Persuasions-Techniken:
+                    </p>
+                    <TechniqueTagList techniqueIds={currentPost.techniques} showLinks={true} />
+                  </div>
+                ) : (
+                  <p className="text-sm text-green-600 flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4" />
+                    Keine Manipulations-Techniken erkannt
+                  </p>
+                )}
+              </motion.div>
+            )}
           </div>
         </div>
       )}
@@ -416,17 +372,35 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
               </div>
 
               {/* Explanation */}
-              <div className="p-4 bg-muted rounded-lg">
+              <div className="p-4 bg-muted rounded-lg mb-4">
                 <h4 className="font-semibold mb-2">Erklärung:</h4>
                 <p className="text-sm">{currentPost.explanation}</p>
               </div>
 
+              {/* Techniques Used */}
+              {currentPost.techniques.length > 0 && (
+                <div className="p-4 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-lg mb-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Brain className="h-5 w-5 text-blue-600" />
+                    <h4 className="font-semibold text-blue-900 dark:text-blue-100">
+                      Verwendete Manipulations-Techniken
+                    </h4>
+                  </div>
+                  <TechniqueTagList techniqueIds={currentPost.techniques} showLinks={true} />
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    💡 Klicke auf eine Technik, um mehr darüber zu erfahren
+                  </p>
+                </div>
+              )}
+
               {/* Next Button */}
               <button
                 onClick={handleNext}
-                className="w-full mt-4 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
               >
-                {currentPostIndex < samplePosts.length - 1 ? 'Nächster Post' : 'Ergebnis anzeigen'}
+                {currentPostIndex < simulatorPosts.length - 1
+                  ? 'Nächster Post'
+                  : 'Ergebnis anzeigen'}
               </button>
             </motion.div>
           )}

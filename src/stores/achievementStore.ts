@@ -138,6 +138,84 @@ const achievementDefinitions: Omit<Achievement, 'unlockedAt' | 'progress'>[] = [
     icon: '🌅',
     requiredProgress: 1,
   },
+  // Technique-based achievements
+  {
+    id: 'technique-explorer',
+    name: { de: 'Technik-Entdecker', en: 'Technique Explorer' },
+    description: { de: 'Besuche den Techniken-Explorer', en: 'Visit the Technique Explorer' },
+    icon: '🧠',
+    requiredProgress: 1,
+  },
+  {
+    id: 'technique-hunter',
+    name: { de: 'Technik-Jäger', en: 'Technique Hunter' },
+    description: { de: 'Lerne 10 verschiedene Techniken kennen', en: 'Learn about 10 different techniques' },
+    icon: '🎯',
+    requiredProgress: 10,
+  },
+  {
+    id: 'technique-master',
+    name: { de: 'Technik-Meister', en: 'Technique Master' },
+    description: { de: 'Lerne alle 28 Techniken kennen', en: 'Learn about all 28 techniques' },
+    icon: '🏆',
+    requiredProgress: 28,
+  },
+  {
+    id: 'simulator-ace',
+    name: { de: 'Simulator-Ass', en: 'Simulator Ace' },
+    description: { de: 'Erreiche 100% im Simulator', en: 'Score 100% in the simulator' },
+    icon: '🎮',
+    requiredProgress: 1,
+  },
+  {
+    id: 'pattern-recognizer',
+    name: { de: 'Mustererkenner', en: 'Pattern Recognizer' },
+    description: { de: 'Identifiziere 5 Techniken korrekt im Simulator', en: 'Correctly identify 5 techniques in the simulator' },
+    icon: '🔍',
+    requiredProgress: 5,
+  },
+  {
+    id: 'manipulation-detector',
+    name: { de: 'Manipulations-Detektor', en: 'Manipulation Detector' },
+    description: { de: 'Erkenne 20 verschiedene Techniken im Simulator', en: 'Detect 20 different techniques in the simulator' },
+    icon: '🛡️',
+    requiredProgress: 20,
+  },
+  {
+    id: 'cognitive-warrior',
+    name: { de: 'Kognitiver Krieger', en: 'Cognitive Warrior' },
+    description: { de: 'Meistere alle kognitiven Bias-Techniken', en: 'Master all cognitive bias techniques' },
+    icon: '⚔️',
+    requiredProgress: 7, // Number of cognitive_bias techniques
+  },
+  {
+    id: 'social-guardian',
+    name: { de: 'Sozialer Wächter', en: 'Social Guardian' },
+    description: { de: 'Meistere alle Social Dynamics-Techniken', en: 'Master all social dynamics techniques' },
+    icon: '🛡️',
+    requiredProgress: 6, // Number of social_dynamics techniques
+  },
+  {
+    id: 'logic-defender',
+    name: { de: 'Logik-Verteidiger', en: 'Logic Defender' },
+    description: { de: 'Meistere alle Logischen Fehlschlüsse', en: 'Master all logical fallacies' },
+    icon: '⚖️',
+    requiredProgress: 4, // Number of logical_fallacy techniques
+  },
+  {
+    id: 'digital-detective',
+    name: { de: 'Digital-Detektiv', en: 'Digital Detective' },
+    description: { de: 'Meistere alle digitalen Techniken', en: 'Master all digital techniques' },
+    icon: '💻',
+    requiredProgress: 6, // Number of digital_technique techniques
+  },
+  {
+    id: 'counter-master',
+    name: { de: 'Gegenmaßnahmen-Meister', en: 'Counter-Master' },
+    description: { de: 'Lerne alle 12 Gegenmaßnahmen kennen', en: 'Learn all 12 counter-measures' },
+    icon: '🛡️',
+    requiredProgress: 12,
+  },
 ];
 
 export const useAchievementStore = create<AchievementState>()(

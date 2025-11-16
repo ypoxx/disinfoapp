@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Filter, Grid3x3, Network, TrendingUp, BookOpen } from 'lucide-react';
 import { Button, Card } from '@/components/shared/UIComponents';
@@ -10,6 +10,7 @@ import {
   getTechniquesByImportance,
 } from '@/data/persuasion';
 import { filterTechniques, sortTechniques } from '@/data/persuasion/utils';
+import { useKnowledgeStore } from '@/stores/knowledgeStore';
 import type {
   PersuasionTechnique,
   TechniqueFilters as Filters,
@@ -24,6 +25,19 @@ export function TechniqueExplorer() {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedTechnique, setSelectedTechnique] = useState<PersuasionTechnique | null>(null);
   const [sortBy, setSortBy] = useState<TechniqueSortBy>('name');
+
+  const { markTechniqueViewed } = useKnowledgeStore();
+
+  // Mark page visit for achievement
+  useEffect(() => {
+    markTechniqueViewed('_explorer_visit_');
+  }, [markTechniqueViewed]);
+
+  // Mark technique as viewed when opened
+  const handleSelectTechnique = (technique: PersuasionTechnique) => {
+    setSelectedTechnique(technique);
+    markTechniqueViewed(technique.id);
+  };
 
   // Filter state
   const [filters, setFilters] = useState<Filters>({
@@ -115,7 +129,7 @@ export function TechniqueExplorer() {
             {importantTechniques.map((technique) => (
               <button
                 key={technique.id}
-                onClick={() => setSelectedTechnique(technique)}
+                onClick={() => handleSelectTechnique(technique)}
                 className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
               >
                 {technique.name.de}
@@ -253,7 +267,7 @@ export function TechniqueExplorer() {
         ) : viewMode === 'grid' ? (
           <TechniqueGrid
             techniques={displayedTechniques}
-            onSelectTechnique={setSelectedTechnique}
+            onSelectTechnique={handleSelectTechnique}
           />
         ) : (
           <Card className="p-8 text-center">

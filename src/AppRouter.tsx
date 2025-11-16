@@ -7,6 +7,7 @@ import { ProgressPage } from './features/progress/ProgressPage';
 import { SimulatorPage } from './features/simulator/SimulatorPage';
 import { TechniqueExplorer } from './features/techniques/TechniqueExplorer';
 import { TechniqueQuizPage } from './features/quiz/TechniqueQuizPage';
+import { KnowledgeDashboard } from './features/dashboard/KnowledgeDashboard';
 
 export function AppRouter() {
   return (
@@ -19,6 +20,7 @@ export function AppRouter() {
         <Route path="simulator" element={<SimulatorPage />} />
         <Route path="techniques" element={<TechniqueExplorer />} />
         <Route path="quiz" element={<TechniqueQuizPage />} />
+        <Route path="dashboard" element={<KnowledgeDashboard />} />
       </Route>
     </Routes>
   );

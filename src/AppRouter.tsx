@@ -6,6 +6,7 @@ import { QuizPage } from './features/lessons/QuizPage';
 import { ProgressPage } from './features/progress/ProgressPage';
 import { SimulatorPage } from './features/simulator/SimulatorPage';
 import { TechniqueExplorer } from './features/techniques/TechniqueExplorer';
+import { TechniqueQuizPage } from './features/quiz/TechniqueQuizPage';
 
 export function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export function AppRouter() {
         <Route path="progress" element={<ProgressPage />} />
         <Route path="simulator" element={<SimulatorPage />} />
         <Route path="techniques" element={<TechniqueExplorer />} />
+        <Route path="quiz" element={<TechniqueQuizPage />} />
       </Route>
     </Routes>
   );

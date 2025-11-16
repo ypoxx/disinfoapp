@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Brain, Target, Users } from 'lucide-react';
+import { ArrowRight, Shield, Brain, Target, Users, Lightbulb, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { DailyChallengeCard } from '@/components/challenges/DailyChallengeCard';
 
@@ -72,6 +72,81 @@ export function HomePage() {
         <DailyChallengeCard />
       </motion.div>
 
+      {/* New Learning Tools */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.25 }}
+        className="mt-12"
+      >
+        <h2 className="mb-6 text-2xl font-bold">Neue Lernwerkzeuge</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Technique Quiz Card */}
+          <Link to="/quiz" className="group">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="h-full rounded-lg border-2 border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5 p-6 shadow-md transition-all hover:border-primary/40 hover:shadow-lg"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <div className="rounded-lg bg-primary/20 p-3">
+                  <GraduationCap className="h-8 w-8 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Technik-Quiz</h3>
+                  <p className="text-sm text-muted-foreground">Teste dein Wissen</p>
+                </div>
+              </div>
+              <p className="mb-4 text-muted-foreground">
+                Identifiziere Manipulationstechniken in realistischen Szenarien. 10 Fragen mit sofortigem Feedback und detaillierten Erklärungen.
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2">
+                  <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+                    10 Fragen
+                  </span>
+                  <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">
+                    Bis zu 200 XP
+                  </span>
+                </div>
+                <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.div>
+          </Link>
+
+          {/* Technique Explorer Card */}
+          <Link to="/techniques" className="group">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="h-full rounded-lg border-2 border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 shadow-md transition-all hover:border-purple-500/40 hover:shadow-lg"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <div className="rounded-lg bg-purple-500/20 p-3">
+                  <Lightbulb className="h-8 w-8 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Technik-Explorer</h3>
+                  <p className="text-sm text-muted-foreground">Entdecke alle Techniken</p>
+                </div>
+              </div>
+              <p className="mb-4 text-muted-foreground">
+                Erkunde 28 Persuasions- und Manipulationstechniken mit wissenschaftlichen Erkenntnissen, Beispielen und Gegenmaßnahmen.
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2">
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-600">
+                    28 Techniken
+                  </span>
+                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-600">
+                    12 Gegenmaßnahmen
+                  </span>
+                </div>
+                <ArrowRight className="h-5 w-5 text-purple-600 transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.div>
+          </Link>
+        </div>
+      </motion.div>
+
       {/* Features Grid */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -107,8 +182,8 @@ export function HomePage() {
             <div className="text-muted-foreground">Lernmodule</div>
           </div>
           <div>
-            <div className="mb-2 text-4xl font-bold text-primary">50+</div>
-            <div className="text-muted-foreground">Interaktive Übungen</div>
+            <div className="mb-2 text-4xl font-bold text-primary">28</div>
+            <div className="text-muted-foreground">Manipulations-Techniken</div>
           </div>
           <div>
             <div className="mb-2 text-4xl font-bold text-primary">100%</div>

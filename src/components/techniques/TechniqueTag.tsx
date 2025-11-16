@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Brain, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getTechniqueById } from '@/data/persuasion';
-import type { PersuasionTechnique } from '@/types/persuasion';
 
 interface TechniqueTagProps {
   techniqueId: string;

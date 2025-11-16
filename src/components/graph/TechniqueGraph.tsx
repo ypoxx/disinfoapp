@@ -7,10 +7,8 @@ import {
   simulationStep,
   GraphLayout,
   GraphNode,
-  GraphEdge,
   getRelationshipColor,
   getCategoryColor,
-  applyZoom,
   inverseZoom,
   getConnectedNodes,
 } from '@/utils/graphLayout';
@@ -278,11 +276,12 @@ export function TechniqueGraph({
         }
       });
 
-      if (clickedNode) {
+      if (clickedNode !== null) {
         // Start dragging node
-        setDraggedNode(clickedNode);
-        clickedNode.fx = clickedNode.x;
-        clickedNode.fy = clickedNode.y;
+        const node = clickedNode as GraphNode;
+        setDraggedNode(node);
+        node.fx = node.x;
+        node.fy = node.y;
       } else {
         // Start panning
         setIsDragging(true);

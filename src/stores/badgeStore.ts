@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { badges, Badge, calculateBadgePoints } from '@/data/badges';
+import { badges, calculateBadgePoints } from '@/data/badges';
 
 export interface BadgeState {
   earnedBadges: Set<string>; // Badge IDs

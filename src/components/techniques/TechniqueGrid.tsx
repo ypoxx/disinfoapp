@@ -22,8 +22,8 @@ const categoryIcons: Record<TechniqueCategory, React.ReactNode> = {
   social_dynamics: <Users className="h-5 w-5" />,
   logical_fallacy: <AlertTriangle className="h-5 w-5" />,
   emotional_manipulation: <Heart className="h-5 w-5" />,
-  nlp_technique: <MessageSquare className="h-5 w-5" />,
-  digital_technique: <Laptop className="h-5 w-5" />,
+  nlp: <MessageSquare className="h-5 w-5" />,
+  digital_influence: <Laptop className="h-5 w-5" />,
 };
 
 const categoryColors: Record<TechniqueCategory, string> = {
@@ -31,8 +31,8 @@ const categoryColors: Record<TechniqueCategory, string> = {
   social_dynamics: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
   logical_fallacy: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
   emotional_manipulation: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300',
-  nlp_technique: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300',
-  digital_technique: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  nlp: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300',
+  digital_influence: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
 };
 
 const difficultyLabels = {
@@ -58,11 +58,10 @@ export function TechniqueGrid({ techniques, onSelectTechnique }: TechniqueGridPr
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.05 }}
+          onClick={() => onSelectTechnique(technique)}
+          className="cursor-pointer"
         >
-          <Card
-            className="group h-full cursor-pointer transition-all hover:shadow-lg"
-            onClick={() => onSelectTechnique(technique)}
-          >
+          <Card className="group h-full transition-all hover:shadow-lg">
             {/* Category Badge */}
             <div className="mb-3 flex items-center justify-between">
               <div

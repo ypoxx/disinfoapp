@@ -55,8 +55,8 @@ export function createGraphLayout(
 
   // Create edges
   const edges: GraphEdge[] = relationships.map((rel) => ({
-    source: rel.from,
-    target: rel.to,
+    source: rel.source,
+    target: rel.target,
     type: rel.type,
     strength: rel.strength,
     data: rel,

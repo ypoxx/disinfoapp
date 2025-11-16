@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { TechniqueMastery, KnowledgeState } from '@/types/persuasion';
-import { persuasionTechniques, counterMeasures } from '@/data/persuasion';
+import { persuasionTechniques } from '@/data/persuasion';
 import { useAchievementStore } from './achievementStore';
 
 interface KnowledgeStoreState extends KnowledgeState {
@@ -140,7 +140,7 @@ export const useKnowledgeStore = create<KnowledgeStoreState>()(
               achievementStore.updateProgress('social-guardian', masteredInCategory);
             } else if (technique.category === 'logical_fallacy') {
               achievementStore.updateProgress('logic-defender', masteredInCategory);
-            } else if (technique.category === 'digital_technique') {
+            } else if (technique.category === 'digital_influence') {
               achievementStore.updateProgress('digital-detective', masteredInCategory);
             }
 

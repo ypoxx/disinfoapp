@@ -84,7 +84,7 @@ export const useProgressStore = create<ProgressState>()(
           // Check for badges after state update (non-blocking)
           setTimeout(() => {
             const knowledgeState = useKnowledgeStore.getState();
-            const masteredCount = Array.from(knowledgeState.techniqueMastery.values()).filter(
+            const masteredCount = Object.values(knowledgeState.techniques).filter(
               (m) => m.masteryLevel >= 70
             ).length;
 

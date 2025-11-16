@@ -8,10 +8,15 @@ import { SimulatorPage } from './features/simulator/SimulatorPage';
 import { TechniqueExplorer } from './features/techniques/TechniqueExplorer';
 import { TechniqueQuizPage } from './features/quiz/TechniqueQuizPage';
 import { KnowledgeDashboard } from './features/dashboard/KnowledgeDashboard';
+import { DiscoverFeed } from './components/discover/DiscoverFeed';
 
 export function AppRouter() {
   return (
     <Routes>
+      {/* Immersive full-screen route without layout */}
+      <Route path="/discover" element={<DiscoverFeed />} />
+
+      {/* Standard routes with layout */}
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="modules" element={<LearningModules />} />

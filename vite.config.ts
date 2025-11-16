@@ -19,8 +19,8 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: '/disinfoapp/',
+        start_url: '/disinfoapp/',
         icons: [
           {
             src: 'pwa-192x192.png',

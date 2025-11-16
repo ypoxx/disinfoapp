@@ -708,7 +708,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Erst wird die aktuelle Erfahrung der Person gespiegelt (Pacing), um Rapport aufzubauen, dann wird sie in eine gewünschte Richtung gelenkt (Leading).',
       en: 'First, the person\'s current experience is mirrored (Pacing) to build rapport, then they are guided in a desired direction (Leading).',
     },
-    category: 'nlp_technique',
+    category: 'nlp',
     difficulty: 'advanced',
     effectiveness: 'moderate',
     examples: [
@@ -749,7 +749,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Befehle oder Suggestionen werden in scheinbar harmlose Sätze eingebettet, oft durch Betonung oder sprachliche Muster hervorgehoben.',
       en: 'Commands or suggestions are embedded in seemingly harmless sentences, often highlighted through emphasis or linguistic patterns.',
     },
-    category: 'nlp_technique',
+    category: 'nlp',
     difficulty: 'expert',
     effectiveness: 'low',
     examples: [
@@ -790,7 +790,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Nutzung detaillierter persönlicher Daten zur Erstellung hochgradig personalisierter Botschaften, die auf individuelle Schwachstellen abzielen.',
       en: 'Use of detailed personal data to create highly personalized messages that target individual vulnerabilities.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'expert',
     effectiveness: 'very_high',
     examples: [
@@ -831,7 +831,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Systematische Manipulation der digitalen Informationsumgebung durch Bots, koordinierte Kampagnen, Algorithmus-Manipulation und astroturfing.',
       en: 'Systematic manipulation of the digital information environment through bots, coordinated campaigns, algorithm manipulation, and astroturfing.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'expert',
     effectiveness: 'very_high',
     examples: [
@@ -872,7 +872,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Einsatz von Bildern, Videos, Grafiken und Design-Elementen zur emotionalen Beeinflussung und Verzerrung der Wahrnehmung.',
       en: 'Use of images, videos, graphics, and design elements for emotional influence and perception distortion.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'intermediate',
     effectiveness: 'high',
     examples: [
@@ -913,7 +913,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'KI-generierte oder manipulierte Medieninhalte (Deepfakes, KI-Bilder, gefälschte Audio) zur Täuschung oder Beeinflussung.',
       en: 'AI-generated or manipulated media content (deepfakes, AI images, fake audio) for deception or influence.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'expert',
     effectiveness: 'very_high',
     examples: [
@@ -954,7 +954,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Manipulative UI/UX-Design-Elemente, die Nutzer zu ungewollten Handlungen verleiten oder Entscheidungen erschweren.',
       en: 'Manipulative UI/UX design elements that trick users into unwanted actions or make decisions difficult.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'intermediate',
     effectiveness: 'high',
     examples: [
@@ -1037,7 +1037,7 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       de: 'Einsatz von künstlicher Intelligenz zur personalisierten, adaptiven und skalierten Persuasion durch Verhaltensvorhersage und Echtzeit-Optimierung.',
       en: 'Use of artificial intelligence for personalized, adaptive, and scaled persuasion through behavior prediction and real-time optimization.',
     },
-    category: 'digital_technique',
+    category: 'digital_influence',
     difficulty: 'expert',
     effectiveness: 'very_high',
     examples: [

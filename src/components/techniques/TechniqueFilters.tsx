@@ -14,8 +14,8 @@ const categories: { value: TechniqueCategory; label: string }[] = [
   { value: 'social_dynamics', label: 'Soziale Dynamiken' },
   { value: 'logical_fallacy', label: 'Logische Fehlschlüsse' },
   { value: 'emotional_manipulation', label: 'Emotionale Manipulation' },
-  { value: 'nlp_technique', label: 'NLP-Techniken' },
-  { value: 'digital_technique', label: 'Digitale Techniken' },
+  { value: 'nlp', label: 'NLP-Techniken' },
+  { value: 'digital_influence', label: 'Digitale Techniken' },
 ];
 
 const difficulties: { value: DifficultyLevel; label: string }[] = [

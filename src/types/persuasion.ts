@@ -13,8 +13,8 @@ export type TechniqueCategory =
   | 'social_dynamics'
   | 'emotional_manipulation'
   | 'logical_fallacy'
-  | 'nlp_technique'
-  | 'digital_technique';
+  | 'nlp'
+  | 'digital_influence';
 
 export type DifficultyLevel = 'beginner' | 'intermediate' | 'advanced' | 'expert';
 

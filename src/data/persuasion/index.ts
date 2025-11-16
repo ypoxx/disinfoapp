@@ -59,6 +59,17 @@ export {
   getGroupsForTechnique,
 } from './taxonomy';
 
+// Utilities
+export {
+  filterTechniques,
+  sortTechniques,
+  buildTechniqueGraph,
+  getRecommendedTechniques,
+  findPathBetweenTechniques,
+  calculateTechniqueImportance,
+  getTechniquesByImportance,
+} from './utils';
+
 // Re-export types for convenience
 export type {
   PersuasionTechnique,

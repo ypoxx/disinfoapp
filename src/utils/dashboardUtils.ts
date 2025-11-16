@@ -1,4 +1,4 @@
-import { TechniqueMastery, KnowledgeState, PersuasionTechnique, TechniqueCategory } from '@/types/persuasion';
+import { KnowledgeState, TechniqueCategory } from '@/types/persuasion';
 import { persuasionTechniques } from '@/data/persuasion';
 
 export interface CategoryStats {
@@ -74,7 +74,7 @@ export function calculateCategoryStats(knowledgeState: KnowledgeState): Category
     const stats = categories.get(technique.category)!;
     stats.totalTechniques++;
 
-    const mastery = knowledgeState.techniqueMastery.get(technique.id);
+    const mastery = knowledgeState.techniques[technique.id];
     if (mastery) {
       stats.practiceCount += mastery.encounterCount;
       stats.averageMastery += mastery.masteryLevel;
@@ -105,7 +105,7 @@ export function calculateCategoryStats(knowledgeState: KnowledgeState): Category
 export function buildLearningTimeline(knowledgeState: KnowledgeState): LearningTimelineEvent[] {
   const events: LearningTimelineEvent[] = [];
 
-  knowledgeState.techniqueMastery.forEach((mastery, techniqueId) => {
+  Object.entries(knowledgeState.techniques).forEach(([techniqueId, mastery]) => {
     const technique = persuasionTechniques.find((t) => t.id === techniqueId);
     if (!technique) return;
 
@@ -144,7 +144,7 @@ export function buildLearningTimeline(knowledgeState: KnowledgeState): LearningT
 export function analyzeWeaknesses(knowledgeState: KnowledgeState): WeaknessAnalysis[] {
   const weaknesses: WeaknessAnalysis[] = [];
 
-  knowledgeState.techniqueMastery.forEach((mastery, techniqueId) => {
+  Object.entries(knowledgeState.techniques).forEach(([techniqueId, mastery]) => {
     const technique = persuasionTechniques.find((t) => t.id === techniqueId);
     if (!technique) return;
 
@@ -222,7 +222,7 @@ export function calculateDashboardStats(knowledgeState: KnowledgeState): Dashboa
   let viewedCount = 0;
   let masteredCount = 0;
 
-  knowledgeState.techniqueMastery.forEach((mastery) => {
+  Object.values(knowledgeState.techniques).forEach((mastery) => {
     totalMastery += mastery.masteryLevel;
     totalPracticeCount += mastery.encounterCount;
     totalCorrect += mastery.correctIdentifications;

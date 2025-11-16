@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   ExternalLink,
 } from 'lucide-react';
-import { Button, Card } from '@/components/shared/UIComponents';
 import {
   getRelationshipsForTechnique,
   getCounterMeasuresForTechnique,
@@ -19,6 +18,7 @@ import {
   getPhasesForTechnique,
   getRecommendedTechniques,
 } from '@/data/persuasion';
+import { Card } from '@/components/shared/UIComponents';
 import type { PersuasionTechnique } from '@/types/persuasion';
 
 interface TechniqueDetailProps {
@@ -322,37 +322,39 @@ export function TechniqueDetail({ technique, onClose, onNavigate }: TechniqueDet
                       if (!other) return null;
 
                       return (
-                        <Card
+                        <div
                           key={idx}
-                          className="cursor-pointer transition-colors hover:bg-muted/50"
                           onClick={() => handleNavigate(otherId)}
+                          className="cursor-pointer"
                         >
-                          <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                              <div className="mb-1 flex items-center gap-2">
-                                <h4 className="font-semibold">{other.name.de}</h4>
-                                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
-                                  {rel.type.replace('_', ' ')}
-                                </span>
-                              </div>
-                              <p className="mb-2 text-sm text-muted-foreground">
-                                {rel.description.de}
-                              </p>
-                              <div className="flex items-center gap-2">
-                                <div className="text-xs text-muted-foreground">
-                                  Stärke: {Math.round(rel.strength * 100)}%
+                          <Card className="transition-colors hover:bg-muted/50">
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1">
+                                <div className="mb-1 flex items-center gap-2">
+                                  <h4 className="font-semibold">{other.name.de}</h4>
+                                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+                                    {rel.type.replace('_', ' ')}
+                                  </span>
                                 </div>
-                                <div className="h-2 flex-1 max-w-xs overflow-hidden rounded-full bg-muted">
-                                  <div
-                                    className="h-full bg-primary"
-                                    style={{ width: `${rel.strength * 100}%` }}
-                                  />
+                                <p className="mb-2 text-sm text-muted-foreground">
+                                  {rel.description.de}
+                                </p>
+                                <div className="flex items-center gap-2">
+                                  <div className="text-xs text-muted-foreground">
+                                    Stärke: {Math.round(rel.strength * 100)}%
+                                  </div>
+                                  <div className="h-2 flex-1 max-w-xs overflow-hidden rounded-full bg-muted">
+                                    <div
+                                      className="h-full bg-primary"
+                                      style={{ width: `${rel.strength * 100}%` }}
+                                    />
+                                  </div>
                                 </div>
                               </div>
+                              <ExternalLink className="h-4 w-4 text-muted-foreground" />
                             </div>
-                            <ExternalLink className="h-4 w-4 text-muted-foreground" />
-                          </div>
-                        </Card>
+                          </Card>
+                        </div>
                       );
                     })
                   )}

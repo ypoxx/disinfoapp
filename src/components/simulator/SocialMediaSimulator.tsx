@@ -12,9 +12,9 @@ import {
   ExternalLink,
   Brain,
 } from 'lucide-react';
-import { simulatorPosts, type SimulatorPost } from '@/data/simulator/posts';
 import { TechniqueTagList } from '@/components/techniques/TechniqueTag';
 import { Link } from 'react-router-dom';
+import { simulatorPosts } from '@/data/simulator/posts';
 
 interface SimulatorProps {
   onComplete?: (score: number) => void;

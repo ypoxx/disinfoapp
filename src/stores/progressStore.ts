@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { UserProgress, ModuleProgress, Achievement } from '@/types';
+import { useBadgeStore } from './badgeStore';
+import { useKnowledgeStore } from './knowledgeStore';
 
 interface ProgressState extends UserProgress {
   // Actions
@@ -78,6 +80,19 @@ export const useProgressStore = create<ProgressState>()(
         set((state) => {
           const newXP = state.xp + amount;
           const newLevel = calculateLevel(newXP);
+
+          // Check for badges after state update (non-blocking)
+          setTimeout(() => {
+            const knowledgeState = useKnowledgeStore.getState();
+            const masteredCount = Array.from(knowledgeState.techniqueMastery.values()).filter(
+              (m) => m.masteryLevel >= 70
+            ).length;
+
+            useBadgeStore.getState().checkAndAwardBadges({
+              masteredTechniques: masteredCount,
+            });
+          }, 0);
+
           return {
             xp: newXP,
             level: newLevel,

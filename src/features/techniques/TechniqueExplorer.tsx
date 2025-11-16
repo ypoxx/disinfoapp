@@ -5,9 +5,11 @@ import { Button, Card } from '@/components/shared/UIComponents';
 import { TechniqueGrid } from '@/components/techniques/TechniqueGrid';
 import { TechniqueFilters } from '@/components/techniques/TechniqueFilters';
 import { TechniqueDetail } from '@/components/techniques/TechniqueDetail';
+import { TechniqueGraph } from '@/components/graph/TechniqueGraph';
 import {
   persuasionTechniques,
   getTechniquesByImportance,
+  techniqueRelationships,
 } from '@/data/persuasion';
 import { filterTechniques, sortTechniques } from '@/data/persuasion/utils';
 import { useKnowledgeStore } from '@/stores/knowledgeStore';
@@ -270,12 +272,15 @@ export function TechniqueExplorer() {
             onSelectTechnique={handleSelectTechnique}
           />
         ) : (
-          <Card className="p-8 text-center">
-            <Network className="mx-auto mb-4 h-16 w-16 text-muted-foreground" />
-            <h3 className="mb-2 text-lg font-semibold">Graph-Ansicht</h3>
-            <p className="text-muted-foreground">
-              Die interaktive Graph-Visualisierung wird in Kürze implementiert
-            </p>
+          <Card className="overflow-hidden p-0">
+            <div className="h-[600px]">
+              <TechniqueGraph
+                techniques={displayedTechniques}
+                relationships={techniqueRelationships}
+                selectedTechniqueId={selectedTechnique?.id}
+                onSelectTechnique={handleSelectTechnique}
+              />
+            </div>
           </Card>
         )}
       </motion.div>

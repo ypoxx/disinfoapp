@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Brain, Target, Users, Lightbulb, GraduationCap } from 'lucide-react';
+import { ArrowRight, Shield, Brain, Target, Users, Lightbulb, GraduationCap, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { DailyChallengeCard } from '@/components/challenges/DailyChallengeCard';
 
@@ -141,6 +141,38 @@ export function HomePage() {
                   </span>
                 </div>
                 <ArrowRight className="h-5 w-5 text-purple-600 transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.div>
+          </Link>
+
+          {/* Discover Feed Card */}
+          <Link to="/discover" className="group">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="h-full rounded-lg border-2 border-pink-500/20 bg-gradient-to-br from-pink-500/10 to-orange-500/5 p-6 shadow-md transition-all hover:border-pink-500/40 hover:shadow-lg"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <div className="rounded-lg bg-pink-500/20 p-3">
+                  <Sparkles className="h-8 w-8 text-pink-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Entdecken</h3>
+                  <p className="text-sm text-muted-foreground">TikTok-Style lernen</p>
+                </div>
+              </div>
+              <p className="mb-4 text-muted-foreground">
+                Wische durch Manipulationstechniken wie auf TikTok. Schnell, visuell und unterhaltsam - perfekt für unterwegs.
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2">
+                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600">
+                    Vollbild
+                  </span>
+                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600">
+                    Mobile-First
+                  </span>
+                </div>
+                <ArrowRight className="h-5 w-5 text-pink-600 transition-transform group-hover:translate-x-1" />
               </div>
             </motion.div>
           </Link>

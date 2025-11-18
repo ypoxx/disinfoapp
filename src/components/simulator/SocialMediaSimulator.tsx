@@ -48,6 +48,7 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
 
     if (currentPostIndex < simulatorPosts.length - 1) {
       setCurrentPostIndex((prev) => prev + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Calculate score
       const correct = Object.entries(selectedPosts).filter(([postId, answer]) => {
@@ -69,6 +70,7 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
     setShowRedFlags(false);
     setShowTechniques(false);
     setCompleted(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const getCorrectAnswers = () => {

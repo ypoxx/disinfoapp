@@ -60,6 +60,7 @@ export function FeatureTour() {
       setCurrentStep(nextStep);
       if (tourSteps[nextStep].route) {
         navigate(tourSteps[nextStep].route!);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   };
@@ -75,6 +76,7 @@ export function FeatureTour() {
       setCurrentStep(prevStep);
       if (tourSteps[prevStep].route) {
         navigate(tourSteps[prevStep].route!);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   };

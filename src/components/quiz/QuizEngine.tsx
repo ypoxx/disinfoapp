@@ -102,6 +102,7 @@ export function QuizEngine({ questions, onComplete, timeLimit }: QuizEngineProps
       onComplete(score, timeSpent);
     } else {
       setCurrentQuestionIndex((prev) => prev + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

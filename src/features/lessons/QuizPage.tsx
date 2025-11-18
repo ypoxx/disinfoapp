@@ -63,22 +63,26 @@ export function QuizPage() {
   const handleStartLesson = () => {
     setViewState('lesson');
     setCurrentStep(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNextStep = () => {
     if (currentStep < lessonContent.steps.length - 1) {
       setCurrentStep((prev) => prev + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handlePreviousStep = () => {
     if (currentStep > 0) {
       setCurrentStep((prev) => prev - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handleStartQuiz = () => {
     setViewState('quiz');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleQuizComplete = (score: number, timeSpent: number) => {
@@ -132,6 +136,7 @@ export function QuizPage() {
     setViewState('quiz');
     setQuizScore(0);
     setQuizTimeSpent(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     // Unlock comeback kid achievement for retrying after failure
     updateProgress('comeback-kid', 1);
   };

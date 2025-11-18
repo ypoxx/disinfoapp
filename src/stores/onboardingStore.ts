@@ -101,13 +101,12 @@ export const useOnboardingStore = create<OnboardingState>()(
     {
       name: 'onboarding-storage',
       // Custom serialization for Set
+      // NOTE: showTour and currentStep are NOT persisted to avoid blocking the page on reload
       partialize: (state) => ({
         hasCompletedOnboarding: state.hasCompletedOnboarding,
         hasSeenWelcome: state.hasSeenWelcome,
         visitedPages: Array.from(state.visitedPages),
         completedSteps: Array.from(state.completedSteps),
-        currentStep: state.currentStep,
-        showTour: state.showTour,
       }),
       // Custom deserialization
       merge: (persisted: any, current) => ({

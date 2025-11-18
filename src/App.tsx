@@ -4,6 +4,8 @@ import { AppRouter } from './AppRouter';
 import { useAchievementStore } from './stores/achievementStore';
 import { useChallengeStore } from './stores/challengeStore';
 import { AchievementNotification } from './components/gamification/AchievementNotification';
+import { WelcomeModal } from './components/onboarding/WelcomeModal';
+import { FeatureTour } from './components/onboarding/FeatureTour';
 
 function App() {
   const { initializeAchievements, recentlyUnlocked, clearNotification } = useAchievementStore();
@@ -23,6 +25,8 @@ function App() {
         achievement={recentlyUnlocked}
         onClose={clearNotification}
       />
+      <WelcomeModal />
+      <FeatureTour />
     </BrowserRouter>
   );
 }

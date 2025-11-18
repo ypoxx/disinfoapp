@@ -81,13 +81,12 @@ export function FeatureTour() {
 
   return (
     <AnimatePresence>
-      {/* Backdrop */}
+      {/* Backdrop - non-blocking to allow page interaction */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-        onClick={handleSkip}
+        className="fixed inset-0 z-40 bg-black/20 pointer-events-none"
       />
 
       {/* Tooltip */}
@@ -95,8 +94,7 @@ export function FeatureTour() {
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="fixed bottom-8 left-1/2 z-50 w-full max-w-md -translate-x-1/2 px-4"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed bottom-8 left-1/2 z-50 w-full max-w-md -translate-x-1/2 px-4 pointer-events-auto"
       >
         <div className="rounded-xl border-2 border-primary bg-white p-6 shadow-2xl dark:bg-gray-800">
           {/* Close Button */}

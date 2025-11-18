@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, BookOpen, BarChart3, Smartphone, Brain, LineChart, Sparkles } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Smartphone, Brain, LineChart, Sparkles, Search } from 'lucide-react';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { NewBadge } from '../onboarding/NewBadge';
 import { useEffect } from 'react';
@@ -25,6 +25,7 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
     { to: '/modules', icon: BookOpen, label: 'Lernmodule' },
     { to: '/techniques', icon: Brain, label: 'Techniken' },
     { to: '/simulator', icon: Smartphone, label: 'Simulator' },
+    { to: '/checker', icon: Search, label: 'AI Checker' },
     { to: '/dashboard', icon: LineChart, label: 'Dashboard' },
     { to: '/progress', icon: BarChart3, label: 'Fortschritt' },
   ];

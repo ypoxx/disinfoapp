@@ -8,6 +8,7 @@ import { SimulatorPage } from './features/simulator/SimulatorPage';
 import { TechniqueExplorer } from './features/techniques/TechniqueExplorer';
 import { TechniqueQuizPage } from './features/quiz/TechniqueQuizPage';
 import { KnowledgeDashboard } from './features/dashboard/KnowledgeDashboard';
+import { CheckerPage } from './features/checker/CheckerPage';
 import { DiscoverFeed } from './components/discover/DiscoverFeed';
 
 export function AppRouter() {
@@ -23,6 +24,7 @@ export function AppRouter() {
         <Route path="modules/:moduleId" element={<QuizPage />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="simulator" element={<SimulatorPage />} />
+        <Route path="checker" element={<CheckerPage />} />
         <Route path="techniques" element={<TechniqueExplorer />} />
         <Route path="quiz" element={<TechniqueQuizPage />} />
         <Route path="dashboard" element={<KnowledgeDashboard />} />

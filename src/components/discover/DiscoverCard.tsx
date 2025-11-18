@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PersuasionTechnique } from '@/types/persuasion';
-import { Share2, BookOpen, ExternalLink } from 'lucide-react';
+import { Share2, BookOpen, ExternalLink, Award } from 'lucide-react';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
@@ -55,28 +55,51 @@ function generateMeshGradient(category: string): string {
   };
 
   const gradients = categoryGradients[category] || categoryGradients.cognitive_bias;
-
-  // Combine all gradient layers
   return gradients.join(', ');
 }
 
 /**
- * Generate a catchy headline for a technique
+ * Get German category label
  */
-function generateCatchyHeadline(technique: PersuasionTechnique): string {
+function getCategoryLabel(category: string): string {
+  const labels: Record<string, string> = {
+    cognitive_bias: 'Kognitive Verzerrung',
+    social_dynamics: 'Soziale Dynamiken',
+    emotional_manipulation: 'Emotionale Manipulation',
+    logical_fallacy: 'Logischer Fehlschluss',
+    nlp: 'NLP-Techniken',
+    digital_influence: 'Digitaler Einfluss',
+  };
+  return labels[category] || category;
+}
+
+/**
+ * Generate a professional, educational headline
+ */
+function generateProfessionalHeadline(technique: PersuasionTechnique): string {
   const templates = [
-    `🤯 ${technique.name.de}: Der Trick, der dich manipuliert`,
-    `⚠️ So nutzt ${technique.name.de} deine Psyche aus`,
-    `💡 ${technique.name.de}: Das musst du wissen!`,
-    `🎯 ${technique.name.de} - Erkenne die Manipulation`,
-    `🔥 ${technique.name.de}: Davor solltest du dich schützen`,
-    `🧠 Die Wahrheit über ${technique.name.de}`,
-    `❗ ${technique.name.de}: Wirst du gerade manipuliert?`,
-    `🚨 ${technique.name.de} - Überall um dich herum`,
+    `${technique.name.de}: Wie diese Technik funktioniert`,
+    `${technique.name.de}: Mechanismen und Wirkweise`,
+    `${technique.name.de}: Verstehen und Erkennen`,
+    `${technique.name.de}: Wissenschaftlich erklärt`,
+    `${technique.name.de}: Hintergründe und Anwendung`,
+    `${technique.name.de}: So funktioniert die Beeinflussung`,
   ];
 
   const hash = technique.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return templates[hash % templates.length];
+}
+
+/**
+ * Get evidence quality badge
+ */
+function getEvidenceBadge(quality: string): { icon: string; label: string; color: string } {
+  const badges = {
+    high: { icon: '✓✓✓', label: 'Hohe Evidenz', color: 'text-green-300' },
+    moderate: { icon: '✓✓', label: 'Moderate Evidenz', color: 'text-yellow-300' },
+    low: { icon: '✓', label: 'Limitierte Evidenz', color: 'text-orange-300' },
+  };
+  return badges[quality as keyof typeof badges] || badges.moderate;
 }
 
 export function DiscoverCard({ technique, isVisible, onAddToLearning }: DiscoverCardProps) {
@@ -107,11 +130,16 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
     }
   };
 
-  const headline = generateCatchyHeadline(technique);
+  const headline = generateProfessionalHeadline(technique);
+  const categoryLabel = getCategoryLabel(technique.category);
+  const evidenceBadge = getEvidenceBadge(technique.evidence.uncertainty?.evidenceQuality || 'moderate');
 
   // Show more examples on tap
   const exampleCount = showExamples ? 3 : 1;
   const displayExamples = technique.examples.slice(0, exampleCount);
+
+  // Count studies
+  const studyCount = technique.evidence.studies.length;
 
   return (
     <section
@@ -121,7 +149,7 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
       }}
     >
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
 
       {/* Category badge */}
       <motion.div
@@ -130,7 +158,7 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         transition={{ duration: 0.4 }}
         className="absolute top-4 right-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
       >
-        {technique.category.replace('_', ' ')}
+        {categoryLabel}
       </motion.div>
 
       {/* Difficulty indicator */}
@@ -140,10 +168,10 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         transition={{ duration: 0.4, delay: 0.1 }}
         className="absolute top-4 left-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
       >
-        {technique.difficulty === 'beginner' && '⭐ Einfach'}
-        {technique.difficulty === 'intermediate' && '⭐⭐ Mittel'}
-        {technique.difficulty === 'advanced' && '⭐⭐⭐ Schwer'}
-        {technique.difficulty === 'expert' && '⭐⭐⭐⭐ Experte'}
+        {technique.difficulty === 'beginner' && 'Grundlagen'}
+        {technique.difficulty === 'intermediate' && 'Fortgeschritten'}
+        {technique.difficulty === 'advanced' && 'Experte'}
+        {technique.difficulty === 'expert' && 'Spezialist'}
       </motion.div>
 
       {/* Content overlay */}
@@ -153,16 +181,36 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-lg leading-tight"
+          className="text-2xl sm:text-3xl font-bold text-white mb-3 drop-shadow-lg leading-tight"
         >
           {headline}
         </motion.h1>
+
+        {/* Scientific Evidence Badge */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ delay: 0.3 }}
+          className="flex items-center gap-3 mb-4 flex-wrap"
+        >
+          <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            <Award size={14} className="text-white" />
+            <span className="text-xs text-white font-medium">
+              {studyCount} {studyCount === 1 ? 'Studie' : 'Studien'}
+            </span>
+          </div>
+          <div className={`flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full ${evidenceBadge.color}`}>
+            <span className="text-xs font-medium">
+              {evidenceBadge.icon} {evidenceBadge.label}
+            </span>
+          </div>
+        </motion.div>
 
         {/* Full Description */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="text-white/95 text-base sm:text-lg leading-relaxed mb-5 drop-shadow-md"
         >
           {technique.description.de}
@@ -176,10 +224,13 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-              className="text-sm sm:text-base text-white/90 border-l-3 border-white/60 pl-4 mb-3 italic"
+              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+              className="text-sm sm:text-base text-white/90 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 mb-3"
             >
-              💡 <span className="font-semibold">Beispiel:</span> {example}
+              <div className="flex items-start gap-2">
+                <span className="text-white/60 text-xs mt-0.5 flex-shrink-0">Beispiel {index + 1}</span>
+                <span className="flex-1">{example}</span>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -189,11 +240,11 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           <motion.button
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.8 }}
             onClick={() => setShowExamples(true)}
-            className="text-yellow-300 text-sm font-medium hover:text-yellow-200 transition-colors w-fit mb-4"
+            className="text-blue-300 text-sm font-medium hover:text-blue-200 transition-colors w-fit mb-4 underline"
           >
-            + Weitere Beispiele anzeigen
+            + {technique.examples.length - 1} weitere Beispiele anzeigen
           </motion.button>
         )}
 
@@ -201,16 +252,11 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 0.6 }}
-          className="flex items-center gap-2 text-white/80 text-sm mb-4"
+          transition={{ delay: 0.7 }}
+          className="flex items-center gap-2 text-white/80 text-sm mb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 w-fit"
         >
           <span className="font-medium">Effektivität:</span>
-          <div className="flex gap-1">
-            {['very_high', 'high'].includes(technique.effectiveness) && '🔥🔥🔥'}
-            {technique.effectiveness === 'moderate' && '🔥🔥'}
-            {technique.effectiveness === 'low' && '🔥'}
-          </div>
-          <span className="text-xs">
+          <span className="font-bold text-white">
             {technique.effectiveness === 'very_high' && 'Sehr hoch'}
             {technique.effectiveness === 'high' && 'Hoch'}
             {technique.effectiveness === 'moderate' && 'Moderat'}
@@ -222,12 +268,12 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         <motion.button
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.9 }}
           onClick={() => navigate(`/techniques/${technique.id}`)}
-          className="flex items-center gap-2 text-yellow-300 font-semibold text-base hover:text-yellow-200 transition-colors w-fit"
+          className="flex items-center gap-2 text-blue-300 font-semibold text-base hover:text-blue-200 transition-colors w-fit"
         >
           <ExternalLink size={18} />
-          Vollständige Details ansehen
+          Detaillierte Analyse ansehen
         </motion.button>
       </div>
 

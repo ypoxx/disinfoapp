@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { QuizQuestion } from '@/types';
 import { Button, Card, ProgressBar } from '@/components/shared/UIComponents';
 import { Alert } from '@/components/shared/Alert';
 import { Clock, CheckCircle2, XCircle } from 'lucide-react';
+import { shuffleWithMapping } from '@/utils/arrayUtils';
 
 interface QuizEngineProps {
   questions: QuizQuestion[];
   onComplete: (score: number, timeSpent: number) => void;
   timeLimit?: number; // in seconds
+}
+
+interface ShuffledQuestion {
+  shuffledOptions?: { de: string }[];
+  indexMapping?: number[]; // Maps shuffled index to original index
 }
 
 export function QuizEngine({ questions, onComplete, timeLimit }: QuizEngineProps) {
@@ -21,6 +27,26 @@ export function QuizEngine({ questions, onComplete, timeLimit }: QuizEngineProps
 
   const currentQuestion = questions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
+
+  // Shuffle options for multiple-choice questions (but not true/false)
+  const shuffledQuestions = useMemo<ShuffledQuestion[]>(() => {
+    return questions.map((question) => {
+      if (question.type === 'multiple-choice' && question.options && question.options.length > 0) {
+        const { shuffled, indexMapping } = shuffleWithMapping(question.options);
+        return {
+          shuffledOptions: shuffled,
+          indexMapping,
+        };
+      }
+      return {};
+    });
+  }, [questions]);
+
+  const currentShuffled = shuffledQuestions[currentQuestionIndex];
+  const displayOptions =
+    currentQuestion.type === 'multiple-choice'
+      ? currentShuffled.shuffledOptions || currentQuestion.options
+      : currentQuestion.options;
 
   // Timer
   useEffect(() => {
@@ -46,13 +72,23 @@ export function QuizEngine({ questions, onComplete, timeLimit }: QuizEngineProps
     onComplete(score, timeSpent);
   };
 
-  const handleAnswer = (answer: string | number) => {
-    const correct = answer === currentQuestion.correctAnswer;
+  const handleAnswer = (shuffledAnswer: string | number) => {
+    // For multiple-choice, map shuffled index back to original index
+    let originalAnswer = shuffledAnswer;
+    if (
+      currentQuestion.type === 'multiple-choice' &&
+      typeof shuffledAnswer === 'number' &&
+      currentShuffled.indexMapping
+    ) {
+      originalAnswer = currentShuffled.indexMapping[shuffledAnswer];
+    }
+
+    const correct = originalAnswer === currentQuestion.correctAnswer;
     setIsCorrect(correct);
     setShowFeedback(true);
 
     const newAnswers = [...answers];
-    newAnswers[currentQuestionIndex] = answer;
+    newAnswers[currentQuestionIndex] = originalAnswer;
     setAnswers(newAnswers);
   };
 
@@ -119,34 +155,41 @@ export function QuizEngine({ questions, onComplete, timeLimit }: QuizEngineProps
             <h3 className="mb-6 text-xl font-semibold">{currentQuestion.question.de}</h3>
 
             {/* Answer Options */}
-            {currentQuestion.type === 'multiple-choice' && currentQuestion.options && (
+            {currentQuestion.type === 'multiple-choice' && displayOptions && (
               <div className="space-y-3">
-                {currentQuestion.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => !showFeedback && handleAnswer(index)}
-                    disabled={showFeedback}
-                    className={`w-full rounded-lg border-2 p-4 text-left transition-all ${
-                      showFeedback && index === currentQuestion.correctAnswer
-                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
-                        : showFeedback && answers[currentQuestionIndex] === index
-                          ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
-                          : 'border-border hover:border-primary hover:bg-accent'
-                    } ${showFeedback ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span>{option.de}</span>
-                      {showFeedback && index === currentQuestion.correctAnswer && (
-                        <CheckCircle2 className="h-5 w-5 text-green-600" />
-                      )}
-                      {showFeedback &&
-                        answers[currentQuestionIndex] === index &&
-                        index !== currentQuestion.correctAnswer && (
+                {displayOptions.map((option, shuffledIndex) => {
+                  // Map back to find if this is the correct answer
+                  const originalIndex = currentShuffled.indexMapping
+                    ? currentShuffled.indexMapping[shuffledIndex]
+                    : shuffledIndex;
+                  const isCorrectAnswer = originalIndex === currentQuestion.correctAnswer;
+                  const isUserAnswer = answers[currentQuestionIndex] === originalIndex;
+
+                  return (
+                    <button
+                      key={shuffledIndex}
+                      onClick={() => !showFeedback && handleAnswer(shuffledIndex)}
+                      disabled={showFeedback}
+                      className={`w-full rounded-lg border-2 p-4 text-left transition-all ${
+                        showFeedback && isCorrectAnswer
+                          ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                          : showFeedback && isUserAnswer
+                            ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                            : 'border-border hover:border-primary hover:bg-accent'
+                      } ${showFeedback ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{option.de}</span>
+                        {showFeedback && isCorrectAnswer && (
+                          <CheckCircle2 className="h-5 w-5 text-green-600" />
+                        )}
+                        {showFeedback && isUserAnswer && !isCorrectAnswer && (
                           <XCircle className="h-5 w-5 text-red-600" />
                         )}
-                    </div>
-                  </button>
-                ))}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             )}
 

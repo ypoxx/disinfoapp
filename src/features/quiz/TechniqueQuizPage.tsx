@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Brain, CheckCircle, X, TrendingUp, Award, RefreshCw, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { TechniqueTagList } from '@/components/techniques/TechniqueTag';
 import { useKnowledgeStore } from '@/stores/knowledgeStore';
 import { useProgressStore } from '@/stores/progressStore';
 import { useAchievementStore } from '@/stores/achievementStore';
+import { shuffle } from '@/utils/arrayUtils';
 import type { TechniqueQuestion } from '@/types/persuasion';
 
 export function TechniqueQuizPage() {
@@ -27,11 +28,19 @@ export function TechniqueQuizPage() {
     setQuestions(getRandomQuestions(10));
   }, []);
 
+  // Shuffle options for each question
+  const shuffledQuestions = useMemo(() => {
+    return questions.map((question) => ({
+      ...question,
+      options: shuffle(question.options),
+    }));
+  }, [questions]);
+
   if (questions.length === 0) {
     return <div className="container mx-auto px-4 py-8">Loading...</div>;
   }
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion = shuffledQuestions[currentQuestionIndex];
   const isAnswered = results[currentQuestion.id] !== undefined;
 
   const handleSelectAnswer = (answerId: string) => {

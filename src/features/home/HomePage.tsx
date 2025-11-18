@@ -157,19 +157,19 @@ export function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">Entdecken</h3>
-                  <p className="text-sm text-muted-foreground">TikTok-Style lernen</p>
+                  <p className="text-sm text-muted-foreground">Swipen & Lernen</p>
                 </div>
               </div>
               <p className="mb-4 text-muted-foreground">
-                Wische durch Manipulationstechniken wie auf TikTok. Schnell, visuell und unterhaltsam - perfekt für unterwegs.
+                Wische durch alle Manipulationstechniken im Vollbild-Modus. Schnell, visuell und unterhaltsam - perfekt für unterwegs.
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600">
-                    Vollbild
+                    Swipe-Modus
                   </span>
                   <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600">
-                    Mobile-First
+                    Vollbild
                   </span>
                 </div>
                 <ArrowRight className="h-5 w-5 text-pink-600 transition-transform group-hover:translate-x-1" />

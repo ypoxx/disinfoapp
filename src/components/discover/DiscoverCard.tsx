@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PersuasionTechnique } from '@/types/persuasion';
-import { getCachedTechniqueImage } from '@/services/imageService';
-import { TypewriterText } from './TypewriterText';
 import { Share2, BookOpen, ExternalLink } from 'lucide-react';
 
 interface DiscoverCardProps {
@@ -13,7 +11,57 @@ interface DiscoverCardProps {
 }
 
 /**
- * Generate a catchy TikTok-style headline for a technique
+ * Generate a beautiful mesh gradient based on technique category
+ * Returns CSS background string with multiple layers for depth
+ */
+function generateMeshGradient(category: string): string {
+  const categoryGradients: Record<string, string[]> = {
+    cognitive_bias: [
+      'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #1e3a8a 0%, #312e81 100%)',
+    ],
+    social_dynamics: [
+      'radial-gradient(circle at 30% 40%, rgba(236, 72, 153, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 70% 60%, rgba(244, 63, 94, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 80%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #9f1239 0%, #881337 100%)',
+    ],
+    emotional_manipulation: [
+      'radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #c2410c 0%, #b91c1c 100%)',
+    ],
+    logical_fallacy: [
+      'radial-gradient(circle at 35% 35%, rgba(16, 185, 129, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 65% 65%, rgba(20, 184, 166, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #065f46 0%, #134e4a 100%)',
+    ],
+    nlp: [
+      'radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #6b21a8 0%, #86198f 100%)',
+    ],
+    digital_influence: [
+      'radial-gradient(circle at 30% 60%, rgba(6, 182, 212, 0.8) 0%, transparent 50%)',
+      'radial-gradient(circle at 70% 40%, rgba(14, 165, 233, 0.7) 0%, transparent 50%)',
+      'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.6) 0%, transparent 70%)',
+      'linear-gradient(135deg, #075985 0%, #1e40af 100%)',
+    ],
+  };
+
+  const gradients = categoryGradients[category] || categoryGradients.cognitive_bias;
+
+  // Combine all gradient layers
+  return gradients.join(', ');
+}
+
+/**
+ * Generate a catchy headline for a technique
  */
 function generateCatchyHeadline(technique: PersuasionTechnique): string {
   const templates = [
@@ -27,53 +75,25 @@ function generateCatchyHeadline(technique: PersuasionTechnique): string {
     `🚨 ${technique.name.de} - Überall um dich herum`,
   ];
 
-  // Use technique ID to deterministically select a template
   const hash = technique.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return templates[hash % templates.length];
 }
 
 export function DiscoverCard({ technique, isVisible, onAddToLearning }: DiscoverCardProps) {
   const navigate = useNavigate();
-  const [backgroundStyle, setBackgroundStyle] = useState<React.CSSProperties>({});
-  const [showTypewriter, setShowTypewriter] = useState(false);
-  const [imageSource, setImageSource] = useState<string>('');
+  const [showExamples, setShowExamples] = useState(false);
 
-  useEffect(() => {
-    if (isVisible) {
-      // Start typewriter after a small delay when card becomes visible
-      const timer = setTimeout(() => setShowTypewriter(true), 300);
-      return () => clearTimeout(timer);
-    } else {
-      setShowTypewriter(false);
-    }
-  }, [isVisible]);
-
-  useEffect(() => {
-    // Load image/gradient
-    getCachedTechniqueImage(technique.name.en, technique.category, technique.id).then(
-      (result) => {
-        if (result.url) {
-          setBackgroundStyle({
-            backgroundImage: `url(${result.url})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          });
-          setImageSource(result.source);
-        } else if (result.gradient) {
-          setBackgroundStyle({
-            background: result.gradient,
-          });
-          setImageSource('generated');
-        }
-      }
-    );
-  }, [technique]);
+  // Generate gradient immediately (synchronously)
+  const backgroundGradient = useMemo(
+    () => generateMeshGradient(technique.category),
+    [technique.category]
+  );
 
   const handleShare = async () => {
     const shareData = {
       title: technique.name.de,
       text: technique.description.de,
-      url: window.location.origin + `/techniques/${technique.id}`,
+      url: window.location.origin + `/disinfoapp/techniques/${technique.id}`,
     };
 
     try {
@@ -81,7 +101,6 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         await navigator.share(shareData);
       } else if (navigator.clipboard) {
         await navigator.clipboard.writeText(shareData.url);
-        // Could add toast notification here
       }
     } catch (error) {
       console.error('Share failed:', error);
@@ -89,72 +108,126 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
   };
 
   const headline = generateCatchyHeadline(technique);
-  const shortDescription = technique.description.de.slice(0, 200) + '...';
+
+  // Show more examples on tap
+  const exampleCount = showExamples ? 3 : 1;
+  const displayExamples = technique.examples.slice(0, exampleCount);
 
   return (
     <section
       className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden"
-      style={backgroundStyle}
+      style={{
+        background: backgroundGradient,
+      }}
     >
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
-
-      {/* Image source attribution (small, top-left) */}
-      {imageSource && imageSource !== 'generated' && (
-        <div className="absolute top-2 left-2 text-[10px] text-white/60 bg-black/30 px-2 py-1 rounded">
-          {imageSource === 'wikipedia' && '📚 Wikipedia'}
-          {imageSource === 'unsplash' && '📷 Unsplash'}
-        </div>
-      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
 
       {/* Category badge */}
-      <div className="absolute top-2 right-2 text-xs text-white bg-black/50 px-3 py-1 rounded-full">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.4 }}
+        className="absolute top-4 right-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
+      >
         {technique.category.replace('_', ' ')}
-      </div>
+      </motion.div>
+
+      {/* Difficulty indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.4, delay: 0.1 }}
+        className="absolute top-4 left-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
+      >
+        {technique.difficulty === 'beginner' && '⭐ Einfach'}
+        {technique.difficulty === 'intermediate' && '⭐⭐ Mittel'}
+        {technique.difficulty === 'advanced' && '⭐⭐⭐ Schwer'}
+        {technique.difficulty === 'expert' && '⭐⭐⭐⭐ Experte'}
+      </motion.div>
 
       {/* Content overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 pb-24">
+      <div className="absolute inset-0 flex flex-col justify-end p-6 pb-24 overflow-y-auto">
         {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-3xl font-bold text-white mb-3 drop-shadow-lg"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-lg leading-tight"
         >
           {headline}
         </motion.h1>
 
-        {/* Description with typewriter effect */}
-        <div className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md">
-          {showTypewriter ? (
-            <TypewriterText text={shortDescription} speed={15} />
-          ) : (
-            <div className="h-24" /> // Placeholder to prevent layout shift
-          )}
-        </div>
+        {/* Full Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-white/95 text-base sm:text-lg leading-relaxed mb-5 drop-shadow-md"
+        >
+          {technique.description.de}
+        </motion.div>
 
-        {/* Example */}
-        {technique.examples[0] && (
-          <motion.div
+        {/* Examples */}
+        <AnimatePresence>
+          {displayExamples.map((example, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+              className="text-sm sm:text-base text-white/90 border-l-3 border-white/60 pl-4 mb-3 italic"
+            >
+              💡 <span className="font-semibold">Beispiel:</span> {example}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+
+        {/* Show more examples button */}
+        {technique.examples.length > 1 && !showExamples && (
+          <motion.button
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ delay: 2, duration: 0.5 }}
-            className="text-sm text-white/80 italic border-l-2 border-white/50 pl-3 mb-4"
+            transition={{ delay: 0.7 }}
+            onClick={() => setShowExamples(true)}
+            className="text-yellow-300 text-sm font-medium hover:text-yellow-200 transition-colors w-fit mb-4"
           >
-            💡 Beispiel: {technique.examples[0]}
-          </motion.div>
+            + Weitere Beispiele anzeigen
+          </motion.button>
         )}
+
+        {/* Effectiveness indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6 }}
+          className="flex items-center gap-2 text-white/80 text-sm mb-4"
+        >
+          <span className="font-medium">Effektivität:</span>
+          <div className="flex gap-1">
+            {['very_high', 'high'].includes(technique.effectiveness) && '🔥🔥🔥'}
+            {technique.effectiveness === 'moderate' && '🔥🔥'}
+            {technique.effectiveness === 'low' && '🔥'}
+          </div>
+          <span className="text-xs">
+            {technique.effectiveness === 'very_high' && 'Sehr hoch'}
+            {technique.effectiveness === 'high' && 'Hoch'}
+            {technique.effectiveness === 'moderate' && 'Moderat'}
+            {technique.effectiveness === 'low' && 'Niedrig'}
+          </span>
+        </motion.div>
 
         {/* Read more link */}
         <motion.button
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 2.5, duration: 0.5 }}
+          transition={{ delay: 0.8 }}
           onClick={() => navigate(`/techniques/${technique.id}`)}
-          className="flex items-center gap-2 text-yellow-300 font-medium hover:text-yellow-200 transition-colors w-fit"
+          className="flex items-center gap-2 text-yellow-300 font-semibold text-base hover:text-yellow-200 transition-colors w-fit"
         >
-          <ExternalLink size={16} />
-          Mehr erfahren
+          <ExternalLink size={18} />
+          Vollständige Details ansehen
         </motion.button>
       </div>
 
@@ -164,9 +237,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 1, duration: 0.3 }}
+          transition={{ delay: 0.5, duration: 0.3 }}
           onClick={() => onAddToLearning(technique.id)}
-          className="w-14 h-14 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all active:scale-95"
+          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
           title="Zum Lernpfad hinzufügen"
         >
           <BookOpen size={24} />
@@ -176,9 +249,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 1.2, duration: 0.3 }}
+          transition={{ delay: 0.6, duration: 0.3 }}
           onClick={handleShare}
-          className="w-14 h-14 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all active:scale-95"
+          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
           title="Teilen"
         >
           <Share2 size={24} />

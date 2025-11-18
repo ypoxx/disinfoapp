@@ -3,6 +3,8 @@ import { AnalyticsDashboard } from '@/components/analytics/AnalyticsDashboard';
 import { StreakCard } from '@/components/gamification/StreakCard';
 import { BadgeShowcase } from '@/components/gamification/BadgeShowcase';
 import { PersonalizedRecommendations } from '@/components/gamification/PersonalizedRecommendations';
+import { NextBestAction } from '@/components/gamification/NextBestAction';
+import { CategoryPractice } from '@/components/dashboard/CategoryPractice';
 
 export function ProgressPage() {
   return (
@@ -17,6 +19,16 @@ export function ProgressPage() {
         <p className="text-muted-foreground">
           Verfolge deine Lernreise und erreiche neue Meilensteine
         </p>
+      </motion.div>
+
+      {/* Next Best Action - Prominent */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.05 }}
+        className="mb-8"
+      >
+        <NextBestAction />
       </motion.div>
 
       {/* Top Section: Streak and Recommendations */}
@@ -45,6 +57,16 @@ export function ProgressPage() {
         className="mb-8"
       >
         <AnalyticsDashboard />
+      </motion.div>
+
+      {/* Category Practice */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35 }}
+        className="mb-8"
+      >
+        <CategoryPractice />
       </motion.div>
 
       {/* Badge Showcase */}

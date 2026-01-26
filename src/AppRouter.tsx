@@ -13,20 +13,24 @@ import { DiscoverFeed } from './components/discover/DiscoverFeed';
 export function AppRouter() {
   return (
     <Routes>
-      {/* Immersive full-screen route without layout */}
-      <Route path="/discover" element={<DiscoverFeed />} />
+      {/* PRIMARY: SwipeFeed as main app (full-screen, immersive) */}
+      <Route path="/" element={<DiscoverFeed />} />
 
-      {/* Standard routes with layout */}
-      <Route path="/" element={<Layout />}>
+      {/* LEGACY: Full dashboard app accessible via /dashboard */}
+      <Route path="/dashboard" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="modules" element={<LearningModules />} />
         <Route path="modules/:moduleId" element={<QuizPage />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="simulator" element={<SimulatorPage />} />
         <Route path="techniques" element={<TechniqueExplorer />} />
+        <Route path="techniques/:techniqueId" element={<TechniqueExplorer />} />
         <Route path="quiz" element={<TechniqueQuizPage />} />
-        <Route path="dashboard" element={<KnowledgeDashboard />} />
+        <Route path="knowledge" element={<KnowledgeDashboard />} />
       </Route>
+
+      {/* Redirect old /discover path to root */}
+      <Route path="/discover" element={<DiscoverFeed />} />
     </Routes>
   );
 }

@@ -4,9 +4,12 @@ import { DiscoverCard } from './DiscoverCard';
 import { persuasionTechniques } from '@/data/persuasion';
 import { useDiscoverStore } from '@/stores/discoverStore';
 import { useKnowledgeStore } from '@/stores/knowledgeStore';
+import { useLanguageStore } from '@/stores/languageStore';
 import { PersuasionTechnique } from '@/types/persuasion';
-import { ArrowLeft, RotateCcw } from 'lucide-react';
+import { ui } from '@/utils/i18n';
+import { Menu, RotateCcw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 
 /**
  * Shuffle array using Fisher-Yates algorithm with seed for consistency
@@ -27,6 +30,12 @@ export function DiscoverFeed() {
   const [visibleIndex, setVisibleIndex] = useState(0);
   const { markAsSeen, updateLastVisit, seenTechniques, resetSeen } = useDiscoverStore();
   const { markTechniqueViewed } = useKnowledgeStore();
+  const { language, detectLanguage } = useLanguageStore();
+
+  // Detect language on mount
+  useEffect(() => {
+    detectLanguage();
+  }, [detectLanguage]);
 
   // Shuffle techniques on mount
   useEffect(() => {
@@ -71,8 +80,8 @@ export function DiscoverFeed() {
       // Mark technique as viewed in knowledge store
       markTechniqueViewed(techniqueId);
 
-      // Navigate to technique detail
-      navigate(`/techniques/${techniqueId}`);
+      // Navigate to technique detail in dashboard
+      navigate(`/dashboard/techniques/${techniqueId}`);
     },
     [markTechniqueViewed, navigate]
   );
@@ -95,40 +104,48 @@ export function DiscoverFeed() {
   }
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Header */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/80 to-transparent">
+    <div className="relative h-screen w-full overflow-hidden bg-black font-sans">
+      {/* Header - Telekom inspired */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/90 via-black/60 to-transparent">
         <button
-          onClick={() => navigate(-1)}
-          className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all"
+          onClick={() => navigate('/dashboard')}
+          className="w-10 h-10 rounded-full bg-[#e20074]/90 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#e20074] transition-all active:scale-95"
+          title={ui('header.dashboard', language)}
         >
-          <ArrowLeft size={20} />
+          <Menu size={20} />
         </button>
 
-        <h1 className="text-white text-xl font-bold drop-shadow-lg">Entdecken</h1>
+        <h1 className="text-white text-xl font-bold drop-shadow-lg tracking-tight">
+          DisInfo <span className="text-[#e20074]">{language === 'en' ? 'Glossary' : 'Glossar'}</span>
+        </h1>
 
-        <button
-          onClick={handleReset}
-          className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all"
-          title="Neu mischen"
-        >
-          <RotateCcw size={20} />
-        </button>
+        <div className="flex gap-2">
+          <LanguageSwitcher variant="dark" />
+          <button
+            onClick={handleReset}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all active:scale-95"
+            title={ui('action.shuffle', language)}
+          >
+            <RotateCcw size={18} />
+          </button>
+        </div>
       </div>
 
-      {/* Progress indicator */}
+      {/* Progress indicator - Magenta accent */}
       <div className="fixed top-16 left-0 right-0 z-40 px-4">
-        <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+        <div className="h-1 bg-white/10 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-white rounded-full"
+            className="h-full bg-[#e20074] rounded-full"
             initial={{ width: 0 }}
             animate={{ width: `${((visibleIndex + 1) / techniques.length) * 100}%` }}
             transition={{ duration: 0.3 }}
           />
         </div>
-        <div className="text-center text-white/60 text-xs mt-1">
+        <div className="text-center text-white/50 text-xs mt-1.5 font-medium">
           {visibleIndex + 1} / {techniques.length}
-          {seenTechniques.size > 0 && ` • ${seenTechniques.size} gesehen`}
+          {seenTechniques.size > 0 && (
+            <span className="text-[#e20074]/80"> · {seenTechniques.size} {ui('progress.seen', language)}</span>
+          )}
         </div>
       </div>
 
@@ -153,33 +170,42 @@ export function DiscoverFeed() {
               technique={technique}
               isVisible={visibleIndex === index}
               onAddToLearning={handleAddToLearning}
+              language={language}
             />
           </div>
         ))}
 
-        {/* End card */}
-        <section className="relative h-screen w-full flex-shrink-0 snap-start bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900 flex items-center justify-center">
+        {/* End card - Telekom Magenta gradient */}
+        <section className="relative h-screen w-full flex-shrink-0 snap-start bg-gradient-to-br from-[#e20074] via-[#b8005c] to-[#7a003d] flex items-center justify-center">
           <div className="text-center px-6">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, type: 'spring' }}
-              className="text-6xl mb-6"
+              className="text-7xl mb-8"
             >
-              🎉
+              ✓
             </motion.div>
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Alle Techniken entdeckt!
+            <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">
+              {ui('end.title', language)}
             </h2>
-            <p className="text-white/80 mb-8">
-              Du hast alle {techniques.length} Manipulationstechniken gesehen.
+            <p className="text-white/90 mb-8 text-lg">
+              {ui('end.subtitle', language).replace('{count}', techniques.length.toString())}
             </p>
-            <button
-              onClick={handleReset}
-              className="px-6 py-3 bg-white text-purple-900 font-bold rounded-full hover:bg-gray-100 transition-all active:scale-95"
-            >
-              Nochmal von vorne
-            </button>
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={handleReset}
+                className="px-8 py-4 bg-white text-[#e20074] font-bold rounded-xl hover:bg-gray-100 transition-all active:scale-95"
+              >
+                {ui('end.restart', language)}
+              </button>
+              <button
+                onClick={() => navigate('/dashboard')}
+                className="px-8 py-4 bg-white/20 text-white font-medium rounded-xl hover:bg-white/30 transition-all active:scale-95"
+              >
+                {ui('end.toDashboard', language)}
+              </button>
+            </div>
           </div>
         </section>
       </div>
@@ -193,7 +219,7 @@ export function DiscoverFeed() {
           className="fixed bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none z-40"
         >
           <div className="flex flex-col items-center text-white/60">
-            <div className="text-sm mb-2">Wische nach oben</div>
+            <div className="text-sm mb-2">{ui('hint.swipeUp', language)}</div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}

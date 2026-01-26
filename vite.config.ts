@@ -5,22 +5,23 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/disinfoapp/',
+  // Root path for Netlify deployment
+  base: '/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Desinformation Detection App',
-        short_name: 'DisinfoApp',
-        description: 'Progressive Web App zur Erkennung und Bekämpfung von Desinformation',
-        theme_color: '#2563eb',
-        background_color: '#ffffff',
+        name: 'DisInfo Glossar',
+        short_name: 'DisInfo',
+        description: 'Lerne Kommunikations- und Desinformationsbegriffe im TikTok-Style',
+        theme_color: '#e20074',
+        background_color: '#0d0d0d',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/disinfoapp/',
-        start_url: '/disinfoapp/',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: 'pwa-192x192.png',

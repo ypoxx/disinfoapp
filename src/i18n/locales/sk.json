@@ -1,0 +1,333 @@
+{
+  "common": {
+    "start": "Začať",
+    "continue": "Pokračovať",
+    "back": "Späť",
+    "next": "Ďalej",
+    "close": "Zavrieť",
+    "save": "Uložiť",
+    "cancel": "Zrušiť",
+    "loading": "Načítava sa...",
+    "error": "Chyba",
+    "success": "Úspech",
+    "progress": "Pokrok",
+    "completed": "Dokončené",
+    "notCompleted": "Nedokončené",
+    "viewAll": "Zobraziť všetko",
+    "learnMore": "Zistiť viac",
+    "tryAgain": "Skúsiť znova",
+    "share": "Zdieľať",
+    "free": "Zadarmo"
+  },
+  "nav": {
+    "home": "Domov",
+    "discover": "Objavovať",
+    "modules": "Moduly",
+    "techniques": "Techniky",
+    "simulator": "Simulátor",
+    "dashboard": "Panel",
+    "progress": "Pokrok"
+  },
+  "home": {
+    "hero": {
+      "title1": "Rozpoznaj dezinformáciu.",
+      "title2": "Chráň pravdu.",
+      "subtitle": "Nauč sa v interaktívnych moduloch, ako rozpoznávať falošné správy, overovať fakty a kriticky myslieť o informáciách. Staň sa expertom v boji proti dezinformácii."
+    },
+    "cta": {
+      "start": "Začať",
+      "myProgress": "Môj pokrok"
+    },
+    "features": {
+      "recognize": {
+        "title": "Rozpoznávanie dezinformácie",
+        "description": "Nauč sa identifikovať znaky a taktiky falošných informácií"
+      },
+      "thinking": {
+        "title": "Kritické myslenie",
+        "description": "Rozvíjaj schopnosti analýzy a hodnotenia informácií"
+      },
+      "practice": {
+        "title": "Praktické cvičenia",
+        "description": "Cvič na reálnych príkladoch v bezpečnom prostredí"
+      },
+      "community": {
+        "title": "Spoločné učenie",
+        "description": "Vymieňaj si nápady s ostatnými a učte sa navzájom"
+      }
+    },
+    "newTools": {
+      "title": "Nové nástroje na učenie",
+      "quiz": {
+        "title": "Kvíz techník",
+        "subtitle": "Otestuj svoje vedomosti",
+        "description": "Identifikuj manipulačné techniky v realistických scenároch. 10 otázok s okamžitou spätnou väzbou a podrobnými vysvetleniami.",
+        "questions": "10 otázok",
+        "xp": "Až 200 XP"
+      },
+      "explorer": {
+        "title": "Prieskumník techník",
+        "subtitle": "Objav všetky techniky",
+        "description": "Preskúmaj 28 presvedčovacích a manipulačných techník s vedeckými poznatkami, príkladmi a protiopatreniami.",
+        "techniques": "28 techník",
+        "countermeasures": "12 protiopatrení"
+      },
+      "discover": {
+        "title": "Objavovať",
+        "subtitle": "Posúvaj a uč sa",
+        "description": "Prechádzaj všetkými manipulačnými technikami v režime celej obrazovky. Rýchlo, vizuálne a zábavne - ideálne na cesty.",
+        "swipe": "Režim posúvania",
+        "fullscreen": "Celá obrazovka"
+      }
+    },
+    "stats": {
+      "modules": "Vzdelávacie moduly",
+      "techniques": "Manipulačné techniky",
+      "free": "Zadarmo"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "O DisinfoApp",
+      "description": "Progresívna webová aplikácia na detekciu a boj proti dezinformácii. Nauč sa rozpoznávať falošné správy a rozvíjaj kritické myslenie."
+    },
+    "quickLinks": {
+      "title": "Rýchle odkazy",
+      "modules": "Vzdelávacie moduly",
+      "progress": "Pokrok",
+      "privacy": "Ochrana súkromia",
+      "imprint": "Impressum"
+    },
+    "community": {
+      "title": "Komunita",
+      "madeWith": "Vytvorené s",
+      "for": "pre digitálnu gramotnosť"
+    },
+    "copyright": "Všetky práva vyhradené."
+  },
+  "modules": {
+    "title": "Vzdelávacie moduly",
+    "subtitle": "Vyber si modul na rozšírenie vedomostí o dezinformácii",
+    "duration": "{{minutes}} min",
+    "lessons": "{{count}} lekcií",
+    "startModule": "Začať modul",
+    "continueModule": "Pokračovať",
+    "completed": "Dokončené",
+    "difficulty": {
+      "beginner": "Začiatočník",
+      "intermediate": "Stredne pokročilý",
+      "advanced": "Pokročilý",
+      "expert": "Expert"
+    }
+  },
+  "quiz": {
+    "title": "Kvíz",
+    "question": "Otázka {{current}} z {{total}}",
+    "checkAnswer": "Skontrolovať odpoveď",
+    "nextQuestion": "Ďalšia otázka",
+    "finishQuiz": "Dokončiť kvíz",
+    "correct": "Správne!",
+    "incorrect": "Bohužiaľ nesprávne",
+    "correctAnswer": "Správna odpoveď",
+    "explanation": "Vysvetlenie",
+    "yourAnswer": "Tvoja odpoveď",
+    "results": {
+      "title": "Výsledok kvízu",
+      "score": "{{score}} z {{total}} správnych",
+      "percentage": "{{percentage}}%",
+      "excellent": "Výborne!",
+      "good": "Dobrá práca!",
+      "needsWork": "Cvič ďalej!",
+      "xpEarned": "{{xp}} XP získaných",
+      "tryAgain": "Skúsiť znova",
+      "backToModules": "Späť na moduly"
+    }
+  },
+  "techniques": {
+    "title": "Manipulačné techniky",
+    "subtitle": "Preskúmaj 28 presvedčovacích a manipulačných techník",
+    "searchPlaceholder": "Hľadať techniky...",
+    "allCategories": "Všetky kategórie",
+    "allDifficulties": "Všetky úrovne",
+    "gridView": "Mriežkové zobrazenie",
+    "graphView": "Sieťové zobrazenie",
+    "categories": {
+      "cognitive_bias": "Kognitívne skreslenia",
+      "social_dynamics": "Sociálna dynamika",
+      "logical_fallacy": "Logické chyby",
+      "emotional_manipulation": "Emocionálna manipulácia",
+      "nlp": "Jazykové vzory",
+      "digital_influence": "Digitálny vplyv"
+    },
+    "detail": {
+      "overview": "Prehľad",
+      "examples": "Príklady",
+      "detection": "Detekcia",
+      "countermeasures": "Protiopatrenia",
+      "related": "Súvisiace techniky",
+      "howItWorks": "Ako to funguje",
+      "whyEffective": "Prečo je to účinné",
+      "scientificBasis": "Vedecký základ",
+      "realWorldExamples": "Príklady z praxe",
+      "warningSignals": "Varovné signály",
+      "psychologicalBackground": "Psychologické pozadie",
+      "defenseTips": "Tipy na obranu",
+      "relatedTechniques": "Súvisiace techniky",
+      "effectiveness": "Účinnosť",
+      "detectability": "Detekovateľnosť"
+    }
+  },
+  "discover": {
+    "title": "Objavovať",
+    "swipeHint": "Posuň hore pre viac",
+    "tapToLearn": "Ťukni pre detaily",
+    "learnMore": "Zistiť viac",
+    "category": "Kategória",
+    "technique": "Technika {{current}} z {{total}}",
+    "completed": "Všetky techniky objavené!",
+    "startOver": "Začať odznova"
+  },
+  "simulator": {
+    "title": "Simulátor sociálnych médií",
+    "subtitle": "Analyzuj príspevky na manipulačné techniky",
+    "analyzePost": "Analyzovať príspevok",
+    "detectedTechniques": "Zistené techniky",
+    "noTechniques": "Nezistené žiadne manipulačné techniky",
+    "sharePost": "Zdieľať",
+    "reportPost": "Nahlásiť",
+    "likePost": "Páči sa mi",
+    "commentPost": "Komentovať",
+    "trustScore": "Skóre dôveryhodnosti",
+    "high": "Vysoké",
+    "medium": "Stredné",
+    "low": "Nízke"
+  },
+  "dashboard": {
+    "title": "Panel vedomostí",
+    "subtitle": "Sleduj svoj pokrok v učení a majstrovstvo",
+    "overview": "Prehľad",
+    "techniquesLearned": "Naučené techniky",
+    "totalXp": "Celkové XP",
+    "currentStreak": "Aktuálna séria",
+    "masteryLevel": "Úroveň majstrovstva",
+    "heatmap": {
+      "title": "Tepelná mapa aktivity",
+      "subtitle": "Tvoja učebná aktivita za posledné týždne"
+    },
+    "radar": {
+      "title": "Radar kategórií",
+      "subtitle": "Tvoje silné stránky podľa kategórií"
+    },
+    "timeline": {
+      "title": "Časová os učenia",
+      "subtitle": "Tvoja história učenia"
+    },
+    "weaknesses": {
+      "title": "Oblasti na zlepšenie",
+      "subtitle": "Oblasti vyžadujúce viac pozornosti"
+    }
+  },
+  "progress": {
+    "title": "Tvoj pokrok",
+    "subtitle": "Sleduj svoju učebnú cestu",
+    "overview": {
+      "title": "Prehľad",
+      "totalXp": "Celkové XP",
+      "level": "Úroveň {{level}}",
+      "modulesCompleted": "Dokončené moduly",
+      "techniquesLearned": "Naučené techniky",
+      "quizzesTaken": "Absolvované kvízy",
+      "accuracy": "Presnosť"
+    },
+    "streak": {
+      "title": "Séria učenia",
+      "days": "dní",
+      "currentStreak": "Aktuálna séria",
+      "longestStreak": "Najdlhšia séria",
+      "keepItUp": "Len tak ďalej!",
+      "streakLost": "Séria prerušená - začni znova!"
+    },
+    "achievements": {
+      "title": "Úspechy",
+      "unlocked": "{{count}} odomknutých",
+      "locked": "Zamknuté",
+      "progress": "Pokrok: {{current}}/{{target}}"
+    },
+    "badges": {
+      "title": "Odznaky",
+      "collected": "{{count}} zozbieraných",
+      "rarity": {
+        "common": "Bežný",
+        "rare": "Vzácny",
+        "epic": "Epický",
+        "legendary": "Legendárny"
+      }
+    },
+    "recommendations": {
+      "title": "Odporúčania",
+      "subtitle": "Na základe tvojho učebného správania",
+      "nextBest": "Ďalší krok"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Vitaj v DisinfoApp!",
+      "subtitle": "Tvoj spoločník v boji proti dezinformácii",
+      "step1": {
+        "title": "Nauč sa techniky",
+        "description": "Objav 28 manipulačných techník a ako ich rozpoznať"
+      },
+      "step2": {
+        "title": "Cvič interaktívne",
+        "description": "Otestuj svoje vedomosti v kvízoch a simuláciách"
+      },
+      "step3": {
+        "title": "Zbieraj úspechy",
+        "description": "Získavaj XP, odznaky a odomykaj úspechy"
+      },
+      "step4": {
+        "title": "Staň sa expertom",
+        "description": "Rozvíjaj kritické myslenie a chráň sa pred manipuláciou"
+      },
+      "getStarted": "Poďme na to!",
+      "skip": "Preskočiť"
+    },
+    "tour": {
+      "step1": "Objav nové funkcie",
+      "step2": "Otestuj vedomosti v kvíze",
+      "step3": "Preskúmaj všetky techniky",
+      "complete": "Dokončiť prehliadku"
+    }
+  },
+  "challenges": {
+    "daily": {
+      "title": "Denná výzva",
+      "subtitle": "Získaj bonusové XP",
+      "completed": "Dokončené!",
+      "timeLeft": "Zostáva {{hours}}h {{minutes}}m",
+      "reward": "{{xp}} XP odmena",
+      "startChallenge": "Začať výzvu"
+    }
+  },
+  "achievements": {
+    "unlocked": "Úspech odomknutý!",
+    "new": "Nové!"
+  },
+  "theme": {
+    "light": "Svetlý",
+    "dark": "Tmavý",
+    "system": "Systémový"
+  },
+  "language": {
+    "select": "Vybrať jazyk",
+    "current": "Aktuálny jazyk"
+  },
+  "accessibility": {
+    "toggleMenu": "Prepnúť menu",
+    "toggleTheme": "Prepnúť tému",
+    "closeModal": "Zavrieť okno",
+    "openModal": "Otvoriť okno",
+    "nextSlide": "Ďalší snímok",
+    "prevSlide": "Predchádzajúci snímok"
+  }
+}

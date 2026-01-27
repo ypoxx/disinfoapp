@@ -1,51 +1,75 @@
 /** @type {import('tailwindcss').Config} */
+import telekomPreset from '@telekom/design-tokens/dist/tailwindcss-preset/design-tokens.config.js';
+
 export default {
+  presets: [telekomPreset],
   darkMode: ['class'],
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      // Bridge existing semantic colors to Telekom tokens for compatibility
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+        border: 'var(--telekom-color-ui-border-standard)',
+        input: 'var(--telekom-color-ui-border-standard)',
+        ring: 'var(--telekom-color-functional-focus-standard)',
+        background: 'var(--telekom-color-background-canvas)',
+        foreground: 'var(--telekom-color-text-and-icon-standard)',
+        card: {
+          DEFAULT: 'var(--telekom-color-background-surface)',
+          foreground: 'var(--telekom-color-text-and-icon-standard)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'var(--telekom-color-background-surface)',
+          foreground: 'var(--telekom-color-text-and-icon-standard)',
         },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+        muted: {
+          DEFAULT: 'var(--telekom-color-ui-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-additional)',
+        },
+        accent: {
+          DEFAULT: 'var(--telekom-color-ui-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-standard)',
+        },
+        destructive: {
+          DEFAULT: 'var(--telekom-color-functional-danger-standard)',
+          foreground: 'var(--telekom-color-text-and-icon-white-standard)',
+        },
+        secondary: {
+          DEFAULT: 'var(--telekom-color-ui-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-standard)',
+        },
+        // Semantic status colors
+        success: {
+          DEFAULT: 'var(--telekom-color-functional-success-standard)',
+          subtle: 'var(--telekom-color-functional-success-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-functional-success)',
+        },
+        warning: {
+          DEFAULT: 'var(--telekom-color-functional-warning-standard)',
+          subtle: 'var(--telekom-color-functional-warning-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-functional-warning)',
+        },
+        danger: {
+          DEFAULT: 'var(--telekom-color-functional-danger-standard)',
+          subtle: 'var(--telekom-color-functional-danger-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-functional-danger)',
+        },
+        info: {
+          DEFAULT: 'var(--telekom-color-functional-informational-standard)',
+          subtle: 'var(--telekom-color-functional-informational-subtle)',
+          foreground: 'var(--telekom-color-text-and-icon-functional-informational)',
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: 'var(--telekom-radius-large)',
+        md: 'var(--telekom-radius-standard)',
+        sm: 'var(--telekom-radius-small)',
+      },
+      boxShadow: {
+        sm: 'var(--telekom-shadow-raised-standard)',
+        DEFAULT: 'var(--telekom-shadow-raised-standard)',
+        md: 'var(--telekom-shadow-floating-standard)',
+        lg: 'var(--telekom-shadow-overlay)',
       },
       keyframes: {
         'accordion-down': {
@@ -56,12 +80,32 @@ export default {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'slide-up': {
+          from: { transform: 'translateY(10px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
+        },
+        'slide-down': {
+          from: { transform: 'translateY(-10px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
+        },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        'scale-in': {
+          from: { transform: 'scale(0.95)', opacity: '0' },
+          to: { transform: 'scale(1)', opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-up': 'slide-up 0.3s ease-out',
+        'slide-down': 'slide-down 0.3s ease-out',
+        'fade-in': 'fade-in 0.2s ease-out',
+        'scale-in': 'scale-in 0.2s ease-out',
       },
     },
   },
   plugins: [],
-}
+};

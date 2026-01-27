@@ -1,0 +1,333 @@
+{
+  "common": {
+    "start": "Kezdés",
+    "continue": "Folytatás",
+    "back": "Vissza",
+    "next": "Következő",
+    "close": "Bezárás",
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "loading": "Betöltés...",
+    "error": "Hiba",
+    "success": "Siker",
+    "progress": "Haladás",
+    "completed": "Befejezve",
+    "notCompleted": "Nincs befejezve",
+    "viewAll": "Összes megtekintése",
+    "learnMore": "Tudj meg többet",
+    "tryAgain": "Próbáld újra",
+    "share": "Megosztás",
+    "free": "Ingyenes"
+  },
+  "nav": {
+    "home": "Kezdőlap",
+    "discover": "Felfedezés",
+    "modules": "Modulok",
+    "techniques": "Technikák",
+    "simulator": "Szimulátor",
+    "dashboard": "Irányítópult",
+    "progress": "Haladás"
+  },
+  "home": {
+    "hero": {
+      "title1": "Ismerd fel a dezinformációt.",
+      "title2": "Védd az igazságot.",
+      "subtitle": "Tanuld meg interaktív modulokban, hogyan ismerheted fel az álhíreket, ellenőrizheted a tényeket és hogyan gondolkodhatsz kritikusan az információkról. Válj szakértővé a dezinformáció elleni harcban."
+    },
+    "cta": {
+      "start": "Kezdés",
+      "myProgress": "Haladásom"
+    },
+    "features": {
+      "recognize": {
+        "title": "Dezinformáció felismerése",
+        "description": "Tanuld meg azonosítani a hamis információk jellemzőit és taktikáit"
+      },
+      "thinking": {
+        "title": "Kritikus gondolkodás",
+        "description": "Fejleszd készségeidet az információk elemzésében és értékelésében"
+      },
+      "practice": {
+        "title": "Gyakorlati feladatok",
+        "description": "Gyakorolj valós példákkal biztonságos tanulási környezetben"
+      },
+      "community": {
+        "title": "Közös tanulás",
+        "description": "Cserélj ötleteket másokkal és tanuljatok egymástól"
+      }
+    },
+    "newTools": {
+      "title": "Új tanulási eszközök",
+      "quiz": {
+        "title": "Technika kvíz",
+        "subtitle": "Teszteld a tudásod",
+        "description": "Azonosítsd a manipulációs technikákat valósághű helyzetekben. 10 kérdés azonnali visszajelzéssel és részletes magyarázatokkal.",
+        "questions": "10 kérdés",
+        "xp": "Akár 200 XP"
+      },
+      "explorer": {
+        "title": "Technika felfedező",
+        "subtitle": "Fedezd fel az összes technikát",
+        "description": "Fedezz fel 28 meggyőzési és manipulációs technikát tudományos háttérrel, példákkal és ellenintézkedésekkel.",
+        "techniques": "28 technika",
+        "countermeasures": "12 ellenintézkedés"
+      },
+      "discover": {
+        "title": "Felfedezés",
+        "subtitle": "Lapozz és tanulj",
+        "description": "Lapozz végig az összes manipulációs technikán teljes képernyős módban. Gyors, vizuális és szórakoztató - tökéletes útközben.",
+        "swipe": "Lapozás mód",
+        "fullscreen": "Teljes képernyő"
+      }
+    },
+    "stats": {
+      "modules": "Tanulási modulok",
+      "techniques": "Manipulációs technikák",
+      "free": "Ingyenes"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "A DisinfoApp-ról",
+      "description": "Progresszív webalkalmazás a dezinformáció felismerésére és leküzdésére. Tanuld meg felismerni az álhíreket és fejleszd kritikus gondolkodásod."
+    },
+    "quickLinks": {
+      "title": "Gyors linkek",
+      "modules": "Tanulási modulok",
+      "progress": "Haladás",
+      "privacy": "Adatvédelem",
+      "imprint": "Impresszum"
+    },
+    "community": {
+      "title": "Közösség",
+      "madeWith": "Készült",
+      "for": "a digitális műveltségért"
+    },
+    "copyright": "Minden jog fenntartva."
+  },
+  "modules": {
+    "title": "Tanulási modulok",
+    "subtitle": "Válassz egy modult a dezinformációval kapcsolatos tudásod bővítéséhez",
+    "duration": "{{minutes}} perc",
+    "lessons": "{{count}} lecke",
+    "startModule": "Modul indítása",
+    "continueModule": "Folytatás",
+    "completed": "Befejezve",
+    "difficulty": {
+      "beginner": "Kezdő",
+      "intermediate": "Középhaladó",
+      "advanced": "Haladó",
+      "expert": "Szakértő"
+    }
+  },
+  "quiz": {
+    "title": "Kvíz",
+    "question": "{{current}}. kérdés a {{total}}-ból",
+    "checkAnswer": "Válasz ellenőrzése",
+    "nextQuestion": "Következő kérdés",
+    "finishQuiz": "Kvíz befejezése",
+    "correct": "Helyes!",
+    "incorrect": "Sajnos helytelen",
+    "correctAnswer": "Helyes válasz",
+    "explanation": "Magyarázat",
+    "yourAnswer": "A te válaszod",
+    "results": {
+      "title": "Kvíz eredmény",
+      "score": "{{score}} / {{total}} helyes",
+      "percentage": "{{percentage}}%",
+      "excellent": "Kiváló!",
+      "good": "Szép munka!",
+      "needsWork": "Gyakorolj tovább!",
+      "xpEarned": "{{xp}} XP szerzett",
+      "tryAgain": "Próbáld újra",
+      "backToModules": "Vissza a modulokhoz"
+    }
+  },
+  "techniques": {
+    "title": "Manipulációs technikák",
+    "subtitle": "Fedezz fel 28 meggyőzési és manipulációs technikát",
+    "searchPlaceholder": "Technikák keresése...",
+    "allCategories": "Minden kategória",
+    "allDifficulties": "Minden nehézség",
+    "gridView": "Rács nézet",
+    "graphView": "Hálózat nézet",
+    "categories": {
+      "cognitive_bias": "Kognitív torzítások",
+      "social_dynamics": "Társas dinamikák",
+      "logical_fallacy": "Logikai hibák",
+      "emotional_manipulation": "Érzelmi manipuláció",
+      "nlp": "Nyelvi minták",
+      "digital_influence": "Digitális befolyásolás"
+    },
+    "detail": {
+      "overview": "Áttekintés",
+      "examples": "Példák",
+      "detection": "Felismerés",
+      "countermeasures": "Ellenintézkedések",
+      "related": "Kapcsolódó technikák",
+      "howItWorks": "Hogyan működik",
+      "whyEffective": "Miért hatékony",
+      "scientificBasis": "Tudományos háttér",
+      "realWorldExamples": "Valós példák",
+      "warningSignals": "Figyelmeztető jelek",
+      "psychologicalBackground": "Pszichológiai háttér",
+      "defenseTips": "Védekezési tippek",
+      "relatedTechniques": "Kapcsolódó technikák",
+      "effectiveness": "Hatékonyság",
+      "detectability": "Észlelhetőség"
+    }
+  },
+  "discover": {
+    "title": "Felfedezés",
+    "swipeHint": "Húzd felfelé a továbbiakhoz",
+    "tapToLearn": "Koppints a részletekért",
+    "learnMore": "Tudj meg többet",
+    "category": "Kategória",
+    "technique": "{{current}}. technika a {{total}}-ból",
+    "completed": "Minden technika felfedezve!",
+    "startOver": "Újrakezdés"
+  },
+  "simulator": {
+    "title": "Közösségi média szimulátor",
+    "subtitle": "Elemezd a bejegyzéseket manipulációs technikák szempontjából",
+    "analyzePost": "Bejegyzés elemzése",
+    "detectedTechniques": "Észlelt technikák",
+    "noTechniques": "Nem észleltünk manipulációs technikát",
+    "sharePost": "Megosztás",
+    "reportPost": "Jelentés",
+    "likePost": "Tetszik",
+    "commentPost": "Hozzászólás",
+    "trustScore": "Megbízhatósági pontszám",
+    "high": "Magas",
+    "medium": "Közepes",
+    "low": "Alacsony"
+  },
+  "dashboard": {
+    "title": "Tudás irányítópult",
+    "subtitle": "Kövesd tanulási haladásodat és mesterségedet",
+    "overview": "Áttekintés",
+    "techniquesLearned": "Megtanult technikák",
+    "totalXp": "Összes XP",
+    "currentStreak": "Jelenlegi sorozat",
+    "masteryLevel": "Mesteri szint",
+    "heatmap": {
+      "title": "Aktivitás hőtérkép",
+      "subtitle": "Tanulási aktivitásod az elmúlt hetekben"
+    },
+    "radar": {
+      "title": "Kategória radar",
+      "subtitle": "Erősségeid kategóriánként"
+    },
+    "timeline": {
+      "title": "Tanulási idővonal",
+      "subtitle": "Tanulási előzményeid"
+    },
+    "weaknesses": {
+      "title": "Fejlesztendő területek",
+      "subtitle": "Területek, amelyek több figyelmet igényelnek"
+    }
+  },
+  "progress": {
+    "title": "Haladásod",
+    "subtitle": "Kövesd tanulási utadat",
+    "overview": {
+      "title": "Áttekintés",
+      "totalXp": "Összes XP",
+      "level": "{{level}}. szint",
+      "modulesCompleted": "Befejezett modulok",
+      "techniquesLearned": "Megtanult technikák",
+      "quizzesTaken": "Kitöltött kvízek",
+      "accuracy": "Pontosság"
+    },
+    "streak": {
+      "title": "Tanulási sorozat",
+      "days": "nap",
+      "currentStreak": "Jelenlegi sorozat",
+      "longestStreak": "Leghosszabb sorozat",
+      "keepItUp": "Így tovább!",
+      "streakLost": "Sorozat elveszett - kezdj újra!"
+    },
+    "achievements": {
+      "title": "Eredmények",
+      "unlocked": "{{count}} feloldva",
+      "locked": "Zárolva",
+      "progress": "Haladás: {{current}}/{{target}}"
+    },
+    "badges": {
+      "title": "Jelvények",
+      "collected": "{{count}} összegyűjtve",
+      "rarity": {
+        "common": "Gyakori",
+        "rare": "Ritka",
+        "epic": "Epikus",
+        "legendary": "Legendás"
+      }
+    },
+    "recommendations": {
+      "title": "Ajánlások",
+      "subtitle": "Tanulási viselkedésed alapján",
+      "nextBest": "Következő lépés"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Üdvözöl a DisinfoApp!",
+      "subtitle": "Társad a dezinformáció elleni harcban",
+      "step1": {
+        "title": "Tanulj technikákat",
+        "description": "Fedezz fel 28 manipulációs technikát és hogyan ismerheted fel őket"
+      },
+      "step2": {
+        "title": "Gyakorolj interaktívan",
+        "description": "Teszteld tudásod kvízekkel és szimulációkkal"
+      },
+      "step3": {
+        "title": "Gyűjts eredményeket",
+        "description": "Szerezz XP-t, jelvényeket és old fel eredményeket"
+      },
+      "step4": {
+        "title": "Válj szakértővé",
+        "description": "Fejleszd kritikus gondolkodásod és védd magad a manipulációtól"
+      },
+      "getStarted": "Kezdjük!",
+      "skip": "Kihagyás"
+    },
+    "tour": {
+      "step1": "Fedezd fel az új funkciókat",
+      "step2": "Teszteld tudásod a kvízben",
+      "step3": "Fedezd fel az összes technikát",
+      "complete": "Túra befejezése"
+    }
+  },
+  "challenges": {
+    "daily": {
+      "title": "Napi kihívás",
+      "subtitle": "Szerezz bónusz XP-t",
+      "completed": "Befejezve!",
+      "timeLeft": "Még {{hours}}ó {{minutes}}p",
+      "reward": "{{xp}} XP jutalom",
+      "startChallenge": "Kihívás indítása"
+    }
+  },
+  "achievements": {
+    "unlocked": "Eredmény feloldva!",
+    "new": "Új!"
+  },
+  "theme": {
+    "light": "Világos",
+    "dark": "Sötét",
+    "system": "Rendszer"
+  },
+  "language": {
+    "select": "Nyelv kiválasztása",
+    "current": "Jelenlegi nyelv"
+  },
+  "accessibility": {
+    "toggleMenu": "Menü váltása",
+    "toggleTheme": "Téma váltása",
+    "closeModal": "Ablak bezárása",
+    "openModal": "Ablak megnyitása",
+    "nextSlide": "Következő dia",
+    "prevSlide": "Előző dia"
+  }
+}

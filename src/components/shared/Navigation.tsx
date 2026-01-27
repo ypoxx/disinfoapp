@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Home, BookOpen, BarChart3, Smartphone, Brain, LineChart, Sparkles } from 'lucide-react';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { NewBadge } from '../onboarding/NewBadge';
@@ -11,6 +12,7 @@ interface NavigationProps {
 }
 
 export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
+  const { t } = useTranslation();
   const { hasVisitedPage, markPageVisited } = useOnboardingStore();
   const location = useLocation();
 
@@ -20,13 +22,13 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
   }, [location.pathname, markPageVisited]);
 
   const navItems = [
-    { to: '/', icon: Home, label: 'Start' },
-    { to: '/discover', icon: Sparkles, label: 'Entdecken' },
-    { to: '/modules', icon: BookOpen, label: 'Lernmodule' },
-    { to: '/techniques', icon: Brain, label: 'Techniken' },
-    { to: '/simulator', icon: Smartphone, label: 'Simulator' },
-    { to: '/dashboard', icon: LineChart, label: 'Dashboard' },
-    { to: '/progress', icon: BarChart3, label: 'Fortschritt' },
+    { to: '/', icon: Home, labelKey: 'nav.home' },
+    { to: '/discover', icon: Sparkles, labelKey: 'nav.discover' },
+    { to: '/modules', icon: BookOpen, labelKey: 'nav.modules' },
+    { to: '/techniques', icon: Brain, labelKey: 'nav.techniques' },
+    { to: '/simulator', icon: Smartphone, labelKey: 'nav.simulator' },
+    { to: '/dashboard', icon: LineChart, labelKey: 'nav.dashboard' },
+    { to: '/progress', icon: BarChart3, labelKey: 'nav.progress' },
   ];
 
   const baseClasses = mobile
@@ -37,7 +39,7 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
 
   return (
     <nav className={mobile ? 'flex flex-col space-y-2' : 'flex items-center space-x-1'}>
-      {navItems.map(({ to, icon: Icon, label }) => {
+      {navItems.map(({ to, icon: Icon, labelKey }) => {
         const isNew = !hasVisitedPage(to);
         return (
           <NavLink
@@ -49,7 +51,7 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
             onClick={onNavigate}
           >
             <Icon className="h-4 w-4" />
-            <span>{label}</span>
+            <span>{t(labelKey)}</span>
             {isNew && to !== '/' && (
               <NewBadge className="absolute -right-1 -top-1 scale-75" />
             )}

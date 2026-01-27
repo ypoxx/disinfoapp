@@ -1,0 +1,333 @@
+{
+  "common": {
+    "start": "Jetzt Starten",
+    "continue": "Fortsetzen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "progress": "Fortschritt",
+    "completed": "Abgeschlossen",
+    "notCompleted": "Nicht abgeschlossen",
+    "viewAll": "Alle anzeigen",
+    "learnMore": "Mehr erfahren",
+    "tryAgain": "Erneut versuchen",
+    "share": "Teilen",
+    "free": "Kostenlos"
+  },
+  "nav": {
+    "home": "Start",
+    "discover": "Entdecken",
+    "modules": "Lernmodule",
+    "techniques": "Techniken",
+    "simulator": "Simulator",
+    "dashboard": "Dashboard",
+    "progress": "Fortschritt"
+  },
+  "home": {
+    "hero": {
+      "title1": "Erkenne Desinformation.",
+      "title2": "Schütze die Wahrheit.",
+      "subtitle": "Lerne in interaktiven Modulen, wie du Fake News erkennst, Fakten checkst und kritisch mit Informationen umgehst. Werde zum Experten im Kampf gegen Desinformation."
+    },
+    "cta": {
+      "start": "Jetzt Starten",
+      "myProgress": "Mein Fortschritt"
+    },
+    "features": {
+      "recognize": {
+        "title": "Desinformation Erkennen",
+        "description": "Lerne die Merkmale und Taktiken von Falschinformationen zu identifizieren"
+      },
+      "thinking": {
+        "title": "Kritisches Denken",
+        "description": "Entwickle Fähigkeiten zur Analyse und Bewertung von Informationen"
+      },
+      "practice": {
+        "title": "Praktische Übungen",
+        "description": "Übe mit realen Beispielen in einer sicheren Lernumgebung"
+      },
+      "community": {
+        "title": "Gemeinsam Lernen",
+        "description": "Tausche dich mit anderen aus und lerne voneinander"
+      }
+    },
+    "newTools": {
+      "title": "Neue Lernwerkzeuge",
+      "quiz": {
+        "title": "Technik-Quiz",
+        "subtitle": "Teste dein Wissen",
+        "description": "Identifiziere Manipulationstechniken in realistischen Szenarien. 10 Fragen mit sofortigem Feedback und detaillierten Erklärungen.",
+        "questions": "10 Fragen",
+        "xp": "Bis zu 200 XP"
+      },
+      "explorer": {
+        "title": "Technik-Explorer",
+        "subtitle": "Entdecke alle Techniken",
+        "description": "Erkunde 28 Persuasions- und Manipulationstechniken mit wissenschaftlichen Erkenntnissen, Beispielen und Gegenmaßnahmen.",
+        "techniques": "28 Techniken",
+        "countermeasures": "12 Gegenmaßnahmen"
+      },
+      "discover": {
+        "title": "Entdecken",
+        "subtitle": "Swipen & Lernen",
+        "description": "Wische durch alle Manipulationstechniken im Vollbild-Modus. Schnell, visuell und unterhaltsam - perfekt für unterwegs.",
+        "swipe": "Swipe-Modus",
+        "fullscreen": "Vollbild"
+      }
+    },
+    "stats": {
+      "modules": "Lernmodule",
+      "techniques": "Manipulations-Techniken",
+      "free": "Kostenlos"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "Über DisinfoApp",
+      "description": "Eine progressive Web-App zur Erkennung und Bekämpfung von Desinformation. Lerne, Fake News zu erkennen und kritisches Denken zu entwickeln."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "modules": "Lernmodule",
+      "progress": "Fortschritt",
+      "privacy": "Datenschutz",
+      "imprint": "Impressum"
+    },
+    "community": {
+      "title": "Community",
+      "madeWith": "Made with",
+      "for": "for digital literacy"
+    },
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "modules": {
+    "title": "Lernmodule",
+    "subtitle": "Wähle ein Modul, um dein Wissen über Desinformation zu erweitern",
+    "duration": "{{minutes}} Min.",
+    "lessons": "{{count}} Lektionen",
+    "startModule": "Modul starten",
+    "continueModule": "Fortsetzen",
+    "completed": "Abgeschlossen",
+    "difficulty": {
+      "beginner": "Anfänger",
+      "intermediate": "Fortgeschritten",
+      "advanced": "Erweitert",
+      "expert": "Experte"
+    }
+  },
+  "quiz": {
+    "title": "Quiz",
+    "question": "Frage {{current}} von {{total}}",
+    "checkAnswer": "Antwort prüfen",
+    "nextQuestion": "Nächste Frage",
+    "finishQuiz": "Quiz abschließen",
+    "correct": "Richtig!",
+    "incorrect": "Leider falsch",
+    "correctAnswer": "Richtige Antwort",
+    "explanation": "Erklärung",
+    "yourAnswer": "Deine Antwort",
+    "results": {
+      "title": "Quiz Ergebnis",
+      "score": "{{score}} von {{total}} richtig",
+      "percentage": "{{percentage}}%",
+      "excellent": "Ausgezeichnet!",
+      "good": "Gut gemacht!",
+      "needsWork": "Weiter üben!",
+      "xpEarned": "{{xp}} XP verdient",
+      "tryAgain": "Erneut versuchen",
+      "backToModules": "Zurück zu Modulen"
+    }
+  },
+  "techniques": {
+    "title": "Manipulationstechniken",
+    "subtitle": "Erkunde 28 Persuasions- und Manipulationstechniken",
+    "searchPlaceholder": "Techniken durchsuchen...",
+    "allCategories": "Alle Kategorien",
+    "allDifficulties": "Alle Schwierigkeiten",
+    "gridView": "Rasteransicht",
+    "graphView": "Netzwerkansicht",
+    "categories": {
+      "cognitive_bias": "Kognitive Verzerrungen",
+      "social_dynamics": "Soziale Dynamiken",
+      "logical_fallacy": "Logische Fehlschlüsse",
+      "emotional_manipulation": "Emotionale Manipulation",
+      "nlp": "Sprachliche Muster",
+      "digital_influence": "Digitaler Einfluss"
+    },
+    "detail": {
+      "overview": "Übersicht",
+      "examples": "Beispiele",
+      "detection": "Erkennung",
+      "countermeasures": "Gegenmaßnahmen",
+      "related": "Verwandte Techniken",
+      "howItWorks": "Wie es funktioniert",
+      "whyEffective": "Warum es wirkt",
+      "scientificBasis": "Wissenschaftliche Grundlage",
+      "realWorldExamples": "Beispiele aus der Praxis",
+      "warningSignals": "Warnsignale",
+      "psychologicalBackground": "Psychologischer Hintergrund",
+      "defenseTips": "Verteidigungstipps",
+      "relatedTechniques": "Verwandte Techniken",
+      "effectiveness": "Wirksamkeit",
+      "detectability": "Erkennbarkeit"
+    }
+  },
+  "discover": {
+    "title": "Entdecken",
+    "swipeHint": "Wische nach oben für mehr",
+    "tapToLearn": "Tippe für Details",
+    "learnMore": "Mehr erfahren",
+    "category": "Kategorie",
+    "technique": "Technik {{current}} von {{total}}",
+    "completed": "Alle Techniken entdeckt!",
+    "startOver": "Von vorne beginnen"
+  },
+  "simulator": {
+    "title": "Social Media Simulator",
+    "subtitle": "Analysiere Posts auf Manipulationstechniken",
+    "analyzePost": "Post analysieren",
+    "detectedTechniques": "Erkannte Techniken",
+    "noTechniques": "Keine Manipulationstechniken erkannt",
+    "sharePost": "Teilen",
+    "reportPost": "Melden",
+    "likePost": "Gefällt mir",
+    "commentPost": "Kommentieren",
+    "trustScore": "Vertrauenswürdigkeit",
+    "high": "Hoch",
+    "medium": "Mittel",
+    "low": "Niedrig"
+  },
+  "dashboard": {
+    "title": "Wissens-Dashboard",
+    "subtitle": "Verfolge deinen Lernfortschritt und deine Meisterschaft",
+    "overview": "Übersicht",
+    "techniquesLearned": "Techniken gelernt",
+    "totalXp": "Gesamt XP",
+    "currentStreak": "Aktuelle Serie",
+    "masteryLevel": "Meisterschaftsgrad",
+    "heatmap": {
+      "title": "Aktivitäts-Heatmap",
+      "subtitle": "Deine Lernaktivität der letzten Wochen"
+    },
+    "radar": {
+      "title": "Kategorie-Radar",
+      "subtitle": "Deine Stärken nach Kategorie"
+    },
+    "timeline": {
+      "title": "Lern-Timeline",
+      "subtitle": "Dein Lernverlauf"
+    },
+    "weaknesses": {
+      "title": "Verbesserungspotential",
+      "subtitle": "Bereiche, die mehr Aufmerksamkeit brauchen"
+    }
+  },
+  "progress": {
+    "title": "Dein Fortschritt",
+    "subtitle": "Verfolge deine Lernreise",
+    "overview": {
+      "title": "Übersicht",
+      "totalXp": "Gesamt XP",
+      "level": "Level {{level}}",
+      "modulesCompleted": "Module abgeschlossen",
+      "techniquesLearned": "Techniken gelernt",
+      "quizzesTaken": "Quiz absolviert",
+      "accuracy": "Genauigkeit"
+    },
+    "streak": {
+      "title": "Lernserie",
+      "days": "Tage",
+      "currentStreak": "Aktuelle Serie",
+      "longestStreak": "Längste Serie",
+      "keepItUp": "Weiter so!",
+      "streakLost": "Serie verloren - starte neu!"
+    },
+    "achievements": {
+      "title": "Erfolge",
+      "unlocked": "{{count}} freigeschaltet",
+      "locked": "Gesperrt",
+      "progress": "Fortschritt: {{current}}/{{target}}"
+    },
+    "badges": {
+      "title": "Abzeichen",
+      "collected": "{{count}} gesammelt",
+      "rarity": {
+        "common": "Gewöhnlich",
+        "rare": "Selten",
+        "epic": "Episch",
+        "legendary": "Legendär"
+      }
+    },
+    "recommendations": {
+      "title": "Empfehlungen",
+      "subtitle": "Basierend auf deinem Lernverhalten",
+      "nextBest": "Nächster Schritt"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Willkommen bei DisinfoApp!",
+      "subtitle": "Dein Begleiter im Kampf gegen Desinformation",
+      "step1": {
+        "title": "Lerne Techniken",
+        "description": "Entdecke 28 Manipulationstechniken und wie du sie erkennst"
+      },
+      "step2": {
+        "title": "Übe interaktiv",
+        "description": "Teste dein Wissen in Quiz und Simulationen"
+      },
+      "step3": {
+        "title": "Sammle Erfolge",
+        "description": "Verdiene XP, Abzeichen und schalte Erfolge frei"
+      },
+      "step4": {
+        "title": "Werde Experte",
+        "description": "Entwickle kritisches Denken und schütze dich vor Manipulation"
+      },
+      "getStarted": "Los geht's!",
+      "skip": "Überspringen"
+    },
+    "tour": {
+      "step1": "Entdecke neue Funktionen",
+      "step2": "Teste dein Wissen im Quiz",
+      "step3": "Erkunde alle Techniken",
+      "complete": "Tour abschließen"
+    }
+  },
+  "challenges": {
+    "daily": {
+      "title": "Tägliche Herausforderung",
+      "subtitle": "Verdiene Bonus-XP",
+      "completed": "Abgeschlossen!",
+      "timeLeft": "Noch {{hours}}h {{minutes}}m",
+      "reward": "{{xp}} XP Belohnung",
+      "startChallenge": "Herausforderung starten"
+    }
+  },
+  "achievements": {
+    "unlocked": "Erfolg freigeschaltet!",
+    "new": "Neu!"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "language": {
+    "select": "Sprache wählen",
+    "current": "Aktuelle Sprache"
+  },
+  "accessibility": {
+    "toggleMenu": "Menü umschalten",
+    "toggleTheme": "Design umschalten",
+    "closeModal": "Fenster schließen",
+    "openModal": "Fenster öffnen",
+    "nextSlide": "Nächste Folie",
+    "prevSlide": "Vorherige Folie"
+  }
+}

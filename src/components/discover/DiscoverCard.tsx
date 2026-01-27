@@ -1,11 +1,10 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PersuasionTechnique } from '@/types/persuasion';
 import { SupportedLanguage } from '@/stores/languageStore';
 import { t, ui, getCategoryLabel as getCategoryLabelI18n, getDifficultyLabel, getEffectivenessLabel, getEvidenceLabel, getStudyCountLabel } from '@/utils/i18n';
 import { Share2, BookOpen, ExternalLink, Award } from 'lucide-react';
-import { getImageForTechnique } from '@/services/imageService';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
@@ -17,45 +16,47 @@ interface DiscoverCardProps {
 /**
  * Generate a beautiful mesh gradient based on technique category
  * Telekom-inspired with Magenta accents
+ * Dark enough at bottom for white text readability (WCAG AA compliant)
  */
 function generateMeshGradient(category: string): string {
-  // Magenta RGB: 226, 0, 116 = rgba(226, 0, 116, x)
+  // Each category has unique colors but all ensure good text contrast
+  // Base gradients are dark, with colored accents in the upper portion
   const categoryGradients: Record<string, string[]> = {
     cognitive_bias: [
-      'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 80% 70%, rgba(226, 0, 116, 0.4) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.5) 0%, transparent 70%)',
-      'linear-gradient(135deg, #1e2a4a 0%, #1a1a2e 100%)',
+      'radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 30%, rgba(99, 102, 241, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 90% 10%, rgba(226, 0, 116, 0.3) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #1e2a4a 0%, #0f1525 50%, #0a0d15 100%)',
     ],
     social_dynamics: [
-      'radial-gradient(circle at 30% 40%, rgba(226, 0, 116, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 60%, rgba(184, 0, 92, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 80%, rgba(122, 0, 61, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #3d0020 0%, #1a0010 100%)',
+      'radial-gradient(ellipse at 20% 15%, rgba(226, 0, 116, 0.6) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 75% 25%, rgba(184, 0, 92, 0.5) 0%, transparent 40%)',
+      'radial-gradient(circle at 50% 40%, rgba(122, 0, 61, 0.3) 0%, transparent 50%)',
+      'linear-gradient(to bottom, #3d0020 0%, #1f0010 50%, #0f0008 100%)',
     ],
     emotional_manipulation: [
-      'radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 75% 75%, rgba(226, 0, 116, 0.5) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.5) 0%, transparent 70%)',
-      'linear-gradient(135deg, #3d1c00 0%, #2d0a0a 100%)',
+      'radial-gradient(ellipse at 25% 20%, rgba(245, 158, 11, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 30%, rgba(239, 68, 68, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 15%, rgba(226, 0, 116, 0.3) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #3d1c00 0%, #1f0e00 50%, #100800 100%)',
     ],
     logical_fallacy: [
-      'radial-gradient(circle at 35% 35%, rgba(16, 185, 129, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 65% 65%, rgba(226, 0, 116, 0.3) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.5) 0%, transparent 70%)',
-      'linear-gradient(135deg, #0a2520 0%, #0a1a1a 100%)',
+      'radial-gradient(ellipse at 30% 15%, rgba(16, 185, 129, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 65% 30%, rgba(6, 182, 212, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 80% 20%, rgba(226, 0, 116, 0.2) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #0a2520 0%, #051210 50%, #030a08 100%)',
     ],
     nlp: [
-      'radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 60% 80%, rgba(226, 0, 116, 0.5) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.5) 0%, transparent 70%)',
-      'linear-gradient(135deg, #2d1a4a 0%, #1a0a2e 100%)',
+      'radial-gradient(ellipse at 25% 20%, rgba(139, 92, 246, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 25%, rgba(168, 85, 247, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 10%, rgba(226, 0, 116, 0.35) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #2d1a4a 0%, #170d25 50%, #0b0612 100%)',
     ],
     digital_influence: [
-      'radial-gradient(circle at 30% 60%, rgba(6, 182, 212, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 40%, rgba(226, 0, 116, 0.4) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.5) 0%, transparent 70%)',
-      'linear-gradient(135deg, #0a1a2e 0%, #0d0d1a 100%)',
+      'radial-gradient(ellipse at 30% 20%, rgba(6, 182, 212, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 25%, rgba(59, 130, 246, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 15%, rgba(226, 0, 116, 0.25) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #0a1a2e 0%, #050d17 50%, #03080d 100%)',
     ],
   };
 
@@ -103,27 +104,12 @@ function getEvidenceIcon(quality: string): string {
 export function DiscoverCard({ technique, isVisible, onAddToLearning, language }: DiscoverCardProps) {
   const navigate = useNavigate();
   const [showExamples, setShowExamples] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
 
-  // Get the curated image URL for this technique
-  const imageUrl = useMemo(() => getImageForTechnique(technique.id), [technique.id]);
-
-  // Generate gradient as fallback
+  // Generate beautiful gradient based on category
   const backgroundGradient = useMemo(
     () => generateMeshGradient(technique.category),
     [technique.category]
   );
-
-  // Preload image when card becomes visible
-  useEffect(() => {
-    if (isVisible && imageUrl && !imageLoaded && !imageError) {
-      const img = new Image();
-      img.onload = () => setImageLoaded(true);
-      img.onerror = () => setImageError(true);
-      img.src = imageUrl;
-    }
-  }, [isVisible, imageUrl, imageLoaded, imageError]);
 
   const handleShare = async () => {
     const shareData = {
@@ -161,31 +147,8 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning, language }
         background: backgroundGradient,
       }}
     >
-      {/* Background image layer */}
-      {imageUrl && !imageError && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: imageLoaded ? 1 : 0 }}
-          transition={{ duration: 0.6 }}
-          className="absolute inset-0"
-        >
-          <img
-            src={imageUrl}
-            alt=""
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </motion.div>
-      )}
-
-      {/* Dark overlay for text readability - stronger when image is visible */}
-      <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          imageLoaded && !imageError
-            ? 'bg-gradient-to-t from-black/98 via-black/70 to-black/30'
-            : 'bg-gradient-to-t from-black/95 via-black/60 to-black/40'
-        }`}
-      />
+      {/* Subtle overlay for consistent text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
       {/* Category badge - top right, below header */}
       <motion.div

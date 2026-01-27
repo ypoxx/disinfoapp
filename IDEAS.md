@@ -87,6 +87,27 @@ This file contains ideas that have been discussed but not yet implemented. When 
 
 ---
 
+## Design Decisions
+
+### Card Background Strategy (decided 2026-01-27)
+
+**Chosen:** Abstract category-based gradients (no photos)
+
+**Rationale:**
+- Stock photos rarely match the abstract concepts of persuasion techniques
+- Gradient backgrounds ensure perfect text contrast (WCAG AA compliant)
+- Faster loading, no external API dependencies
+- Consistent aesthetic across all cards
+- Telekom Magenta accent in every gradient maintains brand identity
+
+**Future alternatives if photos are desired:**
+- [ ] **AI-generated illustrations** - Custom DALL-E/Midjourney images per technique
+- [ ] **Abstract icons/symbols** - Simple SVG icons that represent concepts
+- [ ] **Wikipedia Commons images** - Historical/journalistic images where relevant
+- [ ] **User-submitted images** - Community-curated with moderation
+
+---
+
 ## Rejected Ideas (with reasons)
 
 ### ~~Social login~~

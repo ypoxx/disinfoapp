@@ -7,7 +7,7 @@ import { useKnowledgeStore } from '@/stores/knowledgeStore';
 import { useLanguageStore } from '@/stores/languageStore';
 import { PersuasionTechnique } from '@/types/persuasion';
 import { ui } from '@/utils/i18n';
-import { Menu, RotateCcw } from 'lucide-react';
+import { RotateCcw, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 
@@ -105,15 +105,12 @@ export function DiscoverFeed() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black font-sans">
-      {/* Header - Telekom inspired */}
+      {/* Header - Clean, minimal Telekom inspired */}
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/90 via-black/60 to-transparent">
-        <button
-          onClick={() => navigate('/dashboard')}
-          className="w-10 h-10 rounded-full bg-[#e20074]/90 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#e20074] transition-all active:scale-95"
-          title={ui('header.dashboard', language)}
-        >
-          <Menu size={20} />
-        </button>
+        {/* Brand logo */}
+        <div className="w-10 h-10 rounded-full bg-[#e20074] flex items-center justify-center">
+          <Shield size={20} className="text-white" />
+        </div>
 
         <h1 className="text-white text-xl font-bold drop-shadow-lg tracking-tight">
           DisInfo <span className="text-[#e20074]">{language === 'en' ? 'Glossary' : 'Glossar'}</span>
@@ -192,20 +189,12 @@ export function DiscoverFeed() {
             <p className="text-white/90 mb-8 text-lg">
               {ui('end.subtitle', language).replace('{count}', techniques.length.toString())}
             </p>
-            <div className="flex flex-col gap-3">
-              <button
-                onClick={handleReset}
-                className="px-8 py-4 bg-white text-[#e20074] font-bold rounded-xl hover:bg-gray-100 transition-all active:scale-95"
-              >
-                {ui('end.restart', language)}
-              </button>
-              <button
-                onClick={() => navigate('/dashboard')}
-                className="px-8 py-4 bg-white/20 text-white font-medium rounded-xl hover:bg-white/30 transition-all active:scale-95"
-              >
-                {ui('end.toDashboard', language)}
-              </button>
-            </div>
+            <button
+              onClick={handleReset}
+              className="px-8 py-4 bg-white text-[#e20074] font-bold rounded-xl hover:bg-gray-100 transition-all active:scale-95"
+            >
+              {ui('end.restart', language)}
+            </button>
           </div>
         </section>
       </div>

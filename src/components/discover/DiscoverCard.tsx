@@ -1,10 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PersuasionTechnique } from '@/types/persuasion';
 import { SupportedLanguage } from '@/stores/languageStore';
 import { t, ui, getCategoryLabel as getCategoryLabelI18n, getDifficultyLabel, getEffectivenessLabel, getEvidenceLabel, getStudyCountLabel } from '@/utils/i18n';
 import { Share2, BookOpen, ExternalLink, Award } from 'lucide-react';
+import { getImageForTechnique } from '@/services/imageService';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
@@ -102,12 +103,27 @@ function getEvidenceIcon(quality: string): string {
 export function DiscoverCard({ technique, isVisible, onAddToLearning, language }: DiscoverCardProps) {
   const navigate = useNavigate();
   const [showExamples, setShowExamples] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
-  // Generate gradient immediately (synchronously)
+  // Get the curated image URL for this technique
+  const imageUrl = useMemo(() => getImageForTechnique(technique.id), [technique.id]);
+
+  // Generate gradient as fallback
   const backgroundGradient = useMemo(
     () => generateMeshGradient(technique.category),
     [technique.category]
   );
+
+  // Preload image when card becomes visible
+  useEffect(() => {
+    if (isVisible && imageUrl && !imageLoaded && !imageError) {
+      const img = new Image();
+      img.onload = () => setImageLoaded(true);
+      img.onerror = () => setImageError(true);
+      img.src = imageUrl;
+    }
+  }, [isVisible, imageUrl, imageLoaded, imageError]);
 
   const handleShare = async () => {
     const shareData = {
@@ -145,8 +161,31 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning, language }
         background: backgroundGradient,
       }}
     >
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40" />
+      {/* Background image layer */}
+      {imageUrl && !imageError && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: imageLoaded ? 1 : 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute inset-0"
+        >
+          <img
+            src={imageUrl}
+            alt=""
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </motion.div>
+      )}
+
+      {/* Dark overlay for text readability - stronger when image is visible */}
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${
+          imageLoaded && !imageError
+            ? 'bg-gradient-to-t from-black/98 via-black/70 to-black/30'
+            : 'bg-gradient-to-t from-black/95 via-black/60 to-black/40'
+        }`}
+      />
 
       {/* Category badge - top right, below header */}
       <motion.div

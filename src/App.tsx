@@ -19,7 +19,7 @@ function App() {
   }, [initializeAchievements, generateDailyChallenge]);
 
   return (
-    <BrowserRouter basename="/disinfoapp">
+    <BrowserRouter>
       <AppRouter />
       <AchievementNotification
         achievement={recentlyUnlocked}

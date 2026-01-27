@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import telekomPreset from '@telekom/design-tokens/dist/tailwindcss-preset/design-tokens.config.js';
+import defaultColors from 'tailwindcss/colors';
 
 export default {
   presets: [telekomPreset],
@@ -7,8 +8,34 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      // Bridge existing semantic colors to Telekom tokens for compatibility
+      // Restore default Tailwind colors that may be overridden by preset
       colors: {
+        // Essential colors for DiscoverFeed
+        black: defaultColors.black,
+        white: defaultColors.white,
+        gray: defaultColors.gray,
+        slate: defaultColors.slate,
+        zinc: defaultColors.zinc,
+        neutral: defaultColors.neutral,
+        stone: defaultColors.stone,
+        red: defaultColors.red,
+        orange: defaultColors.orange,
+        amber: defaultColors.amber,
+        yellow: defaultColors.yellow,
+        lime: defaultColors.lime,
+        green: defaultColors.green,
+        emerald: defaultColors.emerald,
+        teal: defaultColors.teal,
+        cyan: defaultColors.cyan,
+        sky: defaultColors.sky,
+        blue: defaultColors.blue,
+        indigo: defaultColors.indigo,
+        violet: defaultColors.violet,
+        purple: defaultColors.purple,
+        fuchsia: defaultColors.fuchsia,
+        pink: defaultColors.pink,
+        rose: defaultColors.rose,
+        // Bridge existing semantic colors to Telekom tokens for compatibility
         border: 'var(--telekom-color-ui-border-standard)',
         input: 'var(--telekom-color-ui-border-standard)',
         ring: 'var(--telekom-color-functional-focus-standard)',

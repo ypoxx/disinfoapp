@@ -13,11 +13,11 @@ import { DiscoverFeed } from './components/discover/DiscoverFeed';
 export function AppRouter() {
   return (
     <Routes>
-      {/* Immersive full-screen route without layout */}
-      <Route path="/discover" element={<DiscoverFeed />} />
+      {/* Main app: TikTok-style Discover Feed at root */}
+      <Route path="/" element={<DiscoverFeed />} />
 
-      {/* Standard routes with layout */}
-      <Route path="/" element={<Layout />}>
+      {/* Full app: Hidden under /app path */}
+      <Route path="/app" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="modules" element={<LearningModules />} />
         <Route path="modules/:moduleId" element={<QuizPage />} />

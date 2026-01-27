@@ -71,8 +71,8 @@ export function DiscoverFeed() {
       // Mark technique as viewed in knowledge store
       markTechniqueViewed(techniqueId);
 
-      // Navigate to technique detail
-      navigate(`/techniques/${techniqueId}`);
+      // Navigate to technique detail in full app
+      navigate(`/app/techniques/${techniqueId}`);
     },
     [markTechniqueViewed, navigate]
   );
@@ -99,8 +99,9 @@ export function DiscoverFeed() {
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/80 to-transparent">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/app')}
           className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-all"
+          title="Zur vollständigen App"
         >
           <ArrowLeft size={20} />
         </button>

@@ -116,7 +116,7 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
     const shareData = {
       title: technique.name.de,
       text: technique.description.de,
-      url: window.location.origin + `/disinfoapp/techniques/${technique.id}`,
+      url: window.location.origin + `/app/techniques/${technique.id}`,
     };
 
     try {
@@ -269,7 +269,7 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ delay: 0.9 }}
-          onClick={() => navigate(`/techniques/${technique.id}`)}
+          onClick={() => navigate(`/app/techniques/${technique.id}`)}
           className="flex items-center gap-2 text-blue-300 font-semibold text-base hover:text-blue-200 transition-colors w-fit"
         >
           <ExternalLink size={18} />

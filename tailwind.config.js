@@ -7,7 +7,15 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
       colors: {
+        magenta: {
+          DEFAULT: 'hsl(var(--magenta))',
+          dark: 'hsl(var(--magenta-dark))',
+          light: 'hsl(var(--magenta-light))',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

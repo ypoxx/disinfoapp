@@ -2,50 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TeleNeo Font - Telekom's corporate font with system fallbacks */
+@font-face {
+  font-family: 'TeleNeo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('TeleNeo'), local('TeleNeoWeb');
+}
+
+@font-face {
+  font-family: 'TeleNeo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('TeleNeo Medium'), local('TeleNeoWeb-Medium');
+}
+
+@font-face {
+  font-family: 'TeleNeo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('TeleNeo Bold'), local('TeleNeoWeb-Bold');
+}
+
 @layer base {
   :root {
+    /* Telekom-inspired Design Tokens */
+    /* Primary: Telekom Magenta #e20074 */
+    --magenta: 330 100% 44%;
+    --magenta-dark: 330 100% 36%;
+    --magenta-light: 328 100% 54%;
+
+    /* Light Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --popover-foreground: 0 0% 10%;
+    --primary: 330 100% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 330 100% 95%;
+    --accent-foreground: 330 100% 36%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 330 100% 44%;
+    --radius: 0.75rem;
+
+    /* Typography */
+    --font-sans: 'TeleNeo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    /* Dark Theme - Telekom inspired */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 330 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 330 100% 20%;
+    --accent-foreground: 330 100% 70%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 330 100% 50%;
   }
 }
 

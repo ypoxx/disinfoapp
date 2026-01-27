@@ -2,55 +2,61 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { PersuasionTechnique } from '@/types/persuasion';
+import { SupportedLanguage } from '@/stores/languageStore';
+import { t, ui, getCategoryLabel as getCategoryLabelI18n, getDifficultyLabel, getEffectivenessLabel, getEvidenceLabel, getStudyCountLabel } from '@/utils/i18n';
 import { Share2, BookOpen, ExternalLink, Award } from 'lucide-react';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
   isVisible: boolean;
   onAddToLearning: (techniqueId: string) => void;
+  language: SupportedLanguage;
 }
 
 /**
  * Generate a beautiful mesh gradient based on technique category
- * Returns CSS background string with multiple layers for depth
+ * Telekom-inspired with Magenta accents
+ * Dark enough at bottom for white text readability (WCAG AA compliant)
  */
 function generateMeshGradient(category: string): string {
+  // Each category has unique colors but all ensure good text contrast
+  // Base gradients are dark, with colored accents in the upper portion
   const categoryGradients: Record<string, string[]> = {
     cognitive_bias: [
-      'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #1e3a8a 0%, #312e81 100%)',
+      'radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 30%, rgba(99, 102, 241, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 90% 10%, rgba(226, 0, 116, 0.3) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #1e2a4a 0%, #0f1525 50%, #0a0d15 100%)',
     ],
     social_dynamics: [
-      'radial-gradient(circle at 30% 40%, rgba(236, 72, 153, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 60%, rgba(244, 63, 94, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 80%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #9f1239 0%, #881337 100%)',
+      'radial-gradient(ellipse at 20% 15%, rgba(226, 0, 116, 0.6) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 75% 25%, rgba(184, 0, 92, 0.5) 0%, transparent 40%)',
+      'radial-gradient(circle at 50% 40%, rgba(122, 0, 61, 0.3) 0%, transparent 50%)',
+      'linear-gradient(to bottom, #3d0020 0%, #1f0010 50%, #0f0008 100%)',
     ],
     emotional_manipulation: [
-      'radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #c2410c 0%, #b91c1c 100%)',
+      'radial-gradient(ellipse at 25% 20%, rgba(245, 158, 11, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 30%, rgba(239, 68, 68, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 15%, rgba(226, 0, 116, 0.3) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #3d1c00 0%, #1f0e00 50%, #100800 100%)',
     ],
     logical_fallacy: [
-      'radial-gradient(circle at 35% 35%, rgba(16, 185, 129, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 65% 65%, rgba(20, 184, 166, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #065f46 0%, #134e4a 100%)',
+      'radial-gradient(ellipse at 30% 15%, rgba(16, 185, 129, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 65% 30%, rgba(6, 182, 212, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 80% 20%, rgba(226, 0, 116, 0.2) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #0a2520 0%, #051210 50%, #030a08 100%)',
     ],
     nlp: [
-      'radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #6b21a8 0%, #86198f 100%)',
+      'radial-gradient(ellipse at 25% 20%, rgba(139, 92, 246, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 25%, rgba(168, 85, 247, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 10%, rgba(226, 0, 116, 0.35) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #2d1a4a 0%, #170d25 50%, #0b0612 100%)',
     ],
     digital_influence: [
-      'radial-gradient(circle at 30% 60%, rgba(6, 182, 212, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 40%, rgba(14, 165, 233, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #075985 0%, #1e40af 100%)',
+      'radial-gradient(ellipse at 30% 20%, rgba(6, 182, 212, 0.5) 0%, transparent 45%)',
+      'radial-gradient(ellipse at 70% 25%, rgba(59, 130, 246, 0.4) 0%, transparent 40%)',
+      'radial-gradient(circle at 85% 15%, rgba(226, 0, 116, 0.25) 0%, transparent 35%)',
+      'linear-gradient(to bottom, #0a1a2e 0%, #050d17 50%, #03080d 100%)',
     ],
   };
 
@@ -59,54 +65,47 @@ function generateMeshGradient(category: string): string {
 }
 
 /**
- * Get German category label
+ * Get the technique name based on language
  */
-function getCategoryLabel(category: string): string {
-  const labels: Record<string, string> = {
-    cognitive_bias: 'Kognitive Verzerrung',
-    social_dynamics: 'Soziale Dynamiken',
-    emotional_manipulation: 'Emotionale Manipulation',
-    logical_fallacy: 'Logischer Fehlschluss',
-    nlp: 'NLP-Techniken',
-    digital_influence: 'Digitaler Einfluss',
-  };
-  return labels[category] || category;
+function getTechniqueName(
+  technique: PersuasionTechnique,
+  language: SupportedLanguage
+): { primary: string; secondary?: string } {
+  const primary = language === 'en' ? (technique.name.en || technique.name.de) : technique.name.de;
+  // Show English name as subtitle if different from primary and we're in German
+  const secondary = language === 'de' && technique.name.en !== technique.name.de ? technique.name.en : undefined;
+  return { primary, secondary };
 }
 
 /**
- * Generate a professional, educational headline
+ * Get evidence quality badge colors
  */
-function generateProfessionalHeadline(technique: PersuasionTechnique): string {
-  const templates = [
-    `${technique.name.de}: Wie diese Technik funktioniert`,
-    `${technique.name.de}: Mechanismen und Wirkweise`,
-    `${technique.name.de}: Verstehen und Erkennen`,
-    `${technique.name.de}: Wissenschaftlich erklärt`,
-    `${technique.name.de}: Hintergründe und Anwendung`,
-    `${technique.name.de}: So funktioniert die Beeinflussung`,
-  ];
-
-  const hash = technique.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  return templates[hash % templates.length];
+function getEvidenceBadgeColor(quality: string): string {
+  const colors: Record<string, string> = {
+    high: 'text-green-300',
+    moderate: 'text-yellow-300',
+    low: 'text-orange-300',
+  };
+  return colors[quality] || colors.moderate;
 }
 
 /**
- * Get evidence quality badge
+ * Get evidence quality icon
  */
-function getEvidenceBadge(quality: string): { icon: string; label: string; color: string } {
-  const badges = {
-    high: { icon: '✓✓✓', label: 'Hohe Evidenz', color: 'text-green-300' },
-    moderate: { icon: '✓✓', label: 'Moderate Evidenz', color: 'text-yellow-300' },
-    low: { icon: '✓', label: 'Limitierte Evidenz', color: 'text-orange-300' },
+function getEvidenceIcon(quality: string): string {
+  const icons: Record<string, string> = {
+    high: '✓✓✓',
+    moderate: '✓✓',
+    low: '✓',
   };
-  return badges[quality as keyof typeof badges] || badges.moderate;
+  return icons[quality] || icons.moderate;
 }
 
-export function DiscoverCard({ technique, isVisible, onAddToLearning }: DiscoverCardProps) {
+export function DiscoverCard({ technique, isVisible, onAddToLearning, language }: DiscoverCardProps) {
   const navigate = useNavigate();
   const [showExamples, setShowExamples] = useState(false);
 
-  // Generate gradient immediately (synchronously)
+  // Generate beautiful gradient based on category
   const backgroundGradient = useMemo(
     () => generateMeshGradient(technique.category),
     [technique.category]
@@ -114,9 +113,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
 
   const handleShare = async () => {
     const shareData = {
-      title: technique.name.de,
-      text: technique.description.de,
-      url: window.location.origin + `/disinfoapp/techniques/${technique.id}`,
+      title: t(technique.name, language),
+      text: t(technique.description, language),
+      url: window.location.origin + `/dashboard/techniques/${technique.id}`,
     };
 
     try {
@@ -130,9 +129,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
     }
   };
 
-  const headline = generateProfessionalHeadline(technique);
-  const categoryLabel = getCategoryLabel(technique.category);
-  const evidenceBadge = getEvidenceBadge(technique.evidence.uncertainty?.evidenceQuality || 'moderate');
+  const techniqueName = getTechniqueName(technique, language);
+  const categoryLabel = getCategoryLabelI18n(technique.category, language);
+  const evidenceQuality = technique.evidence.uncertainty?.evidenceQuality || 'moderate';
 
   // Show more examples on tap
   const exampleCount = showExamples ? 3 : 1;
@@ -143,48 +142,50 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
 
   return (
     <section
-      className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden"
+      className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden font-sans"
       style={{
         background: backgroundGradient,
       }}
     >
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+      {/* Subtle overlay for consistent text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
-      {/* Category badge */}
+      {/* Category badge - top right, below header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="absolute top-4 right-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
+        className="absolute top-24 right-4 text-xs text-white bg-[#e20074]/80 backdrop-blur-sm px-3 py-1.5 rounded-lg font-medium"
       >
         {categoryLabel}
       </motion.div>
 
-      {/* Difficulty indicator */}
+      {/* Difficulty indicator - top left, below header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="absolute top-4 left-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
+        className="absolute top-24 left-4 text-xs text-white/90 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-lg font-medium"
       >
-        {technique.difficulty === 'beginner' && 'Grundlagen'}
-        {technique.difficulty === 'intermediate' && 'Fortgeschritten'}
-        {technique.difficulty === 'advanced' && 'Experte'}
-        {technique.difficulty === 'expert' && 'Spezialist'}
+        {getDifficultyLabel(technique.difficulty, language)}
       </motion.div>
 
       {/* Content overlay */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 pb-24 overflow-y-auto">
-        {/* Headline */}
-        <motion.h1
+        {/* Technique Name - Clean, bold typography */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-2xl sm:text-3xl font-bold text-white mb-3 drop-shadow-lg leading-tight"
+          className="mb-3"
         >
-          {headline}
-        </motion.h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg leading-tight tracking-tight">
+            {techniqueName.primary}
+          </h1>
+          {techniqueName.secondary && (
+            <p className="text-lg text-white/60 mt-1 font-medium">{techniqueName.secondary}</p>
+          )}
+        </motion.div>
 
         {/* Scientific Evidence Badge */}
         <motion.div
@@ -196,12 +197,12 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full">
             <Award size={14} className="text-white" />
             <span className="text-xs text-white font-medium">
-              {studyCount} {studyCount === 1 ? 'Studie' : 'Studien'}
+              {getStudyCountLabel(studyCount, language)}
             </span>
           </div>
-          <div className={`flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full ${evidenceBadge.color}`}>
+          <div className={`flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full ${getEvidenceBadgeColor(evidenceQuality)}`}>
             <span className="text-xs font-medium">
-              {evidenceBadge.icon} {evidenceBadge.label}
+              {getEvidenceIcon(evidenceQuality)} {getEvidenceLabel(evidenceQuality, language)}
             </span>
           </div>
         </motion.div>
@@ -213,10 +214,10 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-white/95 text-base sm:text-lg leading-relaxed mb-5 drop-shadow-md"
         >
-          {technique.description.de}
+          {t(technique.description, language)}
         </motion.div>
 
-        {/* Examples */}
+        {/* Examples - Note: examples are currently only in German */}
         <AnimatePresence>
           {displayExamples.map((example, index) => (
             <motion.div
@@ -228,7 +229,7 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
               className="text-sm sm:text-base text-white/90 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 mb-3"
             >
               <div className="flex items-start gap-2">
-                <span className="text-white/60 text-xs mt-0.5 flex-shrink-0">Beispiel {index + 1}</span>
+                <span className="text-white/60 text-xs mt-0.5 flex-shrink-0">{ui('label.example', language)} {index + 1}</span>
                 <span className="flex-1">{example}</span>
               </div>
             </motion.div>
@@ -242,9 +243,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}
             onClick={() => setShowExamples(true)}
-            className="text-blue-300 text-sm font-medium hover:text-blue-200 transition-colors w-fit mb-4 underline"
+            className="text-[#ff6eb4] text-sm font-medium hover:text-[#ff8dc7] transition-colors w-fit mb-4 underline"
           >
-            + {technique.examples.length - 1} weitere Beispiele anzeigen
+            + {technique.examples.length - 1} {ui('action.showMoreExamples', language)}
           </motion.button>
         )}
 
@@ -255,12 +256,9 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           transition={{ delay: 0.7 }}
           className="flex items-center gap-2 text-white/80 text-sm mb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 w-fit"
         >
-          <span className="font-medium">Effektivität:</span>
+          <span className="font-medium">{ui('label.effectiveness', language)}:</span>
           <span className="font-bold text-white">
-            {technique.effectiveness === 'very_high' && 'Sehr hoch'}
-            {technique.effectiveness === 'high' && 'Hoch'}
-            {technique.effectiveness === 'moderate' && 'Moderat'}
-            {technique.effectiveness === 'low' && 'Niedrig'}
+            {getEffectivenessLabel(technique.effectiveness, language)}
           </span>
         </motion.div>
 
@@ -269,26 +267,26 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ delay: 0.9 }}
-          onClick={() => navigate(`/techniques/${technique.id}`)}
-          className="flex items-center gap-2 text-blue-300 font-semibold text-base hover:text-blue-200 transition-colors w-fit"
+          onClick={() => navigate(`/dashboard/techniques/${technique.id}`)}
+          className="flex items-center gap-2 text-[#ff6eb4] font-semibold text-base hover:text-[#ff8dc7] transition-colors w-fit"
         >
           <ExternalLink size={18} />
-          Detaillierte Analyse ansehen
+          {ui('action.learnMore', language)}
         </motion.button>
       </div>
 
-      {/* Action buttons (right side) */}
-      <div className="absolute right-4 bottom-32 flex flex-col gap-4">
+      {/* Action buttons (right side) - Telekom Magenta accent */}
+      <div className="absolute right-4 bottom-32 flex flex-col gap-3">
         {/* Add to learning path */}
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.5, duration: 0.3 }}
           onClick={() => onAddToLearning(technique.id)}
-          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
-          title="Zum Lernpfad hinzufügen"
+          className="w-12 h-12 rounded-full bg-[#e20074] backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#ff1493] transition-all active:scale-95 shadow-lg"
+          title={ui('action.openInDashboard', language)}
         >
-          <BookOpen size={24} />
+          <BookOpen size={20} />
         </motion.button>
 
         {/* Share button */}
@@ -297,10 +295,10 @@ export function DiscoverCard({ technique, isVisible, onAddToLearning }: Discover
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.6, duration: 0.3 }}
           onClick={handleShare}
-          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
-          title="Teilen"
+          className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all active:scale-95 shadow-lg"
+          title={ui('action.share', language)}
         >
-          <Share2 size={24} />
+          <Share2 size={20} />
         </motion.button>
       </div>
     </section>

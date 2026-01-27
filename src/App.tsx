@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AppRouter } from './AppRouter';
 import { useAchievementStore } from './stores/achievementStore';
@@ -7,8 +7,32 @@ import { AchievementNotification } from './components/gamification/AchievementNo
 import { WelcomeModal } from './components/onboarding/WelcomeModal';
 import { FeatureTour } from './components/onboarding/FeatureTour';
 
+/**
+ * Dashboard-only components wrapper
+ * Only renders onboarding/gamification overlays when on /dashboard routes
+ */
+function DashboardOverlays() {
+  const location = useLocation();
+  const isDashboard = location.pathname.startsWith('/dashboard');
+  const { recentlyUnlocked, clearNotification } = useAchievementStore();
+
+  // Only show onboarding and achievements on dashboard
+  if (!isDashboard) return null;
+
+  return (
+    <>
+      <AchievementNotification
+        achievement={recentlyUnlocked}
+        onClose={clearNotification}
+      />
+      <WelcomeModal />
+      <FeatureTour />
+    </>
+  );
+}
+
 function App() {
-  const { initializeAchievements, recentlyUnlocked, clearNotification } = useAchievementStore();
+  const { initializeAchievements } = useAchievementStore();
   const { generateDailyChallenge } = useChallengeStore();
 
   useEffect(() => {
@@ -19,14 +43,9 @@ function App() {
   }, [initializeAchievements, generateDailyChallenge]);
 
   return (
-    <BrowserRouter basename="/disinfoapp">
+    <BrowserRouter>
       <AppRouter />
-      <AchievementNotification
-        achievement={recentlyUnlocked}
-        onClose={clearNotification}
-      />
-      <WelcomeModal />
-      <FeatureTour />
+      <DashboardOverlays />
     </BrowserRouter>
   );
 }

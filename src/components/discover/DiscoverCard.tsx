@@ -90,7 +90,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
   };
 
   return (
-    <section className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden">
+    <section className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden text-white">
       {/* Background gradient */}
       <div className={`absolute inset-0 bg-gradient-to-b ${style.gradient}`} />
 

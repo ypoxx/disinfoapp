@@ -84,7 +84,7 @@ export function DiscoverFeed() {
   const progress = ((visibleIndex + 1) / techniques.length) * 100;
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Minimal header with progress */}
       <div className="fixed top-0 left-0 right-0 z-50">
         {/* Progress bar - visual, full width */}
@@ -148,7 +148,7 @@ export function DiscoverFeed() {
         ))}
 
         {/* End card */}
-        <section className="relative h-screen w-full flex-shrink-0 snap-start bg-gradient-to-b from-[#e20074]/90 via-purple-900/80 to-black flex items-center justify-center">
+        <section className="relative h-screen w-full flex-shrink-0 snap-start bg-gradient-to-b from-[#e20074]/90 via-purple-900/80 to-black flex items-center justify-center text-white">
           <div className="text-center px-8">
             <motion.div
               initial={{ scale: 0 }}

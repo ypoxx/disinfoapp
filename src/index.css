@@ -33,12 +33,25 @@
   }
 
   body {
-    background-color: var(--telekom-color-background-canvas);
-    color: var(--telekom-color-text-and-icon-standard);
-    font-family: var(--telekom-typography-font-family-sans);
+    /* Fallback colors for when CSS variables haven't loaded */
+    background-color: #ffffff;
+    color: #1a1a1a;
+    /* Telekom design tokens */
+    background-color: var(--telekom-color-background-canvas, #ffffff);
+    color: var(--telekom-color-text-and-icon-standard, #1a1a1a);
+    font-family: var(--telekom-typography-font-family-sans, system-ui, -apple-system, sans-serif);
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  #root {
+    min-height: 100vh;
   }
 
   /* Typography using Telekom text styles */

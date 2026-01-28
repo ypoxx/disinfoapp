@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import de from './locales/de.json';
 import deAT from './locales/de-AT.json';
+import en from './locales/en.json';
 import hu from './locales/hu.json';
 import pl from './locales/pl.json';
 import sk from './locales/sk.json';
@@ -15,6 +16,7 @@ import cnr from './locales/cnr.json';
 export const languages = [
   { code: 'de', name: 'Deutsch', flag: '🇩🇪', dir: 'ltr' },
   { code: 'de-AT', name: 'Österreichisch', flag: '🇦🇹', dir: 'ltr' },
+  { code: 'en', name: 'English', flag: '🇬🇧', dir: 'ltr' },
   { code: 'hu', name: 'Magyar', flag: '🇭🇺', dir: 'ltr' },
   { code: 'pl', name: 'Polski', flag: '🇵🇱', dir: 'ltr' },
   { code: 'sk', name: 'Slovenčina', flag: '🇸🇰', dir: 'ltr' },
@@ -33,6 +35,7 @@ i18n
     resources: {
       de: { translation: de },
       'de-AT': { translation: deAT },
+      en: { translation: en },
       hu: { translation: hu },
       pl: { translation: pl },
       sk: { translation: sk },

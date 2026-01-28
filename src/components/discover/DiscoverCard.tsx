@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PersuasionTechnique } from '@/types/persuasion';
+import { PersuasionTechnique, getLocalizedContent, getLocalizedNameWithEnglish } from '@/types/persuasion';
 import { Share2, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface DiscoverCardProps {
@@ -38,34 +39,20 @@ const categoryStyles: Record<string, { gradient: string; badge: string }> = {
   },
 };
 
-/**
- * German category labels
- */
-const categoryLabels: Record<string, string> = {
-  cognitive_bias: 'Kognitive Verzerrung',
-  social_dynamics: 'Soziale Dynamik',
-  emotional_manipulation: 'Emotionale Manipulation',
-  logical_fallacy: 'Logischer Fehlschluss',
-  nlp: 'Sprachliche Muster',
-  digital_influence: 'Digitaler Einfluss',
-};
-
-/**
- * Difficulty labels
- */
-const difficultyLabels: Record<string, string> = {
-  beginner: 'Einsteiger',
-  intermediate: 'Fortgeschritten',
-  advanced: 'Experte',
-  expert: 'Spezialist',
-};
-
 export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
+  const { t, i18n } = useTranslation();
   const [showAllExamples, setShowAllExamples] = useState(false);
+  const currentLang = i18n.language;
 
   const style = categoryStyles[technique.category] || categoryStyles.cognitive_bias;
-  const categoryLabel = categoryLabels[technique.category] || technique.category;
-  const difficultyLabel = difficultyLabels[technique.difficulty] || technique.difficulty;
+
+  // Localized labels from i18n
+  const categoryLabel = t(`techniques.categories.${technique.category}`);
+  const difficultyLabel = t(`modules.difficulty.${technique.difficulty}`);
+
+  // Localized technique content with fallback
+  const techniqueName = getLocalizedNameWithEnglish(technique.name, currentLang);
+  const techniqueDescription = getLocalizedContent(technique.description, currentLang);
 
   // Show 1 example by default, all on expand
   const visibleExamples = showAllExamples ? technique.examples : technique.examples.slice(0, 1);
@@ -73,8 +60,8 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
 
   const handleShare = async () => {
     const shareData = {
-      title: technique.name.de,
-      text: `${technique.name.de}: ${technique.description.de.slice(0, 100)}...`,
+      title: techniqueName,
+      text: `${techniqueName}: ${techniqueDescription.slice(0, 100)}...`,
       url: window.location.href,
     };
 
@@ -82,7 +69,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
       if (navigator.share) {
         await navigator.share(shareData);
       } else if (navigator.clipboard) {
-        await navigator.clipboard.writeText(`${shareData.title}\n\n${technique.description.de}`);
+        await navigator.clipboard.writeText(`${shareData.title}\n\n${techniqueDescription}`);
       }
     } catch (error) {
       // User cancelled or error
@@ -127,7 +114,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight"
         >
-          {technique.name.de}
+          {techniqueName}
         </motion.h1>
 
         {/* Description */}
@@ -137,7 +124,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-base sm:text-lg text-white/90 leading-relaxed mb-5"
         >
-          {technique.description.de}
+          {techniqueDescription}
         </motion.p>
 
         {/* Examples section */}
@@ -148,7 +135,9 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
           className="space-y-3"
         >
           <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">
-            {technique.examples.length === 1 ? 'Beispiel' : 'Beispiele'}
+            {technique.examples.length === 1
+              ? t('discover.example', 'Beispiel')
+              : t('discover.examples', 'Beispiele')}
           </div>
 
           <AnimatePresence mode="sync">
@@ -177,12 +166,12 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
               {showAllExamples ? (
                 <>
                   <ChevronUp size={16} />
-                  Weniger anzeigen
+                  {t('discover.showLess', 'Weniger anzeigen')}
                 </>
               ) : (
                 <>
                   <ChevronDown size={16} />
-                  {technique.examples.length - 1} weitere {technique.examples.length - 1 === 1 ? 'Beispiel' : 'Beispiele'}
+                  {t('discover.showMore', { count: technique.examples.length - 1 })}
                 </>
               )}
             </button>
@@ -196,7 +185,9 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
           transition={{ delay: 0.5 }}
           className="mt-5 flex items-center gap-3"
         >
-          <span className="text-xs text-white/60 uppercase tracking-wider">Wirksamkeit</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">
+            {t('techniques.detail.effectiveness', 'Wirksamkeit')}
+          </span>
           <div className="flex gap-1">
             {['low', 'moderate', 'high', 'very_high'].map((level, i) => (
               <div
@@ -219,7 +210,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
         transition={{ delay: 0.4, duration: 0.3 }}
         onClick={handleShare}
         className="absolute right-5 bottom-32 w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all active:scale-95 border border-white/20"
-        aria-label="Teilen"
+        aria-label={t('common.share', 'Teilen')}
       >
         <Share2 size={20} />
       </motion.button>

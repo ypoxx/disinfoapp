@@ -185,7 +185,13 @@
     "category": "Kategorie",
     "technique": "Technik {{current}} von {{total}}",
     "completed": "Alle Techniken entdeckt!",
-    "startOver": "Von vorne beginnen"
+    "startOver": "Von vorne beginnen",
+    "example": "Beispiel",
+    "examples": "Beispiele",
+    "showLess": "Weniger anzeigen",
+    "showMore": "{{count}} weitere",
+    "completedDescription": "Du hast {{count}} Manipulationstechniken kennengelernt.",
+    "totalLearned": "{{count}} Begriffe insgesamt gelernt"
   },
   "simulator": {
     "title": "Social Media Simulator",

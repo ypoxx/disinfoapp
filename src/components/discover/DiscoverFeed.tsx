@@ -1,10 +1,27 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import { DiscoverCard } from './DiscoverCard';
 import { persuasionTechniques } from '@/data/persuasion';
 import { useDiscoverStore } from '@/stores/discoverStore';
 import { PersuasionTechnique } from '@/types/persuasion';
-import { RotateCcw, Sparkles } from 'lucide-react';
+import { RotateCcw, Sparkles, Globe, Check } from 'lucide-react';
+
+/**
+ * Supported languages with display names
+ */
+const LANGUAGES = [
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'de-AT', name: 'Österreich', flag: '🇦🇹' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
+  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+  { code: 'sk', name: 'Slovenčina', flag: '🇸🇰' },
+  { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
+  { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
+  { code: 'mk', name: 'Македонски', flag: '🇲🇰' },
+  { code: 'cnr', name: 'Crnogorski', flag: '🇲🇪' },
+];
 
 /**
  * Shuffle array using Fisher-Yates algorithm
@@ -19,10 +36,14 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function DiscoverFeed() {
+  const { t, i18n } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [techniques, setTechniques] = useState<PersuasionTechnique[]>([]);
   const [visibleIndex, setVisibleIndex] = useState(0);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const { markAsSeen, updateLastVisit, seenTechniques, resetSeen } = useDiscoverStore();
+
+  // Current language for display (unused but kept for future use)
 
   // Shuffle techniques on mount
   useEffect(() => {
@@ -61,6 +82,15 @@ export function DiscoverFeed() {
     return () => observer.disconnect();
   }, [techniques, markAsSeen]);
 
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => setShowLanguageMenu(false);
+    if (showLanguageMenu) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [showLanguageMenu]);
+
   const handleReset = () => {
     resetSeen();
     const shuffled = shuffleArray(persuasionTechniques);
@@ -70,12 +100,17 @@ export function DiscoverFeed() {
     }
   };
 
+  const handleLanguageChange = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    setShowLanguageMenu(false);
+  };
+
   if (techniques.length === 0) {
     return (
       <div className="flex items-center justify-center h-screen bg-black">
         <div className="flex flex-col items-center gap-3">
           <Sparkles className="w-8 h-8 text-[#e20074] animate-pulse" />
-          <span className="text-white/70">Wird geladen...</span>
+          <span className="text-white/70">{t('common.loading')}</span>
         </div>
       </div>
     );
@@ -102,20 +137,67 @@ export function DiscoverFeed() {
           {/* Logo/Title */}
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-[#e20074]" />
-            <span className="text-white font-semibold text-sm">Entdecken</span>
+            <span className="text-white font-semibold text-sm">{t('discover.title')}</span>
           </div>
 
-          {/* Progress indicator */}
-          <div className="flex items-center gap-3">
+          {/* Right side controls */}
+          <div className="flex items-center gap-2">
+            {/* Progress indicator */}
             <span className="text-white/60 text-xs tabular-nums">
-              {visibleIndex + 1} von {techniques.length}
+              {visibleIndex + 1} / {techniques.length}
             </span>
+
+            {/* Language selector */}
+            <div className="relative">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowLanguageMenu(!showLanguageMenu);
+                }}
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
+                aria-label={t('language.select')}
+              >
+                <Globe size={16} />
+              </button>
+
+              {/* Language dropdown */}
+              <AnimatePresence>
+                {showLanguageMenu && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-10 w-44 bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/10 shadow-xl overflow-hidden"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div className="py-1 max-h-80 overflow-y-auto">
+                      {LANGUAGES.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => handleLanguageChange(lang.code)}
+                          className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-white/10 transition-colors ${
+                            i18n.language === lang.code ? 'text-[#e20074]' : 'text-white/80'
+                          }`}
+                        >
+                          <span className="text-base">{lang.flag}</span>
+                          <span className="flex-1">{lang.name}</span>
+                          {i18n.language === lang.code && (
+                            <Check size={14} className="text-[#e20074]" />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Reset button */}
             <button
               onClick={handleReset}
               className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
-              aria-label="Neu mischen"
+              aria-label={t('discover.startOver')}
             >
               <RotateCcw size={16} />
             </button>
@@ -160,23 +242,23 @@ export function DiscoverFeed() {
             </motion.div>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-              Alle Begriffe entdeckt
+              {t('discover.completed')}
             </h2>
 
             <p className="text-white/70 text-base mb-8 max-w-xs mx-auto">
-              Du hast {techniques.length} Manipulationstechniken kennengelernt.
+              {t('discover.completedDescription', { count: techniques.length })}
             </p>
 
             <button
               onClick={handleReset}
               className="px-6 py-3 bg-white text-[#e20074] font-semibold rounded-full hover:bg-white/90 transition-all active:scale-95"
             >
-              Nochmal durchgehen
+              {t('discover.startOver')}
             </button>
 
             {seenTechniques.size > 0 && (
               <p className="text-white/50 text-xs mt-6">
-                {seenTechniques.size} Begriffe insgesamt gelernt
+                {t('discover.totalLearned', { count: seenTechniques.size })}
               </p>
             )}
           </div>
@@ -199,7 +281,7 @@ export function DiscoverFeed() {
             >
               ↑
             </motion.div>
-            <span className="text-white/50 text-xs">Nach oben wischen</span>
+            <span className="text-white/50 text-xs">{t('discover.swipeHint')}</span>
           </div>
         </motion.div>
       )}

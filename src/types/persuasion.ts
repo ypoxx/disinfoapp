@@ -45,11 +45,76 @@ export interface Evidence {
 }
 
 /**
- * Multilingual content support
+ * Supported language codes
+ */
+export type SupportedLanguage = 'de' | 'de-AT' | 'en' | 'hu' | 'pl' | 'sk' | 'hr' | 'el' | 'mk' | 'cnr';
+
+/**
+ * Multilingual content support for all 9 target languages
+ * Required: de, en (base languages)
+ * Optional: all others (will fallback to en → de)
  */
 export interface MultilingualContent {
   de: string;
   en: string;
+  'de-AT'?: string;
+  hu?: string;
+  pl?: string;
+  sk?: string;
+  hr?: string;
+  el?: string;
+  mk?: string;
+  cnr?: string;
+}
+
+/**
+ * Get localized content with fallback chain: currentLang → en → de
+ */
+export function getLocalizedContent(
+  content: MultilingualContent | undefined,
+  lang: string,
+  fallback = ''
+): string {
+  if (!content) return fallback;
+
+  // Normalize language code (e.g., 'de-AT' stays, 'de-DE' becomes 'de')
+  const normalizedLang = lang.toLowerCase();
+
+  // Try exact match first
+  if (normalizedLang in content && content[normalizedLang as keyof MultilingualContent]) {
+    return content[normalizedLang as keyof MultilingualContent] as string;
+  }
+
+  // Try base language (e.g., 'de' for 'de-DE')
+  const baseLang = normalizedLang.split('-')[0];
+  if (baseLang in content && content[baseLang as keyof MultilingualContent]) {
+    return content[baseLang as keyof MultilingualContent] as string;
+  }
+
+  // Fallback chain: en → de
+  return content.en || content.de || fallback;
+}
+
+/**
+ * Format technique name with both English and local term (Option A)
+ * e.g., "Framing (Rahmung)" or just "Framing" if same
+ */
+export function getLocalizedNameWithEnglish(
+  content: MultilingualContent | undefined,
+  lang: string
+): string {
+  if (!content) return '';
+
+  const localName = getLocalizedContent(content, lang);
+  const englishName = content.en;
+
+  // If local name is same as English, or lang is English, just return local
+  if (localName === englishName || lang === 'en') {
+    return localName;
+  }
+
+  // Return "English (Local)" format
+  return `${englishName} (${localName})`;
 }
 
 /**

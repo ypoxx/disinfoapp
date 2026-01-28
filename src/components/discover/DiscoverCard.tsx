@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PersuasionTechnique, getLocalizedContent, getLocalizedNameWithEnglish } from '@/types/persuasion';
-import { Share2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Share2, ChevronDown, ChevronUp, Info } from 'lucide-react';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
@@ -42,9 +42,12 @@ const categoryStyles: Record<string, { gradient: string; badge: string }> = {
 export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
   const { t, i18n } = useTranslation();
   const [showAllExamples, setShowAllExamples] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [showImageCredit, setShowImageCredit] = useState(false);
   const currentLang = i18n.language;
 
   const style = categoryStyles[technique.category] || categoryStyles.cognitive_bias;
+  const hasImage = technique.image?.src;
 
   // Localized labels from i18n
   const categoryLabel = t(`techniques.categories.${technique.category}`);
@@ -78,11 +81,57 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
 
   return (
     <section className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden text-white">
-      {/* Background gradient */}
+      {/* Background gradient (always present as base/fallback) */}
       <div className={`absolute inset-0 bg-gradient-to-b ${style.gradient}`} />
 
-      {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      {/* Background image layer (if available) */}
+      {hasImage && (
+        <>
+          <img
+            src={technique.image!.src}
+            alt={technique.image!.alt}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              imageLoaded ? 'opacity-40' : 'opacity-0'
+            }`}
+          />
+          {/* Image credit button */}
+          {imageLoaded && technique.image!.credit && (
+            <button
+              onClick={() => setShowImageCredit(!showImageCredit)}
+              className="absolute top-20 right-5 z-10 w-6 h-6 rounded-full bg-black/30 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/50 transition-all"
+              aria-label="Bildquelle anzeigen"
+            >
+              <Info size={12} />
+            </button>
+          )}
+          {/* Image credit tooltip */}
+          <AnimatePresence>
+            {showImageCredit && technique.image!.credit && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute top-28 right-5 z-10 max-w-[200px] p-2 bg-black/80 backdrop-blur-sm rounded-lg text-xs text-white/80"
+              >
+                <p className="font-medium mb-1">Bildquelle:</p>
+                <p>{technique.image!.credit}</p>
+                {technique.image!.context && (
+                  <p className="mt-1 text-white/60">{technique.image!.context}</p>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
+
+      {/* Overlay for text readability - stronger when image is present */}
+      <div className={`absolute inset-0 bg-gradient-to-t ${
+        hasImage && imageLoaded
+          ? 'from-black/90 via-black/60 to-black/30'
+          : 'from-black/80 via-black/40 to-transparent'
+      }`} />
 
       {/* Top badges */}
       <div className="absolute top-20 left-0 right-0 px-5 flex items-center justify-between">

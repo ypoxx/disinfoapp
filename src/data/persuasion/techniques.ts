@@ -43,6 +43,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Metaphern, die bestimmte Assoziationen wecken',
     ],
     taxonomyGroups: ['cognitive_biases', 'information_presentation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Daniel_Kahneman_%283283955327%29_%28cropped%29.jpg',
+      alt: 'Daniel Kahneman - Nobelpreisträger und Pionier der Framing-Forschung',
+      credit: 'World Economic Forum / Wikimedia Commons',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Daniel_Kahneman_(3283955327)_(cropped).jpg',
+      context: 'Kahneman entwickelte mit Tversky die Framing-Theorie (Asian Disease Problem, 1981)',
+    },
   },
   {
     id: 'priming',
@@ -164,6 +171,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Betonung von Gruppenzugehörigkeit',
     ],
     taxonomyGroups: ['social_influence', 'conformity'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Asch_experiment.svg',
+      alt: 'Asch Konformitätsexperiment - Linienvergleich',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Asch_experiment.svg',
+      context: 'Asch (1951) zeigte: 75% der Teilnehmer gaben mindestens einmal eine falsche Antwort, um der Gruppe zu entsprechen',
+    },
   },
   {
     id: 'scarcity',
@@ -287,6 +301,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Generalisierung von Expertise auf fremde Gebiete',
     ],
     taxonomyGroups: ['social_influence', 'credibility'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Milgram_experiment_v2.svg',
+      alt: 'Milgram-Experiment Aufbau - Gehorsam gegenüber Autoritäten',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Milgram_experiment_v2.svg',
+      context: 'Milgram (1963) zeigte, dass 65% der Teilnehmer bereit waren, tödliche Stromschläge zu geben, wenn eine Autorität es anordnete',
+    },
   },
   {
     id: 'liking',

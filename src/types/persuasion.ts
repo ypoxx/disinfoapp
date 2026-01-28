@@ -118,6 +118,22 @@ export function getLocalizedNameWithEnglish(
 }
 
 /**
+ * Image metadata for technique visualization
+ */
+export interface TechniqueImage {
+  /** Path to image file (relative to /public/) */
+  src: string;
+  /** Alt text for accessibility */
+  alt: string;
+  /** Attribution/credit for the image */
+  credit: string;
+  /** Source URL (e.g., Wikipedia Commons) */
+  sourceUrl?: string;
+  /** Context: Why this image represents this technique */
+  context?: string;
+}
+
+/**
  * Core persuasion technique definition
  */
 export interface PersuasionTechnique {
@@ -143,6 +159,8 @@ export interface PersuasionTechnique {
   warningNeurons: string[];
   /** Taxonomy group membership */
   taxonomyGroups: string[];
+  /** Optional background image for visual display */
+  image?: TechniqueImage;
 }
 
 // ------------------------------------------------------------------

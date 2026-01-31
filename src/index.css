@@ -1,85 +1,109 @@
+/* Telekom Design Tokens */
+@import '@telekom/design-tokens/dist/css/design-tokens.all.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    /* Compatibility layer for existing components */
+    --radius: var(--telekom-radius-standard);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    /* Dark mode overrides using Telekom tokens */
+    --telekom-color-background-canvas: #1a1a1a;
+    --telekom-color-background-canvas-subtle: #242426;
+    --telekom-color-background-surface: #242426;
+    --telekom-color-background-surface-subtle: #2d2d30;
+    --telekom-color-text-and-icon-standard: #ffffff;
+    --telekom-color-text-and-icon-additional: hsla(0, 0%, 100%, 0.65);
+    --telekom-color-text-and-icon-disabled: hsla(0, 0%, 100%, 0.4);
+    --telekom-color-ui-subtle: #2d2d30;
+    --telekom-color-ui-faint: #3d3d40;
+    --telekom-color-ui-border-standard: hsla(0, 0%, 100%, 0.2);
+    --telekom-color-ui-border-hovered: hsla(0, 0%, 100%, 0.4);
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--telekom-color-ui-border-standard);
   }
+
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Fallback colors for when CSS variables haven't loaded */
+    background-color: #ffffff;
+    color: #1a1a1a;
+    /* Telekom design tokens */
+    background-color: var(--telekom-color-background-canvas, #ffffff);
+    color: var(--telekom-color-text-and-icon-standard, #1a1a1a);
+    font-family: var(--telekom-typography-font-family-sans, system-ui, -apple-system, sans-serif);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  /* Typography using Telekom text styles */
+  h1 {
+    font: var(--telekom-text-style-heading-1);
+  }
+
+  h2 {
+    font: var(--telekom-text-style-heading-2);
+  }
+
+  h3 {
+    font: var(--telekom-text-style-heading-3);
+  }
+
+  h4 {
+    font: var(--telekom-text-style-heading-4);
+  }
+
+  h5 {
+    font: var(--telekom-text-style-heading-5);
+  }
+
+  h6 {
+    font: var(--telekom-text-style-heading-6);
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with Telekom colors */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary;
+  background: var(--telekom-color-ui-subtle);
+  border-radius: var(--telekom-radius-small);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground rounded-md;
+  background: var(--telekom-color-ui-regular);
+  border-radius: var(--telekom-radius-small);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-foreground;
+  background: var(--telekom-color-ui-strong);
 }
 
-/* Focus visible styles for accessibility */
+/* Focus visible styles using Telekom focus color */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-ring;
+  outline: 2px solid var(--telekom-color-functional-focus-standard);
+  outline-offset: 2px;
 }
 
 /* Reduced motion for accessibility */
@@ -90,5 +114,78 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility classes using Telekom tokens */
+@layer utilities {
+  .text-style-badge {
+    font: var(--telekom-text-style-badge);
+  }
+
+  .text-style-small {
+    font: var(--telekom-text-style-small);
+  }
+
+  .text-style-caption {
+    font: var(--telekom-text-style-caption);
+  }
+
+  .text-style-body {
+    font: var(--telekom-text-style-body);
+  }
+
+  .text-style-ui {
+    font: var(--telekom-text-style-ui);
+  }
+
+  .text-style-lead {
+    font: var(--telekom-text-style-lead-text);
+  }
+
+  /* Telekom shadow utilities */
+  .shadow-raised {
+    box-shadow: var(--telekom-shadow-raised-standard);
+  }
+
+  .shadow-raised-hover {
+    box-shadow: var(--telekom-shadow-raised-hover);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--telekom-shadow-floating-standard);
+  }
+
+  .shadow-overlay {
+    box-shadow: var(--telekom-shadow-overlay);
+  }
+
+  /* Animation timing using Telekom tokens */
+  .duration-instant {
+    transition-duration: var(--telekom-motion-duration-instant);
+  }
+
+  .duration-immediate {
+    transition-duration: var(--telekom-motion-duration-immediate);
+  }
+
+  .duration-transition {
+    transition-duration: var(--telekom-motion-duration-transition);
+  }
+
+  .duration-animation {
+    transition-duration: var(--telekom-motion-duration-animation);
+  }
+
+  .ease-standard {
+    transition-timing-function: var(--telekom-motion-easing-standard);
+  }
+
+  .ease-enter {
+    transition-timing-function: var(--telekom-motion-easing-enter);
+  }
+
+  .ease-leave {
+    transition-timing-function: var(--telekom-motion-easing-leave);
   }
 }

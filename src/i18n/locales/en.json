@@ -1,0 +1,339 @@
+{
+  "common": {
+    "start": "Get Started",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "progress": "Progress",
+    "completed": "Completed",
+    "notCompleted": "Not completed",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "tryAgain": "Try again",
+    "share": "Share",
+    "free": "Free"
+  },
+  "nav": {
+    "home": "Home",
+    "discover": "Discover",
+    "modules": "Learning Modules",
+    "techniques": "Techniques",
+    "simulator": "Simulator",
+    "dashboard": "Dashboard",
+    "progress": "Progress"
+  },
+  "home": {
+    "hero": {
+      "title1": "Recognize Disinformation.",
+      "title2": "Protect the Truth.",
+      "subtitle": "Learn how to identify fake news, fact-check information, and think critically about media in interactive modules. Become an expert in combating disinformation."
+    },
+    "cta": {
+      "start": "Get Started",
+      "myProgress": "My Progress"
+    },
+    "features": {
+      "recognize": {
+        "title": "Recognize Disinformation",
+        "description": "Learn to identify the characteristics and tactics of misinformation"
+      },
+      "thinking": {
+        "title": "Critical Thinking",
+        "description": "Develop skills for analyzing and evaluating information"
+      },
+      "practice": {
+        "title": "Practical Exercises",
+        "description": "Practice with real-world examples in a safe learning environment"
+      },
+      "community": {
+        "title": "Learn Together",
+        "description": "Exchange ideas with others and learn from each other"
+      }
+    },
+    "newTools": {
+      "title": "New Learning Tools",
+      "quiz": {
+        "title": "Technique Quiz",
+        "subtitle": "Test your knowledge",
+        "description": "Identify manipulation techniques in realistic scenarios. 10 questions with immediate feedback and detailed explanations.",
+        "questions": "10 questions",
+        "xp": "Up to 200 XP"
+      },
+      "explorer": {
+        "title": "Technique Explorer",
+        "subtitle": "Discover all techniques",
+        "description": "Explore 28 persuasion and manipulation techniques with scientific insights, examples, and countermeasures.",
+        "techniques": "28 techniques",
+        "countermeasures": "12 countermeasures"
+      },
+      "discover": {
+        "title": "Discover",
+        "subtitle": "Swipe & Learn",
+        "description": "Swipe through all manipulation techniques in fullscreen mode. Fast, visual, and engaging - perfect for on the go.",
+        "swipe": "Swipe mode",
+        "fullscreen": "Fullscreen"
+      }
+    },
+    "stats": {
+      "modules": "Learning Modules",
+      "techniques": "Manipulation Techniques",
+      "free": "Free"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About DisinfoApp",
+      "description": "A progressive web app for detecting and combating disinformation. Learn to recognize fake news and develop critical thinking skills."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "modules": "Learning Modules",
+      "progress": "Progress",
+      "privacy": "Privacy Policy",
+      "imprint": "Legal Notice"
+    },
+    "community": {
+      "title": "Community",
+      "madeWith": "Made with",
+      "for": "for digital literacy"
+    },
+    "copyright": "All rights reserved."
+  },
+  "modules": {
+    "title": "Learning Modules",
+    "subtitle": "Choose a module to expand your knowledge about disinformation",
+    "duration": "{{minutes}} min",
+    "lessons": "{{count}} lessons",
+    "startModule": "Start module",
+    "continueModule": "Continue",
+    "completed": "Completed",
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    }
+  },
+  "quiz": {
+    "title": "Quiz",
+    "question": "Question {{current}} of {{total}}",
+    "checkAnswer": "Check answer",
+    "nextQuestion": "Next question",
+    "finishQuiz": "Finish quiz",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "correctAnswer": "Correct answer",
+    "explanation": "Explanation",
+    "yourAnswer": "Your answer",
+    "results": {
+      "title": "Quiz Results",
+      "score": "{{score}} of {{total}} correct",
+      "percentage": "{{percentage}}%",
+      "excellent": "Excellent!",
+      "good": "Well done!",
+      "needsWork": "Keep practicing!",
+      "xpEarned": "{{xp}} XP earned",
+      "tryAgain": "Try again",
+      "backToModules": "Back to modules"
+    }
+  },
+  "techniques": {
+    "title": "Manipulation Techniques",
+    "subtitle": "Explore 28 persuasion and manipulation techniques",
+    "searchPlaceholder": "Search techniques...",
+    "allCategories": "All categories",
+    "allDifficulties": "All difficulties",
+    "gridView": "Grid view",
+    "graphView": "Network view",
+    "categories": {
+      "cognitive_bias": "Cognitive Biases",
+      "social_dynamics": "Social Dynamics",
+      "logical_fallacy": "Logical Fallacies",
+      "emotional_manipulation": "Emotional Manipulation",
+      "nlp": "Linguistic Patterns",
+      "digital_influence": "Digital Influence"
+    },
+    "detail": {
+      "overview": "Overview",
+      "examples": "Examples",
+      "detection": "Detection",
+      "countermeasures": "Countermeasures",
+      "related": "Related Techniques",
+      "howItWorks": "How it works",
+      "whyEffective": "Why it works",
+      "scientificBasis": "Scientific basis",
+      "realWorldExamples": "Real-world examples",
+      "warningSignals": "Warning signs",
+      "psychologicalBackground": "Psychological background",
+      "defenseTips": "Defense tips",
+      "relatedTechniques": "Related techniques",
+      "effectiveness": "Effectiveness",
+      "detectability": "Detectability"
+    }
+  },
+  "discover": {
+    "title": "Discover",
+    "swipeHint": "Swipe up for more",
+    "tapToLearn": "Tap for details",
+    "learnMore": "Learn more",
+    "category": "Category",
+    "technique": "Technique {{current}} of {{total}}",
+    "completed": "All techniques discovered!",
+    "startOver": "Start over",
+    "example": "Example",
+    "examples": "Examples",
+    "showLess": "Show less",
+    "showMore": "{{count}} more",
+    "completedDescription": "You have learned {{count}} manipulation techniques.",
+    "totalLearned": "{{count}} terms learned in total"
+  },
+  "simulator": {
+    "title": "Social Media Simulator",
+    "subtitle": "Analyze posts for manipulation techniques",
+    "analyzePost": "Analyze post",
+    "detectedTechniques": "Detected techniques",
+    "noTechniques": "No manipulation techniques detected",
+    "sharePost": "Share",
+    "reportPost": "Report",
+    "likePost": "Like",
+    "commentPost": "Comment",
+    "trustScore": "Trust score",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "dashboard": {
+    "title": "Knowledge Dashboard",
+    "subtitle": "Track your learning progress and mastery",
+    "overview": "Overview",
+    "techniquesLearned": "Techniques learned",
+    "totalXp": "Total XP",
+    "currentStreak": "Current streak",
+    "masteryLevel": "Mastery level",
+    "heatmap": {
+      "title": "Activity Heatmap",
+      "subtitle": "Your learning activity over the past weeks"
+    },
+    "radar": {
+      "title": "Category Radar",
+      "subtitle": "Your strengths by category"
+    },
+    "timeline": {
+      "title": "Learning Timeline",
+      "subtitle": "Your learning history"
+    },
+    "weaknesses": {
+      "title": "Areas for Improvement",
+      "subtitle": "Topics that need more attention"
+    }
+  },
+  "progress": {
+    "title": "Your Progress",
+    "subtitle": "Track your learning journey",
+    "overview": {
+      "title": "Overview",
+      "totalXp": "Total XP",
+      "level": "Level {{level}}",
+      "modulesCompleted": "Modules completed",
+      "techniquesLearned": "Techniques learned",
+      "quizzesTaken": "Quizzes taken",
+      "accuracy": "Accuracy"
+    },
+    "streak": {
+      "title": "Learning Streak",
+      "days": "Days",
+      "currentStreak": "Current streak",
+      "longestStreak": "Longest streak",
+      "keepItUp": "Keep it up!",
+      "streakLost": "Streak lost - start again!"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "unlocked": "{{count}} unlocked",
+      "locked": "Locked",
+      "progress": "Progress: {{current}}/{{target}}"
+    },
+    "badges": {
+      "title": "Badges",
+      "collected": "{{count}} collected",
+      "rarity": {
+        "common": "Common",
+        "rare": "Rare",
+        "epic": "Epic",
+        "legendary": "Legendary"
+      }
+    },
+    "recommendations": {
+      "title": "Recommendations",
+      "subtitle": "Based on your learning behavior",
+      "nextBest": "Next step"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welcome to DisinfoApp!",
+      "subtitle": "Your companion in the fight against disinformation",
+      "step1": {
+        "title": "Learn Techniques",
+        "description": "Discover 28 manipulation techniques and how to recognize them"
+      },
+      "step2": {
+        "title": "Practice Interactively",
+        "description": "Test your knowledge in quizzes and simulations"
+      },
+      "step3": {
+        "title": "Earn Achievements",
+        "description": "Earn XP, badges, and unlock achievements"
+      },
+      "step4": {
+        "title": "Become an Expert",
+        "description": "Develop critical thinking and protect yourself from manipulation"
+      },
+      "getStarted": "Let's go!",
+      "skip": "Skip"
+    },
+    "tour": {
+      "step1": "Discover new features",
+      "step2": "Test your knowledge in the quiz",
+      "step3": "Explore all techniques",
+      "complete": "Complete tour"
+    }
+  },
+  "challenges": {
+    "daily": {
+      "title": "Daily Challenge",
+      "subtitle": "Earn bonus XP",
+      "completed": "Completed!",
+      "timeLeft": "{{hours}}h {{minutes}}m remaining",
+      "reward": "{{xp}} XP reward",
+      "startChallenge": "Start challenge"
+    }
+  },
+  "achievements": {
+    "unlocked": "Achievement unlocked!",
+    "new": "New!"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "select": "Select language",
+    "current": "Current language"
+  },
+  "accessibility": {
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle theme",
+    "closeModal": "Close modal",
+    "openModal": "Open modal",
+    "nextSlide": "Next slide",
+    "prevSlide": "Previous slide"
+  }
+}

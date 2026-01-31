@@ -1,308 +1,268 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { PersuasionTechnique } from '@/types/persuasion';
-import { Share2, BookOpen, ExternalLink, Award } from 'lucide-react';
+import { PersuasionTechnique, getLocalizedContent, getLocalizedNameWithEnglish } from '@/types/persuasion';
+import { Share2, ChevronDown, ChevronUp, Info } from 'lucide-react';
 
 interface DiscoverCardProps {
   technique: PersuasionTechnique;
   isVisible: boolean;
-  onAddToLearning: (techniqueId: string) => void;
 }
 
 /**
- * Generate a beautiful mesh gradient based on technique category
- * Returns CSS background string with multiple layers for depth
+ * Category colors with Telekom Magenta as primary accent
  */
-function generateMeshGradient(category: string): string {
-  const categoryGradients: Record<string, string[]> = {
-    cognitive_bias: [
-      'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #1e3a8a 0%, #312e81 100%)',
-    ],
-    social_dynamics: [
-      'radial-gradient(circle at 30% 40%, rgba(236, 72, 153, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 60%, rgba(244, 63, 94, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 80%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #9f1239 0%, #881337 100%)',
-    ],
-    emotional_manipulation: [
-      'radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #c2410c 0%, #b91c1c 100%)',
-    ],
-    logical_fallacy: [
-      'radial-gradient(circle at 35% 35%, rgba(16, 185, 129, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 65% 65%, rgba(20, 184, 166, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #065f46 0%, #134e4a 100%)',
-    ],
-    nlp: [
-      'radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #6b21a8 0%, #86198f 100%)',
-    ],
-    digital_influence: [
-      'radial-gradient(circle at 30% 60%, rgba(6, 182, 212, 0.8) 0%, transparent 50%)',
-      'radial-gradient(circle at 70% 40%, rgba(14, 165, 233, 0.7) 0%, transparent 50%)',
-      'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.6) 0%, transparent 70%)',
-      'linear-gradient(135deg, #075985 0%, #1e40af 100%)',
-    ],
-  };
+const categoryStyles: Record<string, { gradient: string; badge: string }> = {
+  cognitive_bias: {
+    gradient: 'from-[#e20074]/90 via-purple-900/80 to-blue-900/90',
+    badge: 'bg-[#e20074]/30 text-white',
+  },
+  social_dynamics: {
+    gradient: 'from-rose-900/90 via-[#e20074]/70 to-orange-900/80',
+    badge: 'bg-rose-500/30 text-white',
+  },
+  emotional_manipulation: {
+    gradient: 'from-amber-900/90 via-orange-800/80 to-red-900/80',
+    badge: 'bg-amber-500/30 text-white',
+  },
+  logical_fallacy: {
+    gradient: 'from-emerald-900/90 via-teal-800/80 to-cyan-900/80',
+    badge: 'bg-emerald-500/30 text-white',
+  },
+  nlp: {
+    gradient: 'from-violet-900/90 via-purple-800/80 to-fuchsia-900/80',
+    badge: 'bg-violet-500/30 text-white',
+  },
+  digital_influence: {
+    gradient: 'from-sky-900/90 via-blue-800/80 to-indigo-900/80',
+    badge: 'bg-sky-500/30 text-white',
+  },
+};
 
-  const gradients = categoryGradients[category] || categoryGradients.cognitive_bias;
-  return gradients.join(', ');
-}
+export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
+  const { t, i18n } = useTranslation();
+  const [showAllExamples, setShowAllExamples] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [showImageCredit, setShowImageCredit] = useState(false);
+  const currentLang = i18n.language;
 
-/**
- * Get German category label
- */
-function getCategoryLabel(category: string): string {
-  const labels: Record<string, string> = {
-    cognitive_bias: 'Kognitive Verzerrung',
-    social_dynamics: 'Soziale Dynamiken',
-    emotional_manipulation: 'Emotionale Manipulation',
-    logical_fallacy: 'Logischer Fehlschluss',
-    nlp: 'NLP-Techniken',
-    digital_influence: 'Digitaler Einfluss',
-  };
-  return labels[category] || category;
-}
+  const style = categoryStyles[technique.category] || categoryStyles.cognitive_bias;
+  const hasImage = technique.image?.src;
 
-/**
- * Generate a professional, educational headline
- */
-function generateProfessionalHeadline(technique: PersuasionTechnique): string {
-  const templates = [
-    `${technique.name.de}: Wie diese Technik funktioniert`,
-    `${technique.name.de}: Mechanismen und Wirkweise`,
-    `${technique.name.de}: Verstehen und Erkennen`,
-    `${technique.name.de}: Wissenschaftlich erklärt`,
-    `${technique.name.de}: Hintergründe und Anwendung`,
-    `${technique.name.de}: So funktioniert die Beeinflussung`,
-  ];
+  // Localized labels from i18n
+  const categoryLabel = t(`techniques.categories.${technique.category}`);
+  const difficultyLabel = t(`modules.difficulty.${technique.difficulty}`);
 
-  const hash = technique.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  return templates[hash % templates.length];
-}
+  // Localized technique content with fallback
+  const techniqueName = getLocalizedNameWithEnglish(technique.name, currentLang);
+  const techniqueDescription = getLocalizedContent(technique.description, currentLang);
 
-/**
- * Get evidence quality badge
- */
-function getEvidenceBadge(quality: string): { icon: string; label: string; color: string } {
-  const badges = {
-    high: { icon: '✓✓✓', label: 'Hohe Evidenz', color: 'text-green-300' },
-    moderate: { icon: '✓✓', label: 'Moderate Evidenz', color: 'text-yellow-300' },
-    low: { icon: '✓', label: 'Limitierte Evidenz', color: 'text-orange-300' },
-  };
-  return badges[quality as keyof typeof badges] || badges.moderate;
-}
-
-export function DiscoverCard({ technique, isVisible, onAddToLearning }: DiscoverCardProps) {
-  const navigate = useNavigate();
-  const [showExamples, setShowExamples] = useState(false);
-
-  // Generate gradient immediately (synchronously)
-  const backgroundGradient = useMemo(
-    () => generateMeshGradient(technique.category),
-    [technique.category]
-  );
+  // Show 1 example by default, all on expand
+  const visibleExamples = showAllExamples ? technique.examples : technique.examples.slice(0, 1);
+  const hasMoreExamples = technique.examples.length > 1;
 
   const handleShare = async () => {
     const shareData = {
-      title: technique.name.de,
-      text: technique.description.de,
-      url: window.location.origin + `/disinfoapp/techniques/${technique.id}`,
+      title: techniqueName,
+      text: `${techniqueName}: ${techniqueDescription.slice(0, 100)}...`,
+      url: window.location.href,
     };
 
     try {
       if (navigator.share) {
         await navigator.share(shareData);
       } else if (navigator.clipboard) {
-        await navigator.clipboard.writeText(shareData.url);
+        await navigator.clipboard.writeText(`${shareData.title}\n\n${techniqueDescription}`);
       }
     } catch (error) {
-      console.error('Share failed:', error);
+      // User cancelled or error
     }
   };
 
-  const headline = generateProfessionalHeadline(technique);
-  const categoryLabel = getCategoryLabel(technique.category);
-  const evidenceBadge = getEvidenceBadge(technique.evidence.uncertainty?.evidenceQuality || 'moderate');
-
-  // Show more examples on tap
-  const exampleCount = showExamples ? 3 : 1;
-  const displayExamples = technique.examples.slice(0, exampleCount);
-
-  // Count studies
-  const studyCount = technique.evidence.studies.length;
-
   return (
-    <section
-      className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden"
-      style={{
-        background: backgroundGradient,
-      }}
-    >
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+    <section className="relative h-screen w-full flex-shrink-0 snap-start overflow-hidden text-white">
+      {/* Background gradient (always present as base/fallback) */}
+      <div className={`absolute inset-0 bg-gradient-to-b ${style.gradient}`} />
 
-      {/* Category badge */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.4 }}
-        className="absolute top-4 right-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
-      >
-        {categoryLabel}
-      </motion.div>
+      {/* Background image layer (if available) */}
+      {hasImage && (
+        <>
+          <img
+            src={technique.image!.src}
+            alt={technique.image!.alt}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              imageLoaded ? 'opacity-40' : 'opacity-0'
+            }`}
+          />
+          {/* Image credit button */}
+          {imageLoaded && technique.image!.credit && (
+            <button
+              onClick={() => setShowImageCredit(!showImageCredit)}
+              className="absolute top-20 right-5 z-10 w-6 h-6 rounded-full bg-black/30 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/50 transition-all"
+              aria-label="Bildquelle anzeigen"
+            >
+              <Info size={12} />
+            </button>
+          )}
+          {/* Image credit tooltip */}
+          <AnimatePresence>
+            {showImageCredit && technique.image!.credit && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute top-28 right-5 z-10 max-w-[200px] p-2 bg-black/80 backdrop-blur-sm rounded-lg text-xs text-white/80"
+              >
+                <p className="font-medium mb-1">Bildquelle:</p>
+                <p>{technique.image!.credit}</p>
+                {technique.image!.context && (
+                  <p className="mt-1 text-white/60">{technique.image!.context}</p>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
 
-      {/* Difficulty indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        className="absolute top-4 left-4 text-xs text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium"
-      >
-        {technique.difficulty === 'beginner' && 'Grundlagen'}
-        {technique.difficulty === 'intermediate' && 'Fortgeschritten'}
-        {technique.difficulty === 'advanced' && 'Experte'}
-        {technique.difficulty === 'expert' && 'Spezialist'}
-      </motion.div>
+      {/* Overlay for text readability - stronger when image is present */}
+      <div className={`absolute inset-0 bg-gradient-to-t ${
+        hasImage && imageLoaded
+          ? 'from-black/90 via-black/60 to-black/30'
+          : 'from-black/80 via-black/40 to-transparent'
+      }`} />
 
-      {/* Content overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 pb-24 overflow-y-auto">
-        {/* Headline */}
+      {/* Top badges */}
+      <div className="absolute top-20 left-0 right-0 px-5 flex items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.4 }}
+          className={`px-3 py-1.5 rounded-full text-xs font-semibold ${style.badge} backdrop-blur-sm`}
+        >
+          {categoryLabel}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.4 }}
+          className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/15 text-white/90 backdrop-blur-sm"
+        >
+          {difficultyLabel}
+        </motion.div>
+      </div>
+
+      {/* Main content */}
+      <div className="absolute inset-0 flex flex-col justify-end px-5 pb-28">
+        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-2xl sm:text-3xl font-bold text-white mb-3 drop-shadow-lg leading-tight"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight"
         >
-          {headline}
+          {techniqueName}
         </motion.h1>
 
-        {/* Scientific Evidence Badge */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 0.3 }}
-          className="flex items-center gap-3 mb-4 flex-wrap"
-        >
-          <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full">
-            <Award size={14} className="text-white" />
-            <span className="text-xs text-white font-medium">
-              {studyCount} {studyCount === 1 ? 'Studie' : 'Studien'}
-            </span>
-          </div>
-          <div className={`flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full ${evidenceBadge.color}`}>
-            <span className="text-xs font-medium">
-              {evidenceBadge.icon} {evidenceBadge.label}
-            </span>
-          </div>
-        </motion.div>
-
-        {/* Full Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-white/95 text-base sm:text-lg leading-relaxed mb-5 drop-shadow-md"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-base sm:text-lg text-white/90 leading-relaxed mb-5"
         >
-          {technique.description.de}
-        </motion.div>
+          {techniqueDescription}
+        </motion.p>
 
-        {/* Examples */}
-        <AnimatePresence>
-          {displayExamples.map((example, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              className="text-sm sm:text-base text-white/90 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 mb-3"
+        {/* Examples section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="space-y-3"
+        >
+          <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+            {technique.examples.length === 1
+              ? t('discover.example', 'Beispiel')
+              : t('discover.examples', 'Beispiele')}
+          </div>
+
+          <AnimatePresence mode="sync">
+            {visibleExamples.map((example, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+              >
+                <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+                  „{example}"
+                </p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+
+          {/* Show more/less button */}
+          {hasMoreExamples && (
+            <button
+              onClick={() => setShowAllExamples(!showAllExamples)}
+              className="flex items-center gap-1.5 text-[#e20074] text-sm font-medium hover:text-white transition-colors"
             >
-              <div className="flex items-start gap-2">
-                <span className="text-white/60 text-xs mt-0.5 flex-shrink-0">Beispiel {index + 1}</span>
-                <span className="flex-1">{example}</span>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-
-        {/* Show more examples button */}
-        {technique.examples.length > 1 && !showExamples && (
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ delay: 0.8 }}
-            onClick={() => setShowExamples(true)}
-            className="text-blue-300 text-sm font-medium hover:text-blue-200 transition-colors w-fit mb-4 underline"
-          >
-            + {technique.examples.length - 1} weitere Beispiele anzeigen
-          </motion.button>
-        )}
+              {showAllExamples ? (
+                <>
+                  <ChevronUp size={16} />
+                  {t('discover.showLess', 'Weniger anzeigen')}
+                </>
+              ) : (
+                <>
+                  <ChevronDown size={16} />
+                  {t('discover.showMore', { count: technique.examples.length - 1 })}
+                </>
+              )}
+            </button>
+          )}
+        </motion.div>
 
         {/* Effectiveness indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7 }}
-          className="flex items-center gap-2 text-white/80 text-sm mb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 w-fit"
+          transition={{ delay: 0.5 }}
+          className="mt-5 flex items-center gap-3"
         >
-          <span className="font-medium">Effektivität:</span>
-          <span className="font-bold text-white">
-            {technique.effectiveness === 'very_high' && 'Sehr hoch'}
-            {technique.effectiveness === 'high' && 'Hoch'}
-            {technique.effectiveness === 'moderate' && 'Moderat'}
-            {technique.effectiveness === 'low' && 'Niedrig'}
+          <span className="text-xs text-white/60 uppercase tracking-wider">
+            {t('techniques.detail.effectiveness', 'Wirksamkeit')}
           </span>
+          <div className="flex gap-1">
+            {['low', 'moderate', 'high', 'very_high'].map((level, i) => (
+              <div
+                key={level}
+                className={`w-6 h-1.5 rounded-full transition-all ${
+                  ['low', 'moderate', 'high', 'very_high'].indexOf(technique.effectiveness) >= i
+                    ? 'bg-[#e20074]'
+                    : 'bg-white/20'
+                }`}
+              />
+            ))}
+          </div>
         </motion.div>
-
-        {/* Read more link */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ delay: 0.9 }}
-          onClick={() => navigate(`/techniques/${technique.id}`)}
-          className="flex items-center gap-2 text-blue-300 font-semibold text-base hover:text-blue-200 transition-colors w-fit"
-        >
-          <ExternalLink size={18} />
-          Detaillierte Analyse ansehen
-        </motion.button>
       </div>
 
-      {/* Action buttons (right side) */}
-      <div className="absolute right-4 bottom-32 flex flex-col gap-4">
-        {/* Add to learning path */}
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 0.5, duration: 0.3 }}
-          onClick={() => onAddToLearning(technique.id)}
-          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
-          title="Zum Lernpfad hinzufügen"
-        >
-          <BookOpen size={24} />
-        </motion.button>
-
-        {/* Share button */}
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 0.6, duration: 0.3 }}
-          onClick={handleShare}
-          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-gray-900 hover:bg-white transition-all active:scale-95 shadow-lg"
-          title="Teilen"
-        >
-          <Share2 size={24} />
-        </motion.button>
-      </div>
+      {/* Share button - bottom right */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+        transition={{ delay: 0.4, duration: 0.3 }}
+        onClick={handleShare}
+        className="absolute right-5 bottom-32 w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all active:scale-95 border border-white/20"
+        aria-label={t('common.share', 'Teilen')}
+      >
+        <Share2 size={20} />
+      </motion.button>
     </section>
   );
 }

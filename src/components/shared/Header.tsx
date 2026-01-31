@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Shield, Menu, X, Sun, Moon } from 'lucide-react';
 import { useState } from 'react';
 import { Navigation } from './Navigation';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { useThemeStore } from '@/stores/themeStore';
 
 export function Header() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { setTheme, getActiveTheme } = useThemeStore();
   const activeTheme = getActiveTheme();
@@ -22,28 +25,32 @@ export function Header() {
           <span className="text-xl font-bold">DisinfoApp</span>
         </Link>
 
-        {/* Desktop Navigation & Theme Toggle */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop Navigation & Controls */}
+        <div className="hidden md:flex items-center gap-2">
           <Navigation />
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-accent transition-colors"
-            aria-label="Toggle theme"
-          >
-            {activeTheme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
+          <div className="ml-2 flex items-center gap-1 border-l pl-3">
+            <LanguageSwitcher compact />
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-accent transition-colors"
+              aria-label={t('accessibility.toggleTheme')}
+            >
+              {activeTheme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu Button & Theme Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-1 md:hidden">
+          <LanguageSwitcher compact />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-accent transition-colors"
-            aria-label="Toggle theme"
+            aria-label={t('accessibility.toggleTheme')}
           >
             {activeTheme === 'dark' ? (
               <Sun className="h-5 w-5" />
@@ -53,7 +60,8 @@ export function Header() {
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            className="p-2 rounded-lg hover:bg-accent transition-colors"
+            aria-label={t('accessibility.toggleMenu')}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

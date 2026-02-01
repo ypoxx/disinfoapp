@@ -90,6 +90,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Subtile Assoziationen zwischen nicht verwandten Konzepten',
     ],
     taxonomyGroups: ['cognitive_biases', 'unconscious_influence'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Stimulus-response_model.svg/640px-Stimulus-response_model.svg.png',
+      alt: 'Stimulus-Response-Modell - Grundlage des Priming',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Stimulus-response_model.svg',
+      context: 'Priming basiert auf dem Prinzip, dass ein Stimulus nachfolgende Reaktionen beeinflusst - Bargh et al. (1996)',
+    },
   },
   {
     id: 'anchoring',
@@ -130,6 +137,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       '"Normalpreis" vs. "Aktionspreis" Vergleiche',
     ],
     taxonomyGroups: ['cognitive_biases', 'decision_making'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Anchoring_and_adjustment_heuristic_bias.svg/640px-Anchoring_and_adjustment_heuristic_bias.svg.png',
+      alt: 'Anchoring und Adjustment Heuristik - Diagramm',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Anchoring_and_adjustment_heuristic_bias.svg',
+      context: 'Tversky & Kahneman (1974) zeigten, dass Anfangswerte nachfolgende Urteile verzerren',
+    },
   },
   {
     id: 'social_proof',
@@ -219,6 +233,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Exklusivitätsversprechen ohne echte Limitation',
     ],
     taxonomyGroups: ['social_influence', 'urgency_creation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Robert_B_Cialdini_-_Influence_-_The_Psychology_of_Persuasion.JPG/480px-Robert_B_Cialdini_-_Influence_-_The_Psychology_of_Persuasion.JPG',
+      alt: 'Robert Cialdini - Influence: The Psychology of Persuasion',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Robert_B_Cialdini_-_Influence_-_The_Psychology_of_Persuasion.JPG',
+      context: 'Cialdini identifizierte Verknappung als eines der sechs Prinzipien der Überzeugung',
+    },
   },
   {
     id: 'reciprocity',
@@ -260,6 +281,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Door-in-the-face Technik (große Bitte gefolgt von kleinerer)',
     ],
     taxonomyGroups: ['social_influence', 'obligation_creation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gift_box_icon.svg/480px-Gift_box_icon.svg.png',
+      alt: 'Geschenkbox - Symbol der Reziprozität',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gift_box_icon.svg',
+      context: 'Reziprozität: Geschenke erzeugen Verpflichtungsgefühl - Cialdini et al. (1975)',
+    },
   },
   {
     id: 'authority',
@@ -363,6 +391,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Attraktivität als Hauptargument',
     ],
     taxonomyGroups: ['social_influence', 'relationship_building'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Handshake_%28102893%29_-_The_Noun_Project.svg/480px-Handshake_%28102893%29_-_The_Noun_Project.svg.png',
+      alt: 'Handschlag - Symbol für Sympathie und Verbindung',
+      credit: 'The Noun Project / Wikimedia Commons (CC0)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Handshake_(102893)_-_The_Noun_Project.svg',
+      context: 'Menschen sagen eher ja zu Personen, die sie mögen - Cialdini (1984)',
+    },
   },
   {
     id: 'consistency',
@@ -418,6 +453,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Identitätsbasierte Argumentation',
     ],
     taxonomyGroups: ['social_influence', 'commitment'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/CognitiveDissonanceDiagram.jpg/640px-CognitiveDissonanceDiagram.jpg',
+      alt: 'Kognitive Dissonanz Diagramm - Grundlage der Konsistenztheorie',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:CognitiveDissonanceDiagram.jpg',
+      context: 'Festinger (1957) zeigte: Menschen streben nach Konsistenz zwischen Überzeugungen und Handlungen',
+    },
   },
   {
     id: 'reactance_theory',
@@ -473,6 +515,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Provokative Freiheitsentzug-Darstellungen',
     ],
     taxonomyGroups: ['cognitive_biases', 'resistance_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Forbidden_fruit.jpg/480px-Forbidden_fruit.jpg',
+      alt: 'Verbotene Frucht - Symbol für psychologische Reaktanz',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_fruit.jpg',
+      context: 'Brehm (1966): Verbote erhöhen oft die Attraktivität des Verbotenen',
+    },
   },
   {
     id: 'ad_hominem',
@@ -514,6 +563,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Charakterangriffe',
     ],
     taxonomyGroups: ['logical_fallacies', 'argumentation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ad_Hominem_Fallacy_Icon.svg/480px-Ad_Hominem_Fallacy_Icon.svg.png',
+      alt: 'Ad Hominem Fehlschluss - Icon',
+      credit: 'Wikimedia Commons (CC-BY-SA 4.0)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ad_Hominem_Fallacy_Icon.svg',
+      context: 'Ad Hominem: Angriff auf die Person statt auf das Argument',
+    },
   },
   {
     id: 'false_dichotomy',
@@ -555,6 +611,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Polarisierende Sprache',
     ],
     taxonomyGroups: ['logical_fallacies', 'oversimplification'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Yin_yang.svg/480px-Yin_yang.svg.png',
+      alt: 'Yin und Yang - Symbolisierung falscher Dichotomie',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yin_yang.svg',
+      context: 'Falsches Dilemma: Nur zwei Optionen anbieten, obwohl Alternativen existieren',
+    },
   },
   {
     id: 'straw_man',
@@ -596,6 +659,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       '"Die wollen..." Generalisierungen',
     ],
     taxonomyGroups: ['logical_fallacies', 'argumentation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Straw_Man_Fallacy_Icon.svg/480px-Straw_Man_Fallacy_Icon.svg.png',
+      alt: 'Strohmann-Argument - Icon',
+      credit: 'Wikimedia Commons (CC-BY-SA 4.0)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Straw_Man_Fallacy_Icon.svg',
+      context: 'Strohmann: Das Argument des Gegners wird verzerrt, um es leichter anzugreifen',
+    },
   },
   {
     id: 'equivocation',
@@ -637,6 +707,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Unklare Definitionen',
     ],
     taxonomyGroups: ['logical_fallacies', 'language_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Semantic_Net.svg/640px-Semantic_Net.svg.png',
+      alt: 'Semantisches Netzwerk - Bedeutungsbeziehungen',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Semantic_Net.svg',
+      context: 'Äquivokation nutzt mehrdeutige Begriffe zur Täuschung',
+    },
   },
   {
     id: 'emotional_appeal',
@@ -692,6 +769,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Dramatisierung und Übertreibung',
     ],
     taxonomyGroups: ['emotional_manipulation', 'persuasion_techniques'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/%22Remember_Dec._7th%22_-_NARA_-_513580.jpg/480px-%22Remember_Dec._7th%22_-_NARA_-_513580.jpg',
+      alt: 'Remember Dec. 7th - WWII Propaganda Poster mit emotionalem Appell',
+      credit: 'U.S. National Archives / Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:%22Remember_Dec._7th%22_-_NARA_-_513580.jpg',
+      context: 'Emotionale Appelle umgehen rationales Denken durch Aktivierung von Angst und Wut',
+    },
   },
   {
     id: 'repetition',
@@ -747,6 +831,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Slogans statt Argumente',
     ],
     taxonomyGroups: ['cognitive_biases', 'information_repetition'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Poster_-_Keep_Calm_and_Carry_On.svg/400px-Poster_-_Keep_Calm_and_Carry_On.svg.png',
+      alt: 'Keep Calm and Carry On - Beispiel für wiederholte Botschaften',
+      credit: 'UK Government / Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Poster_-_Keep_Calm_and_Carry_On.svg',
+      context: 'Zajonc (1968): Wiederholung erhöht Vertrautheit und wahrgenommene Wahrheit (Mere Exposure Effect)',
+    },
   },
   {
     id: 'illusory_truth_effect',
@@ -788,6 +879,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Akzeptanz aufgrund von Bekanntheit',
     ],
     taxonomyGroups: ['cognitive_biases', 'information_repetition'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cognitive_bias_codex_en.svg/640px-Cognitive_bias_codex_en.svg.png',
+      alt: 'Cognitive Bias Codex - Übersicht kognitiver Verzerrungen',
+      credit: 'John Manoogian III / Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cognitive_bias_codex_en.svg',
+      context: 'Die Wahrheitsillusion: Wiederholte Aussagen werden als wahrer wahrgenommen - Hasher et al. (1977)',
+    },
   },
   {
     id: 'pacing_and_leading',
@@ -829,6 +927,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Von Bestätigung zu Suggestion',
     ],
     taxonomyGroups: ['nlp_techniques', 'rapport_building'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Rapport.jpg/640px-Rapport.jpg',
+      alt: 'Rapport-Aufbau - Grundlage von Pacing und Leading',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Rapport.jpg',
+      context: 'Bandler & Grinder (1979): Erst spiegeln (Pacing), dann führen (Leading)',
+    },
   },
   {
     id: 'embedded_commands',
@@ -870,6 +975,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Wiederholte Handlungsaufforderungen',
     ],
     taxonomyGroups: ['nlp_techniques', 'subliminal_influence'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Photographic_Studies_in_Hypnosis%2C_Abnormal_Psychology_%281938%29.webm/640px--Photographic_Studies_in_Hypnosis%2C_Abnormal_Psychology_%281938%29.webm.jpg',
+      alt: 'Historische Hypnose-Studie (1938)',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Photographic_Studies_in_Hypnosis,_Abnormal_Psychology_(1938).ogv',
+      context: 'Erickson entwickelte Techniken für eingebettete Befehle in der Hypnotherapie',
+    },
   },
   {
     id: 'microtargeting',
@@ -911,6 +1023,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Verdächtig passende Angebote',
     ],
     taxonomyGroups: ['digital_techniques', 'data_exploitation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Facebook%27s_estimates_on_users_affected_by_Cambridge_Analytica.svg/640px-Facebook%27s_estimates_on_users_affected_by_Cambridge_Analytica.svg.png',
+      alt: 'Cambridge Analytica Skandal - Betroffene Facebook-Nutzer nach Ländern',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Facebook%27s_estimates_on_users_affected_by_Cambridge_Analytica.svg',
+      context: 'Cambridge Analytica nutzte psychografisches Profiling für personalisierte politische Werbung',
+    },
   },
   {
     id: 'digital_influence',
@@ -952,6 +1071,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Verdächtig neue oder namenlose Accounts',
     ],
     taxonomyGroups: ['digital_techniques', 'coordinated_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Social_Network_Analysis_Visualization.png/640px-Social_Network_Analysis_Visualization.png',
+      alt: 'Soziale Netzwerkanalyse - Visualisierung digitaler Einflussnahme',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Social_Network_Analysis_Visualization.png',
+      context: 'Bot-Netzwerke und koordinierte Kampagnen manipulieren digitale Diskurse',
+    },
   },
   {
     id: 'visual_manipulation',
@@ -1007,6 +1133,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Emotionale statt sachliche Bildauswahl',
     ],
     taxonomyGroups: ['digital_techniques', 'media_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Truncated_Bar_Graph.svg/640px-Truncated_Bar_Graph.svg.png',
+      alt: 'Abgeschnittenes Balkendiagramm - Beispiel für irreführende Visualisierung',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Truncated_Bar_Graph.svg',
+      context: 'Verzerrte Achsen und manipulierte Grafiken verfälschen die Wahrnehmung von Daten',
+    },
   },
   {
     id: 'synthetic_media',
@@ -1048,6 +1181,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Zu perfekte oder generische Gesichter in Bildern',
     ],
     taxonomyGroups: ['digital_techniques', 'ai_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Deepfake_example.gif/480px-Deepfake_example.gif',
+      alt: 'Deepfake Beispiel - KI-generierte Gesichtsmanipulation',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Deepfake_example.gif',
+      context: 'Deepfakes und synthetische Medien erschweren die Unterscheidung von Wahrheit und Fälschung',
+    },
   },
   {
     id: 'dark_patterns',
@@ -1090,6 +1230,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Künstlicher Zeitdruck',
     ],
     taxonomyGroups: ['digital_techniques', 'interface_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Dark_patterns_example.svg/640px-Dark_patterns_example.svg.png',
+      alt: 'Dark Patterns Beispiel - Manipulatives UI-Design',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Dark_patterns_example.svg',
+      context: 'Dark Patterns manipulieren Nutzer durch täuschende Interface-Gestaltung',
+    },
   },
   {
     id: 'nudging',
@@ -1131,6 +1278,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Intransparente Entscheidungshilfen',
     ],
     taxonomyGroups: ['cognitive_biases', 'choice_architecture'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Richard_H._Thaler_EM1B8851_%2824027005667%29.jpg/480px-Richard_H._Thaler_EM1B8851_%2824027005667%29.jpg',
+      alt: 'Richard Thaler - Nobelpreisträger und Begründer der Nudge-Theorie',
+      credit: 'Bengt Nyman / Wikimedia Commons (CC-BY)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Richard_H._Thaler_EM1B8851_(24027005667).jpg',
+      context: 'Thaler & Sunstein (2008): Nudging verändert Entscheidungsarchitektur ohne Wahlfreiheit einzuschränken',
+    },
   },
   {
     id: 'ai_persuasion',
@@ -1172,6 +1326,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Kontinuierliche Verhaltensoptimierung',
     ],
     taxonomyGroups: ['digital_techniques', 'ai_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.svg/640px-Artificial_neural_network.svg.png',
+      alt: 'Künstliches neuronales Netzwerk - Grundlage KI-gestützter Persuasion',
+      credit: 'Wikimedia Commons (Public Domain)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Artificial_neural_network.svg',
+      context: 'KI ermöglicht personalisierte, adaptive und skalierte Persuasion in Echtzeit',
+    },
   },
   {
     id: 'narrative_persuasion',
@@ -1213,6 +1374,13 @@ export const persuasionTechniques: PersuasionTechnique[] = [
       'Identifikationsfiguren als Hauptargument',
     ],
     taxonomyGroups: ['emotional_manipulation', 'storytelling'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/640px-GoldenGateBridge-001.jpg',
+      alt: 'Golden Gate Bridge - Symbolbild für narrative Strukturen und Verbindungen',
+      credit: 'Rich Niewiroski Jr. / Wikimedia Commons (CC-BY 2.5)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:GoldenGateBridge-001.jpg',
+      context: 'Narrative schaffen Verbindungen und umgehen kritisches Denken - Green & Brock (2000) Transportation Theory',
+    },
   },
 ];
 

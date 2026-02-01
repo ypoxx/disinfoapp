@@ -91,7 +91,12 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
             src={technique.image!.src}
             alt={technique.image!.alt}
             loading="lazy"
+            referrerPolicy="no-referrer"
             onLoad={() => setImageLoaded(true)}
+            onError={(e) => {
+              // Hide broken image on error
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
               imageLoaded ? 'opacity-40' : 'opacity-0'
             }`}

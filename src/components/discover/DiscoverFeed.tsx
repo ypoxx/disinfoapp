@@ -107,9 +107,9 @@ export function DiscoverFeed() {
 
   if (techniques.length === 0) {
     return (
-      <div className="flex items-center justify-center h-screen bg-black">
+      <div className="flex items-center justify-center h-[calc(100dvh-8rem)] bg-black">
         <div className="flex flex-col items-center gap-3">
-          <Sparkles className="w-8 h-8 text-[#e20074] animate-pulse" />
+          <Sparkles className="w-8 h-8 text-primary animate-pulse" />
           <span className="text-white/70">{t('common.loading')}</span>
         </div>
       </div>
@@ -119,13 +119,13 @@ export function DiscoverFeed() {
   const progress = ((visibleIndex + 1) / techniques.length) * 100;
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black text-white">
-      {/* Minimal header with progress */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        {/* Progress bar - visual, full width */}
+    <div className="relative h-[calc(100dvh-8rem)] md:h-[calc(100dvh-3.5rem)] w-full overflow-hidden bg-black text-white -mx-0">
+      {/* Inline header with progress */}
+      <div className="absolute top-0 left-0 right-0 z-30">
+        {/* Progress bar */}
         <div className="h-1 bg-white/10">
           <motion.div
-            className="h-full bg-[#e20074]"
+            className="h-full bg-primary"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -134,15 +134,12 @@ export function DiscoverFeed() {
 
         {/* Header content */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-black/60 to-transparent">
-          {/* Logo/Title */}
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-[#e20074]" />
+            <Sparkles className="w-5 h-5 text-primary" />
             <span className="text-white font-semibold text-sm">{t('discover.title')}</span>
           </div>
 
-          {/* Right side controls */}
           <div className="flex items-center gap-2">
-            {/* Progress indicator */}
             <span className="text-white/60 text-xs tabular-nums">
               {visibleIndex + 1} / {techniques.length}
             </span>
@@ -154,13 +151,12 @@ export function DiscoverFeed() {
                   e.stopPropagation();
                   setShowLanguageMenu(!showLanguageMenu);
                 }}
-                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
+                className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
                 aria-label={t('language.select')}
               >
-                <Globe size={16} />
+                <Globe size={18} />
               </button>
 
-              {/* Language dropdown */}
               <AnimatePresence>
                 {showLanguageMenu && (
                   <motion.div
@@ -168,7 +164,7 @@ export function DiscoverFeed() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-10 w-44 bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/10 shadow-xl overflow-hidden"
+                    className="absolute right-0 top-12 w-44 max-w-[calc(100vw-2rem)] bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/10 shadow-xl overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="py-1 max-h-80 overflow-y-auto">
@@ -176,14 +172,14 @@ export function DiscoverFeed() {
                         <button
                           key={lang.code}
                           onClick={() => handleLanguageChange(lang.code)}
-                          className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-white/10 transition-colors ${
-                            i18n.language === lang.code ? 'text-[#e20074]' : 'text-white/80'
+                          className={`w-full px-3 py-2.5 text-left text-sm flex items-center gap-2 hover:bg-white/10 transition-colors ${
+                            i18n.language === lang.code ? 'text-primary' : 'text-white/80'
                           }`}
                         >
                           <span className="text-base">{lang.flag}</span>
                           <span className="flex-1">{lang.name}</span>
                           {i18n.language === lang.code && (
-                            <Check size={14} className="text-[#e20074]" />
+                            <Check size={14} className="text-primary" />
                           )}
                         </button>
                       ))}
@@ -196,10 +192,10 @@ export function DiscoverFeed() {
             {/* Reset button */}
             <button
               onClick={handleReset}
-              className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
+              className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all"
               aria-label={t('discover.startOver')}
             >
-              <RotateCcw size={16} />
+              <RotateCcw size={18} />
             </button>
           </div>
         </div>
@@ -208,7 +204,7 @@ export function DiscoverFeed() {
       {/* Scrollable container with snap */}
       <div
         ref={containerRef}
-        className="h-screen overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+        className="h-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -230,7 +226,7 @@ export function DiscoverFeed() {
         ))}
 
         {/* End card */}
-        <section className="relative h-screen w-full flex-shrink-0 snap-start bg-gradient-to-b from-[#e20074]/90 via-purple-900/80 to-black flex items-center justify-center text-white">
+        <section className="relative h-full w-full flex-shrink-0 snap-start bg-gradient-to-b from-primary/90 via-purple-900/80 to-black flex items-center justify-center text-white">
           <div className="text-center px-8">
             <motion.div
               initial={{ scale: 0 }}
@@ -251,7 +247,7 @@ export function DiscoverFeed() {
 
             <button
               onClick={handleReset}
-              className="px-6 py-3 bg-white text-[#e20074] font-semibold rounded-full hover:bg-white/90 transition-all active:scale-95"
+              className="px-6 py-3 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition-all active:scale-95"
             >
               {t('discover.startOver')}
             </button>
@@ -271,7 +267,7 @@ export function DiscoverFeed() {
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ delay: 3, duration: 1 }}
-          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 pointer-events-none z-40"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 pointer-events-none z-30"
         >
           <div className="flex flex-col items-center gap-1">
             <motion.div

@@ -5,29 +5,28 @@ import { useAchievementStore } from './stores/achievementStore';
 import { useChallengeStore } from './stores/challengeStore';
 import { AchievementNotification } from './components/gamification/AchievementNotification';
 import { WelcomeModal } from './components/onboarding/WelcomeModal';
-import { FeatureTour } from './components/onboarding/FeatureTour';
+import { ErrorBoundary } from './components/shared/ErrorBoundary';
 
 function App() {
   const { initializeAchievements, recentlyUnlocked, clearNotification } = useAchievementStore();
   const { generateDailyChallenge } = useChallengeStore();
 
   useEffect(() => {
-    // Initialize achievements on app start
     initializeAchievements();
-    // Generate daily challenge
     generateDailyChallenge();
   }, [initializeAchievements, generateDailyChallenge]);
 
   return (
-    <BrowserRouter>
-      <AppRouter />
-      <AchievementNotification
-        achievement={recentlyUnlocked}
-        onClose={clearNotification}
-      />
-      <WelcomeModal />
-      <FeatureTour />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AppRouter />
+        <AchievementNotification
+          achievement={recentlyUnlocked}
+          onClose={clearNotification}
+        />
+        <WelcomeModal />
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 

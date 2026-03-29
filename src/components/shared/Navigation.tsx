@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Home, BookOpen, BarChart3, Smartphone, Brain, LineChart, Sparkles } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Smartphone, Brain, Sparkles, Zap } from 'lucide-react';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { NewBadge } from '../onboarding/NewBadge';
 import { useEffect } from 'react';
@@ -23,11 +23,11 @@ export function Navigation({ mobile = false, onNavigate }: NavigationProps) {
 
   const navItems = [
     { to: '/', icon: Home, labelKey: 'nav.home' },
-    { to: '/discover', icon: Sparkles, labelKey: 'nav.discover' },
+    { to: '/practice', icon: Zap, labelKey: 'nav.practice' },
     { to: '/modules', icon: BookOpen, labelKey: 'nav.modules' },
-    { to: '/techniques', icon: Brain, labelKey: 'nav.techniques' },
     { to: '/simulator', icon: Smartphone, labelKey: 'nav.simulator' },
-    { to: '/dashboard', icon: LineChart, labelKey: 'nav.dashboard' },
+    { to: '/techniques', icon: Brain, labelKey: 'nav.techniques' },
+    { to: '/discover', icon: Sparkles, labelKey: 'nav.discover' },
     { to: '/progress', icon: BarChart3, labelKey: 'nav.progress' },
   ];
 

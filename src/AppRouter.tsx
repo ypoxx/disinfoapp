@@ -1,32 +1,65 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/shared/Layout';
-import { HomePage } from './features/home/HomePage';
-import { LearningModules } from './features/lessons/LearningModules';
-import { QuizPage } from './features/lessons/QuizPage';
-import { ProgressPage } from './features/progress/ProgressPage';
-import { SimulatorPage } from './features/simulator/SimulatorPage';
-import { TechniqueExplorer } from './features/techniques/TechniqueExplorer';
-import { TechniqueQuizPage } from './features/quiz/TechniqueQuizPage';
-import { KnowledgeDashboard } from './features/dashboard/KnowledgeDashboard';
-import { DiscoverFeed } from './components/discover/DiscoverFeed';
+
+// Lazy load all pages for code splitting
+const HomePage = lazy(() =>
+  import('./features/home/HomePage').then((m) => ({ default: m.HomePage }))
+);
+const LearningModules = lazy(() =>
+  import('./features/lessons/LearningModules').then((m) => ({ default: m.LearningModules }))
+);
+const QuizPage = lazy(() =>
+  import('./features/lessons/QuizPage').then((m) => ({ default: m.QuizPage }))
+);
+const ProgressPage = lazy(() =>
+  import('./features/progress/ProgressPage').then((m) => ({ default: m.ProgressPage }))
+);
+const SimulatorPage = lazy(() =>
+  import('./features/simulator/SimulatorPage').then((m) => ({ default: m.SimulatorPage }))
+);
+const TechniqueExplorer = lazy(() =>
+  import('./features/techniques/TechniqueExplorer').then((m) => ({ default: m.TechniqueExplorer }))
+);
+const TechniqueQuizPage = lazy(() =>
+  import('./features/quiz/TechniqueQuizPage').then((m) => ({ default: m.TechniqueQuizPage }))
+);
+const KnowledgeDashboard = lazy(() =>
+  import('./features/dashboard/KnowledgeDashboard').then((m) => ({ default: m.KnowledgeDashboard }))
+);
+const DiscoverFeed = lazy(() =>
+  import('./components/discover/DiscoverFeed').then((m) => ({ default: m.DiscoverFeed }))
+);
+const PracticePage = lazy(() =>
+  import('./features/practice/PracticePage').then((m) => ({ default: m.PracticePage }))
+);
+
+function PageLoader() {
+  return (
+    <div className="flex min-h-[50vh] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+    </div>
+  );
+}
 
 export function AppRouter() {
   return (
-    <Routes>
-      {/* Main app: TikTok-style Discover Feed at root */}
-      <Route path="/" element={<DiscoverFeed />} />
-
-      {/* Full app: Hidden under /app path */}
-      <Route path="/app" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="modules" element={<LearningModules />} />
-        <Route path="modules/:moduleId" element={<QuizPage />} />
-        <Route path="progress" element={<ProgressPage />} />
-        <Route path="simulator" element={<SimulatorPage />} />
-        <Route path="techniques" element={<TechniqueExplorer />} />
-        <Route path="quiz" element={<TechniqueQuizPage />} />
-        <Route path="dashboard" element={<KnowledgeDashboard />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {/* All routes within Layout (header + footer + bottom nav) */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/discover" element={<DiscoverFeed />} />
+          <Route path="/modules" element={<LearningModules />} />
+          <Route path="/modules/:moduleId" element={<QuizPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/simulator" element={<SimulatorPage />} />
+          <Route path="/techniques" element={<TechniqueExplorer />} />
+          <Route path="/quiz" element={<TechniqueQuizPage />} />
+          <Route path="/dashboard" element={<KnowledgeDashboard />} />
+          <Route path="/practice" element={<PracticePage />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }

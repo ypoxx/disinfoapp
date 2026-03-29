@@ -26,6 +26,15 @@ export const tacticsLessonContent: LessonContent = {
                 <li>Rhetorische Tricks und logische Fehlschlüsse</li>
                 <li>Wie du diese Taktiken erkennst und dich schützt</li>
               </ul>
+              <p className="mt-4">
+                <strong>Für Kommunikatoren besonders relevant:</strong> Diese Taktiken werden
+                gezielt gegen Unternehmen, Marken und öffentliche Personen eingesetzt. Als
+                Kommunikationsprofi müssen Sie Desinformationskampagnen frühzeitig erkennen,
+                die sich gegen Ihre Organisation oder Ihre Kunden richten. Ob gefälschte
+                Produktbewertungen, manipulierte Zitate von Führungskräften oder koordinierte
+                Shitstorms – das Verständnis dieser Methoden ist die Grundlage für eine
+                wirksame Krisenkommunikation und den Schutz der Reputation Ihrer Organisation.
+              </p>
             </>
           ),
         },
@@ -57,6 +66,18 @@ export const tacticsLessonContent: LessonContent = {
                   <li>"In 24 Stunden ist es zu spät!"</li>
                 </ul>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Angstbasierte Desinformation trifft Unternehmen häufig bei Produktsicherheit
+                  und Gesundheitsthemen. Beispiel: „Produkt X verursacht Krebs!" verbreitet sich
+                  viral, bevor Ihr Unternehmen reagieren kann. Erstellen Sie vorab
+                  Krisenszenarien mit vorbereiteten Fakten-Statements und identifizieren Sie
+                  vertrauenswürdige Drittquellen (z.B. Behörden, unabhängige Institute), die
+                  Ihre Position stützen können. Schnelle, transparente Kommunikation ist der
+                  beste Schutz gegen Angst-Narrative.
+                </p>
+              </div>
             </>
           ),
         },
@@ -82,6 +103,17 @@ export const tacticsLessonContent: LessonContent = {
                   <li>Absolute Aussagen ("ALLE sind...", "NIEMAND will...")</li>
                   <li>Klare Feindbilder</li>
                 </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Empörungswellen gegen Marken und Führungskräfte werden oft gezielt ausgelöst –
+                  etwa durch aus dem Zusammenhang gerissene Zitate oder manipulierte Screenshots.
+                  Beispiel: Ein CEO-Zitat wird verkürzt geteilt und löst einen Shitstorm aus.
+                  Reagieren Sie sachlich und zeitnah, aber vermeiden Sie es, die Empörung durch
+                  emotionale Gegenreaktionen weiter anzufachen. Monitoren Sie Social-Media-Kanäle
+                  kontinuierlich, um koordinierte Empörungskampagnen frühzeitig zu erkennen.
+                </p>
               </div>
             </>
           ),
@@ -145,6 +177,19 @@ export const tacticsLessonContent: LessonContent = {
                   <li>Unscharfe Bereiche um Gesicht oder Haare</li>
                 </ul>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Deepfakes stellen eine wachsende Bedrohung für Unternehmensreputation dar.
+                  Gefälschte Videos von Vorständen oder Unternehmenssprechern können Aktienkurse
+                  beeinflussen oder Vertrauen zerstören. Etablieren Sie ein
+                  Verifikationsprotokoll: Offizielle Statements nur über verifizierte Kanäle
+                  veröffentlichen, digitale Wasserzeichen nutzen und ein Monitoring für
+                  Deepfake-Inhalte mit Bezug zu Ihrem Unternehmen einrichten. Bereiten Sie
+                  ein Template für schnelle Dementis vor, falls ein Deepfake Ihrer
+                  Führungskräfte auftaucht.
+                </p>
+              </div>
             </>
           ),
         },
@@ -175,6 +220,19 @@ export const tacticsLessonContent: LessonContent = {
                   <li>Folgen vielen, haben wenige Follower</li>
                 </ul>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Bot-Netzwerke werden gezielt eingesetzt, um negative Kampagnen gegen
+                  Unternehmen zu verstärken – etwa koordinierte negative Bewertungen,
+                  Boykott-Hashtags oder gefälschte Kundenbeschwerden. Nutzen Sie
+                  Social-Listening-Tools (z.B. Brandwatch, Talkwalker), um unnatürliche
+                  Aktivitätsmuster zu erkennen: plötzliche Spitzen bei Erwähnungen, identische
+                  Formulierungen von verschiedenen Accounts oder massenhaftes Posten in kurzer
+                  Zeit. Dokumentieren Sie diese Muster als Beweismaterial für Plattform-Meldungen
+                  und ggf. rechtliche Schritte.
+                </p>
+              </div>
             </>
           ),
         },
@@ -203,6 +261,21 @@ export const tacticsLessonContent: LessonContent = {
                   <li>Koordinierte Social-Media-Kampagnen</li>
                   <li>Scheinbar unabhängige Organisationen mit versteckten Geldgebern</li>
                 </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Astroturfing kann sowohl gegen als auch zugunsten von Unternehmen eingesetzt
+                  werden – beides ist gefährlich. Konkurrenten können gefälschte
+                  Bürgerinitiativen gegen Ihre Projekte inszenieren, während umgekehrt der
+                  Verdacht auf eigenes Astroturfing (z.B. gekaufte Bewertungen oder bezahlte
+                  Influencer ohne Kennzeichnung) enormen Reputationsschaden verursacht.
+                  Setzen Sie in Ihrer eigenen Kommunikation auf volle Transparenz bei
+                  Kooperationen und Sponsoring. Wenn Sie Astroturfing gegen Ihr Unternehmen
+                  vermuten, recherchieren Sie die Hintergründe vermeintlicher Graswurzel-
+                  Kampagnen: Wer finanziert die Gruppe? Seit wann existiert sie? Gibt es
+                  Verbindungen zu Wettbewerbern oder Interessengruppen?
+                </p>
               </div>
             </>
           ),
@@ -237,6 +310,18 @@ export const tacticsLessonContent: LessonContent = {
                 <li>Auswahl eines spezifischen Zeitraums</li>
                 <li>Fehlende Gesamtstatistiken</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Cherry Picking wird häufig gegen Unternehmen eingesetzt: Ein einzelner
+                  negativer Testbericht wird hervorgehoben, während hunderte positive ignoriert
+                  werden. Oder ein Quartal mit Umsatzrückgang wird isoliert dargestellt, obwohl
+                  der Jahrestrend positiv ist. Ihre Gegenmaßnahme: Stellen Sie proaktiv
+                  vollständige Daten und Kontext bereit. Erstellen Sie leicht verständliche
+                  Infografiken mit Langzeittrends, die Journalisten und Stakeholder nutzen
+                  können, um selektive Darstellungen einzuordnen.
+                </p>
+              </div>
             </>
           ),
         },
@@ -264,6 +349,18 @@ export const tacticsLessonContent: LessonContent = {
                 Das Problem wird nicht gelöst oder diskutiert, sondern nur abgelenkt. Beide
                 Probleme könnten real sein, aber keines wird angegangen.
               </p>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Whataboutism begegnet Ihnen in der Krisenkommunikation ständig: „Ihr
+                  Unternehmen hat ein Datenleck? Aber Konzern Y hatte letztes Jahr ein viel
+                  größeres!" Diese Ablenkung wird sowohl von Angreifern als auch manchmal
+                  versehentlich in eigenen Statements verwendet. Vermeiden Sie es in Ihrer
+                  eigenen Kommunikation, auf Konkurrenten zu verweisen – das wirkt defensiv
+                  und unglaubwürdig. Bleiben Sie bei den Fakten Ihres Falls und kommunizieren
+                  Sie konkrete Maßnahmen, die Sie ergreifen.
+                </p>
+              </div>
             </>
           ),
         },
@@ -291,6 +388,18 @@ export const tacticsLessonContent: LessonContent = {
                 <li>Kompromisse und Mittelwege sind möglich</li>
                 <li>Verschiedene Aspekte können gleichzeitig wahr sein</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Falsche Dichotomien werden oft in der öffentlichen Debatte gegen Unternehmen
+                  eingesetzt: „Entweder Profit ODER Umweltschutz!", „Entweder billige Produkte
+                  ODER faire Löhne!" Durchbrechen Sie diese Schwarz-Weiß-Narrative in Ihrer
+                  Kommunikation, indem Sie differenzierte Positionen mit konkreten Beispielen
+                  belegen. Zeigen Sie, dass Ihr Unternehmen mehrere Ziele gleichzeitig verfolgt,
+                  und vermeiden Sie selbst vereinfachende Entweder-oder-Formulierungen in
+                  Pressemitteilungen und Social-Media-Posts.
+                </p>
+              </div>
             </>
           ),
         },
@@ -311,6 +420,19 @@ export const tacticsLessonContent: LessonContent = {
                 </p>
                 <p className="mt-2">
                   → Das Verhalten der Person sagt nichts über die Richtigkeit ihrer Argumente aus.
+                </p>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Ad-Hominem-Angriffe auf CEOs, Sprecher oder Markenbotschafter sind eine
+                  gängige Desinformationstaktik. Das Privatleben von Führungskräften wird
+                  instrumentalisiert, um sachliche Unternehmensaussagen zu diskreditieren.
+                  Schulen Sie Ihre Sprecher im Umgang mit persönlichen Angriffen: Nicht auf
+                  die persönliche Ebene einsteigen, sondern konsequent auf die Sachargumente
+                  zurücklenken. Bei systematischen Kampagnen gegen Einzelpersonen prüfen Sie
+                  rechtliche Optionen und stellen Sie sicher, dass betroffene Mitarbeiter
+                  auch persönliche Unterstützung erhalten.
                 </p>
               </div>
             </>
@@ -354,6 +476,20 @@ export const tacticsLessonContent: LessonContent = {
                 <li>Prüfe, wann und wo etwas gesagt wurde</li>
                 <li>Achte auf fehlenden Kontext in Zitaten</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Aus dem Kontext gerissene Zitate sind eine der häufigsten Bedrohungen für
+                  Führungskräfte und Unternehmenssprecher. Ein Interview-Ausschnitt oder ein
+                  einzelner Satz aus einer Rede kann viral gehen und das Gegenteil dessen
+                  bedeuten, was gemeint war. Vorbeugende Maßnahmen: Zeichnen Sie wichtige
+                  Statements immer vollständig auf, veröffentlichen Sie Transkripte und
+                  Langfassungen proaktiv, und halten Sie die Originalquellen bereit, um bei
+                  Bedarf sofort den vollen Kontext nachliefern zu können. Briefen Sie Ihre
+                  Sprecher, in kurzen, abgeschlossenen Sätzen zu kommunizieren, die schwerer
+                  aus dem Zusammenhang zu reißen sind.
+                </p>
+              </div>
             </>
           ),
         },
@@ -381,6 +517,20 @@ export const tacticsLessonContent: LessonContent = {
                 <li>Prüfe Kleidung und Wetter (passt es zur Jahreszeit?)</li>
                 <li>Suche nach dem Original-Upload</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Alte Bilder und Videos werden regelmäßig recycelt, um Unternehmen in
+                  ein schlechtes Licht zu rücken – etwa Fotos eines längst behobenen
+                  Produktionsfehlers, die als aktuelle Aufnahme geteilt werden, oder
+                  alte Protestbilder vor Firmenzentralen, die als neue Demonstration
+                  dargestellt werden. Pflegen Sie ein datiertes Archiv Ihrer eigenen
+                  Bild- und Videomaterialien. Bei Verdacht auf recycelte Inhalte nutzen
+                  Sie umgekehrte Bildersuche und EXIF-Daten-Analyse, um das tatsächliche
+                  Aufnahmedatum zu belegen. Kommunizieren Sie die Richtigstellung mit
+                  klaren Zeitstempeln und Quellenangaben.
+                </p>
+              </div>
             </>
           ),
         },

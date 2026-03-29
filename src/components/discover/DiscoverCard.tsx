@@ -14,11 +14,11 @@ interface DiscoverCardProps {
  */
 const categoryStyles: Record<string, { gradient: string; badge: string }> = {
   cognitive_bias: {
-    gradient: 'from-[#e20074]/90 via-purple-900/80 to-blue-900/90',
-    badge: 'bg-[#e20074]/30 text-white',
+    gradient: 'from-primary/90 via-purple-900/80 to-blue-900/90',
+    badge: 'bg-primary/30 text-white',
   },
   social_dynamics: {
-    gradient: 'from-rose-900/90 via-[#e20074]/70 to-orange-900/80',
+    gradient: 'from-rose-900/90 via-primary/70 to-orange-900/80',
     badge: 'bg-rose-500/30 text-white',
   },
   emotional_manipulation: {
@@ -215,7 +215,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
           {hasMoreExamples && (
             <button
               onClick={() => setShowAllExamples(!showAllExamples)}
-              className="flex items-center gap-1.5 text-[#e20074] text-sm font-medium hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-primary text-sm font-medium hover:text-white transition-colors"
             >
               {showAllExamples ? (
                 <>
@@ -248,7 +248,7 @@ export function DiscoverCard({ technique, isVisible }: DiscoverCardProps) {
                 key={level}
                 className={`w-6 h-1.5 rounded-full transition-all ${
                   ['low', 'moderate', 'high', 'very_high'].indexOf(technique.effectiveness) >= i
-                    ? 'bg-[#e20074]'
+                    ? 'bg-primary'
                     : 'bg-white/20'
                 }`}
               />

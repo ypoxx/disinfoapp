@@ -109,15 +109,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-10 border-t pt-8">
+          <p className="text-center text-sm text-muted-foreground">
             &copy; {currentYear} DisinfoApp. {t('footer.copyright')}
           </p>
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="rounded bg-primary/10 px-2 py-1 font-medium text-primary">
-              Powered by Telekom
-            </span>
-          </div>
         </div>
       </div>
     </footer>

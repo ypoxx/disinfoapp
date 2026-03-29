@@ -8,8 +8,8 @@ export const modules: LearningModule[] = [
       en: 'Basics of Disinformation',
     },
     description: {
-      de: 'Lerne die Grundlagen: Was ist Desinformation, wie unterscheidet sie sich von Fehlinformation und warum ist sie gefährlich?',
-      en: 'Learn the basics: What is disinformation, how does it differ from misinformation, and why is it dangerous?',
+      de: 'Die Grundlagen für Kommunikationsprofis: Was ist Desinformation, wie unterscheidet sie sich von PR-Spin und Fehlinformation – und warum ist sie eine wachsende Bedrohung für Organisationen?',
+      en: 'Essentials for communication professionals: What is disinformation, how does it differ from PR spin and misinformation – and why is it a growing threat to organizations?',
     },
     type: 'lesson',
     difficulty: 'beginner',
@@ -32,8 +32,8 @@ export const modules: LearningModule[] = [
       en: 'Disinformation Tactics',
     },
     description: {
-      de: 'Erkenne gängige Taktiken und Techniken, die zur Verbreitung von Falschinformationen eingesetzt werden.',
-      en: 'Recognize common tactics and techniques used to spread false information.',
+      de: 'Erkenne Taktiken, die gegen Organisationen eingesetzt werden: Koordinierte Kampagnen, Reputationsangriffe, Context Collapse und Plattform-Manipulation.',
+      en: 'Recognize tactics used against organizations: coordinated campaigns, reputation attacks, context collapse, and platform manipulation.',
     },
     type: 'lesson',
     difficulty: 'intermediate',
@@ -56,8 +56,8 @@ export const modules: LearningModule[] = [
       en: 'Psychology of Manipulation',
     },
     description: {
-      de: 'Verstehe die psychologischen Mechanismen, die Desinformation so wirksam machen: Kognitive Verzerrungen und emotionale Trigger.',
-      en: 'Understand the psychological mechanisms that make disinformation so effective: cognitive biases and emotional triggers.',
+      de: 'Warum Desinformation wirkt – auch bei Profis: Kognitive Verzerrungen, emotionale Trigger und wie Organisationsvertrauen in Krisen erodiert.',
+      en: 'Why disinformation works – even on professionals: cognitive biases, emotional triggers, and how organizational trust erodes in crises.',
     },
     type: 'lesson',
     difficulty: 'advanced',
@@ -80,8 +80,8 @@ export const modules: LearningModule[] = [
       en: 'Fact-Checking Strategies',
     },
     description: {
-      de: 'Lerne praktische Methoden und Tools zum Überprüfen von Informationen und Quellen.',
-      en: 'Learn practical methods and tools for verifying information and sources.',
+      de: 'Praktische Tools und Methoden für Kommunikationsabteilungen: Faktencheck-Workflows, Monitoring-Tools und Verifizierung unter Zeitdruck.',
+      en: 'Practical tools and methods for communications teams: fact-checking workflows, monitoring tools, and verification under time pressure.',
     },
     type: 'lesson',
     difficulty: 'intermediate',
@@ -104,8 +104,8 @@ export const modules: LearningModule[] = [
       en: 'Practical Application',
     },
     description: {
-      de: 'Wende dein Wissen in realistischen Szenarien an und entwickle deine Fähigkeiten zur Desinformationserkennung.',
-      en: 'Apply your knowledge in realistic scenarios and develop your disinformation detection skills.',
+      de: 'Realistische Szenarien aus dem Kommunikationsalltag: Reagiere auf Shitstorms, identifiziere koordinierte Angriffe und übe den Umgang mit Desinformation unter Druck.',
+      en: 'Realistic scenarios from daily communications work: respond to crises, identify coordinated attacks, and practice handling disinformation under pressure.',
     },
     type: 'simulation',
     difficulty: 'expert',
@@ -116,6 +116,30 @@ export const modules: LearningModule[] = [
     content: {
       title: {
         de: 'Praxisanwendung',
+      },
+      media: [],
+      interactions: [],
+    },
+  },
+  {
+    id: 'crisis-response',
+    name: {
+      de: 'Krisenreaktion für Kommunikatoren',
+      en: 'Crisis Response for Communicators',
+    },
+    description: {
+      de: 'Erfahre, wie Kommunikationsprofis auf Desinformationsangriffe gegen ihre Organisationen reagieren sollten: Strategien, Stakeholder-Management und ethische Leitlinien.',
+      en: 'Learn how communication professionals should respond to disinformation attacks on their organizations: strategies, stakeholder management, and ethical guidelines.',
+    },
+    type: 'lesson',
+    difficulty: 'expert',
+    duration: 35,
+    points: 300,
+    prerequisites: ['basics', 'tactics', 'psychology'],
+    tags: ['krise', 'kommunikation', 'strategie', 'reaktion'],
+    content: {
+      title: {
+        de: 'Krisenreaktion für Kommunikatoren',
       },
       media: [],
       interactions: [],

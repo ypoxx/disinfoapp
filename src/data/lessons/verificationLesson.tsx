@@ -25,6 +25,18 @@ export const verificationLessonContent: LessonContent = {
                 <li>Tools und Techniken für effektiven Faktencheck</li>
                 <li>Umgang mit Bildern, Videos und statistischen Behauptungen</li>
               </ul>
+              <div className="mt-6 rounded-lg border-2 border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold text-blue-800 dark:text-blue-300">Warum Verification DIE Kernkompetenz für Kommunikatoren ist:</p>
+                <p className="mt-2">
+                  Für PR-Profis, Unternehmenskommunikatoren und Journalisten ist Faktencheck nicht nur Allgemeinbildung – er ist <strong>berufliche Pflicht</strong>. Im Kommunikationsalltag begegnen euch ständig Situationen, die schnelle und zuverlässige Verifizierung erfordern:
+                </p>
+                <ul className="mt-2 list-disc pl-6">
+                  <li><strong>Pressemitteilungen prüfen:</strong> Bevor ihr Informationen weitergebt oder freigebt, müsst ihr Zahlen, Zitate und Fakten verifizieren – eure Glaubwürdigkeit steht auf dem Spiel.</li>
+                  <li><strong>Gerüchte über Kunden oder die eigene Organisation entkräften:</strong> Wenn falsche Behauptungen kursieren, braucht ihr belastbare Gegenargumente und verifizierte Fakten für eine wirksame Krisenkommunikation.</li>
+                  <li><strong>Social Listening:</strong> Im Social-Media-Monitoring tauchen täglich ungeprüfte Behauptungen auf. Wer sie frühzeitig erkennt und richtig einordnet, verhindert Reputationsschäden.</li>
+                  <li><strong>Quellenprüfung für eigene Inhalte:</strong> Ob Blogpost, Newsletter oder Kundenpräsentation – jede nicht verifizierte Information kann zum Bumerang werden.</li>
+                </ul>
+              </div>
             </>
           ),
         },
@@ -85,6 +97,23 @@ export const verificationLessonContent: LessonContent = {
                   </ul>
                 </div>
               </div>
+              <div className="mt-6 rounded-lg border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20 p-4">
+                <p className="font-semibold">CRAAP-Test im Unternehmenskontext: Negative Berichterstattung bewerten</p>
+                <p className="mt-2">
+                  Wenn Quellen negative Behauptungen über eure Organisation aufstellen, hilft der CRAAP-Test bei der systematischen Einordnung:
+                </p>
+                <ul className="mt-2 list-disc pl-6 space-y-1">
+                  <li><strong>Currency:</strong> Bezieht sich der Bericht auf aktuelle Ereignisse oder werden veraltete Vorfälle aufgewärmt?</li>
+                  <li><strong>Relevance:</strong> Ist die Kritik substanziell oder wird ein Randthema aufgebauscht?</li>
+                  <li><strong>Authority:</strong> Ist der Verfasser ein Branchenexperte, ein anonymer Account oder ein bekannter Aktivist mit Agenda?</li>
+                  <li><strong>Accuracy:</strong> Lassen sich die Behauptungen durch interne Daten oder unabhängige Quellen bestätigen oder widerlegen?</li>
+                  <li><strong>Purpose:</strong> Handelt es sich um investigativen Journalismus, Meinungsmache oder gezielte Kampagne eines Wettbewerbers?</li>
+                </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Erstellt eine interne CRAAP-Bewertungsvorlage für euer Kommunikationsteam. Bei eingehenden Medienanfragen oder kritischen Social-Media-Posts könnt ihr so in wenigen Minuten systematisch einordnen, ob eine Reaktion nötig ist – und wenn ja, wie dringend. Dokumentiert eure Bewertungen, damit ihr im Krisenfall einen Audit-Trail habt.</p>
+              </div>
             </>
           ),
         },
@@ -133,6 +162,10 @@ export const verificationLessonContent: LessonContent = {
                   </div>
                 </div>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Diese Red Flags gelten auch für Quellen, die <em>positive</em> Dinge über eure Organisation behaupten. Bevor ihr einen vermeintlich schmeichelhaften Artikel teilt oder in eure Pressemappe aufnehmt: Prüft, ob die Quelle seriös ist. Einen unseriösen Bericht zu teilen, nur weil er euch lobt, kann eure Glaubwürdigkeit langfristig beschädigen.</p>
+              </div>
             </>
           ),
         },
@@ -169,6 +202,10 @@ export const verificationLessonContent: LessonContent = {
                 <p className="mt-2 text-sm italic">
                   Ein Foto von "aktuellen Protesten" wird viral. Rückwärtssuche zeigt: Das Bild ist 5 Jahre alt und stammt aus einem anderen Land.
                 </p>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Nutzt Rückwärts-Bildersuche auch für eure eigenen PR-Bilder! Prüft regelmäßig, ob Bilder eurer Organisation in falschem Kontext verwendet werden. Ebenso wichtig: Bevor ihr Stock-Fotos oder nutzergenerierte Bilder in Kampagnen einsetzt, verifiziert deren Ursprung – ein Bild mit ungeklärten Rechten oder problematischer Vorgeschichte kann zum PR-Desaster werden.</p>
               </div>
             </>
           ),
@@ -235,6 +272,10 @@ export const verificationLessonContent: LessonContent = {
               <p className="mt-4">
                 Experten verbringen mehr Zeit AUSSERHALB einer Quelle als darin, um ihre Glaubwürdigkeit zu bewerten!
               </p>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Laterales Lesen ist besonders wertvoll, wenn ihr mit neuen Medienpartnern, Influencern oder Branchenexperten zusammenarbeiten wollt. Bevor ihr eine Kooperation eingeht oder ein Zitat übernehmt: Recherchiert den Hintergrund der Person oder Organisation in externen Quellen. So schützt ihr eure Marke vor ungewollten Assoziationen.</p>
+              </div>
             </>
           ),
         },
@@ -326,6 +367,90 @@ export const verificationLessonContent: LessonContent = {
                   </span>
                 </li>
               </ol>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Wenn ihr Statistiken in Pressemitteilungen, Reports oder Social-Media-Posts verwendet, stellt sicher, dass ihr die Primärquelle verlinkt und die Methodik versteht. Journalisten werden nachfragen – und nichts untergräbt eure Glaubwürdigkeit schneller als eine Statistik, die ihr selbst nicht erklären könnt. Legt euch ein internes Fact-Sheet an, das Quelle, Methodik und Einschränkungen jeder verwendeten Zahl dokumentiert.</p>
+              </div>
+            </>
+          ),
+        },
+      ],
+    },
+    {
+      id: 'monitoring-tools',
+      title: 'Monitoring-Tools für Kommunikatoren',
+      sections: [
+        {
+          id: 'social-listening',
+          title: 'Social Listening und Medienbeobachtung',
+          type: 'tip',
+          content: (
+            <>
+              <p>
+                Professionelle Kommunikatoren brauchen <strong>systematische Monitoring-Workflows</strong>, um Falschinformationen frühzeitig zu erkennen und gezielt darauf reagieren zu können.
+              </p>
+              <div className="mt-4 space-y-3">
+                <div className="rounded-lg bg-blue-50 dark:bg-blue-900/20 p-3">
+                  <p className="font-semibold">Social Listening Tools</p>
+                  <ul className="mt-1 text-sm list-disc pl-5">
+                    <li><strong>Brandwatch / Talkwalker:</strong> Echtzeit-Monitoring von Marken-Erwähnungen über alle Social-Media-Plattformen hinweg</li>
+                    <li><strong>Google Alerts:</strong> Kostenlose Benachrichtigungen bei neuen Erwähnungen eurer Organisation, Produkte oder Schlüsselbegriffe</li>
+                    <li><strong>CrowdTangle (Meta):</strong> Analyse viraler Inhalte auf Facebook und Instagram – hilfreich, um Desinformationswellen frühzeitig zu erkennen</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-green-50 dark:bg-green-900/20 p-3">
+                  <p className="font-semibold">Reverse Image Search für PR-Bilder</p>
+                  <ul className="mt-1 text-sm list-disc pl-5">
+                    <li><strong>Google Lens / TinEye:</strong> Regelmäßig prüfen, ob eure offiziellen Bilder in falschem Kontext verwendet werden</li>
+                    <li><strong>InVID/WeVerify Plugin:</strong> Browser-Extension zur Analyse von Videos und Bildern – erkennt Manipulationen und findet Originalquellen</li>
+                    <li><strong>FotoForensics:</strong> Detaillierte Bildanalyse zur Erkennung von Photoshop-Bearbeitungen und Metadaten-Prüfung</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-purple-50 dark:bg-purple-900/20 p-3">
+                  <p className="font-semibold">Medienbeobachtung und Analyse</p>
+                  <ul className="mt-1 text-sm list-disc pl-5">
+                    <li><strong>Meltwater / Cision:</strong> Umfassende Medienbeobachtung über Print, Online, TV, Radio und Social Media</li>
+                    <li><strong>Pressrelations / Landau Media:</strong> Deutschsprachige Medienbeobachtung mit Reichweitenanalyse</li>
+                    <li><strong>DPA-Factchecking:</strong> Professioneller Faktencheck-Service für Redaktionen und Kommunikationsabteilungen</li>
+                  </ul>
+                </div>
+              </div>
+            </>
+          ),
+        },
+        {
+          id: 'verification-workflow',
+          title: 'Verifikations-Workflow für Kommunikationsteams',
+          type: 'tip',
+          content: (
+            <>
+              <p>
+                Ein strukturierter Workflow hilft eurem Team, bei kritischen Meldungen schnell und fundiert zu reagieren:
+              </p>
+              <div className="mt-4 rounded-lg bg-muted p-4">
+                <p className="font-semibold">5-Schritte-Verifikations-Workflow:</p>
+                <ol className="mt-2 list-decimal pl-5 space-y-2">
+                  <li>
+                    <strong>Alert erhalten:</strong> Social-Listening-Tool meldet kritische Erwähnung oder ungewöhnlichen Anstieg der Mentions
+                  </li>
+                  <li>
+                    <strong>Quelle bewerten:</strong> CRAAP-Test anwenden – Wer behauptet was, mit welcher Reichweite und welchem Hintergrund?
+                  </li>
+                  <li>
+                    <strong>Fakten intern prüfen:</strong> Abgleich mit internen Daten, Rücksprache mit Fachabteilungen, Dokumentation sichten
+                  </li>
+                  <li>
+                    <strong>Externe Verifizierung:</strong> Laterales Lesen, Rückwärts-Bildersuche, Faktencheck-Websites konsultieren
+                  </li>
+                  <li>
+                    <strong>Reaktionsstrategie festlegen:</strong> Auf Basis der Verifizierung entscheiden – Richtigstellung, Statement, Monitoring fortsetzen oder bewusst ignorieren
+                  </li>
+                </ol>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Haltet eine vorbereitete Eskalationsmatrix bereit: Wer im Team übernimmt bei welcher Schwere der Falschinformation die Federführung? Definiert klare Schwellenwerte (z.B. Reichweite, Tonalität, Medientyp), ab wann eine aktive Reaktion erfolgen muss. So vermeidet ihr hektische Ad-hoc-Entscheidungen im Krisenfall.</p>
+              </div>
             </>
           ),
         },
@@ -402,6 +527,10 @@ export const verificationLessonContent: LessonContent = {
                     <strong>Bei Unsicherheit: Nicht teilen!</strong> Lieber einen Post weniger als Desinformation verbreiten
                   </div>
                 </div>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Druckt diese Checkliste aus und hängt sie im Kommunikationsbüro auf – oder integriert sie als festen Bestandteil in euer Content-Freigabe-Verfahren. Jede Pressemitteilung, jeder Social-Media-Post und jede Stellungnahme sollte vor Veröffentlichung mindestens die wichtigsten Punkte dieser Liste durchlaufen.</p>
               </div>
               <div className="mt-6 rounded-lg border-2 border-primary bg-primary/5 p-4">
                 <p className="text-center font-semibold">

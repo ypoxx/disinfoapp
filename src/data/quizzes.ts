@@ -91,6 +91,60 @@ export const quizzes: Record<string, Quiz> = {
         },
         points: 10,
       },
+      {
+        id: 'basics-q6',
+        question: {
+          de: 'Ein Unternehmen wird Ziel einer koordinierten Desinformationskampagne. Welche erste Maßnahme ist für die Kommunikationsabteilung am wichtigsten?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Die Narrativentwicklung analysieren und Reichweite der Kampagne einschätzen' },
+          { de: 'Sofort eine Pressemitteilung herausgeben, die alles dementiert' },
+          { de: 'Alle Social-Media-Kanäle vorübergehend abschalten' },
+          { de: 'Rechtliche Schritte einleiten, ohne die Lage zu analysieren' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Bevor Kommunikationsprofis reagieren, müssen sie die Lage verstehen: Wer verbreitet was, mit welcher Reichweite und welchem Narrativ? Nur so kann eine wirksame Gegenstrategie entwickelt werden.',
+        },
+        points: 10,
+      },
+      {
+        id: 'basics-q7',
+        question: {
+          de: 'Was unterscheidet professionellen PR-Spin grundlegend von Desinformation?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'PR-Spin betont günstige Fakten, Desinformation erfindet oder verfälscht sie bewusst' },
+          { de: 'Es gibt keinen Unterschied – beides ist Manipulation' },
+          { de: 'PR-Spin ist immer legal, Desinformation immer illegal' },
+          { de: 'Desinformation ist nur im Internet möglich, PR-Spin nur offline' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'PR-Spin arbeitet mit selektiver Hervorhebung realer Fakten. Desinformation hingegen erfindet, verfälscht oder manipuliert Informationen bewusst, um zu täuschen. Kommunikationsprofis müssen diese Grenze kennen und respektieren.',
+        },
+        points: 10,
+      },
+      {
+        id: 'basics-q8',
+        question: {
+          de: 'Welche Rolle spielen Algorithmen bei der Verbreitung von Desinformation gegen Organisationen?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Sie verstärken emotionale und polarisierende Inhalte, wodurch Angriffe auf Organisationen schneller viral gehen' },
+          { de: 'Algorithmen filtern Desinformation zuverlässig heraus' },
+          { de: 'Algorithmen betreffen nur private Nutzer, nicht Organisationen' },
+          { de: 'Die Rolle der Algorithmen wird stark überschätzt' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Plattform-Algorithmen priorisieren Inhalte mit hohem Engagement. Empörende Falschinformationen über Unternehmen oder Organisationen erzeugen starke Reaktionen und werden dadurch algorithmisch bevorzugt verbreitet.',
+        },
+        points: 10,
+      },
     ],
   },
 
@@ -220,6 +274,60 @@ export const quizzes: Record<string, Quiz> = {
         },
         points: 10,
       },
+      {
+        id: 'tactics-q8',
+        question: {
+          de: 'Was ist "Coordinated Inauthentic Behavior" (koordiniertes inauthentisches Verhalten)?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Netzwerke aus Fake-Accounts, die koordiniert handeln, um Narrative künstlich zu verstärken' },
+          { de: 'Wenn mehrere Journalisten über das gleiche Thema berichten' },
+          { de: 'Automatische Antworten im Kundenservice' },
+          { de: 'Koordinierte PR-Kampagnen mehrerer Unternehmen' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Coordinated Inauthentic Behavior beschreibt Netzwerke gefälschter Accounts, die gezielt zusammenarbeiten, um Desinformation zu verbreiten und den Eindruck einer breiten öffentlichen Meinung zu erwecken. Kommunikationsprofis müssen solche Muster erkennen können.',
+        },
+        points: 10,
+      },
+      {
+        id: 'tactics-q9',
+        question: {
+          de: 'Wie funktioniert Plattform-Manipulation gegen Unternehmen typischerweise?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Durch koordinierte Bewertungsbomben, Hashtag-Hijacking und gezielte Trendmanipulation' },
+          { de: 'Durch das Hacken der Unternehmenswebsite' },
+          { de: 'Ausschließlich durch bezahlte Werbeanzeigen' },
+          { de: 'Durch das Melden von Unternehmensaccounts bei der Plattform' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Plattform-Manipulation umfasst Taktiken wie koordinierte negative Bewertungen, das Kapern von Hashtags und das künstliche Pushen von Trends. Kommunikationsteams müssen diese Muster frühzeitig erkennen, um angemessen reagieren zu können.',
+        },
+        points: 10,
+      },
+      {
+        id: 'tactics-q10',
+        question: {
+          de: 'Was bedeutet "Context Collapse" (Kontextkollaps) für die Unternehmenskommunikation?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Aussagen werden aus ihrem ursprünglichen Kontext gerissen und vor einem völlig anderen Publikum verbreitet' },
+          { de: 'Ein technischer Fehler, bei dem Webseiten nicht laden' },
+          { de: 'Wenn zu viele Informationen gleichzeitig veröffentlicht werden' },
+          { de: 'Der Zusammenbruch interner Kommunikationskanäle' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Kontextkollaps entsteht, wenn Inhalte aus einem spezifischen Kommunikationskontext (z. B. interne Präsentation, Fachkonferenz) herausgerissen und ohne Kontext einem Massenpublikum präsentiert werden. Dies ist eine häufige Quelle für Desinformation gegen Organisationen.',
+        },
+        points: 10,
+      },
     ],
   },
 
@@ -310,6 +418,42 @@ export const quizzes: Record<string, Quiz> = {
         correctAnswer: 0,
         explanation: {
           de: 'Sozialer Beweis ist unsere psychologische Tendenz, uns an anderen zu orientieren. Online manifestiert sich dies durch Likes, Shares und virale Verbreitung - die manipuliert werden kann.',
+        },
+        points: 10,
+      },
+      {
+        id: 'psych-q6',
+        question: {
+          de: 'Warum ist das Vertrauen in eine Organisation nach einer Desinformationskampagne schwer wiederherzustellen, selbst wenn die Falschinformation widerlegt wurde?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Der "Continued Influence Effect" sorgt dafür, dass widerlegte Informationen weiter das Denken beeinflussen' },
+          { de: 'Menschen vergessen Widerlegungen schneller als Falschinformationen' },
+          { de: 'Organisationen kommunizieren Widerlegungen immer schlecht' },
+          { de: 'Vertrauen kann nach einer Krise nie wiederhergestellt werden' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Der Continued Influence Effect zeigt, dass falsche Informationen selbst nach Korrektur weiter das Urteil und Verhalten beeinflussen. Für Kommunikationsprofis bedeutet das: Eine einfache Richtigstellung reicht nicht – es braucht wiederholte, konsistente Gegenkommunikation.',
+        },
+        points: 10,
+      },
+      {
+        id: 'psych-q7',
+        question: {
+          de: 'In einer Krisensituation neigen Kommunikationsteams zu vorschnellen Reaktionen. Welcher psychologische Mechanismus ist dafür hauptverantwortlich?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Action Bias – unter Druck besteht ein übermäßiger Drang zu handeln, auch wenn Abwarten besser wäre' },
+          { de: 'Dunning-Kruger-Effekt – das Team überschätzt seine Fähigkeiten' },
+          { de: 'Sozialer Beweis – das Team folgt dem Verhalten anderer Unternehmen' },
+          { de: 'Anchoring Bias – das Team orientiert sich zu stark an der ersten Information' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Der Action Bias beschreibt die Tendenz, unter Druck „irgendetwas" zu tun, statt strategisch abzuwägen. In Krisensituationen kann vorschnelles Handeln die Lage verschlimmern, z. B. durch das Streisand-Effekt-Risiko bei unnötigen Dementis.',
         },
         points: 10,
       },
@@ -424,6 +568,42 @@ export const quizzes: Record<string, Quiz> = {
         },
         points: 10,
       },
+      {
+        id: 'verify-q7',
+        question: {
+          de: 'Welcher Ansatz ist für die Faktenprüfung in der Unternehmenskommunikation am effektivsten, wenn Behauptungen über die eigene Organisation kursieren?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Dreistufiges Verfahren: Interne Faktenlage klären, unabhängige Quellen prüfen, dokumentierte Gegendarstellung vorbereiten' },
+          { de: 'Sofort auf Social Media dementieren' },
+          { de: 'Nur intern kommunizieren und die Behauptungen ignorieren' },
+          { de: 'Ausschließlich die Rechtsabteilung einschalten' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Professionelle Faktenprüfung in Organisationen erfordert ein systematisches Vorgehen: Zuerst intern die Fakten klären, dann mit externen Quellen abgleichen und schließlich eine belastbare Gegendarstellung vorbereiten. Schnellschüsse ohne Faktencheck können die Glaubwürdigkeit beschädigen.',
+        },
+        points: 10,
+      },
+      {
+        id: 'verify-q8',
+        question: {
+          de: 'Welches Monitoring-Tool-Setup ist für Kommunikationsprofis am sinnvollsten, um Desinformation frühzeitig zu erkennen?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Kombination aus Social-Listening-Tools, Google Alerts und spezialisierten Plattformen wie CrowdTangle oder Brandwatch' },
+          { de: 'Ausschließlich Google-Suche und manuelle Überprüfung' },
+          { de: 'Nur die eigenen Social-Media-Kanäle beobachten' },
+          { de: 'Auf Hinweise von Journalisten warten' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Ein umfassendes Monitoring erfordert mehrere Tools: Social-Listening für Echtzeitüberwachung, Alerts für Medienbeobachtung und spezialisierte Plattformen zur Analyse von Verbreitungsmustern. Nur so können Kommunikationsteams frühzeitig auf entstehende Desinformationskampagnen reagieren.',
+        },
+        points: 10,
+      },
     ],
   },
 
@@ -522,6 +702,195 @@ export const quizzes: Record<string, Quiz> = {
           de: 'Perfekt! Starke Emotionen sind ein Warnsignal. Desinformation nutzt Wut, um rationalesPrüfen zu umgehen. Die 24-Stunden-Regel hilft: Warte einen Tag, bevor du emotionale Inhalte teilst.',
         },
         points: 15,
+      },
+      {
+        id: 'prac-q6',
+        question: {
+          de: 'Als Pressesprecher:in entdeckst du einen viralen Tweet mit einem gefälschten Zitat deines CEO. Der Tweet hat bereits 50.000 Shares. Was ist deine erste Maßnahme?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Reichweite und Verbreitungsmuster dokumentieren, dann eine faktenbasierte Richtigstellung mit dem Originalzitat vorbereiten' },
+          { de: 'Sofort einen wütenden Gegentweet posten und den Urheber angreifen' },
+          { de: 'Abwarten, bis sich die Aufregung von selbst legt' },
+          { de: 'Den Tweet melden und hoffen, dass die Plattform ihn löscht' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Professionelle Krisenkommunikation erfordert zunächst Situationsbewertung: Wie weit hat sich die Falschinformation verbreitet? Dann eine ruhige, faktenbasierte Richtigstellung mit nachprüfbaren Belegen. Emotionale Gegenangriffe verstärken oft nur die Aufmerksamkeit für die Falschinformation.',
+        },
+        points: 15,
+      },
+      {
+        id: 'prac-q7',
+        question: {
+          de: 'Dein Unternehmen wird in einem Desinformationsnarrativ als Umweltverschmutzer dargestellt. Die Vorwürfe sind falsch, aber emotional aufgeladen. Wie gehst du als Kommunikationsprofi vor?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Transparente Kommunikation mit überprüfbaren Daten, proaktive Ansprache wichtiger Stakeholder und Zusammenarbeit mit unabhängigen Experten' },
+          { de: 'Eine groß angelegte Werbekampagne starten, die das grüne Image betont' },
+          { de: 'Die Kritiker verklagen und öffentlich diskreditieren' },
+          { de: 'Nichts tun, weil jede Reaktion das Narrativ verstärkt' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Bei emotional aufgeladenen Falschdarstellungen braucht es eine Kombination aus Fakten, Transparenz und Drittvalidierung. Unabhängige Experten verleihen der Gegendarstellung Glaubwürdigkeit. Wichtige Stakeholder (Investoren, Partner, Mitarbeitende) brauchen proaktive Information.',
+        },
+        points: 15,
+      },
+    ],
+  },
+
+  'crisis-response': {
+    id: 'crisis-response-quiz',
+    moduleId: 'crisis-response',
+    timeLimit: 600, // 10 minutes
+    passingScore: 75,
+    questions: [
+      {
+        id: 'crisis-q1',
+        question: {
+          de: 'Ein kleines Desinformationsnarrativ über Ihr Unternehmen kursiert in einer Nischen-Community mit 2.000 Followern. Noch hat kein Mainstream-Medium berichtet. Was tun Sie?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Beobachten und dokumentieren, aber NICHT öffentlich reagieren – das Amplifikationsrisiko ist zu hoch' },
+          { de: 'Sofort eine Pressemitteilung herausgeben, um dem Narrativ zuvorzukommen' },
+          { de: 'Die Community direkt konfrontieren und die Falschinformation dementieren' },
+          { de: 'Die Rechtsabteilung mit einer Abmahnung beauftragen' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Wenn Desinformation noch in einer kleinen Nische zirkuliert, kann eine öffentliche Reaktion das Narrativ erst einem Massenpublikum bekannt machen (Streisand-Effekt). Strategisches Monitoring ohne Amplifikation ist hier die richtige Wahl. Intern vorbereiten, extern abwarten.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q2',
+        question: {
+          de: 'Welche Reaktionsstrategie ist bei einer nachweislich falschen, aber weit verbreiteten Behauptung über Ihr Unternehmen am wirksamsten?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Counter-Narrative: Eine eigene, positive Geschichte erzählen, die das falsche Narrativ durch Fakten und Kontext ersetzt' },
+          { de: 'Einfaches Dementi: Die Behauptung kategorisch abstreiten' },
+          { de: 'Diminish-Strategie: Die Bedeutung der Behauptung herunterspielen' },
+          { de: 'Alle drei Strategien sind immer gleich wirksam' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Forschung zeigt: Einfache Dementis können das falsche Narrativ durch Wiederholung sogar verstärken. Counter-Narratives sind wirksamer, weil sie eine alternative Erzählung bieten, statt nur zu widersprechen. Die Wahl der Strategie hängt jedoch vom Kontext ab – bei eindeutigen Faktenlagen kann auch ein klares Dementi angemessen sein.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q3',
+        question: {
+          de: 'Während einer Desinformationskrise fordern Investoren und Medien gleichzeitig Stellungnahmen. Welche Stakeholder-Kommunikation hat Priorität?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Parallele, aber differenzierte Kommunikation: Investoren brauchen Fakten und Geschäftsauswirkungen, Medien brauchen klare Statements und Belege' },
+          { de: 'Zuerst die Medien bedienen, dann die Investoren' },
+          { de: 'Ein einheitliches Statement für alle Stakeholder verwenden' },
+          { de: 'Zuerst die Investoren beruhigen und die Medien auf später vertrösten' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Verschiedene Stakeholder haben unterschiedliche Informationsbedürfnisse. Investoren interessieren sich für Geschäftsauswirkungen und Risikomanagement, Medien für klare Fakten und Zitate. Ein-Größe-passt-alle-Kommunikation wird keiner Gruppe gerecht und kann die Krise verschärfen.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q4',
+        question: {
+          de: 'Eine Falschmeldung über Ihr Unternehmen verbreitet sich rasant. Sie haben noch nicht alle Fakten intern bestätigt. Was tun Sie?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Ein Holding-Statement veröffentlichen, das Kenntnis der Situation zeigt und eine vollständige Stellungnahme ankündigt' },
+          { de: 'Schnell reagieren und alle verfügbaren Informationen sofort veröffentlichen, auch unbestätigte' },
+          { de: 'Schweigen, bis alle Fakten zu 100% bestätigt sind' },
+          { de: 'Die Falschmeldung einfach kopieren und ein "Falsch!" darunterschreiben' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Das Holding-Statement ist der Goldstandard bei der Abwägung zwischen Geschwindigkeit und Genauigkeit. Es zeigt Handlungsfähigkeit, ohne unbestätigte Informationen zu verbreiten. Formulierung: "Uns ist die Behauptung bekannt. Wir prüfen die Sachlage und werden zeitnah umfassend Stellung nehmen."',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q5',
+        question: {
+          de: 'Ihr Kommunikationsteam erwägt, ein Desinformationsnetzwerk öffentlich zu enttarnen, das Ihr Unternehmen angreift. Welches ethische Dilemma besteht?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Die Enttarnung könnte als Einschüchterung wirken und unschuldige Personen treffen, die Inhalte unwissentlich geteilt haben' },
+          { de: 'Es gibt kein ethisches Dilemma – Desinformationsverbreiter verdienen keine Rücksicht' },
+          { de: 'Das einzige Problem sind mögliche rechtliche Kosten' },
+          { de: 'Die Enttarnung ist immer die beste Strategie' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Counter-Desinformation birgt eigene ethische Risiken: Nicht alle, die Falschinformationen teilen, tun dies böswillig. Öffentliche Enttarnung kann als Machtmissbrauch wahrgenommen werden, besonders wenn Privatpersonen betroffen sind. Kommunikationsprofis müssen Verhältnismäßigkeit, Datenschutz und die Unterscheidung zwischen bewussten Akteuren und unwissenden Verbreitern beachten.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q6',
+        question: {
+          de: 'Welche Metriken sind am aussagekräftigsten, um die Wirkung einer Desinformationskampagne gegen Ihre Organisation zu bewerten?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Kombination aus Reichweite, Sentiment-Analyse, Medienübernahme-Rate und Auswirkung auf Vertrauensumfragen' },
+          { de: 'Ausschließlich die Anzahl der Social-Media-Shares' },
+          { de: 'Nur die Anzahl der Medienberichte' },
+          { de: 'Allein der Aktienkurs als Indikator' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Die Wirkung von Desinformation ist mehrdimensional: Reichweite zeigt die Verbreitung, Sentiment-Analyse die emotionale Tonalität, Medienübernahme-Rate ob Mainstream-Medien das Narrativ aufgreifen, und Vertrauensumfragen die reale Auswirkung auf die Reputation. Nur eine Kombination ergibt ein vollständiges Bild.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q7',
+        question: {
+          de: 'Während einer externen Desinformationskrise beginnen Mitarbeitende, die Falschinformationen intern zu diskutieren und in privaten Social-Media-Posts zu teilen. Was hat Priorität?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Sofortige, transparente interne Kommunikation mit Fakten, klaren Sprachregelungen und Ansprechpartnern für Rückfragen' },
+          { de: 'Mitarbeitende anweisen, nicht über die Krise zu sprechen' },
+          { de: 'Abwarten, bis die externe Krise gelöst ist, dann intern kommunizieren' },
+          { de: 'Nur das Management informieren und den Rest des Teams außen vor lassen' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Mitarbeitende sind wichtige Multiplikatoren – sie können die Krise verschärfen oder entschärfen. Transparente interne Kommunikation mit klaren Fakten gibt Mitarbeitenden Sicherheit und verhindert, dass sie unbeabsichtigt Desinformation weiterverbreiten. Redeverbote erzeugen nur Misstrauen.',
+        },
+        points: 10,
+      },
+      {
+        id: 'crisis-q8',
+        question: {
+          de: 'Nach einer überstandenen Desinformationskrise: Welche Maßnahme stärkt die Resilienz Ihrer Organisation am nachhaltigsten?',
+        },
+        type: 'multiple-choice',
+        options: [
+          { de: 'Systematische Nachbereitung mit Lessons Learned, Aufbau eines Frühwarnsystems und regelmäßige Krisenübungen für das Kommunikationsteam' },
+          { de: 'Möglichst schnell vergessen und zum Tagesgeschäft zurückkehren' },
+          { de: 'Ein einmaliges Krisenhandbuch erstellen und abheften' },
+          { de: 'Ausschließlich in bessere Social-Media-Überwachungstools investieren' },
+        ],
+        correctAnswer: 0,
+        explanation: {
+          de: 'Post-Krisen-Resilienz erfordert einen ganzheitlichen Ansatz: Systematische Auswertung (Was lief gut/schlecht?), Aufbau eines Frühwarnsystems für zukünftige Kampagnen und regelmäßige Übungen, damit das Team im Ernstfall schnell und souverän reagieren kann. Technik allein reicht nicht – es braucht auch trainierte Menschen und erprobte Prozesse.',
+        },
+        points: 10,
       },
     ],
   },

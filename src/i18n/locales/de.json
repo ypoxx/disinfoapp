@@ -26,13 +26,15 @@
     "techniques": "Techniken",
     "simulator": "Simulator",
     "dashboard": "Dashboard",
-    "progress": "Fortschritt"
+    "progress": "Fortschritt",
+    "practice": "Üben",
+    "more": "Mehr"
   },
   "home": {
     "hero": {
-      "title1": "Erkenne Desinformation.",
-      "title2": "Schütze die Wahrheit.",
-      "subtitle": "Lerne in interaktiven Modulen, wie du Fake News erkennst, Fakten checkst und kritisch mit Informationen umgehst. Werde zum Experten im Kampf gegen Desinformation."
+      "title1": "Desinformation erkennen.",
+      "title2": "Professionell reagieren.",
+      "subtitle": "Die Lernplattform für Kommunikationsprofis: Erkenne Manipulationstaktiken, trainiere deine Reaktionsfähigkeit und schütze die Reputation deiner Organisation."
     },
     "cta": {
       "start": "Jetzt Starten",
@@ -40,20 +42,20 @@
     },
     "features": {
       "recognize": {
-        "title": "Desinformation Erkennen",
-        "description": "Lerne die Merkmale und Taktiken von Falschinformationen zu identifizieren"
+        "title": "Angriffe Erkennen",
+        "description": "Identifiziere Desinformationskampagnen gegen deine Organisation, bevor sie viral gehen"
       },
       "thinking": {
-        "title": "Kritisches Denken",
-        "description": "Entwickle Fähigkeiten zur Analyse und Bewertung von Informationen"
+        "title": "Strategisch Reagieren",
+        "description": "Lerne wann du reagierst, wann du schweigst und wie du das richtige Gegennarrativ findest"
       },
       "practice": {
-        "title": "Praktische Übungen",
-        "description": "Übe mit realen Beispielen in einer sicheren Lernumgebung"
+        "title": "Praxis-Training",
+        "description": "Trainiere mit realistischen Szenarien aus PR, Journalismus und Unternehmenskommunikation"
       },
       "community": {
-        "title": "Gemeinsam Lernen",
-        "description": "Tausche dich mit anderen aus und lerne voneinander"
+        "title": "Tägliche Dosis",
+        "description": "Kurze Micro-Übungen für den Arbeitsalltag – wie Duolingo, nur für Kommunikatoren"
       }
     },
     "newTools": {
@@ -89,7 +91,7 @@
   "footer": {
     "about": {
       "title": "Über DisinfoApp",
-      "description": "Eine progressive Web-App zur Erkennung und Bekämpfung von Desinformation. Lerne, Fake News zu erkennen und kritisches Denken zu entwickeln."
+      "description": "Die Lernplattform für Kommunikationsprofis – Desinformation erkennen, strategisch reagieren und Organisationen schützen."
     },
     "quickLinks": {
       "title": "Quick Links",
@@ -195,7 +197,7 @@
   },
   "simulator": {
     "title": "Social Media Simulator",
-    "subtitle": "Analysiere Posts auf Manipulationstechniken",
+    "subtitle": "Erkenne Manipulationstechniken in realistischen Social-Media-Posts – von offensichtlich bis professionell getarnt",
     "analyzePost": "Post analysieren",
     "detectedTechniques": "Erkannte Techniken",
     "noTechniques": "Keine Manipulationstechniken erkannt",
@@ -278,7 +280,7 @@
   "onboarding": {
     "welcome": {
       "title": "Willkommen bei DisinfoApp!",
-      "subtitle": "Dein Begleiter im Kampf gegen Desinformation",
+      "subtitle": "Die Lernplattform für Kommunikationsprofis",
       "step1": {
         "title": "Lerne Techniken",
         "description": "Entdecke 28 Manipulationstechniken und wie du sie erkennst"

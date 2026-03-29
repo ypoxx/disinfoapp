@@ -121,4 +121,28 @@ export const modules: LearningModule[] = [
       interactions: [],
     },
   },
+  {
+    id: 'crisis-response',
+    name: {
+      de: 'Krisenreaktion für Kommunikatoren',
+      en: 'Crisis Response for Communicators',
+    },
+    description: {
+      de: 'Erfahre, wie Kommunikationsprofis auf Desinformationsangriffe gegen ihre Organisationen reagieren sollten: Strategien, Stakeholder-Management und ethische Leitlinien.',
+      en: 'Learn how communication professionals should respond to disinformation attacks on their organizations: strategies, stakeholder management, and ethical guidelines.',
+    },
+    type: 'lesson',
+    difficulty: 'expert',
+    duration: 35,
+    points: 300,
+    prerequisites: ['basics', 'tactics', 'psychology'],
+    tags: ['krise', 'kommunikation', 'strategie', 'reaktion'],
+    content: {
+      title: {
+        de: 'Krisenreaktion für Kommunikatoren',
+      },
+      media: [],
+      interactions: [],
+    },
+  },
 ];

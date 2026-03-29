@@ -46,7 +46,7 @@ export function LearningModules() {
       >
         <h1 className="mb-4 text-4xl font-bold">Lernmodule</h1>
         <p className="mb-12 text-lg text-muted-foreground">
-          Wähle ein Modul und beginne deine Reise zur Desinformations-Erkennung
+          Praxisorientierte Module für Kommunikationsprofis – von Grundlagen bis Krisenreaktion
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

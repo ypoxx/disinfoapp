@@ -25,6 +25,9 @@ export const psychologyLessonContent: LessonContent = {
                 <li>Der Einfluss von sozialen Beweisen und Gruppendruck</li>
                 <li>Wie du dich psychologisch gegen Manipulation schützt</li>
               </ul>
+              <p className="mt-4">
+                <strong>Warum dieses Wissen für Kommunikatoren unverzichtbar ist:</strong> Wer professionell kommuniziert – ob in PR, Unternehmenskommunikation oder Journalismus – trägt eine doppelte Verantwortung. Einerseits müssen Kommunikatoren die psychologischen Mechanismen hinter Desinformation verstehen, um ihre Organisationen, Marken und Zielgruppen wirksam zu schützen. Andererseits gilt es, diese Kenntnisse ethisch einzusetzen: Wer die Schwachstellen menschlicher Kognition kennt, kann bewusst auf manipulative Techniken verzichten und stattdessen transparente, faktenbasierte Kommunikation gestalten. In einer Medienlandschaft, die zunehmend von Desinformation geprägt ist, wird psychologische Kompetenz zur Kernqualifikation jedes Kommunikationsprofis.
+              </p>
             </>
           ),
         },
@@ -55,6 +58,18 @@ export const psychologyLessonContent: LessonContent = {
                 <li>Menschen teilen Inhalte, die ihre Meinung bestätigen, ohne sie zu prüfen</li>
                 <li>Echokammern verstärken diesen Effekt</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-muted p-4">
+                <p className="font-semibold">Im Berufsalltag von Kommunikatoren:</p>
+                <ul className="mt-2 list-disc pl-6">
+                  <li><strong>Medienmonitoring:</strong> Wer bereits eine bestimmte Haltung zu einem Thema hat, filtert beim Clipping unbewusst nur bestätigende Berichte heraus – und übersieht kritische Gegenstimmen oder differenzierte Einordnungen.</li>
+                  <li><strong>Stakeholder-Analyse:</strong> PR-Teams neigen dazu, positives Feedback überzubewerten und kritische Signale aus der Öffentlichkeit herunterzuspielen, weil sie die eigene Kommunikationsstrategie bestätigt sehen wollen.</li>
+                  <li><strong>Journalismus:</strong> Auch Redaktionen können dem Bestätigungsfehler unterliegen, wenn sie eine Story bereits im Kopf haben und Recherche-Ergebnisse selektiv gewichten.</li>
+                </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Führen Sie in Ihrem Team ein "Advocatus Diaboli"-Prinzip ein: Bei jeder wichtigen Lagebeurteilung oder Medienanalyse übernimmt eine Person bewusst die Gegenposition. So durchbrechen Sie den Bestätigungsfehler systematisch und stärken die Qualität Ihrer Kommunikationsentscheidungen.</p>
+              </div>
             </>
           ),
         },
@@ -79,6 +94,18 @@ export const psychologyLessonContent: LessonContent = {
                 <li>Emotionale, schockierende Geschichten bleiben besser im Gedächtnis</li>
                 <li>Wiederholte Falschmeldungen werden als "wahr" empfunden, weil sie vertraut sind</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-muted p-4">
+                <p className="font-semibold">Im Berufsalltag von Kommunikatoren:</p>
+                <ul className="mt-2 list-disc pl-6">
+                  <li><strong>Krisenbewertung:</strong> Ein einzelner viraler Shitstorm kann dazu führen, dass das Kommunikationsteam die tatsächliche Bedrohungslage massiv überschätzt – weil das dramatische Ereignis mental leicht verfügbar ist, während die Datenlage eine andere Sprache spricht.</li>
+                  <li><strong>Themenplanung:</strong> Kommunikatoren setzen häufig auf Themen, die gerade medial präsent sind, anstatt strategisch relevante, aber weniger sichtbare Themen zu priorisieren.</li>
+                  <li><strong>Reporting:</strong> In Berichten an die Geschäftsleitung werden besonders einprägsame Einzelfälle überbewertet, während langfristige Trends und statistische Realitäten zu kurz kommen.</li>
+                </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Ergänzen Sie Ihre Krisenbewertung immer mit quantitativen Daten. Fragen Sie sich: "Wie groß ist die tatsächliche Reichweite? Wie viele echte Nutzer (nicht Bots) diskutieren das Thema? Wie verhält sich das im Vergleich zu früheren Vorfällen?" Zahlen helfen, die Verfügbarkeitsheuristik zu durchbrechen und fundierte Entscheidungen zu treffen.</p>
+              </div>
             </>
           ),
         },
@@ -103,6 +130,10 @@ export const psychologyLessonContent: LessonContent = {
                 <li>Spätere Korrekturen haben weniger Einfluss</li>
                 <li>Übertriebene Anfangszahlen beeinflussen spätere Wahrnehmung</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Im Krisenfall gilt: Wer zuerst kommuniziert, setzt den Anker. Entwickeln Sie daher schnelle Reaktionsprotokolle, damit Ihre Organisation in den ersten Stunden einer Desinformationskampagne die Deutungshoheit behält. Gleichzeitig: Prüfen Sie bei eingehenden Meldungen bewusst, ob eine Erstinformation Ihr Urteil als "Anker" verzerrt.</p>
+              </div>
             </>
           ),
         },
@@ -127,6 +158,10 @@ export const psychologyLessonContent: LessonContent = {
                 <li>Echte Experten drücken sich differenzierter aus (wirken unsicherer)</li>
                 <li>Komplexe Themen werden zu stark vereinfacht</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Seien Sie wachsam gegenüber selbsternannten "Experten" in sozialen Medien, die mit großer Überzeugung Falschbehauptungen über Ihr Unternehmen oder Ihre Branche verbreiten. Setzen Sie auf echte Fachexpertise in Ihren Antworten und scheuen Sie sich nicht vor differenzierten Aussagen – auch wenn sie weniger "knackig" wirken als die vereinfachten Thesen der Gegenseite.</p>
+              </div>
             </>
           ),
         },
@@ -157,6 +192,10 @@ export const psychologyLessonContent: LessonContent = {
               <p className="mt-4">
                 Deshalb funktionieren angstbasierte Desinformations-Kampagnen so gut: Sie umgehen unsere rationalen Filter.
               </p>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Wenn Ihr Unternehmen Ziel einer angstbasierten Desinformationskampagne wird, vermeiden Sie es, mit Gegenangst zu reagieren. Setzen Sie stattdessen auf sachliche, beruhigende Kommunikation mit konkreten Fakten. Geben Sie Ihrem Publikum Handlungsoptionen – das reduziert das Gefühl der Hilflosigkeit und reaktiviert rationales Denken.</p>
+              </div>
             </>
           ),
         },
@@ -177,6 +216,10 @@ export const psychologyLessonContent: LessonContent = {
                   <li>Drängt zum Handeln (Teilen als "moralische Pflicht")</li>
                   <li>Reduziert Notwendigkeit zum Faktencheck</li>
                 </ul>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Moralische Empörung ist der stärkste Treiber für virale Desinformation. Schulen Sie Ihr Team darin, bei empörenden Inhalten besonders sorgfältig zu prüfen, bevor reagiert wird. Erstellen Sie Eskalationsprotokolle, die eine "Cooling-off"-Phase beinhalten, bevor offizielle Statements zu hochemotionalen Themen veröffentlicht werden.</p>
               </div>
             </>
           ),
@@ -237,6 +280,10 @@ export const psychologyLessonContent: LessonContent = {
                 <li>"Tausende können nicht irren"-Mentalität</li>
                 <li>Viraler Spread verstärkt Glaubwürdigkeit</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Nutzen Sie Social-Listening-Tools, um zwischen echtem organischen Engagement und künstlich erzeugter Popularität zu unterscheiden. Achten Sie auf Indikatoren wie plötzliche Spitzen ohne erkennbaren Auslöser, identische Formulierungen bei verschiedenen Accounts und ungewöhnliche Posting-Zeiten. Dieses Wissen hilft Ihnen, die tatsächliche Stimmungslage realistisch einzuschätzen.</p>
+              </div>
             </>
           ),
         },
@@ -312,6 +359,80 @@ export const psychologyLessonContent: LessonContent = {
       ],
     },
     {
+      id: 'team-resilience',
+      title: 'Psychologische Resilienz im Kommunikationsteam',
+      sections: [
+        {
+          id: 'resilience-intro',
+          title: 'Warum Teams eine psychologische Abwehrstrategie brauchen',
+          type: 'info',
+          content: (
+            <>
+              <p>
+                Kommunikationsteams stehen an vorderster Front, wenn Desinformation auf Organisationen trifft. Täglicher Kontakt mit manipulativen Inhalten, Zeitdruck in Krisensituationen und die emotionale Belastung durch Online-Angriffe können zu <strong>kognitiver Ermüdung</strong> und <strong>Desensibilisierung</strong> führen – beides schwächt die Fähigkeit, Desinformation zuverlässig zu erkennen und angemessen zu reagieren.
+              </p>
+              <p className="mt-4">
+                Psychologische Resilienz im Team ist daher keine "weiche" Kompetenz, sondern ein operativer Erfolgsfaktor für professionelle Kommunikation.
+              </p>
+            </>
+          ),
+        },
+        {
+          id: 'resilience-strategies',
+          title: 'Strategien für resiliente Kommunikationsteams',
+          type: 'tip',
+          content: (
+            <>
+              <p className="font-semibold">Fünf Säulen der Team-Resilienz gegen Desinformation:</p>
+              <ol className="mt-2 list-decimal pl-6 space-y-3">
+                <li>
+                  <strong>Regelmäßige Sensibilisierung:</strong> Führen Sie monatliche Team-Briefings zu aktuellen Desinformationsmustern und -kampagnen durch. Wer die neuesten Taktiken kennt, erkennt sie schneller.
+                </li>
+                <li>
+                  <strong>Buddy-System bei Krisen:</strong> In akuten Desinformationslagen sollte niemand allein Inhalte bewerten oder Statements formulieren. Vier-Augen-Prinzip schützt vor individuellen kognitiven Verzerrungen.
+                </li>
+                <li>
+                  <strong>Emotionale Entlastung institutionalisieren:</strong> Schaffen Sie Räume, in denen Teammitglieder über die psychische Belastung durch Hassrede, Trolling und manipulative Kampagnen sprechen können – ohne Stigma.
+                </li>
+                <li>
+                  <strong>Klare Eskalationswege:</strong> Definieren Sie vorab, wann ein Vorfall die Schwelle zur Desinformationskrise überschreitet. Klare Prozesse reduzieren Stress und verhindern Überreaktionen unter Druck.
+                </li>
+                <li>
+                  <strong>Rotation bei belastenden Aufgaben:</strong> Wer dauerhaft Desinformation und toxische Inhalte monitort, brennt aus. Rotieren Sie diese Aufgaben regelmäßig im Team.
+                </li>
+              </ol>
+            </>
+          ),
+        },
+        {
+          id: 'resilience-checklist',
+          title: 'Checkliste: Ist Ihr Team resilient?',
+          type: 'info',
+          content: (
+            <>
+              <div className="space-y-3">
+                <div className="rounded-lg bg-muted p-4">
+                  <p className="font-semibold">Prüfen Sie diese Punkte für Ihr Kommunikationsteam:</p>
+                  <ul className="mt-2 list-disc pl-6 space-y-2">
+                    <li>Gibt es einen dokumentierten Prozess für den Umgang mit Desinformation?</li>
+                    <li>Werden Teammitglieder regelmäßig in Erkennung und Abwehr von Desinformation geschult?</li>
+                    <li>Existiert ein Vier-Augen-Prinzip für Krisenkommunikation?</li>
+                    <li>Gibt es Maßnahmen zum Schutz der psychischen Gesundheit des Teams?</li>
+                    <li>Werden Entscheidungen in Drucksituationen systematisch reflektiert (After-Action-Reviews)?</li>
+                    <li>Haben Sie ein Netzwerk externer Experten (Faktenchecker, Psychologen, Juristen), die im Ernstfall schnell hinzugezogen werden können?</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Führen Sie einmal pro Quartal eine "Desinformations-Übung" durch – ähnlich einer Brandschutzübung. Simulieren Sie eine koordinierte Desinformationskampagne gegen Ihre Organisation und trainieren Sie die Team-Reaktion unter realistischen Bedingungen. So bauen Sie Routine auf, bevor der Ernstfall eintritt.</p>
+              </div>
+            </>
+          ),
+        },
+      ],
+    },
+    {
       id: 'summary',
       title: 'Zusammenfassung',
       sections: [
@@ -351,6 +472,10 @@ export const psychologyLessonContent: LessonContent = {
                 <p className="text-center font-semibold">
                   Psychologisches Wissen ist deine stärkste Verteidigung! Teste dein Verständnis im Quiz.
                 </p>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">Integrieren Sie die Erkenntnisse dieses Moduls in Ihre Kommunikationsstrategie: Erstellen Sie ein internes Handbuch mit den wichtigsten kognitiven Verzerrungen und deren Relevanz für Ihre Branche. Schulen Sie nicht nur Ihr Kommunikationsteam, sondern auch Führungskräfte und Sprecher – denn psychologische Resilienz gegen Desinformation ist eine Kompetenz der gesamten Organisation.</p>
               </div>
             </>
           ),

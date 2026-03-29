@@ -26,6 +26,19 @@ export const basicsLessonContent: LessonContent = {
                 <li>Wie Desinformation verbreitet wird</li>
                 <li>Die psychologischen Mechanismen dahinter</li>
               </ul>
+              <div className="mt-6 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">📣 Besonders relevant für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Für PR-Fachleute, Unternehmenskommunikatoren und Journalisten ist das Verständnis
+                  von Desinformation heute eine Kernkompetenz. Ob <strong>Reputationsmanagement</strong>,{' '}
+                  <strong>Krisenkommunikation</strong> oder <strong>Medienkompetenz</strong> – wer
+                  professionell kommuniziert, muss Desinformation erkennen, einordnen und darauf
+                  reagieren können. Gezielte Falschinformationen können die Glaubwürdigkeit von
+                  Organisationen, Marken und öffentlichen Personen innerhalb von Stunden zerstören.
+                  Dieses Modul gibt Ihnen das Grundlagenwissen, um Ihr Unternehmen und Ihre
+                  Stakeholder besser zu schützen.
+                </p>
+              </div>
             </>
           ),
         },
@@ -77,6 +90,15 @@ export const basicsLessonContent: LessonContent = {
                   weil sie wirklich glaubt, dass sie anderen damit hilft. Das ist Fehlinformation.
                 </p>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Auch gutgemeinte interne Weiterleitungen können Fehlinformationen verbreiten.
+                  Schulen Sie Ihre Mitarbeitenden darin, Informationen vor dem Weiterleiten an
+                  Kolleg:innen oder Stakeholder stets gegenzuprüfen. Erstellen Sie klare
+                  Richtlinien, welche Quellen als verifiziert gelten dürfen.
+                </p>
+              </div>
             </>
           ),
         },
@@ -96,6 +118,15 @@ export const basicsLessonContent: LessonContent = {
                 <p className="mt-2 italic">
                   Ein alter, privater Chat wird veröffentlicht, um jemandem zu schaden, oder
                   Statistiken werden so präsentiert, dass sie eine falsche Schlussfolgerung nahelegen.
+                </p>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Malinformation ist besonders tückisch, weil die zugrunde liegenden Fakten stimmen.
+                  Bereiten Sie für sensible Themen Ihres Unternehmens <strong>Kontextdokumente</strong> vor,
+                  die bei Bedarf schnell veröffentlicht werden können. So können Sie aus dem Kontext
+                  gerissene Fakten sofort richtig einordnen und die vollständige Geschichte erzählen.
                 </p>
               </div>
             </>
@@ -134,6 +165,55 @@ export const basicsLessonContent: LessonContent = {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </>
+          ),
+        },
+        {
+          id: 'def-professional',
+          title: 'Desinformation im Berufsalltag von Kommunikatoren',
+          type: 'info',
+          content: (
+            <>
+              <p>
+                Kommunikationsprofis begegnen Desinformation in vielfältiger Form – oft
+                direkter und folgenreicher als Privatpersonen. Wer für die Außendarstellung
+                einer Organisation verantwortlich ist, muss diese Szenarien kennen:
+              </p>
+              <ul className="mt-4 list-disc pl-6">
+                <li>
+                  <strong>Gezielte Angriffe auf Organisationen:</strong> Konkurrenten, Aktivisten
+                  oder staatliche Akteure verbreiten bewusst falsche Behauptungen über Unternehmen,
+                  um deren Reputation zu schädigen.
+                </li>
+                <li>
+                  <strong>Manipulierte Pressemitteilungen:</strong> Gefälschte oder veränderte
+                  Pressemitteilungen werden in Umlauf gebracht, um Aktienkurse zu beeinflussen
+                  oder Vertrauen zu untergraben.
+                </li>
+                <li>
+                  <strong>Koordinierte Kampagnen gegen Unternehmen:</strong> Über Social-Media-Netzwerke
+                  werden orchestrierte Negativkampagnen gefahren – oft mit Fake-Accounts und
+                  künstlich erzeugter Empörung.
+                </li>
+                <li>
+                  <strong>Deepfakes von Führungskräften:</strong> Manipulierte Audio- oder
+                  Videoaufnahmen von CEOs oder Sprechern werden genutzt, um falsche Aussagen
+                  zu verbreiten.
+                </li>
+                <li>
+                  <strong>Astroturfing:</strong> Künstlich erzeugte Graswurzelbewegungen täuschen
+                  breite öffentliche Unterstützung oder Ablehnung vor.
+                </li>
+              </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Etablieren Sie ein <strong>Frühwarnsystem</strong> in Ihrer Organisation: Monitoring
+                  von Social-Media-Kanälen, Google Alerts für Ihren Organisationsnamen und regelmäßige
+                  Medienanalysen helfen, Desinformationskampagnen frühzeitig zu erkennen – bevor sie
+                  sich viral verbreiten.
+                </p>
               </div>
             </>
           ),
@@ -185,6 +265,17 @@ export const basicsLessonContent: LessonContent = {
                 <p className="mt-2">
                   Während der COVID-19-Pandemie führte Desinformation dazu, dass Menschen
                   gefährliche "Heilmittel" einnahmen oder sich nicht impfen ließen.
+                </p>
+              </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  In Krisensituationen ist schnelle, transparente Kommunikation entscheidend.
+                  Entwickeln Sie vorab einen <strong>Krisenkommunikationsplan</strong>, der auch
+                  Szenarien für Desinformationsangriffe abdeckt. Definieren Sie klare
+                  Freigabeprozesse, damit Sie innerhalb von Stunden – nicht Tagen – reagieren können.
+                  Benennen Sie vertrauenswürdige Sprecher:innen und halten Sie vorformulierte
+                  Bausteine für typische Falschbehauptungen bereit.
                 </p>
               </div>
             </>
@@ -259,6 +350,17 @@ export const basicsLessonContent: LessonContent = {
                   dasselbe denken. Desinformation wird verstärkt, weil kritische Stimmen fehlen.
                 </p>
               </div>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Bedenken Sie bei Ihrer Zielgruppenanalyse, dass Ihre Stakeholder in
+                  unterschiedlichen Filterblasen leben. Eine Botschaft, die in einer Community
+                  ankommt, erreicht eine andere möglicherweise gar nicht. Nutzen Sie
+                  <strong> Social Listening Tools</strong>, um zu verstehen, welche Narrative in
+                  verschiedenen Online-Communities kursieren, und passen Sie Ihre
+                  Kommunikationsstrategie entsprechend an.
+                </p>
+              </div>
             </>
           ),
         },
@@ -276,6 +378,15 @@ export const basicsLessonContent: LessonContent = {
                 <li>Lösche gelegentlich deinen Browserverlauf und Cookies</li>
                 <li>Nutze verschiedene Suchmaschinen für Recherchen</li>
               </ul>
+              <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
+                <p className="font-semibold">🎯 Praxis-Tipp für Kommunikatoren:</p>
+                <p className="mt-2">
+                  Richten Sie sich bewusst <strong>professionelle Recherche-Accounts</strong> ein,
+                  die nicht durch Ihren persönlichen Algorithmus verzerrt sind. Nutzen Sie den
+                  Inkognito-Modus oder separate Browser-Profile für Medienbeobachtung. So sehen Sie,
+                  was die breite Öffentlichkeit sieht – nicht nur Ihre eigene Filterblase.
+                </p>
+              </div>
             </>
           ),
         },

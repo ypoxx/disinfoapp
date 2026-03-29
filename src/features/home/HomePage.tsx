@@ -131,11 +131,11 @@ export function HomePage() {
             <motion.div
               whileHover={{ scale: 1.02, y: -4 }}
               transition={{ duration: 0.2 }}
-              className="h-full rounded-xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent p-6 shadow-md transition-all hover:border-purple-500/40 hover:shadow-xl"
+              className="h-full rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-transparent p-6 shadow-md transition-all hover:border-cyan-500/40 hover:shadow-xl"
             >
               <div className="mb-4 flex items-center gap-3">
-                <div className="rounded-xl bg-purple-500/20 p-3 transition-transform group-hover:scale-110">
-                  <Lightbulb className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                <div className="rounded-xl bg-cyan-500/20 p-3 transition-transform group-hover:scale-110">
+                  <Lightbulb className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">{t('home.newTools.explorer.title')}</h3>
@@ -147,14 +147,14 @@ export function HomePage() {
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-medium text-cyan-600 dark:text-cyan-400">
                     {t('home.newTools.explorer.techniques')}
                   </span>
-                  <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+                  <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-medium text-cyan-600 dark:text-cyan-400">
                     {t('home.newTools.explorer.countermeasures')}
                   </span>
                 </div>
-                <ArrowRight className="h-5 w-5 text-purple-600 dark:text-purple-400 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-5 w-5 text-cyan-600 dark:text-cyan-400 transition-transform group-hover:translate-x-1" />
               </div>
             </motion.div>
           </Link>
@@ -164,11 +164,11 @@ export function HomePage() {
             <motion.div
               whileHover={{ scale: 1.02, y: -4 }}
               transition={{ duration: 0.2 }}
-              className="h-full rounded-xl border border-pink-500/20 bg-gradient-to-br from-pink-500/10 via-orange-500/5 to-transparent p-6 shadow-md transition-all hover:border-pink-500/40 hover:shadow-xl"
+              className="h-full rounded-xl border border-amber-500/20 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-6 shadow-md transition-all hover:border-amber-500/40 hover:shadow-xl"
             >
               <div className="mb-4 flex items-center gap-3">
-                <div className="rounded-xl bg-pink-500/20 p-3 transition-transform group-hover:scale-110">
-                  <Sparkles className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+                <div className="rounded-xl bg-amber-500/20 p-3 transition-transform group-hover:scale-110">
+                  <Sparkles className="h-8 w-8 text-amber-600 dark:text-amber-400" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">{t('home.newTools.discover.title')}</h3>
@@ -180,14 +180,14 @@ export function HomePage() {
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600 dark:text-pink-400">
+                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
                     {t('home.newTools.discover.swipe')}
                   </span>
-                  <span className="rounded-full bg-pink-500/20 px-3 py-1 text-xs font-medium text-pink-600 dark:text-pink-400">
+                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
                     {t('home.newTools.discover.fullscreen')}
                   </span>
                 </div>
-                <ArrowRight className="h-5 w-5 text-pink-600 dark:text-pink-400 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-5 w-5 text-amber-600 dark:text-amber-400 transition-transform group-hover:translate-x-1" />
               </div>
             </motion.div>
           </Link>

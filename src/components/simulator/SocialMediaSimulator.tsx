@@ -197,14 +197,14 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
           <div className="p-4">
             <p className="whitespace-pre-wrap">{currentPost.content}</p>
             {currentPost.image && (
-              <div className="mt-4 bg-muted rounded-lg h-64 flex items-center justify-center">
+              <div className="mt-4 bg-muted rounded-lg h-48 sm:h-64 flex items-center justify-center">
                 <span className="text-muted-foreground">📷 Bild</span>
               </div>
             )}
           </div>
 
           {/* Post Stats */}
-          <div className="px-4 py-2 border-t border-b flex items-center gap-6 text-sm text-muted-foreground">
+          <div className="px-4 py-2 border-t border-b flex items-center gap-4 sm:gap-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
               <ThumbsUp className="h-4 w-4" />
               {currentPost.likes.toLocaleString()}
@@ -220,17 +220,17 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
           </div>
 
           {/* Actions */}
-          <div className="p-4 flex gap-4">
-            <button className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-              <ThumbsUp className="h-5 w-5" />
+          <div className="p-3 sm:p-4 flex gap-3 sm:gap-4">
+            <button className="flex items-center gap-1.5 sm:gap-2 text-sm text-muted-foreground hover:text-foreground">
+              <ThumbsUp className="h-4 w-4 sm:h-5 sm:w-5" />
               <span>Gefällt mir</span>
             </button>
-            <button className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-              <MessageCircle className="h-5 w-5" />
+            <button className="flex items-center gap-1.5 sm:gap-2 text-sm text-muted-foreground hover:text-foreground">
+              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               <span>Kommentieren</span>
             </button>
-            <button className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-              <Share2 className="h-5 w-5" />
+            <button className="flex items-center gap-1.5 sm:gap-2 text-sm text-muted-foreground hover:text-foreground">
+              <Share2 className="h-4 w-4 sm:h-5 sm:w-5" />
               <span>Teilen</span>
             </button>
           </div>
@@ -313,17 +313,17 @@ export function SocialMediaSimulator({ onComplete }: SimulatorProps) {
 
       {/* Answer Buttons */}
       {!isAnswered ? (
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
           <button
             onClick={() => handleAnswer('disinfo')}
-            className="px-6 py-4 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+            className="px-4 sm:px-6 py-3 sm:py-4 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 min-h-[48px]"
           >
             <AlertTriangle className="h-5 w-5" />
             Desinformation
           </button>
           <button
             onClick={() => handleAnswer('legit')}
-            className="px-6 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+            className="px-4 sm:px-6 py-3 sm:py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 min-h-[48px]"
           >
             <CheckCircle className="h-5 w-5" />
             Seriös

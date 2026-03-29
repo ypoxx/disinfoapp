@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Brain, Target, Users, Lightbulb, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowRight, Shield, Brain, Target, Users, Lightbulb, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DailyChallengeCard } from '@/components/challenges/DailyChallengeCard';
@@ -92,7 +92,7 @@ export function HomePage() {
         className="mt-16"
       >
         <h2 className="mb-8 text-2xl font-bold">{t('home.newTools.title')}</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {/* Technique Quiz Card */}
           <Link to="/quiz" className="group">
             <motion.div
@@ -159,38 +159,6 @@ export function HomePage() {
             </motion.div>
           </Link>
 
-          {/* Discover Feed Card */}
-          <Link to="/discover" className="group md:col-span-2 lg:col-span-1">
-            <motion.div
-              whileHover={{ scale: 1.02, y: -4 }}
-              transition={{ duration: 0.2 }}
-              className="h-full rounded-xl border border-amber-500/20 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-6 shadow-md transition-all hover:border-amber-500/40 hover:shadow-xl"
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="rounded-xl bg-amber-500/20 p-3 transition-transform group-hover:scale-110">
-                  <Sparkles className="h-8 w-8 text-amber-600 dark:text-amber-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">{t('home.newTools.discover.title')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('home.newTools.discover.subtitle')}</p>
-                </div>
-              </div>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                {t('home.newTools.discover.description')}
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
-                    {t('home.newTools.discover.swipe')}
-                  </span>
-                  <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
-                    {t('home.newTools.discover.fullscreen')}
-                  </span>
-                </div>
-                <ArrowRight className="h-5 w-5 text-amber-600 dark:text-amber-400 transition-transform group-hover:translate-x-1" />
-              </div>
-            </motion.div>
-          </Link>
         </div>
       </motion.div>
 
@@ -233,7 +201,7 @@ export function HomePage() {
             transition={{ delay: 0.5 }}
             className="flex flex-col items-center"
           >
-            <div className="mb-2 text-5xl font-bold text-primary">5</div>
+            <div className="mb-2 text-5xl font-bold text-primary">6</div>
             <div className="text-sm font-medium text-muted-foreground">{t('home.stats.modules')}</div>
           </motion.div>
           <motion.div

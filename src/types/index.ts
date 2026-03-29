@@ -123,3 +123,25 @@ export interface Challenge {
     timeLimit?: number;
   };
 }
+
+// Micro-Exercise Types (Duolingo-style)
+export type ExerciseType =
+  | 'quick-check' // Is this disinformation? Yes/No with timer
+  | 'technique-match' // Which technique is used here?
+  | 'response-choice' // How should a communicator respond?
+  | 'fill-blank' // Complete the correction statement
+  | 'spot-the-flag'; // Find the red flags in this post
+
+export interface MicroExercise {
+  id: string;
+  type: ExerciseType;
+  difficulty: DifficultyLevel;
+  question: LocalizedString;
+  scenario?: LocalizedString; // Optional context/post to analyze
+  options: LocalizedString[];
+  correctAnswers: number[]; // indices into options (supports multiple correct)
+  explanation: LocalizedString;
+  points: number;
+  timeLimit?: number; // seconds, for quick-check type
+  relatedTechniques?: string[]; // technique IDs for adaptive learning
+}

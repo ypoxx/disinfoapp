@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Home, BookOpen, Smartphone, BarChart3, MoreHorizontal } from 'lucide-react';
+import { Home, BookOpen, Smartphone, BarChart3, MoreHorizontal, Zap as ZapIcon } from 'lucide-react';
 import { useState } from 'react';
-import { Brain, LineChart, Sparkles, Zap } from 'lucide-react';
+import { Brain, LineChart, Sparkles } from 'lucide-react';
 
 export function BottomNav() {
   const { t } = useTranslation();
@@ -10,15 +10,15 @@ export function BottomNav() {
 
   const mainItems = [
     { to: '/', icon: Home, label: t('nav.home') },
+    { to: '/practice', icon: ZapIcon, label: 'Üben' },
     { to: '/modules', icon: BookOpen, label: t('nav.modules') },
-    { to: '/simulator', icon: Smartphone, label: t('nav.simulator') },
     { to: '/progress', icon: BarChart3, label: t('nav.progress') },
   ];
 
   const moreItems = [
+    { to: '/simulator', icon: Smartphone, label: t('nav.simulator') },
     { to: '/discover', icon: Sparkles, label: t('nav.discover') },
     { to: '/techniques', icon: Brain, label: t('nav.techniques') },
-    { to: '/quiz', icon: Zap, label: 'Quiz' },
     { to: '/dashboard', icon: LineChart, label: t('nav.dashboard') },
   ];
 

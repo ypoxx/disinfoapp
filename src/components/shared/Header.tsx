@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Shield, Sun, Moon } from 'lucide-react';
 import { Navigation } from './Navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { AuthButton } from './AuthButton';
 import { useThemeStore } from '@/stores/themeStore';
 
 export function Header() {
@@ -39,11 +40,13 @@ export function Header() {
                 <Moon className="h-5 w-5" />
               )}
             </button>
+            <AuthButton />
           </div>
         </div>
 
         {/* Mobile: Only compact controls (navigation is in BottomNav) */}
         <div className="flex items-center gap-1 md:hidden">
+          <AuthButton />
           <LanguageSwitcher compact />
           <button
             onClick={toggleTheme}

@@ -30,6 +30,9 @@ const KnowledgeDashboard = lazy(() =>
 const DiscoverFeed = lazy(() =>
   import('./components/discover/DiscoverFeed').then((m) => ({ default: m.DiscoverFeed }))
 );
+const PracticePage = lazy(() =>
+  import('./features/practice/PracticePage').then((m) => ({ default: m.PracticePage }))
+);
 
 function PageLoader() {
   return (
@@ -54,6 +57,7 @@ export function AppRouter() {
           <Route path="/techniques" element={<TechniqueExplorer />} />
           <Route path="/quiz" element={<TechniqueQuizPage />} />
           <Route path="/dashboard" element={<KnowledgeDashboard />} />
+          <Route path="/practice" element={<PracticePage />} />
         </Route>
       </Routes>
     </Suspense>

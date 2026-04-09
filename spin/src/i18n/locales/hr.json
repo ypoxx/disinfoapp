@@ -1,0 +1,333 @@
+{
+  "common": {
+    "start": "Započni",
+    "continue": "Nastavi",
+    "back": "Natrag",
+    "next": "Dalje",
+    "close": "Zatvori",
+    "save": "Spremi",
+    "cancel": "Odustani",
+    "loading": "Učitavanje...",
+    "error": "Greška",
+    "success": "Uspjeh",
+    "progress": "Napredak",
+    "completed": "Završeno",
+    "notCompleted": "Nije završeno",
+    "viewAll": "Prikaži sve",
+    "learnMore": "Saznaj više",
+    "tryAgain": "Pokušaj ponovo",
+    "share": "Podijeli",
+    "free": "Besplatno"
+  },
+  "nav": {
+    "home": "Početna",
+    "discover": "Otkrij",
+    "modules": "Moduli",
+    "techniques": "Tehnike",
+    "simulator": "Simulator",
+    "dashboard": "Nadzorna ploča",
+    "progress": "Napredak"
+  },
+  "home": {
+    "hero": {
+      "title1": "Prepoznaj dezinformacije.",
+      "title2": "Zaštiti istinu.",
+      "subtitle": "Nauči u interaktivnim modulima kako prepoznati lažne vijesti, provjeriti činjenice i kritički razmišljati o informacijama. Postani stručnjak u borbi protiv dezinformacija."
+    },
+    "cta": {
+      "start": "Započni",
+      "myProgress": "Moj napredak"
+    },
+    "features": {
+      "recognize": {
+        "title": "Prepoznavanje dezinformacija",
+        "description": "Nauči prepoznati karakteristike i taktike lažnih informacija"
+      },
+      "thinking": {
+        "title": "Kritičko razmišljanje",
+        "description": "Razvij vještine za analizu i procjenu informacija"
+      },
+      "practice": {
+        "title": "Praktične vježbe",
+        "description": "Vježbaj na stvarnim primjerima u sigurnom okruženju"
+      },
+      "community": {
+        "title": "Zajedničko učenje",
+        "description": "Razmjenjuj ideje s drugima i učite jedni od drugih"
+      }
+    },
+    "newTools": {
+      "title": "Novi alati za učenje",
+      "quiz": {
+        "title": "Kviz tehnika",
+        "subtitle": "Testiraj svoje znanje",
+        "description": "Identificiraj manipulativne tehnike u realističnim scenarijima. 10 pitanja s trenutnom povratnom informacijom i detaljnim objašnjenjima.",
+        "questions": "10 pitanja",
+        "xp": "Do 200 XP"
+      },
+      "explorer": {
+        "title": "Istraživač tehnika",
+        "subtitle": "Otkrij sve tehnike",
+        "description": "Istraži 28 tehnika persuazije i manipulacije sa znanstvenim uvidima, primjerima i protumjerama.",
+        "techniques": "28 tehnika",
+        "countermeasures": "12 protumjera"
+      },
+      "discover": {
+        "title": "Otkrij",
+        "subtitle": "Povlači i uči",
+        "description": "Pregledavaj sve manipulativne tehnike u načinu cijelog zaslona. Brzo, vizualno i zabavno - savršeno za u pokretu.",
+        "swipe": "Način povlačenja",
+        "fullscreen": "Cijeli zaslon"
+      }
+    },
+    "stats": {
+      "modules": "Moduli za učenje",
+      "techniques": "Manipulativne tehnike",
+      "free": "Besplatno"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "O DisinfoApp",
+      "description": "Progresivna web aplikacija za otkrivanje i borbu protiv dezinformacija. Nauči prepoznati lažne vijesti i razvij kritičko razmišljanje."
+    },
+    "quickLinks": {
+      "title": "Brzi linkovi",
+      "modules": "Moduli za učenje",
+      "progress": "Napredak",
+      "privacy": "Privatnost",
+      "imprint": "Impressum"
+    },
+    "community": {
+      "title": "Zajednica",
+      "madeWith": "Napravljeno s",
+      "for": "za digitalnu pismenost"
+    },
+    "copyright": "Sva prava pridržana."
+  },
+  "modules": {
+    "title": "Moduli za učenje",
+    "subtitle": "Odaberi modul za proširenje znanja o dezinformacijama",
+    "duration": "{{minutes}} min",
+    "lessons": "{{count}} lekcija",
+    "startModule": "Započni modul",
+    "continueModule": "Nastavi",
+    "completed": "Završeno",
+    "difficulty": {
+      "beginner": "Početnik",
+      "intermediate": "Srednji",
+      "advanced": "Napredni",
+      "expert": "Stručnjak"
+    }
+  },
+  "quiz": {
+    "title": "Kviz",
+    "question": "Pitanje {{current}} od {{total}}",
+    "checkAnswer": "Provjeri odgovor",
+    "nextQuestion": "Sljedeće pitanje",
+    "finishQuiz": "Završi kviz",
+    "correct": "Točno!",
+    "incorrect": "Nažalost netočno",
+    "correctAnswer": "Točan odgovor",
+    "explanation": "Objašnjenje",
+    "yourAnswer": "Tvoj odgovor",
+    "results": {
+      "title": "Rezultat kviza",
+      "score": "{{score}} od {{total}} točnih",
+      "percentage": "{{percentage}}%",
+      "excellent": "Izvrsno!",
+      "good": "Dobro napravljeno!",
+      "needsWork": "Nastavi vježbati!",
+      "xpEarned": "{{xp}} XP osvojeno",
+      "tryAgain": "Pokušaj ponovo",
+      "backToModules": "Natrag na module"
+    }
+  },
+  "techniques": {
+    "title": "Manipulativne tehnike",
+    "subtitle": "Istraži 28 tehnika persuazije i manipulacije",
+    "searchPlaceholder": "Pretraži tehnike...",
+    "allCategories": "Sve kategorije",
+    "allDifficulties": "Sve razine",
+    "gridView": "Mrežni prikaz",
+    "graphView": "Mrežni graf",
+    "categories": {
+      "cognitive_bias": "Kognitivne pristranosti",
+      "social_dynamics": "Društvena dinamika",
+      "logical_fallacy": "Logičke pogreške",
+      "emotional_manipulation": "Emocionalna manipulacija",
+      "nlp": "Jezični obrasci",
+      "digital_influence": "Digitalni utjecaj"
+    },
+    "detail": {
+      "overview": "Pregled",
+      "examples": "Primjeri",
+      "detection": "Otkrivanje",
+      "countermeasures": "Protumjere",
+      "related": "Povezane tehnike",
+      "howItWorks": "Kako funkcionira",
+      "whyEffective": "Zašto je učinkovito",
+      "scientificBasis": "Znanstvena osnova",
+      "realWorldExamples": "Primjeri iz prakse",
+      "warningSignals": "Znakovi upozorenja",
+      "psychologicalBackground": "Psihološka pozadina",
+      "defenseTips": "Savjeti za obranu",
+      "relatedTechniques": "Povezane tehnike",
+      "effectiveness": "Učinkovitost",
+      "detectability": "Mogućnost otkrivanja"
+    }
+  },
+  "discover": {
+    "title": "Otkrij",
+    "swipeHint": "Povuci gore za više",
+    "tapToLearn": "Dodirni za detalje",
+    "learnMore": "Saznaj više",
+    "category": "Kategorija",
+    "technique": "Tehnika {{current}} od {{total}}",
+    "completed": "Sve tehnike otkrivene!",
+    "startOver": "Počni ispočetka"
+  },
+  "simulator": {
+    "title": "Simulator društvenih mreža",
+    "subtitle": "Analiziraj objave za manipulativne tehnike",
+    "analyzePost": "Analiziraj objavu",
+    "detectedTechniques": "Otkrivene tehnike",
+    "noTechniques": "Nisu otkrivene manipulativne tehnike",
+    "sharePost": "Podijeli",
+    "reportPost": "Prijavi",
+    "likePost": "Sviđa mi se",
+    "commentPost": "Komentiraj",
+    "trustScore": "Ocjena pouzdanosti",
+    "high": "Visoka",
+    "medium": "Srednja",
+    "low": "Niska"
+  },
+  "dashboard": {
+    "title": "Nadzorna ploča znanja",
+    "subtitle": "Prati svoj napredak u učenju i majstorstvo",
+    "overview": "Pregled",
+    "techniquesLearned": "Naučene tehnike",
+    "totalXp": "Ukupno XP",
+    "currentStreak": "Trenutna serija",
+    "masteryLevel": "Razina majstorstva",
+    "heatmap": {
+      "title": "Toplinska karta aktivnosti",
+      "subtitle": "Tvoja aktivnost učenja tijekom proteklih tjedana"
+    },
+    "radar": {
+      "title": "Radar kategorija",
+      "subtitle": "Tvoje snage po kategorijama"
+    },
+    "timeline": {
+      "title": "Vremenska crta učenja",
+      "subtitle": "Tvoja povijest učenja"
+    },
+    "weaknesses": {
+      "title": "Područja za poboljšanje",
+      "subtitle": "Područja koja zahtijevaju više pažnje"
+    }
+  },
+  "progress": {
+    "title": "Tvoj napredak",
+    "subtitle": "Prati svoje putovanje učenja",
+    "overview": {
+      "title": "Pregled",
+      "totalXp": "Ukupno XP",
+      "level": "Razina {{level}}",
+      "modulesCompleted": "Završeni moduli",
+      "techniquesLearned": "Naučene tehnike",
+      "quizzesTaken": "Riješeni kvizovi",
+      "accuracy": "Točnost"
+    },
+    "streak": {
+      "title": "Serija učenja",
+      "days": "dana",
+      "currentStreak": "Trenutna serija",
+      "longestStreak": "Najduža serija",
+      "keepItUp": "Samo tako nastavi!",
+      "streakLost": "Serija prekinuta - počni iznova!"
+    },
+    "achievements": {
+      "title": "Postignuća",
+      "unlocked": "{{count}} otključanih",
+      "locked": "Zaključano",
+      "progress": "Napredak: {{current}}/{{target}}"
+    },
+    "badges": {
+      "title": "Značke",
+      "collected": "{{count}} prikupljenih",
+      "rarity": {
+        "common": "Obična",
+        "rare": "Rijetka",
+        "epic": "Epska",
+        "legendary": "Legendarna"
+      }
+    },
+    "recommendations": {
+      "title": "Preporuke",
+      "subtitle": "Na temelju tvog ponašanja pri učenju",
+      "nextBest": "Sljedeći korak"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Dobrodošli u DisinfoApp!",
+      "subtitle": "Tvoj pratitelj u borbi protiv dezinformacija",
+      "step1": {
+        "title": "Nauči tehnike",
+        "description": "Otkrij 28 manipulativnih tehnika i kako ih prepoznati"
+      },
+      "step2": {
+        "title": "Vježbaj interaktivno",
+        "description": "Testiraj svoje znanje u kvizovima i simulacijama"
+      },
+      "step3": {
+        "title": "Skupljaj postignuća",
+        "description": "Osvoji XP, značke i otključaj postignuća"
+      },
+      "step4": {
+        "title": "Postani stručnjak",
+        "description": "Razvij kritičko razmišljanje i zaštiti se od manipulacije"
+      },
+      "getStarted": "Krenimo!",
+      "skip": "Preskoči"
+    },
+    "tour": {
+      "step1": "Otkrij nove značajke",
+      "step2": "Testiraj znanje u kvizu",
+      "step3": "Istraži sve tehnike",
+      "complete": "Završi obilazak"
+    }
+  },
+  "challenges": {
+    "daily": {
+      "title": "Dnevni izazov",
+      "subtitle": "Osvoji bonus XP",
+      "completed": "Završeno!",
+      "timeLeft": "Preostalo {{hours}}h {{minutes}}m",
+      "reward": "{{xp}} XP nagrada",
+      "startChallenge": "Započni izazov"
+    }
+  },
+  "achievements": {
+    "unlocked": "Postignuće otključano!",
+    "new": "Novo!"
+  },
+  "theme": {
+    "light": "Svijetla",
+    "dark": "Tamna",
+    "system": "Sustav"
+  },
+  "language": {
+    "select": "Odaberi jezik",
+    "current": "Trenutni jezik"
+  },
+  "accessibility": {
+    "toggleMenu": "Prebaci izbornik",
+    "toggleTheme": "Prebaci temu",
+    "closeModal": "Zatvori prozor",
+    "openModal": "Otvori prozor",
+    "nextSlide": "Sljedeći slajd",
+    "prevSlide": "Prethodni slajd"
+  }
+}

@@ -1,0 +1,65 @@
+import type { Technique } from '../types';
+
+export const darkPatterns: Technique =   {
+    id: 'dark_patterns',
+    name: {
+      de: 'Dark Patterns',
+      en: 'Dark Patterns',
+      hu: 'Sötét minták',
+      pl: 'Ciemne wzorce',
+      sk: 'Temné vzory',
+      hr: 'Tamni obrasci',
+      el: 'Σκοτεινά μοτίβα',
+      mk: 'Темни обрасци',
+      cnr: 'Tamni obrasci',
+    },
+    description: {
+      de: 'Manipulative UI/UX-Design-Elemente, die Nutzer zu ungewollten Handlungen verleiten oder Entscheidungen erschweren.',
+      en: 'Manipulative UI/UX design elements that trick users into unwanted actions or make decisions difficult.',
+      hu: 'Manipulatív UI/UX tervezési elemek, amelyek rávesznek a felhasználókat nem kívánt cselekedetekre vagy megnehezítik a döntéseket.',
+      pl: 'Manipulacyjne elementy projektowania UI/UX, które nakłaniają użytkowników do niechcianych działań lub utrudniają decyzje.',
+      sk: 'Manipulatívne prvky dizajnu UI/UX, ktoré klamú používateľov do nechcených akcií alebo sťažujú rozhodnutia.',
+      hr: 'Manipulativni elementi UI/UX dizajna koji navode korisnike na neželjene radnje ili otežavaju odluke.',
+      el: 'Χειριστικά στοιχεία σχεδίασης UI/UX που εξαπατούν τους χρήστες σε ανεπιθύμητες ενέργειες ή δυσκολεύουν τις αποφάσεις.',
+      mk: 'Манипулативни елементи на UI/UX дизајн кои ги мамат корисниците во несакани дејства или ги отежнуваат одлуките.',
+      cnr: 'Manipulativni elementi UI/UX dizajna koji navode korisnike na neželjene radnje ili otežavaju odluke.',
+    },
+    category: 'digital_influence',
+    difficulty: 'intermediate',
+    effectiveness: 'high',
+    examples: [
+      'Versteckte Abmelde-Buttons',
+      'Pre-checked Boxen für Newsletter-Anmeldung',
+      'Verschleierte Kosten bis zum letzten Schritt',
+      'Künstliche Dringlichkeit ("Nur noch 1 Zimmer!")',
+      'Roach Motel: Einfach rein, schwer raus',
+    ],
+    evidence: {
+      studies: [
+        'Gray et al. (2018) - Dark Patterns Taxonomy',
+        'Mathur et al. (2019) - Dark Patterns at Scale',
+        'Luguri & Strahilevitz (2021) - Dark Patterns and Consumer',
+      ],
+      findings: 'Dark Patterns sind weit verbreitet und messbar effektiv. Sie reduzieren Nutzer-Autonomie signifikant.',
+      uncertainty: {
+        confidence: 0.87,
+        sampleSize: '30+ Studien, N>15,000',
+        evidenceQuality: 'high',
+      },
+    },
+    relatedTechniques: ['scarcity', 'framing', 'consistency'],
+    warningNeurons: [
+      'Schwierige oder versteckte Opt-Out-Optionen',
+      'Unklare oder irreführende Button-Labels',
+      'Unterschiedliche visuelle Hierarchie für Ja/Nein',
+      'Künstlicher Zeitdruck',
+    ],
+    taxonomyGroups: ['digital_techniques', 'interface_manipulation'],
+    image: {
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Dark_patterns_example.svg/640px-Dark_patterns_example.svg.png',
+      alt: 'Dark Patterns Beispiel - Manipulatives UI-Design',
+      credit: 'Wikimedia Commons (CC-BY-SA)',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Dark_patterns_example.svg',
+      context: 'Dark Patterns manipulieren Nutzer durch täuschende Interface-Gestaltung',
+    },
+  };

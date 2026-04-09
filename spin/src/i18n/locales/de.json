@@ -1,0 +1,119 @@
+{
+  "common": {
+    "start": "Los geht's",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "next": "Weiter",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Geschafft",
+    "progress": "Fortschritt",
+    "completed": "Abgeschlossen",
+    "viewAll": "Alle anzeigen",
+    "learnMore": "Mehr erfahren",
+    "tryAgain": "Nochmal",
+    "correct": "Richtig!",
+    "incorrect": "Nicht ganz",
+    "points": "Punkte",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden"
+  },
+  "nav": {
+    "today": "Heute",
+    "practice": "Üben",
+    "library": "Bibliothek",
+    "profile": "Profil"
+  },
+  "today": {
+    "greeting": "Guten Tag",
+    "dailySession": "Tägliche Übung",
+    "dailySessionDesc": "3-5 Minuten, die dich weiterbringen",
+    "startSession": "Session starten",
+    "streak": "Tage in Folge",
+    "dueReviews": "Wiederholungen fällig",
+    "masteryScore": "Mastery Score",
+    "weeklyGoal": "Wochenziel",
+    "noSessionYet": "Starte deine erste Übung!"
+  },
+  "practice": {
+    "title": "Üben",
+    "dailySession": "Tägliche Session",
+    "quickPractice": "Schnelles Training",
+    "categoryPractice": "Kategorie üben",
+    "simulator": "Simulator",
+    "assessment": "Assessment",
+    "sessionComplete": "Session abgeschlossen!",
+    "xpEarned": "{{xp}} XP verdient",
+    "accuracy": "Genauigkeit",
+    "techniquesReviewed": "Techniken wiederholt",
+    "nextReview": "Nächste Wiederholung"
+  },
+  "library": {
+    "title": "Technik-Bibliothek",
+    "search": "Techniken durchsuchen...",
+    "allCategories": "Alle Kategorien",
+    "techniques": "Techniken",
+    "counterMeasures": "Gegenmaßnahmen",
+    "phaseModel": "Phasenmodell",
+    "difficulty": "Schwierigkeit",
+    "effectiveness": "Wirksamkeit",
+    "evidence": "Evidenz",
+    "examples": "Beispiele",
+    "relatedTechniques": "Verwandte Techniken",
+    "warningSignals": "Erkennungsmerkmale"
+  },
+  "profile": {
+    "title": "Profil",
+    "mastery": "Mastery",
+    "badges": "Abzeichen",
+    "settings": "Einstellungen",
+    "language": "Sprache",
+    "theme": "Erscheinungsbild",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "themeSystem": "System",
+    "weeklyGoal": "Wochenziel",
+    "daysPerWeek": "Tage pro Woche",
+    "totalXP": "Gesamt-XP",
+    "techniquesLearned": "Techniken gelernt",
+    "practiceTime": "Übungszeit",
+    "longestStreak": "Längste Serie",
+    "signInPrompt": "Melde dich an, um deinen Fortschritt geräteübergreifend zu synchronisieren.",
+    "signInWithGoogle": "Mit Google anmelden"
+  },
+  "onboarding": {
+    "welcome": "Willkommen bei SPIN",
+    "tagline": "Kommunikationstechniken meistern",
+    "description": "Lerne Überzeugungstechniken, die Profis kennen sollten — in nur wenigen Minuten am Tag.",
+    "letsGo": "Los geht's",
+    "diagnosticTitle": "Kurzer Check",
+    "diagnosticDesc": "3 Fragen, um deinen Wissensstand einzuschätzen"
+  },
+  "categories": {
+    "cognitive_bias": "Kognitive Verzerrungen",
+    "social_dynamics": "Soziale Dynamiken",
+    "emotional_manipulation": "Emotionale Beeinflussung",
+    "logical_fallacy": "Logische Fehlschlüsse",
+    "nlp": "NLP-Techniken",
+    "digital_influence": "Digitale Einflussnahme"
+  },
+  "difficulty": {
+    "beginner": "Einsteiger",
+    "intermediate": "Fortgeschritten",
+    "advanced": "Profi",
+    "expert": "Experte"
+  },
+  "badges": {
+    "earned": "Erhalten",
+    "locked": "Gesperrt",
+    "rarity": {
+      "common": "Gewöhnlich",
+      "rare": "Selten",
+      "epic": "Episch",
+      "legendary": "Legendär"
+    }
+  }
+}

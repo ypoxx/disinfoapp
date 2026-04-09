@@ -7,6 +7,7 @@ import { useProgressStore } from '@/stores/progress-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useSettingsStore } from '@/stores/settings-store';
 import { useAuthStore } from '@/stores/auth-store';
+import { signInWithGoogle, signOut as firebaseSignOut } from '@/lib/firebase';
 import { languages } from '@/i18n';
 import type { Theme } from '@/stores/settings-store';
 
@@ -62,13 +63,17 @@ export function ProfilePage() {
       </div>
 
       {/* Auth */}
-      {!user && (
+      {!user ? (
         <Card>
           <p className="text-sm text-[var(--color-text-secondary)] mb-3">{t('profile.signInPrompt')}</p>
-          <Button variant="secondary" className="w-full">
+          <Button variant="secondary" className="w-full" onClick={() => signInWithGoogle()}>
             {t('profile.signInWithGoogle')}
           </Button>
         </Card>
+      ) : (
+        <Button variant="ghost" className="w-full" onClick={() => firebaseSignOut()}>
+          {t('common.signOut')}
+        </Button>
       )}
 
       {/* Settings */}

@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Zap, Grid3x3, BarChart3, MonitorPlay } from 'lucide-react';
 import { Card } from '@/design/components/card';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
+import { buildSession } from '@/engine/session-builder';
+import type { Session } from '@/engine/types';
+import { SessionRunner } from './session-runner';
 
 interface PracticeOption {
+  id: string;
   icon: typeof Zap;
   labelKey: string;
   descKey: string;
@@ -11,16 +16,36 @@ interface PracticeOption {
 }
 
 const practiceOptions: PracticeOption[] = [
-  { icon: Zap, labelKey: 'practice.dailySession', descKey: 'today.dailySessionDesc', color: 'var(--color-accent)' },
-  { icon: Grid3x3, labelKey: 'practice.quickPractice', descKey: 'practice.categoryPractice', color: 'var(--color-primary-500)' },
-  { icon: MonitorPlay, labelKey: 'practice.simulator', descKey: 'practice.simulator', color: 'var(--color-success-500)' },
-  { icon: BarChart3, labelKey: 'practice.assessment', descKey: 'practice.assessment', color: 'var(--color-warning-500)' },
+  { id: 'daily', icon: Zap, labelKey: 'practice.dailySession', descKey: 'today.dailySessionDesc', color: 'var(--color-accent)' },
+  { id: 'quick', icon: Grid3x3, labelKey: 'practice.quickPractice', descKey: 'practice.categoryPractice', color: 'var(--color-primary-500)' },
+  { id: 'simulator', icon: MonitorPlay, labelKey: 'practice.simulator', descKey: 'practice.simulator', color: 'var(--color-success-500)' },
+  { id: 'assessment', icon: BarChart3, labelKey: 'practice.assessment', descKey: 'practice.assessment', color: 'var(--color-warning-500)' },
 ];
 
 export function PracticePage() {
   const { t } = useTranslation();
-  const { getDueReviews } = useKnowledgeStore();
+  const { getDueReviews, techniques: knowledgeState } = useKnowledgeStore();
+  const [activeSession, setActiveSession] = useState<Session | null>(null);
+
   const dueCount = getDueReviews().length;
+
+  const startSession = (type: string) => {
+    const config = {
+      knowledgeState,
+      maxItems: type === 'quick' ? 5 : 7,
+    };
+    const session = buildSession(config);
+    setActiveSession(session);
+  };
+
+  if (activeSession) {
+    return (
+      <SessionRunner
+        session={activeSession}
+        onComplete={() => setActiveSession(null)}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -34,8 +59,8 @@ export function PracticePage() {
       </div>
 
       <div className="space-y-3">
-        {practiceOptions.map(({ icon: Icon, labelKey, descKey, color }) => (
-          <Card key={labelKey} hover padding="md">
+        {practiceOptions.map(({ id, icon: Icon, labelKey, descKey, color }) => (
+          <Card key={id} hover padding="md" onClick={() => startSession(id)}>
             <div className="flex items-center gap-4">
               <div
                 className="w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center shrink-0"

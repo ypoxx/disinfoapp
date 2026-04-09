@@ -1,7 +1,11 @@
 import { RouterProvider } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { router } from './router';
+import { initSync } from './lib/sync';
 import './i18n';
+
+// Initialize Firebase (side effect import)
+import './lib/firebase';
 
 function LoadingFallback() {
   return (
@@ -12,6 +16,10 @@ function LoadingFallback() {
 }
 
 export function App() {
+  useEffect(() => {
+    initSync();
+  }, []);
+
   return (
     <Suspense fallback={<LoadingFallback />}>
       <RouterProvider router={router} />

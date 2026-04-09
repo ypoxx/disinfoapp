@@ -1,0 +1,119 @@
+{
+  "common": {
+    "start": "Get Started",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Done",
+    "progress": "Progress",
+    "completed": "Completed",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "tryAgain": "Try again",
+    "correct": "Correct!",
+    "incorrect": "Not quite",
+    "points": "Points",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "nav": {
+    "today": "Today",
+    "practice": "Practice",
+    "library": "Library",
+    "profile": "Profile"
+  },
+  "today": {
+    "greeting": "Good day",
+    "dailySession": "Daily Practice",
+    "dailySessionDesc": "3-5 minutes to sharpen your skills",
+    "startSession": "Start Session",
+    "streak": "Day Streak",
+    "dueReviews": "Reviews Due",
+    "masteryScore": "Mastery Score",
+    "weeklyGoal": "Weekly Goal",
+    "noSessionYet": "Start your first practice!"
+  },
+  "practice": {
+    "title": "Practice",
+    "dailySession": "Daily Session",
+    "quickPractice": "Quick Practice",
+    "categoryPractice": "Category Practice",
+    "simulator": "Simulator",
+    "assessment": "Assessment",
+    "sessionComplete": "Session Complete!",
+    "xpEarned": "{{xp}} XP earned",
+    "accuracy": "Accuracy",
+    "techniquesReviewed": "Techniques Reviewed",
+    "nextReview": "Next Review"
+  },
+  "library": {
+    "title": "Technique Library",
+    "search": "Search techniques...",
+    "allCategories": "All Categories",
+    "techniques": "Techniques",
+    "counterMeasures": "Counter-Measures",
+    "phaseModel": "Phase Model",
+    "difficulty": "Difficulty",
+    "effectiveness": "Effectiveness",
+    "evidence": "Evidence",
+    "examples": "Examples",
+    "relatedTechniques": "Related Techniques",
+    "warningSignals": "Warning Signals"
+  },
+  "profile": {
+    "title": "Profile",
+    "mastery": "Mastery",
+    "badges": "Badges",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Appearance",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "weeklyGoal": "Weekly Goal",
+    "daysPerWeek": "Days per week",
+    "totalXP": "Total XP",
+    "techniquesLearned": "Techniques Learned",
+    "practiceTime": "Practice Time",
+    "longestStreak": "Longest Streak",
+    "signInPrompt": "Sign in to sync your progress across devices.",
+    "signInWithGoogle": "Sign in with Google"
+  },
+  "onboarding": {
+    "welcome": "Welcome to SPIN",
+    "tagline": "Master communication techniques",
+    "description": "Learn persuasion techniques every professional should know — in just a few minutes a day.",
+    "letsGo": "Let's go",
+    "diagnosticTitle": "Quick Check",
+    "diagnosticDesc": "3 questions to assess your knowledge"
+  },
+  "categories": {
+    "cognitive_bias": "Cognitive Biases",
+    "social_dynamics": "Social Dynamics",
+    "emotional_manipulation": "Emotional Influence",
+    "logical_fallacy": "Logical Fallacies",
+    "nlp": "NLP Techniques",
+    "digital_influence": "Digital Influence"
+  },
+  "difficulty": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  },
+  "badges": {
+    "earned": "Earned",
+    "locked": "Locked",
+    "rarity": {
+      "common": "Common",
+      "rare": "Rare",
+      "epic": "Epic",
+      "legendary": "Legendary"
+    }
+  }
+}

@@ -28,6 +28,17 @@
     "dashboard": "Panel",
     "progress": "Pokrok"
   },
+  "today": {
+    "greetingMorning": "Dobré ráno",
+    "greetingAfternoon": "Dobrý deň",
+    "greetingEvening": "Dobrý večer",
+    "greetingFirstTime": "Vitaj v SPIN",
+    "firstSessionTitle": "Pripravený na prvé cvičenie?",
+    "firstSessionDesc": "Spoznaj prvé presvedčovacie techniky za 3–5 minút.",
+    "firstSessionCta": "Začať prvé cvičenie",
+    "signInPrompt": "Prihlás sa, aby si synchronizoval pokrok na všetkých zariadeniach.",
+    "sessionsCompleted": "{{count}} cvičení dokončených"
+  },
   "home": {
     "hero": {
       "title1": "Rozpoznaj dezinformáciu.",
@@ -270,33 +281,34 @@
     }
   },
   "onboarding": {
-    "welcome": {
-      "title": "Vitaj v DisinfoApp!",
-      "subtitle": "Tvoj spoločník v boji proti dezinformácii",
-      "step1": {
-        "title": "Nauč sa techniky",
-        "description": "Objav 28 manipulačných techník a ako ich rozpoznať"
+    "welcome": "Vitaj v SPIN",
+    "tagline": "Ovládni komunikačné techniky",
+    "description": "Nauč sa presvedčovacie techniky, ktoré by mal poznať každý profesionál — len za pár minút denne.",
+    "letsGo": "Poďme na to!",
+    "diagnosticTitle": "Rýchly test",
+    "diagnosticDesc": "3 otázky na posúdenie tvojich vedomostí",
+    "skip": "Preskočiť",
+    "viewResult": "Zobraziť výsledok",
+    "noAccountNeeded": "Nie je potrebný účet. Tvoj pokrok sa ukladá lokálne.",
+    "benefit1Title": "27 techník",
+    "benefit1Desc": "Vedecky podložené a praktické",
+    "benefit2Title": "3–5 min/deň",
+    "benefit2Desc": "Mikroučenie s rozloženým opakovaním",
+    "benefit3Title": "Adaptívne",
+    "benefit3Desc": "Prispôsobí sa tvojej úrovni vedomostí",
+    "result": {
+      "title": "{{score}}/{{total}} správnych",
+      "continue": "Objavuj SPIN",
+      "level": {
+        "advanced": "Pokročilý",
+        "intermediate": "Začiatočník so základmi",
+        "beginner": "Začiatočník"
       },
-      "step2": {
-        "title": "Cvič interaktívne",
-        "description": "Otestuj svoje vedomosti v kvízoch a simuláciách"
-      },
-      "step3": {
-        "title": "Zbieraj úspechy",
-        "description": "Získavaj XP, odznaky a odomykaj úspechy"
-      },
-      "step4": {
-        "title": "Staň sa expertom",
-        "description": "Rozvíjaj kritické myslenie a chráň sa pred manipuláciou"
-      },
-      "getStarted": "Poďme na to!",
-      "skip": "Preskočiť"
-    },
-    "tour": {
-      "step1": "Objav nové funkcie",
-      "step2": "Otestuj vedomosti v kvíze",
-      "step3": "Preskúmaj všetky techniky",
-      "complete": "Dokončiť prehliadku"
+      "message": {
+        "advanced": "Už sa v tom dobre vyznáš. SPIN ťa s pokročilými technikami a rozloženým opakovaním dostane na expertné úroveň.",
+        "intermediate": "Dobrý základ! SPIN ti pomôže systematicky zvládnuť všetkých 27 techník — len za pár minút denne.",
+        "beginner": "Perfektný štart! SPIN ťa krok za krokom prevedie všetkými presvedčovacími technikami, ktoré by mali komunikátori poznať."
+      }
     }
   },
   "challenges": {

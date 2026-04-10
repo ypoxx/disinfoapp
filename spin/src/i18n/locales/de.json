@@ -29,6 +29,10 @@
   },
   "today": {
     "greeting": "Guten Tag",
+    "greetingMorning": "Guten Morgen",
+    "greetingAfternoon": "Guten Tag",
+    "greetingEvening": "Guten Abend",
+    "greetingFirstTime": "Willkommen bei SPIN",
     "dailySession": "Tägliche Übung",
     "dailySessionDesc": "3-5 Minuten, die dich weiterbringen",
     "startSession": "Session starten",
@@ -36,7 +40,12 @@
     "dueReviews": "Wiederholungen fällig",
     "masteryScore": "Mastery Score",
     "weeklyGoal": "Wochenziel",
-    "noSessionYet": "Starte deine erste Übung!"
+    "noSessionYet": "Starte deine erste Übung!",
+    "firstSessionTitle": "Bereit für deine erste Übung?",
+    "firstSessionDesc": "In 3–5 Minuten lernst du deine ersten Überzeugungstechniken kennen.",
+    "firstSessionCta": "Erste Übung starten",
+    "signInPrompt": "Melde dich an, um deinen Fortschritt auf allen Geräten zu synchronisieren.",
+    "sessionsCompleted": "{{count}} Sessions abgeschlossen"
   },
   "practice": {
     "title": "Üben",
@@ -55,7 +64,6 @@
     "example": "Beispiel:",
     "viewResults": "Ergebnis ansehen",
     "time": "Zeit",
-    "sessionsCompleted": "{{count}} Sessions abgeschlossen",
     "comingSoon": "Kommt bald"
   },
   "library": {
@@ -97,7 +105,30 @@
     "description": "Lerne Überzeugungstechniken, die Profis kennen sollten — in nur wenigen Minuten am Tag.",
     "letsGo": "Los geht's",
     "diagnosticTitle": "Kurzer Check",
-    "diagnosticDesc": "3 Fragen, um deinen Wissensstand einzuschätzen"
+    "diagnosticDesc": "3 Fragen, um deinen Wissensstand einzuschätzen",
+    "skip": "Überspringen",
+    "viewResult": "Ergebnis ansehen",
+    "noAccountNeeded": "Kein Account nötig. Dein Fortschritt wird lokal gespeichert.",
+    "benefit1Title": "27 Techniken",
+    "benefit1Desc": "Evidenzbasiert und praxisnah",
+    "benefit2Title": "3–5 Min/Tag",
+    "benefit2Desc": "Microlearning mit Spaced Repetition",
+    "benefit3Title": "Adaptiv",
+    "benefit3Desc": "Passt sich deinem Wissen an",
+    "result": {
+      "title": "{{score}}/{{total}} richtig",
+      "continue": "SPIN entdecken",
+      "level": {
+        "advanced": "Fortgeschritten",
+        "intermediate": "Einsteiger mit Grundwissen",
+        "beginner": "Einsteiger"
+      },
+      "message": {
+        "advanced": "Du kennst dich bereits gut aus. SPIN wird dich mit fortgeschrittenen Techniken und Spaced Repetition auf Expertenniveau bringen.",
+        "intermediate": "Gute Basis! SPIN wird dir helfen, alle 27 Techniken systematisch zu meistern — in nur wenigen Minuten am Tag.",
+        "beginner": "Perfekter Startpunkt! SPIN führt dich Schritt für Schritt durch alle Überzeugungstechniken, die Kommunikatoren kennen sollten."
+      }
+    }
   },
   "categories": {
     "cognitive_bias": "Kognitive Verzerrungen",

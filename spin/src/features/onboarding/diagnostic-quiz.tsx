@@ -7,8 +7,13 @@ import { QuizOption } from '@/design/components/quiz-option';
 import { ProgressBar } from '@/design/components/progress-bar';
 import { t as tContent } from '@content/types';
 
+interface QuizResult {
+  score: number;
+  answers: { techniqueId: string; correct: boolean }[];
+}
+
 interface DiagnosticQuizProps {
-  onComplete: (score: number) => void;
+  onComplete: (result: QuizResult) => void;
 }
 
 /**
@@ -80,6 +85,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState<{ techniqueId: string; correct: boolean }[]>([]);
 
   const question = diagnosticQuestions[currentQ];
   const progress = ((currentQ) / diagnosticQuestions.length) * 100;
@@ -88,19 +94,26 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
     if (showFeedback) return;
     setSelectedAnswer(idx);
     setShowFeedback(true);
-    if (idx === question.correctAnswer) {
-      setScore(prev => prev + 1);
-    }
-  }, [showFeedback, question]);
+  }, [showFeedback]);
 
   const handleNext = () => {
+    const correct = selectedAnswer === question.correctAnswer;
+    const newScore = score + (correct ? 1 : 0);
+    const newAnswers = [...answers, { techniqueId: question.techniqueId, correct }];
+
     if (currentQ + 1 >= diagnosticQuestions.length) {
-      onComplete(score + (selectedAnswer === question.correctAnswer ? 1 : 0));
+      onComplete({ score: newScore, answers: newAnswers });
     } else {
+      setScore(newScore);
+      setAnswers(newAnswers);
       setCurrentQ(prev => prev + 1);
       setSelectedAnswer(null);
       setShowFeedback(false);
     }
+  };
+
+  const handleSkip = () => {
+    onComplete({ score: 0, answers: [] });
   };
 
   return (
@@ -111,11 +124,19 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
           <p className="text-xs font-medium text-[var(--color-text-muted)] uppercase tracking-wider">
             {t('onboarding.diagnosticTitle')}
           </p>
-          <span className="text-xs text-[var(--color-text-muted)] tabular-nums">
+          <button
+            onClick={handleSkip}
+            className="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
+          >
+            {t('onboarding.skip')}
+          </button>
+        </div>
+        <div className="flex items-center gap-2">
+          <ProgressBar value={progress} />
+          <span className="text-xs text-[var(--color-text-muted)] tabular-nums shrink-0">
             {currentQ + 1}/{diagnosticQuestions.length}
           </span>
         </div>
-        <ProgressBar value={progress} />
       </div>
 
       {/* Question */}
@@ -178,7 +199,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
           <Button size="lg" onClick={handleNext} className="w-full">
             {currentQ + 1 >= diagnosticQuestions.length ? (
               <span className="flex items-center gap-2">
-                <CheckCircle2 size={18} /> Ergebnis ansehen
+                <CheckCircle2 size={18} /> {t('onboarding.viewResult')}
               </span>
             ) : (
               t('common.next')

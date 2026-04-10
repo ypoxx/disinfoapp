@@ -39,7 +39,9 @@ export function TodayPage() {
   const activeDays = streak.weeklyProgress.filter(Boolean).length;
   const weeklyProgress = Math.round((activeDays / weeklyGoal) * 100);
   const isFirstTime = sessionsCompleted === 0;
-  const showSignInPrompt = isFirebaseConfigured && !user && !signInDismissed && sessionsCompleted < 3;
+  const [signInError, setSignInError] = useState(false);
+
+  const showSignInPrompt = isFirebaseConfigured && !user && !signInDismissed && sessionsCompleted >= 3;
 
   const dismissSignIn = () => {
     localStorage.setItem(SIGNIN_DISMISSED_KEY, 'true');
@@ -132,10 +134,19 @@ export function TodayPage() {
               <Button
                 variant="secondary"
                 size="sm"
-                onClick={() => signInWithGoogle()}
+                onClick={async () => {
+                  setSignInError(false);
+                  const ok = await signInWithGoogle();
+                  if (!ok) setSignInError(true);
+                }}
               >
                 {t('profile.signInWithGoogle')}
               </Button>
+              {signInError && (
+                <p className="text-xs text-[var(--color-error-500)] mt-1">
+                  {t('common.signInFailed')}
+                </p>
+              )}
             </div>
           </div>
         </Card>

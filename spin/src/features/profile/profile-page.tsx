@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Trophy, Clock, Flame, Zap } from 'lucide-react';
 import { Card } from '@/design/components/card';
@@ -13,6 +14,7 @@ import type { Theme } from '@/stores/settings-store';
 
 export function ProfilePage() {
   const { t, i18n } = useTranslation();
+  const [signInError, setSignInError] = useState(false);
   const { xp, streak, totalPracticeTime, earnedBadges } = useProgressStore();
   const { getOverallMastery, techniques: knownTechniques } = useKnowledgeStore();
   const { theme, setTheme, weeklyGoal, setWeeklyGoal } = useSettingsStore();
@@ -37,11 +39,13 @@ export function ProfilePage() {
           <img src={user.photoURL} alt="" className="w-14 h-14 rounded-full" />
         ) : (
           <div className="w-14 h-14 rounded-full bg-[var(--color-bg-muted)] flex items-center justify-center text-xl font-bold text-[var(--color-text-muted)]">
-            S
+            {user?.displayName?.[0]?.toUpperCase() ?? 'S'}
           </div>
         )}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold tracking-tight">{t('profile.title')}</h1>
+          <h1 className="text-2xl font-bold tracking-tight">
+            {user?.displayName ?? t('profile.title')}
+          </h1>
           <p className="text-sm text-[var(--color-text-secondary)]">
             {earnedBadges.length} {t('profile.badges')}
           </p>
@@ -66,9 +70,22 @@ export function ProfilePage() {
       {!user ? (
         <Card>
           <p className="text-sm text-[var(--color-text-secondary)] mb-3">{t('profile.signInPrompt')}</p>
-          <Button variant="secondary" className="w-full" onClick={() => signInWithGoogle()}>
+          <Button
+            variant="secondary"
+            className="w-full"
+            onClick={async () => {
+              setSignInError(false);
+              const ok = await signInWithGoogle();
+              if (!ok) setSignInError(true);
+            }}
+          >
             {t('profile.signInWithGoogle')}
           </Button>
+          {signInError && (
+            <p className="text-xs text-[var(--color-error-500)] mt-2">
+              {t('common.signInFailed')}
+            </p>
+          )}
         </Card>
       ) : (
         <Button variant="ghost" className="w-full" onClick={() => firebaseSignOut()}>

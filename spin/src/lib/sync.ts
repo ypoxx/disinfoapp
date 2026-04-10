@@ -42,6 +42,8 @@ export async function syncFromCloud(uid: string): Promise<void> {
   const cloudData = await loadUserData(uid);
   if (!cloudData) return;
 
+  let needsRehydrate = false;
+
   for (const key of SYNC_KEYS) {
     const cloudValue = cloudData[key] as { state?: Record<string, unknown> } | undefined;
     if (!cloudValue?.state) continue;
@@ -52,6 +54,7 @@ export async function syncFromCloud(uid: string): Promise<void> {
     // Simple merge: cloud wins if no local data exists
     if (!localValue) {
       localStorage.setItem(key, JSON.stringify(cloudValue));
+      needsRehydrate = true;
       continue;
     }
 
@@ -61,13 +64,16 @@ export async function syncFromCloud(uid: string): Promise<void> {
 
     if (cloudKeyCount > localKeyCount) {
       localStorage.setItem(key, JSON.stringify(cloudValue));
+      needsRehydrate = true;
     }
   }
 
-  // Rehydrate stores from updated localStorage
-  // Zustand persist middleware handles this on next getState() call
-  // Force a reload of stores
-  window.location.reload();
+  // Rehydrate Zustand stores from updated localStorage (no page reload needed)
+  if (needsRehydrate) {
+    useKnowledgeStore.persist.rehydrate();
+    useProgressStore.persist.rehydrate();
+    useSettingsStore.persist.rehydrate();
+  }
 }
 
 /** Set up automatic sync on store changes */

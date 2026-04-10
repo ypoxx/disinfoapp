@@ -28,6 +28,17 @@
     "dashboard": "Kontrolna tabla",
     "progress": "Napredak"
   },
+  "today": {
+    "greetingMorning": "Dobro jutro",
+    "greetingAfternoon": "Dobar dan",
+    "greetingEvening": "Dobro veče",
+    "greetingFirstTime": "Dobrodošli u SPIN",
+    "firstSessionTitle": "Spremni za prvu vježbu?",
+    "firstSessionDesc": "Upoznajte prve tehnike uvjeravanja za samo 3–5 minuta.",
+    "firstSessionCta": "Započnite prvu vježbu",
+    "signInPrompt": "Prijavite se za sinhronizaciju napretka na svim uređajima.",
+    "sessionsCompleted": "{{count}} vježbi završeno"
+  },
   "home": {
     "hero": {
       "title1": "Prepoznaj dezinformacije.",
@@ -270,33 +281,34 @@
     }
   },
   "onboarding": {
-    "welcome": {
-      "title": "Dobrodošli u DisinfoApp!",
-      "subtitle": "Tvoj pratilac u borbi protiv dezinformacija",
-      "step1": {
-        "title": "Nauči tehnike",
-        "description": "Otkrij 28 manipulativnih tehnika i kako ih prepoznati"
+    "welcome": "Dobrodošli u SPIN",
+    "tagline": "Ovladajte komunikacijske tehnike",
+    "description": "Naučite tehnike uvjeravanja koje bi svaki profesionalac trebao poznavati — u samo nekoliko minuta dnevno.",
+    "letsGo": "Počnimo!",
+    "diagnosticTitle": "Brza provjera",
+    "diagnosticDesc": "3 pitanja za procjenu vašeg znanja",
+    "skip": "Preskoči",
+    "viewResult": "Pogledaj rezultat",
+    "noAccountNeeded": "Nije potreban nalog. Vaš napredak se čuva lokalno.",
+    "benefit1Title": "27 tehnika",
+    "benefit1Desc": "Zasnovano na dokazima i praktično",
+    "benefit2Title": "3–5 min/dan",
+    "benefit2Desc": "Mikroučenje s raspoređenim ponavljanjem",
+    "benefit3Title": "Adaptivno",
+    "benefit3Desc": "Prilagođava se vašem nivou znanja",
+    "result": {
+      "title": "{{score}}/{{total}} tačnih",
+      "continue": "Otkrijte SPIN",
+      "level": {
+        "advanced": "Napredni",
+        "intermediate": "Početnik s osnovama",
+        "beginner": "Početnik"
       },
-      "step2": {
-        "title": "Vježbaj interaktivno",
-        "description": "Testiraj svoje znanje u kvizovima i simulacijama"
-      },
-      "step3": {
-        "title": "Skupljaj dostignuća",
-        "description": "Osvajaj XP, značke i otključavaj dostignuća"
-      },
-      "step4": {
-        "title": "Postani ekspert",
-        "description": "Razvij kritičko razmišljanje i zaštiti se od manipulacije"
-      },
-      "getStarted": "Počnimo!",
-      "skip": "Preskoči"
-    },
-    "tour": {
-      "step1": "Otkrij nove funkcije",
-      "step2": "Testiraj znanje u kvizu",
-      "step3": "Istraži sve tehnike",
-      "complete": "Završi obilazak"
+      "message": {
+        "advanced": "Već se dobro snalazite. SPIN će vas s naprednim tehnikama i raspoređenim ponavljanjem dovesti na nivo stručnjaka.",
+        "intermediate": "Dobra baza! SPIN će vam pomoći sistematski da savladate svih 27 tehnika — u samo nekoliko minuta dnevno.",
+        "beginner": "Savršena polazna tačka! SPIN će vas korak po korak provesti kroz sve tehnike uvjeravanja koje bi komunikatori trebali poznavati."
+      }
     }
   },
   "challenges": {

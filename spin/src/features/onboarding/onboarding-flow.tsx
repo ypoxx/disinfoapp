@@ -3,10 +3,16 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/design/components/button';
 import { MasteryMeter } from '@/design/components/mastery-meter';
+import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { WelcomeScreen } from './welcome-screen';
 import { DiagnosticQuiz } from './diagnostic-quiz';
 
 type Step = 'welcome' | 'quiz' | 'result';
+
+interface QuizResult {
+  score: number;
+  answers: { techniqueId: string; correct: boolean }[];
+}
 
 interface OnboardingFlowProps {
   onComplete: () => void;
@@ -15,12 +21,17 @@ interface OnboardingFlowProps {
 export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
   const { t } = useTranslation();
   const [step, setStep] = useState<Step>('welcome');
-  const [score, setScore] = useState(0);
+  const [result, setResult] = useState<QuizResult>({ score: 0, answers: [] });
+  const { recordEncounter } = useKnowledgeStore();
 
   const totalQuestions = 3;
 
-  const handleQuizComplete = (finalScore: number) => {
-    setScore(finalScore);
+  const handleQuizComplete = (quizResult: QuizResult) => {
+    setResult(quizResult);
+    // Seed knowledge store with diagnostic results
+    for (const answer of quizResult.answers) {
+      recordEncounter(answer.techniqueId, answer.correct);
+    }
     setStep('result');
   };
 
@@ -33,8 +44,9 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
   }
 
   // Result screen
+  const { score } = result;
   const accuracy = Math.round((score / totalQuestions) * 100);
-  const level = score === 3 ? 'Fortgeschritten' : score >= 1 ? 'Einsteiger mit Grundwissen' : 'Einsteiger';
+  const levelKey = score === totalQuestions ? 'advanced' : score >= 1 ? 'intermediate' : 'beginner';
 
   return (
     <div className="min-h-svh flex flex-col items-center justify-center px-6 text-center">
@@ -47,21 +59,19 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
 
         <div className="space-y-2">
           <h2 className="text-2xl font-bold">
-            {score}/{totalQuestions} richtig
+            {t('onboarding.result.title', { score, total: totalQuestions })}
           </h2>
-          <p className="text-[var(--color-accent)] font-medium">{level}</p>
+          <p className="text-[var(--color-accent)] font-medium">
+            {t(`onboarding.result.level.${levelKey}`)}
+          </p>
         </div>
 
         <p className="text-sm text-[var(--color-text-secondary)]">
-          {score === 3
-            ? 'Du kennst dich bereits gut aus. SPIN wird dich mit fortgeschrittenen Techniken und Spaced Repetition auf Expertenniveau bringen.'
-            : score >= 1
-              ? 'Gute Basis! SPIN wird dir helfen, alle 27 Techniken systematisch zu meistern — in nur wenigen Minuten am Tag.'
-              : 'Perfekter Startpunkt! SPIN führt dich Schritt für Schritt durch alle Überzeugungstechniken, die Kommunikatoren kennen sollten.'}
+          {t(`onboarding.result.message.${levelKey}`)}
         </p>
 
         <Button size="lg" onClick={onComplete} className="w-full">
-          {t('today.startSession')}
+          {t('onboarding.result.continue')}
         </Button>
       </motion.div>
     </div>

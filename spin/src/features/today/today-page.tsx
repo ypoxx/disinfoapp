@@ -99,7 +99,7 @@ export function TodayPage() {
       {/* Quick stats footer */}
       {sessionsCompleted > 0 && (
         <p className="text-center text-xs text-[var(--color-text-muted)]">
-          {sessionsCompleted} Sessions abgeschlossen
+          {t('practice.sessionsCompleted', { count: sessionsCompleted })}
         </p>
       )}
     </div>

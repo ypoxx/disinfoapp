@@ -18,8 +18,11 @@ interface PracticeOption {
 const practiceOptions: PracticeOption[] = [
   { id: 'daily', icon: Zap, labelKey: 'practice.dailySession', descKey: 'today.dailySessionDesc', color: 'var(--color-accent)' },
   { id: 'quick', icon: Grid3x3, labelKey: 'practice.quickPractice', descKey: 'practice.categoryPractice', color: 'var(--color-primary-500)' },
-  { id: 'simulator', icon: MonitorPlay, labelKey: 'practice.simulator', descKey: 'practice.simulator', color: 'var(--color-success-500)' },
-  { id: 'assessment', icon: BarChart3, labelKey: 'practice.assessment', descKey: 'practice.assessment', color: 'var(--color-warning-500)' },
+];
+
+const comingSoonOptions: PracticeOption[] = [
+  { id: 'simulator', icon: MonitorPlay, labelKey: 'practice.simulator', descKey: 'practice.comingSoon', color: 'var(--color-success-500)' },
+  { id: 'assessment', icon: BarChart3, labelKey: 'practice.assessment', descKey: 'practice.comingSoon', color: 'var(--color-warning-500)' },
 ];
 
 export function PracticePage() {
@@ -61,6 +64,22 @@ export function PracticePage() {
       <div className="space-y-3">
         {practiceOptions.map(({ id, icon: Icon, labelKey, descKey, color }) => (
           <Card key={id} hover padding="md" onClick={() => startSession(id)}>
+            <div className="flex items-center gap-4">
+              <div
+                className="w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center shrink-0"
+                style={{ backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)` }}
+              >
+                <Icon size={24} style={{ color }} />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-medium text-sm">{t(labelKey)}</h3>
+                <p className="text-xs text-[var(--color-text-secondary)] truncate">{t(descKey)}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+        {comingSoonOptions.map(({ id, icon: Icon, labelKey, descKey, color }) => (
+          <Card key={id} padding="md" className="opacity-50">
             <div className="flex items-center gap-4">
               <div
                 className="w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center shrink-0"

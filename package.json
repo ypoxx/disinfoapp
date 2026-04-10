@@ -5,13 +5,13 @@
   "type": "module",
   "description": "Progressive Web App zur Erkennung und Bekämpfung von Desinformation",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "dev": "echo '⚠ SPIN lives in spin/ — use: cd spin && npm run dev' && exit 1",
+    "build": "echo '⚠ SPIN lives in spin/ — use: cd spin && npm run build' && exit 1",
+    "lint": "echo '⚠ SPIN lives in spin/ — use: cd spin && npm run lint' && exit 1",
+    "preview": "echo '⚠ SPIN lives in spin/ — use: cd spin && npm run preview' && exit 1",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "type-check": "tsc --noEmit",
-    "deploy": "npm run build"
+    "type-check": "echo '⚠ SPIN lives in spin/' && exit 1",
+    "deploy": "echo '⚠ SPIN lives in spin/ — deployment via Netlify (base=spin/)' && exit 1"
   },
   "dependencies": {
     "@telekom/design-tokens": "^1.0.0-beta.11",

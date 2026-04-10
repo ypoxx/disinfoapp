@@ -25,6 +25,13 @@ let authInstance: any = null;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let dbInstance: any = null;
 
+/** Detect mobile browsers for redirect-based auth */
+function isMobileBrowser(): boolean {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+    navigator.userAgent
+  );
+}
+
 /** Initialize Firebase lazily */
 async function ensureFirebase() {
   if (firebaseInitialized || !isFirebaseConfigured) return;
@@ -37,26 +44,36 @@ async function ensureFirebase() {
       onAuthStateChanged,
       browserLocalPersistence,
       setPersistence,
+      getRedirectResult,
     } = await import('firebase/auth');
     const {
-      getFirestore,
-      enableMultiTabIndexedDbPersistence,
+      initializeFirestore,
+      persistentLocalCache,
+      persistentMultipleTabManager,
     } = await import('firebase/firestore');
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-    const db = getFirestore(app);
+    const db = initializeFirestore(app, {
+      localCache: persistentLocalCache({
+        tabManager: persistentMultipleTabManager(),
+      }),
+    });
 
     authInstance = auth;
     dbInstance = db;
 
-    enableMultiTabIndexedDbPersistence(db).catch(() => {});
     setPersistence(auth, browserLocalPersistence).catch(() => {});
+
+    // Handle redirect result (for mobile sign-in returning from Google)
+    getRedirectResult(auth).catch(() => {});
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
         useAuthStore.getState().setUser({
           uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
           photoURL: user.photoURL,
         });
       } else {
@@ -81,8 +98,16 @@ export async function signInWithGoogle(): Promise<boolean> {
   await ensureFirebase();
   if (!authInstance) return false;
   try {
-    const { GoogleAuthProvider, signInWithPopup } = await import('firebase/auth');
+    const { GoogleAuthProvider, signInWithPopup, signInWithRedirect } =
+      await import('firebase/auth');
     const provider = new GoogleAuthProvider();
+
+    if (isMobileBrowser()) {
+      await signInWithRedirect(authInstance, provider);
+      // signInWithRedirect navigates away; result handled in ensureFirebase
+      return true;
+    }
+
     await signInWithPopup(authInstance, provider);
     return true;
   } catch {

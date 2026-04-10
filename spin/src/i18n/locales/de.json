@@ -19,7 +19,8 @@
     "incorrect": "Nicht ganz",
     "points": "Punkte",
     "signIn": "Anmelden",
-    "signOut": "Abmelden"
+    "signOut": "Abmelden",
+    "signInFailed": "Anmeldung fehlgeschlagen. Bitte versuche es erneut."
   },
   "nav": {
     "today": "Heute",

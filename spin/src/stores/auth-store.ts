@@ -2,6 +2,8 @@ import { create } from 'zustand';
 
 interface User {
   uid: string;
+  displayName: string | null;
+  email: string | null;
   photoURL: string | null;
 }
 

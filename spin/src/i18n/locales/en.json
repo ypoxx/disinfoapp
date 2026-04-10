@@ -19,7 +19,8 @@
     "incorrect": "Not quite",
     "points": "Points",
     "signIn": "Sign in",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "signInFailed": "Sign-in failed. Please try again."
   },
   "nav": {
     "today": "Today",

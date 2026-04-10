@@ -28,6 +28,17 @@
     "dashboard": "Irányítópult",
     "progress": "Haladás"
   },
+  "today": {
+    "greetingMorning": "Jó reggelt",
+    "greetingAfternoon": "Jó napot",
+    "greetingEvening": "Jó estét",
+    "greetingFirstTime": "Üdvözöl a SPIN",
+    "firstSessionTitle": "Készen állsz az első gyakorlatra?",
+    "firstSessionDesc": "Ismerkedj meg az első meggyőzési technikákkal 3–5 perc alatt.",
+    "firstSessionCta": "Első gyakorlat indítása",
+    "signInPrompt": "Jelentkezz be, hogy szinkronizáld a haladásodat minden eszközödön.",
+    "sessionsCompleted": "{{count}} gyakorlat befejezve"
+  },
   "home": {
     "hero": {
       "title1": "Ismerd fel a dezinformációt.",
@@ -270,33 +281,34 @@
     }
   },
   "onboarding": {
-    "welcome": {
-      "title": "Üdvözöl a DisinfoApp!",
-      "subtitle": "Társad a dezinformáció elleni harcban",
-      "step1": {
-        "title": "Tanulj technikákat",
-        "description": "Fedezz fel 28 manipulációs technikát és hogyan ismerheted fel őket"
+    "welcome": "Üdvözöl a SPIN",
+    "tagline": "Kommunikációs technikák elsajátítása",
+    "description": "Tanuld meg a meggyőzési technikákat, amelyeket minden szakembernek ismernie kellene — napi néhány perc alatt.",
+    "letsGo": "Kezdjük!",
+    "diagnosticTitle": "Gyors felmérés",
+    "diagnosticDesc": "3 kérdés a tudásszinted felméréséhez",
+    "skip": "Kihagyás",
+    "viewResult": "Eredmény megtekintése",
+    "noAccountNeeded": "Nem kell fiók. A haladásod helyben mentődik.",
+    "benefit1Title": "27 technika",
+    "benefit1Desc": "Tudományosan megalapozott és gyakorlatias",
+    "benefit2Title": "3–5 perc/nap",
+    "benefit2Desc": "Mikrotanulás elosztott ismétléssel",
+    "benefit3Title": "Adaptív",
+    "benefit3Desc": "Alkalmazkodik a tudásszintedhez",
+    "result": {
+      "title": "{{score}}/{{total}} helyes",
+      "continue": "SPIN felfedezése",
+      "level": {
+        "advanced": "Haladó",
+        "intermediate": "Kezdő alapismeretekkel",
+        "beginner": "Kezdő"
       },
-      "step2": {
-        "title": "Gyakorolj interaktívan",
-        "description": "Teszteld tudásod kvízekkel és szimulációkkal"
-      },
-      "step3": {
-        "title": "Gyűjts eredményeket",
-        "description": "Szerezz XP-t, jelvényeket és old fel eredményeket"
-      },
-      "step4": {
-        "title": "Válj szakértővé",
-        "description": "Fejleszd kritikus gondolkodásod és védd magad a manipulációtól"
-      },
-      "getStarted": "Kezdjük!",
-      "skip": "Kihagyás"
-    },
-    "tour": {
-      "step1": "Fedezd fel az új funkciókat",
-      "step2": "Teszteld tudásod a kvízben",
-      "step3": "Fedezd fel az összes technikát",
-      "complete": "Túra befejezése"
+      "message": {
+        "advanced": "Már jól ismered a témát. A SPIN haladó technikákkal és elosztott ismétléssel szakértő szintre emel.",
+        "intermediate": "Jó alap! A SPIN segít szisztematikusan elsajátítani mind a 27 technikát — napi néhány perc alatt.",
+        "beginner": "Tökéletes kiindulópont! A SPIN lépésről lépésre végigvezet minden meggyőzési technikán, amelyet a kommunikációs szakembereknek ismerniük kell."
+      }
     }
   },
   "challenges": {

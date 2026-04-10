@@ -29,6 +29,10 @@
   },
   "today": {
     "greeting": "Good day",
+    "greetingMorning": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "greetingFirstTime": "Welcome to SPIN",
     "dailySession": "Daily Practice",
     "dailySessionDesc": "3-5 minutes to sharpen your skills",
     "startSession": "Start Session",
@@ -36,7 +40,12 @@
     "dueReviews": "Reviews Due",
     "masteryScore": "Mastery Score",
     "weeklyGoal": "Weekly Goal",
-    "noSessionYet": "Start your first practice!"
+    "noSessionYet": "Start your first practice!",
+    "firstSessionTitle": "Ready for your first practice?",
+    "firstSessionDesc": "Learn your first persuasion techniques in just 3–5 minutes.",
+    "firstSessionCta": "Start first practice",
+    "signInPrompt": "Sign in to sync your progress across all your devices.",
+    "sessionsCompleted": "{{count}} sessions completed"
   },
   "practice": {
     "title": "Practice",
@@ -90,7 +99,30 @@
     "description": "Learn persuasion techniques every professional should know — in just a few minutes a day.",
     "letsGo": "Let's go",
     "diagnosticTitle": "Quick Check",
-    "diagnosticDesc": "3 questions to assess your knowledge"
+    "diagnosticDesc": "3 questions to assess your knowledge",
+    "skip": "Skip",
+    "viewResult": "View result",
+    "noAccountNeeded": "No account needed. Your progress is saved locally.",
+    "benefit1Title": "27 Techniques",
+    "benefit1Desc": "Evidence-based and practical",
+    "benefit2Title": "3–5 min/day",
+    "benefit2Desc": "Microlearning with spaced repetition",
+    "benefit3Title": "Adaptive",
+    "benefit3Desc": "Adapts to your knowledge level",
+    "result": {
+      "title": "{{score}}/{{total}} correct",
+      "continue": "Discover SPIN",
+      "level": {
+        "advanced": "Advanced",
+        "intermediate": "Beginner with basics",
+        "beginner": "Beginner"
+      },
+      "message": {
+        "advanced": "You already know your stuff. SPIN will take you to expert level with advanced techniques and spaced repetition.",
+        "intermediate": "Good foundation! SPIN will help you systematically master all 27 techniques — in just a few minutes a day.",
+        "beginner": "Perfect starting point! SPIN will guide you step by step through all the persuasion techniques that communicators should know."
+      }
+    }
   },
   "categories": {
     "cognitive_bias": "Cognitive Biases",

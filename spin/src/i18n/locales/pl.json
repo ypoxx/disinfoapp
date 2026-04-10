@@ -28,6 +28,17 @@
     "dashboard": "Panel",
     "progress": "Postęp"
   },
+  "today": {
+    "greetingMorning": "Dzień dobry",
+    "greetingAfternoon": "Dzień dobry",
+    "greetingEvening": "Dobry wieczór",
+    "greetingFirstTime": "Witaj w SPIN",
+    "firstSessionTitle": "Gotowy na pierwszą sesję?",
+    "firstSessionDesc": "Poznaj pierwsze techniki perswazji w zaledwie 3–5 minut.",
+    "firstSessionCta": "Rozpocznij pierwszą sesję",
+    "signInPrompt": "Zaloguj się, aby zsynchronizować postępy na wszystkich urządzeniach.",
+    "sessionsCompleted": "{{count}} sesji ukończonych"
+  },
   "home": {
     "hero": {
       "title1": "Rozpoznaj dezinformację.",
@@ -270,33 +281,34 @@
     }
   },
   "onboarding": {
-    "welcome": {
-      "title": "Witaj w DisinfoApp!",
-      "subtitle": "Twój towarzysz w walce z dezinformacją",
-      "step1": {
-        "title": "Poznaj techniki",
-        "description": "Odkryj 28 technik manipulacji i jak je rozpoznawać"
+    "welcome": "Witaj w SPIN",
+    "tagline": "Opanuj techniki komunikacji",
+    "description": "Poznaj techniki perswazji, które powinien znać każdy profesjonalista — w zaledwie kilka minut dziennie.",
+    "letsGo": "Zaczynamy!",
+    "diagnosticTitle": "Szybki test",
+    "diagnosticDesc": "3 pytania, aby ocenić Twój poziom wiedzy",
+    "skip": "Pomiń",
+    "viewResult": "Zobacz wynik",
+    "noAccountNeeded": "Nie potrzebujesz konta. Postępy zapisywane są lokalnie.",
+    "benefit1Title": "27 technik",
+    "benefit1Desc": "Oparte na dowodach i praktyczne",
+    "benefit2Title": "3–5 min/dzień",
+    "benefit2Desc": "Mikronauka z powtórkami rozłożonymi w czasie",
+    "benefit3Title": "Adaptacyjne",
+    "benefit3Desc": "Dostosowuje się do Twojego poziomu wiedzy",
+    "result": {
+      "title": "{{score}}/{{total}} poprawnych",
+      "continue": "Odkryj SPIN",
+      "level": {
+        "advanced": "Zaawansowany",
+        "intermediate": "Początkujący z podstawami",
+        "beginner": "Początkujący"
       },
-      "step2": {
-        "title": "Ćwicz interaktywnie",
-        "description": "Sprawdź wiedzę w quizach i symulacjach"
-      },
-      "step3": {
-        "title": "Zbieraj osiągnięcia",
-        "description": "Zdobywaj XP, odznaki i odblokowuj osiągnięcia"
-      },
-      "step4": {
-        "title": "Zostań ekspertem",
-        "description": "Rozwijaj krytyczne myślenie i chroń się przed manipulacją"
-      },
-      "getStarted": "Zaczynamy!",
-      "skip": "Pomiń"
-    },
-    "tour": {
-      "step1": "Odkryj nowe funkcje",
-      "step2": "Sprawdź wiedzę w quizie",
-      "step3": "Poznaj wszystkie techniki",
-      "complete": "Zakończ przewodnik"
+      "message": {
+        "advanced": "Już dobrze się orientujesz. SPIN przeniesie Cię na poziom eksperta dzięki zaawansowanym technikom i powtórkom rozłożonym w czasie.",
+        "intermediate": "Dobra baza! SPIN pomoże Ci systematycznie opanować wszystkie 27 technik — w zaledwie kilka minut dziennie.",
+        "beginner": "Idealny punkt startowy! SPIN przeprowadzi Cię krok po kroku przez wszystkie techniki perswazji, które powinien znać każdy komunikator."
+      }
     }
   },
   "challenges": {

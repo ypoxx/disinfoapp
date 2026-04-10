@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Trophy, Target, Clock, Zap } from 'lucide-react';
+import { Trophy, Target, Clock, Zap, BookOpen } from 'lucide-react';
 import { Button } from '@/design/components/button';
 import { Card } from '@/design/components/card';
 import { MasteryMeter } from '@/design/components/mastery-meter';
@@ -59,14 +59,16 @@ export function SessionSummaryView({ summary, onClose }: SessionSummaryViewProps
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-[var(--color-primary-400)]" />
               <div>
-                <p className="text-lg font-bold">{Math.round(summary.timeSpent / 60)}m</p>
-                <p className="text-[10px] text-[var(--color-text-muted)]">Zeit</p>
+                <p className="text-lg font-bold">
+                  {summary.timeSpent < 60
+                    ? `${summary.timeSpent}s`
+                    : `${Math.round(summary.timeSpent / 60)}m`}
+                </p>
+                <p className="text-[10px] text-[var(--color-text-muted)]">{t('practice.time')}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-[var(--color-accent-subtle)] flex items-center justify-center text-[10px] font-bold text-[var(--color-accent)]">
-                {summary.techniquesReviewed.length}
-              </div>
+              <BookOpen size={16} className="text-[var(--color-accent)]" />
               <div>
                 <p className="text-lg font-bold">{summary.techniquesReviewed.length}</p>
                 <p className="text-[10px] text-[var(--color-text-muted)]">{t('practice.techniquesReviewed')}</p>

@@ -58,7 +58,13 @@
     "xpEarned": "{{xp}} XP earned",
     "accuracy": "Accuracy",
     "techniquesReviewed": "Techniques Reviewed",
-    "nextReview": "Next Review"
+    "nextReview": "Next Review",
+    "newTechnique": "New Technique",
+    "reviewLabel": "Review",
+    "example": "Example:",
+    "viewResults": "View Results",
+    "time": "Time",
+    "comingSoon": "Coming Soon"
   },
   "library": {
     "title": "Technique Library",

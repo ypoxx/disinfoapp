@@ -58,7 +58,13 @@
     "xpEarned": "{{xp}} XP verdient",
     "accuracy": "Genauigkeit",
     "techniquesReviewed": "Techniken wiederholt",
-    "nextReview": "Nächste Wiederholung"
+    "nextReview": "Nächste Wiederholung",
+    "newTechnique": "Neue Technik",
+    "reviewLabel": "Wiederholung",
+    "example": "Beispiel:",
+    "viewResults": "Ergebnis ansehen",
+    "time": "Zeit",
+    "comingSoon": "Kommt bald"
   },
   "library": {
     "title": "Technik-Bibliothek",

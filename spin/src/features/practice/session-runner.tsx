@@ -20,7 +20,7 @@ interface SessionRunnerProps {
 }
 
 export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  const [itemStartTime] = useState(Date.now());
+  const [itemStartTime, setItemStartTime] = useState(Date.now());
 
   const { recordEncounter } = useKnowledgeStore();
   const { addXP, checkStreak, completeSession } = useProgressStore();
@@ -76,6 +76,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       setCurrentIndex(prev => prev + 1);
       setSelectedAnswer(null);
       setShowFeedback(false);
+      setItemStartTime(Date.now());
     }
   }, [currentIndex, session, results, addXP, checkStreak, completeSession]);
 
@@ -110,20 +111,20 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
             transition={{ duration: 0.2 }}
             className="space-y-4"
           >
-            {currentItem && renderItem(currentItem, lang, selectedAnswer, showFeedback, handleAnswer)}
+            {currentItem && renderItem(currentItem, lang, t, selectedAnswer, showFeedback, handleAnswer)}
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Bottom action */}
-      {showFeedback && (
+      {/* Bottom action — show immediately for learn/review, after feedback for exercises */}
+      {(currentItem?.type !== 'exercise' || showFeedback) && (
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="px-4 pb-6 safe-area-bottom"
         >
           <Button size="lg" onClick={handleNext} className="w-full">
-            {currentIndex + 1 >= session.items.length ? 'Ergebnis ansehen' : ''}
+            {currentIndex + 1 >= session.items.length ? t('practice.viewResults') : t('common.next')}
             <ArrowRight size={18} />
           </Button>
         </motion.div>
@@ -135,6 +136,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
 function renderItem(
   item: SessionItem,
   lang: string,
+  t: (key: string) => string,
   selectedAnswer: number | null,
   showFeedback: boolean,
   onSelect: (idx: number) => void
@@ -145,7 +147,7 @@ function renderItem(
         <div className="space-y-4 pt-4">
           <div className="flex items-center gap-2 text-[var(--color-accent)]">
             <BookOpen size={18} />
-            <span className="text-xs font-medium uppercase tracking-wider">Neue Technik</span>
+            <span className="text-xs font-medium uppercase tracking-wider">{t('practice.newTechnique')}</span>
           </div>
           <h2 className="text-xl font-bold">{tContent(item.technique.name, lang)}</h2>
           <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
@@ -153,7 +155,7 @@ function renderItem(
           </p>
           {item.technique.examples.length > 0 && (
             <Card padding="sm">
-              <p className="text-xs font-medium text-[var(--color-text-muted)] mb-2">Beispiel:</p>
+              <p className="text-xs font-medium text-[var(--color-text-muted)] mb-2">{t('practice.example')}</p>
               <p className="text-sm italic">{item.technique.examples[0]}</p>
             </Card>
           )}
@@ -165,7 +167,7 @@ function renderItem(
         <div className="space-y-4 pt-4">
           <div className="flex items-center gap-2 text-[var(--color-warning-500)]">
             <RotateCcw size={18} />
-            <span className="text-xs font-medium uppercase tracking-wider">Wiederholung</span>
+            <span className="text-xs font-medium uppercase tracking-wider">{t('practice.reviewLabel')}</span>
           </div>
           <h2 className="text-xl font-bold">{tContent(item.technique.name, lang)}</h2>
           <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">

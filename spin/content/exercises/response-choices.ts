@@ -6,7 +6,7 @@ export const responseChoices: Exercise[] = [
     type: 'response-choice',
     difficulty: 'intermediate',
     question: {
-      de: 'Ihr Unternehmen wird in einem viralen Tweet falsch beschuldigt, Kundendaten verkauft zu haben. Der Tweet hat 15.000 Retweets. Was tun Sie?',
+      de: 'Dein Unternehmen wird in einem viralen Tweet falsch beschuldigt, Kundendaten verkauft zu haben. Der Tweet hat 15.000 Retweets. Was tust du?',
       en: 'Your company is falsely accused in a viral tweet of selling customer data. The tweet has 15,000 retweets. What do you do?',
     },
     options: [
@@ -40,7 +40,7 @@ export const responseChoices: Exercise[] = [
     type: 'response-choice',
     difficulty: 'intermediate',
     question: {
-      de: 'Ein Faktencheck-Portal veröffentlicht eine fehlerhafte Analyse über Ihre Organisation. Was ist der beste erste Schritt?',
+      de: 'Ein Faktencheck-Portal veröffentlicht eine fehlerhafte Analyse über deine Organisation. Was ist der beste erste Schritt?',
       en: 'A fact-checking outlet publishes a flawed analysis about your organization. What is the best first step?',
     },
     options: [
@@ -74,7 +74,7 @@ export const responseChoices: Exercise[] = [
     type: 'response-choice',
     difficulty: 'advanced',
     question: {
-      de: 'Sie entdecken, dass mehrere Social-Media-Accounts koordiniert Falschinformationen über Ihren Kunden verbreiten. Die Accounts sehen authentisch aus. Was ist Ihre Strategie?',
+      de: 'Du entdeckst, dass mehrere Social-Media-Accounts koordiniert Falschinformationen über deinen Kunden verbreiten. Die Accounts sehen authentisch aus. Was ist deine Strategie?',
       en: 'You discover that multiple social media accounts are spreading false information about your client in a coordinated manner. The accounts look authentic. What is your strategy?',
     },
     options: [
@@ -108,12 +108,12 @@ export const responseChoices: Exercise[] = [
     type: 'response-choice',
     difficulty: 'advanced',
     question: {
-      de: 'Ein Deepfake-Video zeigt Ihren CEO bei einer angeblichen Bestechungsübergabe. Das Video verbreitet sich schnell. Was hat höchste Priorität?',
+      de: 'Ein Deepfake-Video zeigt deinen CEO bei einer angeblichen Bestechungsübergabe. Das Video verbreitet sich schnell. Was hat höchste Priorität?',
       en: 'A deepfake video shows your CEO in an alleged bribery exchange. The video is spreading rapidly. What is the highest priority?',
     },
     options: [
       {
-        de: 'Sofort ein offizielles Dementi mit Alibibibeweis veröffentlichen und Forensik-Analyse beauftragen',
+        de: 'Sofort ein offizielles Dementi mit Alibi-Beweis veröffentlichen und Forensik-Analyse beauftragen',
         en: 'Immediately issue an official denial with alibi evidence and commission a forensic analysis',
       },
       {
@@ -131,7 +131,7 @@ export const responseChoices: Exercise[] = [
     ],
     correctAnswers: [0],
     explanation: {
-      de: 'Bei Deepfakes zählt Geschwindigkeit. Jede Stunde ohne Dementi festigt die Falschdarstellung. Ein schnelles offizielles Statement mit konkretem Alibibibeweis (z.B. "CEO war zu diesem Zeitpunkt in Meeting X") plus forensische Analyse des Videos ist die beste Kombination.',
+      de: 'Bei Deepfakes zählt Geschwindigkeit. Jede Stunde ohne Dementi festigt die Falschdarstellung. Ein schnelles offizielles Statement mit konkretem Alibi-Beweis (z.B. "CEO war zu diesem Zeitpunkt in Meeting X") plus forensische Analyse des Videos ist die beste Kombination.',
       en: 'With deepfakes, speed is critical. Every hour without a denial reinforces the false narrative. A quick official statement with concrete alibi evidence (e.g., "The CEO was in meeting X at that time") combined with a forensic analysis of the video is the strongest approach.',
     },
     points: 15,
@@ -142,7 +142,7 @@ export const responseChoices: Exercise[] = [
     type: 'response-choice',
     difficulty: 'expert',
     question: {
-      de: 'Ihre Organisation plant ein kontroverses Projekt. Sie wissen, dass Gegner bald eine Negativkampagne starten werden. Was tun Sie präventiv?',
+      de: 'Deine Organisation plant ein kontroverses Projekt. Du weißt, dass Gegner bald eine Negativkampagne starten werden. Was tust du präventiv?',
       en: 'Your organization is planning a controversial project. You know that opponents will soon launch a negative campaign. What do you do preemptively?',
     },
     options: [

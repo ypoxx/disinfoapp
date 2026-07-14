@@ -40,7 +40,7 @@ export const fillBlanks: Exercise[] = [
     type: 'fill-blank',
     difficulty: 'advanced',
     question: {
-      de: 'Ein manipuliertes Zitat Ihres CEOs verbreitet sich: "Umweltschutz ist mir egal, Profit zählt." Das echte Zitat war differenzierter. Wie reagieren Sie am besten?',
+      de: 'Ein manipuliertes Zitat deines CEOs verbreitet sich: "Umweltschutz ist mir egal, Profit zählt." Das echte Zitat war differenzierter. Wie reagierst du am besten?',
       en: 'A manipulated quote from your CEO is spreading: "I don\'t care about the environment, profit is all that matters." The real quote was more nuanced. What is your best response?',
     },
     options: [
@@ -74,7 +74,7 @@ export const fillBlanks: Exercise[] = [
     type: 'fill-blank',
     difficulty: 'expert',
     question: {
-      de: 'Mehrere Accounts behaupten: "Die neue Fabrik von Firma Z verseucht das Grundwasser!" Ihre Umweltgutachten zeigen das Gegenteil. Welche Kommunikationsstrategie ist am wirksamsten?',
+      de: 'Mehrere Accounts behaupten: "Die neue Fabrik von Firma Z verseucht das Grundwasser!" Deine Umweltgutachten zeigen das Gegenteil. Welche Kommunikationsstrategie ist am wirksamsten?',
       en: 'Multiple accounts claim: "Company Z\'s new factory is contaminating the groundwater!" Your environmental assessments show the opposite. Which communication strategy is most effective?',
     },
     options: [

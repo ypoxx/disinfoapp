@@ -15,6 +15,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    sourcemap: true,
+    // No public sourcemaps: they were 82% of the deploy size and expose source
+    sourcemap: false,
   },
 });

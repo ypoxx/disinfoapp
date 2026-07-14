@@ -1,9 +1,12 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
+type Variant = 'soft' | 'outline' | 'inverse';
+
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   padding?: 'sm' | 'md' | 'lg';
-  hover?: boolean;
+  /** soft = hairline sheet, outline = 2px carbon plate, inverse = carbon plane */
+  variant?: Variant;
 }
 
 const paddingClasses = {
@@ -12,14 +15,20 @@ const paddingClasses = {
   lg: 'p-6',
 };
 
-export function Card({ children, padding = 'md', hover = false, className = '', ...props }: CardProps) {
+const variantClasses: Record<Variant, string> = {
+  soft: 'bg-[var(--color-bg-surface)] border border-[var(--color-border-hairline)]',
+  outline: 'bg-[var(--color-bg-surface)] border-2 border-[var(--color-border)]',
+  inverse: 'bg-[var(--color-bg-inverse)] text-[var(--color-text-inverse)]',
+};
+
+/** Flat poster surface. No shadows, no rounded corners — planes and rules. */
+export function Card({ children, padding = 'md', variant = 'soft', className = '', ...props }: CardProps) {
   return (
     <div
       className={`
-        bg-[var(--color-bg-surface)] rounded-[var(--radius-lg)]
-        border border-[var(--color-border)] shadow-[var(--shadow-sm)]
+        rounded-[var(--radius-md)]
+        ${variantClasses[variant]}
         ${paddingClasses[padding]}
-        ${hover ? 'transition-shadow hover:shadow-[var(--shadow-md)] cursor-pointer' : ''}
         ${className}
       `.trim()}
       {...props}

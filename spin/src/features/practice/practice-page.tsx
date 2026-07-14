@@ -1,45 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Zap, Grid3x3, BarChart3, MonitorPlay } from 'lucide-react';
-import { Card } from '@/design/components/card';
+import { ArrowRight } from 'lucide-react';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { buildSession } from '@/engine/session-builder';
 import type { Session } from '@/engine/types';
 import { SessionRunner } from './session-runner';
 
-interface PracticeOption {
-  id: string;
-  icon: typeof Zap;
-  labelKey: string;
-  descKey: string;
-  color: string;
-}
-
-const practiceOptions: PracticeOption[] = [
-  { id: 'daily', icon: Zap, labelKey: 'practice.dailySession', descKey: 'today.dailySessionDesc', color: 'var(--color-accent)' },
-  { id: 'quick', icon: Grid3x3, labelKey: 'practice.quickPractice', descKey: 'practice.categoryPractice', color: 'var(--color-primary-500)' },
-];
-
-const comingSoonOptions: PracticeOption[] = [
-  { id: 'simulator', icon: MonitorPlay, labelKey: 'practice.simulator', descKey: 'practice.comingSoon', color: 'var(--color-success-500)' },
-  { id: 'assessment', icon: BarChart3, labelKey: 'practice.assessment', descKey: 'practice.comingSoon', color: 'var(--color-warning-500)' },
-];
-
 export function PracticePage() {
   const { t } = useTranslation();
   const { getDueReviews, techniques: knowledgeState } = useKnowledgeStore();
   const [activeSession, setActiveSession] = useState<Session | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const dueCount = getDueReviews().length;
 
-  const startSession = (type: string) => {
-    const config = {
+  const startSession = (type: 'daily' | 'quick', category?: string) => {
+    const session = buildSession({
       knowledgeState,
       maxItems: type === 'quick' ? 5 : 7,
-    };
-    const session = buildSession(config);
+      category,
+    });
     setActiveSession(session);
   };
+
+  // Deep links: /practice?start=daily | /practice?category=<cat>
+  const startParam = searchParams.get('start');
+  const categoryParam = searchParams.get('category');
+  useEffect(() => {
+    if (activeSession) return;
+    if (startParam) {
+      setSearchParams({}, { replace: true });
+      startSession(startParam === 'quick' ? 'quick' : 'daily');
+    } else if (categoryParam) {
+      setSearchParams({}, { replace: true });
+      startSession('daily', categoryParam);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startParam, categoryParam]);
 
   if (activeSession) {
     return (
@@ -52,49 +50,53 @@ export function PracticePage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">{t('practice.title')}</h1>
+      <div className="relative overflow-hidden py-2">
+        <span
+          aria-hidden
+          className="absolute -top-6 right-0 mono-num font-bold text-[7rem] leading-none text-[var(--color-carbon)] opacity-[0.06] select-none pointer-events-none"
+        >
+          02
+        </span>
+        <h1 className="type-display text-xl relative">{t('practice.title')}</h1>
         {dueCount > 0 && (
-          <p className="text-sm text-[var(--color-accent)] mt-1">
+          <p className="mono-label text-[var(--color-accent-text)] mt-2">
             {dueCount} {t('today.dueReviews')}
           </p>
         )}
       </div>
 
-      <div className="space-y-3">
-        {practiceOptions.map(({ id, icon: Icon, labelKey, descKey, color }) => (
-          <Card key={id} hover padding="md" onClick={() => startSession(id)}>
-            <div className="flex items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)` }}
-              >
-                <Icon size={24} style={{ color }} />
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-medium text-sm">{t(labelKey)}</h3>
-                <p className="text-xs text-[var(--color-text-secondary)] truncate">{t(descKey)}</p>
-              </div>
-            </div>
-          </Card>
-        ))}
-        {comingSoonOptions.map(({ id, icon: Icon, labelKey, descKey, color }) => (
-          <Card key={id} padding="md" className="opacity-50">
-            <div className="flex items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-[var(--radius-lg)] flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `color-mix(in srgb, ${color} 15%, transparent)` }}
-              >
-                <Icon size={24} style={{ color }} />
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-medium text-sm">{t(labelKey)}</h3>
-                <p className="text-xs text-[var(--color-text-secondary)] truncate">{t(descKey)}</p>
-              </div>
-            </div>
-          </Card>
-        ))}
-      </div>
+      {/* Tagesübung — the main plane */}
+      <button
+        onClick={() => startSession('daily')}
+        className="w-full text-left bg-[var(--color-signal)] text-[var(--color-accent-ink)] p-5 rounded-[var(--radius-md)] group"
+      >
+        <div className="flex items-center justify-between mb-2">
+          <span className="mono-label">01</span>
+          <span className="mono-label">7 {t('practice.itemsLabel')} · 3–5 MIN</span>
+        </div>
+        <span className="type-display text-lg block">{t('practice.dailySession')}</span>
+        <span className="flex items-center gap-1.5 text-sm font-bold mt-3">
+          {t('today.startSession')}
+          <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
+        </span>
+      </button>
+
+      {/* Schnelles Training */}
+      <button
+        onClick={() => startSession('quick')}
+        className="w-full text-left rule-2 bg-[var(--color-bg-surface)] p-5 rounded-[var(--radius-md)] group
+          hover:bg-[var(--color-bg-muted)] transition-colors duration-100"
+      >
+        <div className="flex items-center justify-between mb-2">
+          <span className="mono-label text-[var(--color-text-muted)]">02</span>
+          <span className="mono-label text-[var(--color-text-muted)]">5 {t('practice.itemsLabel')} · 2–3 MIN</span>
+        </div>
+        <span className="type-display text-lg block">{t('practice.quickPractice')}</span>
+        <span className="flex items-center gap-1.5 text-sm font-bold mt-3 text-[var(--color-text-secondary)]">
+          {t('today.startSession')}
+          <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
+        </span>
+      </button>
     </div>
   );
 }

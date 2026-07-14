@@ -1,15 +1,17 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/design/components/button';
 import { QuizOption } from '@/design/components/quiz-option';
-import { ProgressBar } from '@/design/components/progress-bar';
+import { SegmentProgress } from '@/design/components/segment-progress';
+import { Card } from '@/design/components/card';
 import { t as tContent } from '@content/types';
 
 interface QuizResult {
   score: number;
   answers: { techniqueId: string; correct: boolean }[];
+  skipped?: boolean;
 }
 
 interface DiagnosticQuizProps {
@@ -80,6 +82,7 @@ const diagnosticQuestions = [
 export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
+  const reduce = !!useReducedMotion();
 
   const [currentQ, setCurrentQ] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -88,7 +91,6 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
   const [answers, setAnswers] = useState<{ techniqueId: string; correct: boolean }[]>([]);
 
   const question = diagnosticQuestions[currentQ];
-  const progress = ((currentQ) / diagnosticQuestions.length) * 100;
 
   const handleSelect = useCallback((idx: number) => {
     if (showFeedback) return;
@@ -113,52 +115,59 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
   };
 
   const handleSkip = () => {
-    onComplete({ score: 0, answers: [] });
+    onComplete({ score: 0, answers: [], skipped: true });
   };
 
+  const feedbackText = showFeedback
+    ? `${selectedAnswer === question.correctAnswer ? t('common.correct') : t('common.incorrect')}. ${tContent(question.explanation, lang)}`
+    : '';
+
   return (
-    <div className="min-h-svh flex flex-col px-4 py-6">
+    <div className="min-h-svh flex flex-col px-4 py-6 max-w-md mx-auto w-full">
       {/* Header */}
-      <div className="space-y-2 mb-6">
+      <div className="space-y-3 mb-6">
         <div className="flex items-center justify-between">
-          <p className="text-xs font-medium text-[var(--color-text-muted)] uppercase tracking-wider">
-            {t('onboarding.diagnosticTitle')}
+          <p className="mono-label text-[var(--color-text-muted)]">
+            {t('onboarding.diagnosticTitle')} · {currentQ + 1}/{diagnosticQuestions.length}
           </p>
           <button
             onClick={handleSkip}
-            className="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors"
+            className="mono-label text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors min-h-[2.75rem] px-2 -mr-2"
           >
             {t('onboarding.skip')}
           </button>
         </div>
-        <div className="flex items-center gap-2">
-          <ProgressBar value={progress} />
-          <span className="text-xs text-[var(--color-text-muted)] tabular-nums shrink-0">
-            {currentQ + 1}/{diagnosticQuestions.length}
-          </span>
-        </div>
+        <SegmentProgress
+          total={diagnosticQuestions.length}
+          done={currentQ + (showFeedback ? 1 : 0)}
+          active={currentQ}
+        />
       </div>
+
+      <div aria-live="polite" className="sr-only">{feedbackText}</div>
 
       {/* Question */}
       <div className="flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentQ}
-            initial={{ opacity: 0, x: 20 }}
+            initial={reduce ? false : { opacity: 0, x: 48 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
+            exit={reduce ? undefined : { opacity: 0, x: -48, transition: { duration: 0.1 } }}
+            transition={{ duration: 0.3, ease: [0.9, 0, 0.1, 1] }}
             className="space-y-4"
           >
-            <h2 className="text-lg font-semibold leading-snug">
+            <h2 className="type-display text-lg">
               {tContent(question.question, lang)}
             </h2>
 
             <div className="space-y-2">
               {question.options.map((opt, i) => {
-                let state: 'default' | 'selected' | 'correct' | 'incorrect' = 'default';
+                let state: 'default' | 'selected' | 'correct' | 'incorrect' | 'dimmed' = 'default';
                 if (showFeedback) {
                   if (i === question.correctAnswer) state = 'correct';
                   else if (i === selectedAnswer) state = 'incorrect';
+                  else state = 'dimmed';
                 } else if (i === selectedAnswer) {
                   state = 'selected';
                 }
@@ -169,6 +178,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
                     index={i}
                     label={tContent(opt, lang)}
                     state={state}
+                    tag={t('practice.verdictTag')}
                     onClick={() => handleSelect(i)}
                     disabled={showFeedback}
                   />
@@ -178,11 +188,14 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
 
             {showFeedback && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={reduce ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-[var(--radius-lg)] bg-[var(--color-accent-subtle)] border border-[var(--color-accent)]"
+                transition={{ duration: 0.3, ease: [0.9, 0, 0.1, 1] }}
               >
-                <p className="text-sm">{tContent(question.explanation, lang)}</p>
+                <Card variant="inverse" padding="md">
+                  <p className="mono-label text-[var(--color-signal)] mb-2">{t('practice.explanation')}</p>
+                  <p className="text-sm leading-relaxed">{tContent(question.explanation, lang)}</p>
+                </Card>
               </motion.div>
             )}
           </motion.div>
@@ -192,18 +205,14 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
       {/* Next button */}
       {showFeedback && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, ease: [0.9, 0, 0.1, 1] }}
           className="pt-4 pb-safe"
         >
-          <Button size="lg" onClick={handleNext} className="w-full">
-            {currentQ + 1 >= diagnosticQuestions.length ? (
-              <span className="flex items-center gap-2">
-                <CheckCircle2 size={18} /> {t('onboarding.viewResult')}
-              </span>
-            ) : (
-              t('common.next')
-            )}
+          <Button size="lg" variant="inverse" onClick={handleNext} className="w-full">
+            {currentQ + 1 >= diagnosticQuestions.length ? t('onboarding.viewResult') : t('common.next')}
+            <ArrowRight size={18} aria-hidden />
           </Button>
         </motion.div>
       )}

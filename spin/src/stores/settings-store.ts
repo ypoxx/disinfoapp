@@ -23,7 +23,14 @@ export const useSettingsStore = create<SettingsState>()(
 
       setWeeklyGoal: (days) => set({ weeklyGoal: Math.max(1, Math.min(7, days)) }),
     }),
-    { name: 'spin-settings' }
+    {
+      name: 'spin-settings',
+      version: 1,
+      // Re-apply theme when the store is rehydrated (e.g. after cloud sync)
+      onRehydrateStorage: () => (state) => {
+        if (state) applyTheme(state.theme);
+      },
+    }
   )
 );
 

@@ -297,5 +297,7 @@ export interface TechniqueMastery {
   easeFactor: number; // starts at 2.5
   interval: number; // days
   repetitions: number;
+  /** High-water mark of repetitions — smooths mastery after a lapse */
+  peakRepetitions?: number;
   nextReview: string; // ISO date
 }

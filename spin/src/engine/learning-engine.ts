@@ -9,7 +9,15 @@
  */
 
 export { buildSession } from './session-builder';
-export { calculateNextReview, qualityFromAnswer, isDueForReview, sortByUrgency } from './spaced-repetition';
+export {
+  calculateNextReview,
+  createDefaultMastery,
+  qualityFromOutcome,
+  isDueForReview,
+  sortByUrgency,
+} from './spaced-repetition';
+export type { SessionOutcome } from './spaced-repetition';
 export { interleaveExercises, mixExerciseTypes } from './interleaving';
 export { calculateSessionSummary } from './scoring';
+export { evaluateNewBadges } from './badges';
 export type { Session, SessionItem, ItemResult, SessionSummary } from './types';

@@ -10,6 +10,7 @@ import { techniqueMatches } from './technique-matches';
 import { responseChoices } from './response-choices';
 import { spotTheFlags } from './spot-the-flags';
 import { fillBlanks } from './fill-blanks';
+import { poolExercises } from './pool';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -18,4 +19,5 @@ export const exercises: Exercise[] = [
   ...responseChoices,
   ...spotTheFlags,
   ...fillBlanks,
+  ...poolExercises,
 ];

@@ -16,6 +16,8 @@ interface ProgressState {
   totalPracticeTime: number; // seconds
   sessionsCompleted: number;
   totalQuestionsAnswered: number;
+  /** exerciseId → ISO timestamp last answered, for the no-repeat cooldown */
+  answeredExercises: Record<string, string>;
 
   addXP: (amount: number) => void;
   /** Count today as active (idempotent per day, handles week rollover) */
@@ -24,6 +26,8 @@ interface ProgressState {
   addPracticeTime: (seconds: number) => void;
   completeSession: () => void;
   addQuestionsAnswered: (count: number) => void;
+  /** Stamp answered exercises so they enter their no-repeat cooldown */
+  recordExercisesAnswered: (exerciseIds: string[], at?: string) => void;
 
   /** Streak as it should be DISPLAYED (lapsed streaks show 0) */
   getDisplayStreak: () => number;
@@ -48,6 +52,7 @@ export const useProgressStore = create<ProgressState>()(
       totalPracticeTime: 0,
       sessionsCompleted: 0,
       totalQuestionsAnswered: 0,
+      answeredExercises: {},
 
       addXP: (amount) => set((s) => ({ xp: s.xp + amount })),
 
@@ -71,16 +76,29 @@ export const useProgressStore = create<ProgressState>()(
       addQuestionsAnswered: (count) =>
         set((s) => ({ totalQuestionsAnswered: s.totalQuestionsAnswered + count })),
 
+      recordExercisesAnswered: (exerciseIds, at) => {
+        if (exerciseIds.length === 0) return;
+        const stamp = at ?? new Date().toISOString();
+        set((s) => {
+          const answeredExercises = { ...s.answeredExercises };
+          for (const id of exerciseIds) {
+            if (id) answeredExercises[id] = stamp;
+          }
+          return { answeredExercises };
+        });
+      },
+
       getDisplayStreak: () => displayStreak(get().streak),
       getWeeklyProgress: () => displayWeeklyProgress(get().streak),
       getDaysSinceLastActive: () => daysSinceLastActive(get().streak),
     }),
     {
       name: 'spin-progress',
-      version: 1,
+      version: 2,
       // v0 → v1: weekStart + totalQuestionsAnswered introduced.
       // Old lastActiveDate values were UTC-based YYYY-MM-DD — close enough
       // to local to carry over (worst case: one streak day of grace).
+      // v1 → v2: answeredExercises (per-exercise no-repeat cooldown) introduced.
       migrate: (persisted) => {
         const state = persisted as Partial<ProgressState>;
         if (state.streak && state.streak.weekStart === undefined) {
@@ -88,6 +106,9 @@ export const useProgressStore = create<ProgressState>()(
         }
         if (state.totalQuestionsAnswered === undefined) {
           state.totalQuestionsAnswered = 0;
+        }
+        if (state.answeredExercises === undefined) {
+          state.answeredExercises = {};
         }
         return state as ProgressState;
       },

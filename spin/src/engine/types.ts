@@ -21,6 +21,8 @@ export interface ItemResult {
   correct: boolean;
   timeSpent: number; // seconds
   techniqueId?: string;
+  /** Exercise answered — persisted for the per-exercise no-repeat cooldown. */
+  exerciseId?: string;
 }
 
 /** Summary of a completed session */

@@ -37,6 +37,7 @@ export const techniqueMatches: Exercise[] = [
       en: 'Artificial scarcity creates urgency and fear of missing out (FOMO). Communication professionals should recognize this pattern — it is one of the most commonly used persuasion techniques.',
     },
     points: 10,
+    primaryTechniqueId: 'scarcity',
     relatedTechniques: ['scarcity'],
   },
   {
@@ -75,6 +76,7 @@ export const techniqueMatches: Exercise[] = [
       en: 'False appeal to authority: A prestigious name is used without a concrete source reference. Communication professionals should always verify the primary source.',
     },
     points: 10,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority'],
   },
   {
@@ -113,6 +115,7 @@ export const techniqueMatches: Exercise[] = [
       en: 'Social proof leverages the human tendency to follow the majority. In PR, this technique is ubiquitous — the line between persuasion and manipulation is blurry.',
     },
     points: 10,
+    primaryTechniqueId: 'social_proof',
     relatedTechniques: ['social_proof'],
   },
   {
@@ -151,6 +154,7 @@ export const techniqueMatches: Exercise[] = [
       en: 'A false dichotomy reduces complex issues to two extreme options. This is a common device in political communication — for communication professionals, it is important to highlight the alternatives being left out.',
     },
     points: 10,
+    primaryTechniqueId: 'false_dichotomy',
     relatedTechniques: ['false_dichotomy'],
   },
   {
@@ -189,6 +193,7 @@ export const techniqueMatches: Exercise[] = [
       en: 'Framing through relative rather than absolute numbers: "Doubled" sounds dramatic, but going from 3 to 6 is practically meaningless. Communication professionals must always read statistics in context.',
     },
     points: 10,
+    primaryTechniqueId: 'framing',
     relatedTechniques: ['framing', 'anchoring'],
   },
 ];

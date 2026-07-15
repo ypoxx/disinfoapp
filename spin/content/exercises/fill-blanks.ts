@@ -33,6 +33,7 @@ export const fillBlanks: Exercise[] = [
       en: 'The best correction: (1) States the correct figures, (2) explains the context, (3) shows that employees were considered, (4) provides evidence via a link. The other options are defensive, aggressive, or uninformative.',
     },
     points: 15,
+    primaryTechniqueId: 'framing',
     relatedTechniques: ['framing', 'narrative_persuasion'],
   },
   {
@@ -67,6 +68,7 @@ export const fillBlanks: Exercise[] = [
       en: 'The primary source (original video/transcript) is the strongest evidence. A new statement looks like damage control. Correcting individual accounts does not scale. "Quote was fabricated" repeats the falsehood (familiarity backfire effect).',
     },
     points: 15,
+    primaryTechniqueId: 'framing',
     relatedTechniques: ['framing', 'visual_manipulation'],
   },
   {
@@ -101,6 +103,7 @@ export const fillBlanks: Exercise[] = [
       en: 'Transparency + independent voices + local engagement is the strongest combination. Ad campaigns come across as greenwashing. Exposing the accounts can be perceived as an attack. Local press alone is not enough when content has gone viral.',
     },
     points: 15,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority', 'social_proof', 'narrative_persuasion'],
   },
 ];

@@ -30,6 +30,7 @@ export const quickChecks: Exercise[] = [
     },
     points: 5,
     timeLimit: 10,
+    primaryTechniqueId: 'emotional_appeal',
     relatedTechniques: ['emotional_appeal', 'scarcity', 'reactance_theory'],
   },
   {
@@ -92,6 +93,7 @@ export const quickChecks: Exercise[] = [
     },
     points: 5,
     timeLimit: 10,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority'],
   },
   {
@@ -123,6 +125,7 @@ export const quickChecks: Exercise[] = [
     },
     points: 5,
     timeLimit: 10,
+    primaryTechniqueId: 'social_proof',
     relatedTechniques: ['social_proof', 'reactance_theory', 'authority'],
   },
   {
@@ -185,6 +188,7 @@ export const quickChecks: Exercise[] = [
     },
     points: 5,
     timeLimit: 10,
+    primaryTechniqueId: 'scarcity',
     relatedTechniques: ['scarcity', 'emotional_appeal', 'framing'],
   },
 ];

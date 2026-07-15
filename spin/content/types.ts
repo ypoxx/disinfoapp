@@ -239,8 +239,27 @@ export interface Exercise {
   points: number;
   /** Optional time limit in seconds */
   timeLimit?: number;
+  /**
+   * The single technique this exercise primarily teaches. Drives gating,
+   * interleaving, mastery credit and category colour deterministically.
+   * Must be one of `relatedTechniques`. Optional at the type level so
+   * technique-less legacy items type-check; the content validator requires
+   * it wherever `relatedTechniques` is non-empty.
+   */
+  primaryTechniqueId?: string;
   /** Related technique IDs (for adaptive learning) */
   relatedTechniques: string[];
+}
+
+/**
+ * The technique an exercise counts toward. Prefers the explicit
+ * `primaryTechniqueId`; falls back to the first related technique so callers
+ * stay deterministic even for content that predates the explicit tag.
+ * Returns `undefined` for technique-less items (which are dormant under
+ * technique gating).
+ */
+export function primaryTechniqueOf(exercise: Exercise): string | undefined {
+  return exercise.primaryTechniqueId ?? exercise.relatedTechniques[0];
 }
 
 // ----------------------------------------------------------

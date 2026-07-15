@@ -7,7 +7,7 @@ import { Button } from '@/design/components/button';
 import { Card } from '@/design/components/card';
 import { SegmentProgress } from '@/design/components/segment-progress';
 import { QuizOption } from '@/design/components/quiz-option';
-import { t as tContent, type TechniqueCategory } from '@content/types';
+import { t as tContent, primaryTechniqueOf, type TechniqueCategory } from '@content/types';
 import { techniques as allTechniques } from '@content/techniques';
 import type { Session, SessionItem, ItemResult } from '@/engine/types';
 import { calculateSessionSummary } from '@/engine/scoring';
@@ -32,7 +32,7 @@ interface CompletionData {
 
 function categoryOfItem(item: SessionItem): TechniqueCategory | null {
   if (item.type === 'learn' || item.type === 'review') return item.technique.category;
-  const techId = item.exercise.relatedTechniques[0];
+  const techId = primaryTechniqueOf(item.exercise);
   return allTechniques.find((t) => t.id === techId)?.category ?? null;
 }
 
@@ -79,11 +79,13 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
     const timeSpent = Math.round((Date.now() - itemStartTime.current) / 1000);
     const ex = currentItem.exercise;
     const correct = ex.correctAnswers.includes(optionIndex);
+    const primaryTechnique = primaryTechniqueOf(ex);
 
-    // Credit every related technique (aggregation happens per technique)
-    for (const techniqueId of ex.relatedTechniques) {
-      const o = outcomesRef.current[techniqueId] ?? { correct: 0, total: 0 };
-      outcomesRef.current[techniqueId] = {
+    // Credit the primary technique only — deterministic mastery attribution
+    // (a multi-technique pool would otherwise smear credit across every tag).
+    if (primaryTechnique) {
+      const o = outcomesRef.current[primaryTechnique] ?? { correct: 0, total: 0 };
+      outcomesRef.current[primaryTechnique] = {
         correct: o.correct + (correct ? 1 : 0),
         total: o.total + 1,
       };
@@ -93,7 +95,8 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       itemIndex: currentIndex,
       correct,
       timeSpent,
-      techniqueId: ex.relatedTechniques[0],
+      techniqueId: primaryTechnique,
+      exerciseId: ex.id,
     }]);
   }, [showFeedback, currentItem, currentIndex]);
 
@@ -125,6 +128,10 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
     progress.addPracticeTime(Math.round((Date.now() - sessionStartTime.current) / 1000));
     progress.completeSession();
     progress.addQuestionsAnswered(results.length);
+    // Stamp answered exercises so they enter their per-exercise no-repeat cooldown
+    progress.recordExercisesAnswered(
+      results.map((r) => r.exerciseId).filter((id): id is string => Boolean(id))
+    );
 
     const progressNow = useProgressStore.getState();
     const masteredCount = Object.values(after.techniques).filter((m) => m.masteryLevel >= 80).length;

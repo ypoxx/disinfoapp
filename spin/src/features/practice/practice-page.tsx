@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
+import { useProgressStore } from '@/stores/progress-store';
 import { buildSession } from '@/engine/session-builder';
 import type { Session } from '@/engine/types';
 import { SessionRunner } from './session-runner';
@@ -10,6 +11,7 @@ import { SessionRunner } from './session-runner';
 export function PracticePage() {
   const { t } = useTranslation();
   const { getDueReviews, techniques: knowledgeState } = useKnowledgeStore();
+  const answeredExercises = useProgressStore((s) => s.answeredExercises);
   const [activeSession, setActiveSession] = useState<Session | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -18,6 +20,7 @@ export function PracticePage() {
   const startSession = (type: 'daily' | 'quick', category?: string) => {
     const session = buildSession({
       knowledgeState,
+      answeredExercises,
       maxItems: type === 'quick' ? 5 : 7,
       category,
     });

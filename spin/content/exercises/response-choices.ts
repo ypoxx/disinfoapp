@@ -33,6 +33,7 @@ export const responseChoices: Exercise[] = [
       en: 'At 15,000 retweets, ignoring is no longer an option — the false information is already spreading. A calm, fact-based response with evidence (e.g., a link to your data protection report) is the best strategy. Legal threats come across as defensive, and emotional counter-reactions only escalate.',
     },
     points: 15,
+    primaryTechniqueId: 'framing',
     relatedTechniques: ['framing', 'emotional_appeal'],
   },
   {
@@ -67,6 +68,7 @@ export const responseChoices: Exercise[] = [
       en: 'Reputable fact-checking outlets have correction processes. Direct, professional contact with concrete evidence is the most effective approach. Mobilizing employees would be astroturfing — an unethical communication technique.',
     },
     points: 15,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority'],
   },
   {
@@ -101,6 +103,7 @@ export const responseChoices: Exercise[] = [
       en: 'Professional approach: (1) Secure evidence (screenshots, timestamps), (2) report to the platform, (3) issue a transparent statement about the campaign. Creating counter-accounts would be unethical. Public exposure can backfire (Streisand effect).',
     },
     points: 15,
+    primaryTechniqueId: 'social_proof',
     relatedTechniques: ['social_proof', 'digital_influence'],
   },
   {
@@ -135,6 +138,7 @@ export const responseChoices: Exercise[] = [
       en: 'With deepfakes, speed is critical. Every hour without a denial reinforces the false narrative. A quick official statement with concrete alibi evidence (e.g., "The CEO was in meeting X at that time") combined with a forensic analysis of the video is the strongest approach.',
     },
     points: 15,
+    primaryTechniqueId: 'synthetic_media',
     relatedTechniques: ['synthetic_media', 'visual_manipulation'],
   },
   {
@@ -169,6 +173,7 @@ export const responseChoices: Exercise[] = [
       en: 'Prebunking (also known as "inoculation") is the most effective prevention: People become more resilient to manipulation when they are informed about the expected techniques beforehand. Research shows that proactive transparency is more effective than reactive corrections.',
     },
     points: 15,
+    primaryTechniqueId: 'narrative_persuasion',
     relatedTechniques: ['narrative_persuasion', 'framing'],
   },
 ];

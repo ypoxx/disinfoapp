@@ -1,40 +1,34 @@
 import type { Exercise } from '@content/types';
+import { primaryTechniqueOf } from '@content/types';
 
 /**
- * Interleaving: Ensure no two consecutive items share a technique.
+ * Interleaving: Ensure no two consecutive items share their primary technique.
  *
  * Research shows that interleaving different topics improves long-term
- * retention compared to blocked practice (Rohrer & Taylor, 2007).
+ * retention compared to blocked practice (Rohrer & Taylor, 2007). Keying on
+ * the primary technique (not the full relatedTechniques set) matches how
+ * mastery is credited, so the mix stays deterministic in a multi-technique
+ * pool.
  */
 
-/** Reorder exercises so no two consecutive ones share a relatedTechnique */
+/** Reorder exercises so no two consecutive ones share their primary technique */
 export function interleaveExercises(exercises: Exercise[]): Exercise[] {
   if (exercises.length <= 2) return exercises;
 
   const result: Exercise[] = [];
   const remaining = [...exercises];
 
-  // Greedy interleaving: pick the next exercise that doesn't share techniques with the last one
+  // Greedy interleaving: pick the next exercise whose primary technique differs
+  // from the previous item's; fall back to the first remaining when every
+  // candidate shares it.
   while (remaining.length > 0) {
-    const last = result[result.length - 1];
-    const lastTechniques = new Set(last?.relatedTechniques ?? []);
+    const lastPrimary =
+      result.length > 0 ? primaryTechniqueOf(result[result.length - 1]) : undefined;
 
-    // Find best candidate (no shared techniques with last item)
-    let bestIdx = 0;
-    let bestScore = -1;
+    let idx = remaining.findIndex((ex) => primaryTechniqueOf(ex) !== lastPrimary);
+    if (idx === -1) idx = 0;
 
-    for (let i = 0; i < remaining.length; i++) {
-      const candidate = remaining[i];
-      const overlap = candidate.relatedTechniques.filter(t => lastTechniques.has(t)).length;
-      const score = overlap === 0 ? 2 : (overlap < lastTechniques.size ? 1 : 0);
-
-      if (score > bestScore) {
-        bestScore = score;
-        bestIdx = i;
-      }
-    }
-
-    result.push(remaining.splice(bestIdx, 1)[0]);
+    result.push(remaining.splice(idx, 1)[0]);
   }
 
   return result;

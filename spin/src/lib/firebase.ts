@@ -69,9 +69,11 @@ async function ensureFirebase() {
   }
 }
 
-// If Firebase is configured, start loading it (non-blocking)
+// If Firebase is configured, load it off the critical path: the ~130 KB
+// gzip Firebase chunk must not compete with first paint.
 if (isFirebaseConfigured) {
-  ensureFirebase();
+  const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
+  idle(() => { ensureFirebase(); });
 } else {
   useAuthStore.getState().setLoading(false);
 }
@@ -106,7 +108,12 @@ export async function saveUserData(uid: string, data: Record<string, unknown>): 
       ...data,
       lastSynced: new Date().toISOString(),
     }, { merge: true });
-  } catch { /* Silently fail — data is persisted locally */ }
+    useAuthStore.getState().setSyncStatus('ok');
+  } catch (err) {
+    // Data stays safe in localStorage — but the failure must be visible
+    console.warn('SPIN sync: saving to cloud failed', err);
+    useAuthStore.getState().setSyncStatus('error');
+  }
 }
 
 /** Load user data from Firestore */
@@ -115,8 +122,11 @@ export async function loadUserData(uid: string): Promise<Record<string, unknown>
   try {
     const { doc, getDoc } = await import('firebase/firestore');
     const snap = await getDoc(doc(dbInstance, 'users', uid));
+    useAuthStore.getState().setSyncStatus('ok');
     return snap.exists() ? (snap.data() as Record<string, unknown>) : null;
-  } catch {
+  } catch (err) {
+    console.warn('SPIN sync: loading from cloud failed', err);
+    useAuthStore.getState().setSyncStatus('error');
     return null;
   }
 }

@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { Suspense, useEffect, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
 import { router } from './router';
 import { initSync } from './lib/sync';
 import { OnboardingFlow } from './features/onboarding/onboarding-flow';
@@ -32,13 +33,15 @@ export function App() {
     setOnboarded(true);
   };
 
-  if (!onboarded) {
-    return <OnboardingFlow onComplete={handleOnboardingComplete} />;
-  }
-
   return (
-    <Suspense fallback={<LoadingFallback />}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <MotionConfig reducedMotion="user">
+      {!onboarded ? (
+        <OnboardingFlow onComplete={handleOnboardingComplete} />
+      ) : (
+        <Suspense fallback={<LoadingFallback />}>
+          <RouterProvider router={router} />
+        </Suspense>
+      )}
+    </MotionConfig>
   );
 }

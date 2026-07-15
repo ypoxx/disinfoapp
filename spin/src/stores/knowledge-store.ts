@@ -1,12 +1,31 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { TechniqueMastery } from '@content/types';
+import {
+  calculateNextReview,
+  createDefaultMastery,
+  qualityFromOutcome,
+  isDueForReview,
+  type SessionOutcome,
+} from '@/engine/spaced-repetition';
 
 interface KnowledgeState {
   /** Per-technique mastery data */
   techniques: Record<string, TechniqueMastery>;
 
-  /** Record an encounter with a technique */
+  /**
+   * Mark a technique as introduced (learn item). Creates the SM-2 entry so
+   * the technique enters the review cycle and is never re-introduced.
+   */
+  markSeen: (techniqueId: string) => void;
+
+  /**
+   * Apply the aggregated outcomes of ONE completed session.
+   * Exactly one SM-2 update per technique.
+   */
+  applySessionOutcomes: (outcomes: Record<string, SessionOutcome>) => void;
+
+  /** Record a single standalone answer (diagnostic quiz seeding) */
   recordEncounter: (techniqueId: string, correct: boolean) => void;
 
   /** Get mastery for a specific technique */
@@ -22,98 +41,45 @@ interface KnowledgeState {
   getWeakestTechniques: (limit?: number) => TechniqueMastery[];
 }
 
-function createDefaultMastery(techniqueId: string): TechniqueMastery {
-  const today = new Date().toISOString();
-  return {
-    techniqueId,
-    masteryLevel: 0,
-    encounterCount: 0,
-    correctCount: 0,
-    lastPracticed: today,
-    easeFactor: 2.5,
-    interval: 1,
-    repetitions: 0,
-    nextReview: today,
-  };
-}
-
-/**
- * SM-2 Algorithm: Calculate next review interval
- * Based on SuperMemo SM-2 with minor adaptations
- */
-function updateSM2(mastery: TechniqueMastery, quality: number): TechniqueMastery {
-  // quality: 0-5 (0=complete failure, 5=perfect)
-  const q = Math.max(0, Math.min(5, quality));
-
-  let { easeFactor, interval, repetitions } = mastery;
-
-  if (q >= 3) {
-    // Correct response
-    if (repetitions === 0) {
-      interval = 1;
-    } else if (repetitions === 1) {
-      interval = 6;
-    } else {
-      interval = Math.round(interval * easeFactor);
-    }
-    repetitions += 1;
-  } else {
-    // Incorrect — reset
-    repetitions = 0;
-    interval = 1;
-  }
-
-  // Update ease factor
-  easeFactor = easeFactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
-  easeFactor = Math.max(1.3, easeFactor);
-
-  const nextReview = new Date();
-  nextReview.setDate(nextReview.getDate() + interval);
-
-  // Update mastery level based on accuracy
-  const newCorrectCount = mastery.correctCount + (q >= 3 ? 1 : 0);
-  const newEncounterCount = mastery.encounterCount + 1;
-  const accuracy = newEncounterCount > 0 ? (newCorrectCount / newEncounterCount) * 100 : 0;
-  const masteryLevel = Math.round(
-    accuracy * 0.6 + Math.min(100, repetitions * 10) * 0.4
-  );
-
-  return {
-    ...mastery,
-    easeFactor,
-    interval,
-    repetitions,
-    nextReview: nextReview.toISOString(),
-    lastPracticed: new Date().toISOString(),
-    encounterCount: newEncounterCount,
-    correctCount: newCorrectCount,
-    masteryLevel: Math.min(100, masteryLevel),
-  };
-}
-
 export const useKnowledgeStore = create<KnowledgeState>()(
   persist(
     (set, get) => ({
       techniques: {},
 
-      recordEncounter: (techniqueId, correct) => {
-        const current = get().techniques[techniqueId] || createDefaultMastery(techniqueId);
-        // Map boolean to SM-2 quality: correct=4, incorrect=1
-        const quality = correct ? 4 : 1;
-        const updated = updateSM2(current, quality);
+      markSeen: (techniqueId) => {
+        if (get().techniques[techniqueId]) return;
+        const entry = createDefaultMastery(techniqueId);
+        // First review due tomorrow — introduction is not recall
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        entry.nextReview = tomorrow.toISOString();
+        entry.encounterCount = 1;
+        set((s) => ({ techniques: { ...s.techniques, [techniqueId]: entry } }));
+      },
 
-        set((s) => ({
-          techniques: { ...s.techniques, [techniqueId]: updated },
-        }));
+      applySessionOutcomes: (outcomes) => {
+        set((s) => {
+          const techniques = { ...s.techniques };
+          for (const [techniqueId, outcome] of Object.entries(outcomes)) {
+            const current = techniques[techniqueId] || createDefaultMastery(techniqueId);
+            const quality = qualityFromOutcome(outcome);
+            techniques[techniqueId] = calculateNextReview(current, quality);
+          }
+          return { techniques };
+        });
+      },
+
+      recordEncounter: (techniqueId, correct) => {
+        get().applySessionOutcomes({
+          [techniqueId]: { correct: correct ? 1 : 0, total: 1 },
+        });
       },
 
       getMastery: (techniqueId) => get().techniques[techniqueId],
 
       getDueReviews: () => {
-        const now = new Date().toISOString();
-        return Object.values(get().techniques).filter(
-          (m) => m.nextReview <= now
-        );
+        const now = new Date();
+        return Object.values(get().techniques).filter((m) => isDueForReview(m, now));
       },
 
       getOverallMastery: () => {
@@ -128,6 +94,19 @@ export const useKnowledgeStore = create<KnowledgeState>()(
           .slice(0, limit);
       },
     }),
-    { name: 'spin-knowledge' }
+    {
+      name: 'spin-knowledge',
+      version: 1,
+      // v0 → v1: peakRepetitions introduced (optional, seeded from repetitions)
+      migrate: (persisted) => {
+        const state = persisted as { techniques?: Record<string, TechniqueMastery> };
+        if (state?.techniques) {
+          for (const m of Object.values(state.techniques)) {
+            if (m.peakRepetitions === undefined) m.peakRepetitions = m.repetitions;
+          }
+        }
+        return state as KnowledgeState;
+      },
+    }
   )
 );

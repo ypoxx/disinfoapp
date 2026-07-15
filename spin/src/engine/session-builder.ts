@@ -29,7 +29,7 @@ export function buildSession(config: SessionConfig): Session {
 
   // 1. Get due reviews
   const allMasteries = Object.values(knowledgeState);
-  const dueReviews = sortByUrgency(allMasteries.filter(isDueForReview));
+  const dueReviews = sortByUrgency(allMasteries.filter((m) => isDueForReview(m)));
 
   // Add up to 2 review items
   for (const mastery of dueReviews.slice(0, 2)) {
@@ -45,7 +45,7 @@ export function buildSession(config: SessionConfig): Session {
     .filter(m => m.masteryLevel < 60)
     .map(m => m.techniqueId);
 
-  let availableExercises = exercises.filter(ex => {
+  const availableExercises = exercises.filter(ex => {
     if (category) {
       const tech = techniques.find(t => ex.relatedTechniques.includes(t.id));
       return tech?.category === category;

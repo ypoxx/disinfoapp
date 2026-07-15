@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource/space-mono/latin-400.css";
+@import "@fontsource/space-mono/latin-700.css";
 @import "./design/tokens.css";
 
 /* Base styles */
@@ -13,6 +16,8 @@
     margin: 0;
     background-color: var(--color-bg);
     color: var(--color-text);
+    font-size: var(--text-base);
+    line-height: 1.5;
     transition: background-color var(--transition-normal), color var(--transition-normal);
   }
 
@@ -27,15 +32,73 @@
     outline-offset: 2px;
   }
 
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-carbon);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
     }
   }
+
+  /* Hard stop for all CSS motion when the user asks for it.
+     Framer Motion is covered separately via <MotionConfig reducedMotion="user">. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
-/* Utilities */
+/* Poster Logic type system */
 @layer utilities {
+  /* Expanded Black display type — the voice of the app */
+  .type-display {
+    font-family: var(--font-sans);
+    font-weight: var(--display-weight);
+    font-stretch: var(--display-stretch);
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    text-wrap: balance;
+    /* German compounds at poster sizes need hyphenation to survive 390px */
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Condensed = deflated (wrong answers, de-emphasis) */
+  .type-condensed {
+    font-stretch: var(--condensed-stretch);
+  }
+
+  /* Space Mono micro-label: 11px uppercase tracked */
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 2px carbon rule system */
+  .rule-2 {
+    border: var(--border-heavy) solid var(--color-rule);
+  }
+  .rule-t-2 {
+    border-top: var(--border-heavy) solid var(--color-rule);
+  }
+  .rule-b-2 {
+    border-bottom: var(--border-heavy) solid var(--color-rule);
+  }
+
   .safe-area-top {
     padding-top: env(safe-area-inset-top, 0px);
   }

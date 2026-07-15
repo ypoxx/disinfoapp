@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/design/components/button';
-import { MasteryMeter } from '@/design/components/mastery-meter';
+import { SplitFlap } from '@/design/components/split-flap';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { WelcomeScreen } from './welcome-screen';
 import { DiagnosticQuiz } from './diagnostic-quiz';
@@ -12,6 +12,7 @@ type Step = 'welcome' | 'quiz' | 'result';
 interface QuizResult {
   score: number;
   answers: { techniqueId: string; correct: boolean }[];
+  skipped?: boolean;
 }
 
 interface OnboardingFlowProps {
@@ -20,6 +21,7 @@ interface OnboardingFlowProps {
 
 export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
   const { t } = useTranslation();
+  const reduce = !!useReducedMotion();
   const [step, setStep] = useState<Step>('welcome');
   const [result, setResult] = useState<QuizResult>({ score: 0, answers: [] });
   const { recordEncounter } = useKnowledgeStore();
@@ -43,30 +45,43 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
     return <DiagnosticQuiz onComplete={handleQuizComplete} />;
   }
 
-  // Result screen
-  const { score } = result;
-  const accuracy = Math.round((score / totalQuestions) * 100);
-  const levelKey = score === totalQuestions ? 'advanced' : score >= 1 ? 'intermediate' : 'beginner';
+  // Result screen — honest about skipping (no fake "0/3")
+  const { score, skipped } = result;
+  const levelKey = skipped
+    ? 'skipped'
+    : score === totalQuestions
+      ? 'advanced'
+      : score >= 1
+        ? 'intermediate'
+        : 'beginner';
 
   return (
-    <div className="min-h-svh flex flex-col items-center justify-center px-6 text-center">
+    <div className="min-h-svh flex flex-col justify-center px-6 py-8 max-w-md mx-auto w-full">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="space-y-6 max-w-sm"
+        initial={reduce ? false : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.9, 0, 0.1, 1] }}
+        className="space-y-6"
       >
-        <MasteryMeter value={accuracy} />
+        {!skipped && (
+          <div className="flex items-center gap-4">
+            <SplitFlap value={score} digits={1} size="md" aria-label={`${score}/${totalQuestions}`} />
+            <span className="type-display text-lg text-[var(--color-text-muted)]">/{totalQuestions}</span>
+          </div>
+        )}
 
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold">
-            {t('onboarding.result.title', { score, total: totalQuestions })}
+          <h2 className="type-display text-xl">
+            {skipped
+              ? t('onboarding.result.skippedTitle')
+              : t('onboarding.result.title', { score, total: totalQuestions })}
           </h2>
-          <p className="text-[var(--color-accent)] font-medium">
+          <p className="mono-label text-[var(--color-accent-text)]">
             {t(`onboarding.result.level.${levelKey}`)}
           </p>
         </div>
 
-        <p className="text-sm text-[var(--color-text-secondary)]">
+        <p className="text-base text-[var(--color-text-secondary)] leading-relaxed">
           {t(`onboarding.result.message.${levelKey}`)}
         </p>
 

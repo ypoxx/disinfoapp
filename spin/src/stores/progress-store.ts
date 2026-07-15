@@ -1,12 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
-interface StreakState {
-  current: number;
-  longest: number;
-  lastActiveDate: string | null; // ISO date string
-  weeklyProgress: boolean[]; // Mon-Sun
-}
+import {
+  advanceStreak,
+  displayStreak,
+  displayWeeklyProgress,
+  daysSinceLastActive,
+  weekStartOf,
+  type StreakState,
+} from '@/engine/streak';
 
 interface ProgressState {
   xp: number;
@@ -14,21 +15,22 @@ interface ProgressState {
   earnedBadges: string[];
   totalPracticeTime: number; // seconds
   sessionsCompleted: number;
+  totalQuestionsAnswered: number;
 
   addXP: (amount: number) => void;
+  /** Count today as active (idempotent per day, handles week rollover) */
   checkStreak: () => void;
   earnBadge: (badgeId: string) => void;
   addPracticeTime: (seconds: number) => void;
   completeSession: () => void;
-}
+  addQuestionsAnswered: (count: number) => void;
 
-function getToday(): string {
-  return new Date().toISOString().split('T')[0];
-}
-
-function getDayOfWeek(): number {
-  const day = new Date().getDay();
-  return day === 0 ? 6 : day - 1; // Mon=0, Sun=6
+  /** Streak as it should be DISPLAYED (lapsed streaks show 0) */
+  getDisplayStreak: () => number;
+  /** Weekly progress for the CURRENT week (stale weeks show empty) */
+  getWeeklyProgress: () => boolean[];
+  /** Days since last activity — read BEFORE checkStreak for comeback logic */
+  getDaysSinceLastActive: () => number | null;
 }
 
 export const useProgressStore = create<ProgressState>()(
@@ -40,47 +42,17 @@ export const useProgressStore = create<ProgressState>()(
         longest: 0,
         lastActiveDate: null,
         weeklyProgress: [false, false, false, false, false, false, false],
+        weekStart: weekStartOf(),
       },
       earnedBadges: [],
       totalPracticeTime: 0,
       sessionsCompleted: 0,
+      totalQuestionsAnswered: 0,
 
       addXP: (amount) => set((s) => ({ xp: s.xp + amount })),
 
       checkStreak: () => {
-        const today = getToday();
-        const { streak } = get();
-
-        if (streak.lastActiveDate === today) return; // Already checked today
-
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yesterdayStr = yesterday.toISOString().split('T')[0];
-
-        let newCurrent = streak.current;
-        if (streak.lastActiveDate === yesterdayStr) {
-          newCurrent = streak.current + 1;
-        } else if (streak.lastActiveDate !== today) {
-          newCurrent = 1; // Reset streak
-        }
-
-        const weeklyProgress = [...streak.weeklyProgress];
-        weeklyProgress[getDayOfWeek()] = true;
-
-        // Reset weekly progress on Monday
-        if (getDayOfWeek() === 0 && streak.lastActiveDate !== today) {
-          weeklyProgress.fill(false);
-          weeklyProgress[0] = true;
-        }
-
-        set({
-          streak: {
-            current: newCurrent,
-            longest: Math.max(streak.longest, newCurrent),
-            lastActiveDate: today,
-            weeklyProgress,
-          },
-        });
+        set((s) => ({ streak: advanceStreak(s.streak) }));
       },
 
       earnBadge: (badgeId) =>
@@ -95,7 +67,30 @@ export const useProgressStore = create<ProgressState>()(
 
       completeSession: () =>
         set((s) => ({ sessionsCompleted: s.sessionsCompleted + 1 })),
+
+      addQuestionsAnswered: (count) =>
+        set((s) => ({ totalQuestionsAnswered: s.totalQuestionsAnswered + count })),
+
+      getDisplayStreak: () => displayStreak(get().streak),
+      getWeeklyProgress: () => displayWeeklyProgress(get().streak),
+      getDaysSinceLastActive: () => daysSinceLastActive(get().streak),
     }),
-    { name: 'spin-progress' }
+    {
+      name: 'spin-progress',
+      version: 1,
+      // v0 → v1: weekStart + totalQuestionsAnswered introduced.
+      // Old lastActiveDate values were UTC-based YYYY-MM-DD — close enough
+      // to local to carry over (worst case: one streak day of grace).
+      migrate: (persisted) => {
+        const state = persisted as Partial<ProgressState>;
+        if (state.streak && state.streak.weekStart === undefined) {
+          state.streak.weekStart = weekStartOf();
+        }
+        if (state.totalQuestionsAnswered === undefined) {
+          state.totalQuestionsAnswered = 0;
+        }
+        return state as ProgressState;
+      },
+    }
   )
 );

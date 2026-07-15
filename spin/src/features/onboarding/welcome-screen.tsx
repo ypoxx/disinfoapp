@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { Sparkles, BookOpen, Clock, Target } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/design/components/button';
 
 interface WelcomeScreenProps {
@@ -8,82 +8,64 @@ interface WelcomeScreenProps {
 }
 
 const benefits = [
-  { icon: BookOpen, titleKey: 'onboarding.benefit1Title', descKey: 'onboarding.benefit1Desc' },
-  { icon: Clock, titleKey: 'onboarding.benefit2Title', descKey: 'onboarding.benefit2Desc' },
-  { icon: Target, titleKey: 'onboarding.benefit3Title', descKey: 'onboarding.benefit3Desc' },
+  { index: '01', titleKey: 'onboarding.benefit1Title', descKey: 'onboarding.benefit1Desc' },
+  { index: '02', titleKey: 'onboarding.benefit2Title', descKey: 'onboarding.benefit2Desc' },
+  { index: '03', titleKey: 'onboarding.benefit3Title', descKey: 'onboarding.benefit3Desc' },
 ] as const;
 
 export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
   const { t } = useTranslation();
+  const reduce = !!useReducedMotion();
+
+  const enter = (delay: number) => ({
+    initial: reduce ? false : { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.35, ease: [0.9, 0, 0.1, 1] as const, delay: reduce ? 0 : delay },
+  });
 
   return (
-    <div className="min-h-svh flex flex-col items-center justify-center px-6 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-6 max-w-sm"
-      >
-        {/* Logo / Icon */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-          className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[var(--color-primary-600)] to-[var(--color-primary-800)] flex items-center justify-center shadow-lg"
-        >
-          <Sparkles size={36} className="text-white" />
-        </motion.div>
+    <div className="min-h-svh flex flex-col px-6 py-8 max-w-md mx-auto w-full">
+      {/* Masthead */}
+      <motion.div {...enter(0)} className="flex items-baseline justify-between rule-b-2 pb-2">
+        <span className="type-display text-base leading-none">
+          SPIN<span className="align-super text-[0.55em]">®</span>
+        </span>
+        <span className="mono-label text-[var(--color-text-muted)]">N° 001</span>
+      </motion.div>
 
-        {/* Title */}
-        <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight">{t('onboarding.welcome')}</h1>
-          <p className="text-lg text-[var(--color-accent)]">{t('onboarding.tagline')}</p>
-        </div>
-
-        {/* Description */}
-        <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+      {/* Poster statement */}
+      <div className="flex-1 flex flex-col justify-center py-8">
+        <motion.h1 {...enter(0.1)} className="type-display text-2xl">
+          {t('onboarding.posterLine1')}{' '}
+          <span className="bg-[var(--color-signal)] text-[var(--color-accent-ink)] px-2 inline-block">
+            {t('onboarding.posterHighlight')}
+          </span>
+        </motion.h1>
+        <motion.p {...enter(0.2)} className="text-base text-[var(--color-text-secondary)] leading-relaxed mt-5">
           {t('onboarding.description')}
-        </p>
+        </motion.p>
 
-        {/* Benefits */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="space-y-3 text-left"
-        >
-          {benefits.map(({ icon: Icon, titleKey, descKey }, i) => (
-            <motion.div
-              key={titleKey}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + i * 0.1 }}
-              className="flex items-start gap-3"
-            >
-              <div className="mt-0.5 shrink-0 w-8 h-8 rounded-lg bg-[var(--color-accent-subtle)] flex items-center justify-center">
-                <Icon size={16} className="text-[var(--color-accent)]" />
-              </div>
+        {/* Benefits as an index */}
+        <motion.ol {...enter(0.3)} className="mt-8 rule-t-2">
+          {benefits.map(({ index, titleKey, descKey }) => (
+            <li key={titleKey} className="flex items-baseline gap-3 py-3 border-b border-[var(--color-border-hairline)]">
+              <span className="mono-label text-[var(--color-accent-text)] shrink-0">{index}</span>
               <div>
-                <p className="text-sm font-medium">{t(titleKey)}</p>
-                <p className="text-xs text-[var(--color-text-muted)]">{t(descKey)}</p>
+                <p className="font-bold text-sm">{t(titleKey)}</p>
+                <p className="text-xs text-[var(--color-text-secondary)] mt-0.5">{t(descKey)}</p>
               </div>
-            </motion.div>
+            </li>
           ))}
-        </motion.div>
+        </motion.ol>
+      </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-        >
-          <Button size="lg" onClick={onStart} className="w-full">
-            {t('onboarding.letsGo')}
-          </Button>
-        </motion.div>
-
-        {/* Subtle info */}
-        <p className="text-[10px] text-[var(--color-text-muted)]">
+      {/* CTA */}
+      <motion.div {...enter(0.45)} className="space-y-3 pb-safe">
+        <Button size="lg" onClick={onStart} className="w-full">
+          {t('onboarding.letsGo')}
+          <ArrowRight size={18} aria-hidden />
+        </Button>
+        <p className="mono-label text-[var(--color-text-muted)] text-center">
           {t('onboarding.noAccountNeeded')}
         </p>
       </motion.div>

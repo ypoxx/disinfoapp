@@ -4,24 +4,15 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import de from './locales/de.json';
 import en from './locales/en.json';
-import hu from './locales/hu.json';
-import pl from './locales/pl.json';
-import sk from './locales/sk.json';
-import hr from './locales/hr.json';
-import el from './locales/el.json';
-import mk from './locales/mk.json';
-import cnr from './locales/cnr.json';
 
+/**
+ * Active languages: German and English — fully translated (UI + content).
+ * The other locale files in ./locales are stale copies from the old app;
+ * they are deliberately NOT bundled until they are genuinely translated.
+ */
 export const languages = [
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
-  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-  { code: 'sk', name: 'Slovenčina', flag: '🇸🇰' },
-  { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
-  { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
-  { code: 'mk', name: 'Македонски', flag: '🇲🇰' },
-  { code: 'cnr', name: 'Crnogorski', flag: '🇲🇪' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'en', name: 'English' },
 ] as const;
 
 i18n
@@ -31,13 +22,6 @@ i18n
     resources: {
       de: { translation: de },
       en: { translation: en },
-      hu: { translation: hu },
-      pl: { translation: pl },
-      sk: { translation: sk },
-      hr: { translation: hr },
-      el: { translation: el },
-      mk: { translation: mk },
-      cnr: { translation: cnr },
     },
     fallbackLng: 'de',
     supportedLngs: languages.map(l => l.code),
@@ -47,5 +31,11 @@ i18n
       caches: ['localStorage'],
     },
   });
+
+// Keep <html lang> in sync with the active language (screen readers, hyphenation)
+document.documentElement.lang = i18n.resolvedLanguage ?? 'de';
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng;
+});
 
 export default i18n;

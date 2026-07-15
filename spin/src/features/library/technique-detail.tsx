@@ -1,12 +1,28 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, BookOpen, AlertTriangle, FlaskConical, Link2 } from 'lucide-react';
-import { Card } from '@/design/components/card';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/design/components/button';
-import { MasteryMeter } from '@/design/components/mastery-meter';
-import { getTechnique } from '@content/techniques';
+import { getTechnique, techniques } from '@content/techniques';
 import { t as tContent } from '@content/types';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
+
+interface SectionProps {
+  index: string;
+  title: string;
+  children: React.ReactNode;
+}
+
+function Section({ index, title, children }: SectionProps) {
+  return (
+    <section className="rule-t-2 pt-4">
+      <h2 className="flex items-baseline gap-2 mb-3">
+        <span className="mono-label text-[var(--color-accent-text)]">{index}</span>
+        <span className="mono-label">{title}</span>
+      </h2>
+      {children}
+    </section>
+  );
+}
 
 export function TechniqueDetailPage() {
   const { techniqueId } = useParams<{ techniqueId: string }>();
@@ -20,10 +36,10 @@ export function TechniqueDetailPage() {
 
   if (!technique) {
     return (
-      <div className="text-center py-12">
-        <p className="text-[var(--color-text-secondary)]">Technique not found</p>
-        <Button variant="ghost" onClick={() => navigate('/library')} className="mt-4">
-          <ArrowLeft size={16} /> {t('common.back')}
+      <div className="text-center py-12 space-y-4">
+        <p className="text-[var(--color-text-secondary)]">{t('library.notFound')}</p>
+        <Button variant="ghost" onClick={() => navigate('/library')}>
+          <ArrowLeft size={16} aria-hidden /> {t('common.back')}
         </Button>
       </div>
     );
@@ -32,117 +48,125 @@ export function TechniqueDetailPage() {
   const relatedTechniques = technique.relatedTechniques
     .map((id) => getTechnique(id))
     .filter(Boolean);
+  const index = String(techniques.indexOf(technique) + 1).padStart(2, '0');
+  const uncertainty = technique.evidence.uncertainty;
 
   return (
-    <div className="space-y-4">
-      {/* Back button */}
+    <div className="space-y-5">
+      {/* Back */}
       <button
         onClick={() => navigate('/library')}
-        className="flex items-center gap-1 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)]"
+        className="flex items-center gap-1.5 mono-label text-[var(--color-text-secondary)] hover:text-[var(--color-text)] min-h-[2.75rem]"
       >
-        <ArrowLeft size={16} /> {t('common.back')}
+        <ArrowLeft size={16} aria-hidden /> {t('common.back')}
       </button>
 
-      {/* Header */}
-      <div className="flex items-start justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{tContent(technique.name, lang)}</h1>
-          <div className="flex items-center gap-2 mt-1">
-            <span className="text-xs px-2 py-0.5 rounded-[var(--radius-full)] bg-[var(--color-bg-muted)]">
+      {/* Poster header: technique on its taxonomy plane */}
+      <header
+        className="relative overflow-hidden p-5 pt-6 rounded-[var(--radius-md)]"
+        style={{
+          backgroundColor: `var(--color-cat-${technique.category})`,
+          color: `var(--color-cat-${technique.category}-ink)`,
+        }}
+      >
+        <span
+          aria-hidden
+          className="absolute -top-8 -right-2 mono-num font-bold text-[9rem] leading-none opacity-15 select-none pointer-events-none"
+        >
+          {index}
+        </span>
+        <div className="relative space-y-3">
+          <span className="mono-label">{t(`categories.${technique.category}`)}</span>
+          <h1 className="type-display text-xl">{tContent(technique.name, lang)}</h1>
+          <div className="flex items-center gap-3 pt-1">
+            <span className="mono-label border-2 px-2 py-1" style={{ borderColor: 'currentColor' }}>
               {t(`difficulty.${technique.difficulty}`)}
             </span>
-            <span className="text-xs px-2 py-0.5 rounded-[var(--radius-full)] bg-[var(--color-bg-muted)]">
-              {t(`categories.${technique.category}`)}
-            </span>
+            {mastery && (
+              <span className="mono-label border-2 px-2 py-1" style={{ borderColor: 'currentColor' }}>
+                {t('profile.mastery')} {mastery.masteryLevel}/100
+              </span>
+            )}
           </div>
         </div>
-        {mastery && <MasteryMeter value={mastery.masteryLevel} size="sm" />}
-      </div>
+      </header>
 
       {/* Description */}
-      <Card>
-        <p className="text-sm leading-relaxed">{tContent(technique.description, lang)}</p>
-      </Card>
+      <p className="text-base leading-relaxed">{tContent(technique.description, lang)}</p>
 
-      {/* Examples */}
-      <Card>
-        <div className="flex items-center gap-2 mb-3">
-          <BookOpen size={16} className="text-[var(--color-accent)]" />
-          <h2 className="font-semibold text-sm">{t('library.examples')}</h2>
-        </div>
-        <ul className="space-y-2">
+      {/* Practice CTA — the library is not a dead end */}
+      <Button
+        size="lg"
+        onClick={() => navigate(`/practice?category=${technique.category}`)}
+        className="w-full"
+      >
+        {t('library.practiceCategory')}
+        <ArrowRight size={18} aria-hidden />
+      </Button>
+
+      <Section index="01" title={t('library.examples')}>
+        <ul className="space-y-3">
           {technique.examples.map((ex, i) => (
-            <li key={i} className="text-sm text-[var(--color-text-secondary)] pl-4 border-l-2 border-[var(--color-border)]">
+            <li
+              key={i}
+              className="text-sm leading-relaxed text-[var(--color-text-secondary)] pl-3 border-l-2"
+              style={{ borderColor: `var(--color-cat-${technique.category})` }}
+            >
               {ex}
             </li>
           ))}
         </ul>
-      </Card>
+      </Section>
 
-      {/* Warning Signals */}
-      <Card>
-        <div className="flex items-center gap-2 mb-3">
-          <AlertTriangle size={16} className="text-[var(--color-warning-500)]" />
-          <h2 className="font-semibold text-sm">{t('library.warningSignals')}</h2>
-        </div>
-        <ul className="space-y-1.5">
+      <Section index="02" title={t('library.warningSignals')}>
+        <ul className="space-y-2">
           {technique.warningNeurons.map((signal, i) => (
-            <li key={i} className="text-sm text-[var(--color-text-secondary)] flex items-start gap-2">
-              <span className="text-[var(--color-warning-500)] mt-1 shrink-0">•</span>
+            <li key={i} className="text-sm leading-relaxed text-[var(--color-text-secondary)] flex items-start gap-2">
+              <span className="mono-num text-[var(--color-accent-text)] shrink-0">{String(i + 1).padStart(2, '0')}</span>
               {signal}
             </li>
           ))}
         </ul>
-      </Card>
+      </Section>
 
-      {/* Evidence */}
-      <Card>
-        <div className="flex items-center gap-2 mb-3">
-          <FlaskConical size={16} className="text-[var(--color-primary-500)]" />
-          <h2 className="font-semibold text-sm">{t('library.evidence')}</h2>
-        </div>
-        <p className="text-sm text-[var(--color-text-secondary)] mb-3">{technique.evidence.findings}</p>
-        <div className="space-y-1">
-          {technique.evidence.studies.map((study, i) => (
-            <p key={i} className="text-xs text-[var(--color-text-muted)]">{study}</p>
-          ))}
-        </div>
-        {technique.evidence.uncertainty && (
-          <div className="flex gap-4 mt-3 pt-3 border-t border-[var(--color-border)]">
-            <div className="text-center">
-              <p className="text-lg font-bold">{Math.round(technique.evidence.uncertainty.confidence * 100)}%</p>
-              <p className="text-[10px] text-[var(--color-text-muted)]">Konfidenz</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xs font-medium">{technique.evidence.uncertainty.sampleSize}</p>
-              <p className="text-[10px] text-[var(--color-text-muted)]">Stichprobe</p>
-            </div>
-          </div>
+      <Section index="03" title={t('library.evidence')}>
+        <p className="text-sm leading-relaxed text-[var(--color-text-secondary)] mb-3">
+          {technique.evidence.findings}
+        </p>
+        {uncertainty && (
+          /* Evidence as a datasheet line */
+          <p className="mono-label text-[var(--color-text-muted)] mb-3">
+            {t('library.confidence')} {String(uncertainty.confidence).replace('.', ',')}
+            {' · '}N {uncertainty.sampleSize}
+            {' · '}{t('library.evidenceQuality')}: {t(`library.quality.${uncertainty.evidenceQuality}`)}
+          </p>
         )}
-      </Card>
+        <ul className="space-y-1">
+          {technique.evidence.studies.map((study, i) => (
+            <li key={i} className="text-xs mono-num text-[var(--color-text-muted)]">
+              [{i + 1}] {study}
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-      {/* Related Techniques */}
       {relatedTechniques.length > 0 && (
-        <Card>
-          <div className="flex items-center gap-2 mb-3">
-            <Link2 size={16} className="text-[var(--color-text-secondary)]" />
-            <h2 className="font-semibold text-sm">{t('library.relatedTechniques')}</h2>
-          </div>
+        <Section index="04" title={t('library.relatedTechniques')}>
           <div className="flex flex-wrap gap-2">
             {relatedTechniques.map((related) => (
               <button
                 key={related!.id}
                 onClick={() => navigate(`/library/${related!.id}`)}
-                className="px-3 py-1.5 text-xs font-medium rounded-[var(--radius-full)]
-                  bg-[var(--color-bg-muted)] text-[var(--color-text-secondary)]
-                  hover:bg-[var(--color-accent-subtle)] hover:text-[var(--color-accent)]
-                  transition-colors"
+                className="mono-label px-3 py-2 border-2 border-[var(--color-border-hairline)] min-h-[2.5rem]
+                  text-[var(--color-text-secondary)]
+                  hover:border-[var(--color-border)] hover:text-[var(--color-text)]
+                  transition-colors duration-100"
               >
                 {tContent(related!.name, lang)}
               </button>
             ))}
           </div>
-        </Card>
+        </Section>
       )}
     </div>
   );

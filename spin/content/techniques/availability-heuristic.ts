@@ -27,7 +27,7 @@ export const availabilityHeuristic: Technique = {
     studies: [
       'Tversky et al. (1973) - Availability: A Heuristic for Judging Frequency and Probability'
     ],
-    findings: 'Der Grundeffekt geht auf Tversky & Kahneman (1973) zurück und ist vielfach repliziert: Was leichter erinnert wird, wird als häufiger und wahrscheinlicher eingeschätzt. Effektgröße und Robustheit sind jedoch stark kontextabhängig, und die Befunde stammen überwiegend aus WEIRD-Stichproben. Wie stark der Effekt in konkreten Kommunikationssituationen trägt, ist damit nur moderat belegt — er ist ein verlässlich nachweisbarer Hebel, kein Selbstläufer.',
+    findings: 'Der Grundeffekt geht auf Tversky & Kahneman (1973) zurück und ist vielfach repliziert: Was leichter erinnert wird, wird als häufiger und wahrscheinlicher eingeschätzt. Effektgröße und Robustheit sind jedoch stark kontextabhängig, und die Befunde stammen überwiegend aus WEIRD-Stichproben (westlich, gebildet, industrialisiert, reich, demokratisch). Wie stark der Effekt in konkreten Kommunikationssituationen trägt, ist damit nur moderat belegt — er ist ein verlässlich nachweisbarer Hebel, kein Selbstläufer.',
     uncertainty: {
       confidence: 0.65,
       sampleSize: '',

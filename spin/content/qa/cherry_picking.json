@@ -1,0 +1,60 @@
+{
+ "entry": "cherry_picking",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "cherry_picking",
+    "secondGuess": "paltering_half_truth",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "cherry_picking",
+    "secondGuess": "paltering_half_truth",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "cherry_picking",
+    "secondGuess": "paltering_half_truth",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "cherry_picking",
+    "confident": true,
+    "secondGuess": "paltering_half_truth"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "cherry_picking",
+    "confident": true,
+    "secondGuess": "paltering_half_truth"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "cherry_picking",
+    "confident": true,
+    "secondGuess": "paltering_half_truth"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [],
+ "status": "passed_round1",
+ "finalStatus": "passed_round1"
+}

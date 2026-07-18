@@ -27,7 +27,7 @@ export const lossAversion: Technique = {
     studies: [
       'Kahneman & Tversky (1979) - Prospect Theory: An Analysis of Decision under Risk'
     ],
-    findings: 'Der Grundeffekt geht auf die Prospect Theory zurück (Kahneman & Tversky, 1979) und ist vielfach repliziert. Effektgröße und Robustheit sind jedoch stark kontextabhängig: Die oft zitierte Faustregel, Verluste wögen etwa doppelt so schwer wie Gewinne, gilt nicht universell, und die Befunde stammen überwiegend aus WEIRD-Stichproben (westlich, gebildet, industrialisiert, wohlhabend, demokratisch). Für Kommunikationssituationen ist der Effekt daher als moderat einzuschätzen, nicht als Selbstläufer.',
+    findings: 'Der Grundeffekt geht auf die Prospect Theory zurück (Kahneman & Tversky, 1979) und ist vielfach repliziert. Effektgröße und Robustheit sind jedoch stark kontextabhängig: Die oft zitierte Faustregel, Verluste wögen etwa doppelt so schwer wie Gewinne, gilt nicht universell, und die Befunde stammen überwiegend aus WEIRD-Stichproben (westlich, gebildet, industrialisiert, wohlhabend, demokratisch). Für Kommunikationssituationen ist der Effekt daher als moderat einzuschätzen, nicht als feste Größe, mit der sich verlässlich planen ließe.',
     uncertainty: {
       confidence: 0.65,
       sampleSize: '',

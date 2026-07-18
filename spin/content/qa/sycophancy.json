@@ -1,0 +1,58 @@
+{
+ "entry": "sycophancy",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sycophancy",
+    "secondGuess": "confirmation_bias",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sycophancy",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sycophancy",
+    "secondGuess": "cherry_picking",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sycophancy",
+    "confident": true,
+    "secondGuess": "confirmation_bias"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sycophancy",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sycophancy",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [],
+ "status": "passed_round1",
+ "finalStatus": "passed_round1"
+}

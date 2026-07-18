@@ -13,7 +13,7 @@ export const decoyEffect: Technique = {
   },
   description: {
     de: 'Eine gezielt unterlegene Zusatzoption — der Köder — lässt eine Zieloption im direkten Vergleich klar überlegen erscheinen und verschiebt die Wahl zu ihr, ohne dass sich an der Zieloption selbst etwas ändert.',
-    en: 'A deliberately inferior add-on option — the decoy — makes a target option look like the obvious winner by comparison, steering choice toward it without changing the target itself.',
+    en: 'A deliberately inferior extra option added to the set — the decoy — makes a target option look like the obvious winner by comparison, steering choice toward it without changing the target itself.',
   },
   category: 'cognitive_bias',
   difficulty: 'intermediate',

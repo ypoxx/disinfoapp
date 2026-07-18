@@ -1,0 +1,119 @@
+{
+ "entry": "confirmation_bias",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "consistency"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "consistency"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-confirmation-bias.ts, Übung p3-confirmation_bias-2, Feld explanation (de UND en): Nullbasierte Options-Verweise lecken in den Nutzertext — \"Option 0 wirkt plausibel, weil Themennähe echte Expertise ist\", \"Option 2 verwechselt Dokumentation mit Auswertung\", \"Option 3 überkorrigiert\" (EN analog: \"Option 0 sounds plausible…\"). Nutzer zählen Optionen ab 1 bzw. sehen A–D; \"Option 0\" ist interner Array-Index und für Leser unverständlich — genau die Sorte Bruch, die bei einem genau lesenden Comms-Publikum sofort auffällt. Behebbar: Optionen inhaltlich referenzieren (z. B. \"Der Verweis auf die eigene Expertise wirkt plausibel, weil…\") oder auf die sichtbare Nummerierung umstellen.",
+    "spin/content/techniques/confirmation-bias.ts, Feld evidence.findings: Fachbegriff \"WEIRD-Stichproben\" (\"die Belege stammen überwiegend aus WEIRD-Stichproben\") wird beim ersten Auftreten nicht aufgelöst. Charta-Register: \"Fachbegriffe werden benutzt, nicht wegerklärt — aber beim ersten Auftreten in einem Eintrag einmal knapp aufgelöst.\" WEIRD ist Methodenjargon aus der Psychologie, kein PR-Standardvokabular. Behebbar: einmalige Klammerauflösung, z. B. \"WEIRD-Stichproben (western, educated, industrialized, rich, democratic — also v. a. westliche Studierende)\".",
+    "spin/content/exercises/pilot-confirmation-bias.ts, Übung p3-confirmation_bias-3 (minor): Die gesamte Übung kommt ohne Du-Anrede aus — Szenario rein beschreibend (\"Wochenmeeting der Pressestelle: Die Sprecherin ist überzeugt…\"), Frage \"Welches Muster zeigt die Sprecherin?\", Erklärung nur unpersönliche Infinitive (\"Bewertungsmaßstäbe vor der Auswertung festlegen\"). Charta: \"Du-Anrede in Übungen und UI\". Übungen 1 und 2 lösen das über das Szenario (\"Du übernimmst…\", \"Du leitest…\"); Übung 3 fällt aus dem Register. Behebbar: Szenario-Einstieg \"Du sitzt im Wochenmeeting der Pressestelle…\" (EN: \"You are in the weekly press office meeting…\")."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/pilot-confirmation-bias.ts, Übung p3-confirmation_bias-2, Feld explanation (de UND en): Nullbasierte Options-Verweise lecken in den Nutzertext — \"Option 0 wirkt plausibel, weil Themennähe echte Expertise ist\", \"Option 2 verwechselt Dokumentation mit Auswertung\", \"Option 3 überkorrigiert\" (EN analog: \"Option 0 sounds plausible…\"). Nutzer zählen Optionen ab 1 bzw. sehen A–D; \"Option 0\" ist interner Array-Index und für Leser unverständlich — genau die Sorte Bruch, die bei einem genau lesenden Comms-Publikum sofort auffällt. Behebbar: Optionen inhaltlich referenzieren (z. B. \"Der Verweis auf die eigene Expertise wirkt plausibel, weil…\") oder auf die sichtbare Nummerierung umstellen.",
+  "Stil: spin/content/techniques/confirmation-bias.ts, Feld evidence.findings: Fachbegriff \"WEIRD-Stichproben\" (\"die Belege stammen überwiegend aus WEIRD-Stichproben\") wird beim ersten Auftreten nicht aufgelöst. Charta-Register: \"Fachbegriffe werden benutzt, nicht wegerklärt — aber beim ersten Auftreten in einem Eintrag einmal knapp aufgelöst.\" WEIRD ist Methodenjargon aus der Psychologie, kein PR-Standardvokabular. Behebbar: einmalige Klammerauflösung, z. B. \"WEIRD-Stichproben (western, educated, industrialized, rich, democratic — also v. a. westliche Studierende)\".",
+  "Stil: spin/content/exercises/pilot-confirmation-bias.ts, Übung p3-confirmation_bias-3 (minor): Die gesamte Übung kommt ohne Du-Anrede aus — Szenario rein beschreibend (\"Wochenmeeting der Pressestelle: Die Sprecherin ist überzeugt…\"), Frage \"Welches Muster zeigt die Sprecherin?\", Erklärung nur unpersönliche Infinitive (\"Bewertungsmaßstäbe vor der Auswertung festlegen\"). Charta: \"Du-Anrede in Übungen und UI\". Übungen 1 und 2 lösen das über das Szenario (\"Du übernimmst…\", \"Du leitest…\"); Übung 3 fällt aus dem Register. Behebbar: Szenario-Einstieg \"Du sitzt im Wochenmeeting der Pressestelle…\" (EN: \"You are in the weekly press office meeting…\")."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "confirmation_bias",
+    "confident": true,
+    "secondGuess": "consistency"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "confirmation_bias",
+    "secondGuess": "cherry_picking",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "confirmation_bias",
+    "secondGuess": "cherry_picking",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "confirmation_bias",
+    "secondGuess": "anchoring",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  },
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "passed_round2"
+}

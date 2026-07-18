@@ -13,7 +13,7 @@ export const falseBalance: Technique = {
   },
   description: {
     de: 'Eine einseitige Faktenlage wird als ausgewogene Kontroverse inszeniert: Eine empirisch schwache Minderheitsposition erhält gleichberechtigten Raum neben dem Stand des Wissens, sodass ein Konsens wie eine offene Debatte wirkt.',
-    en: 'Staging a lopsided body of evidence as a balanced controversy: an empirically weak minority view is given equal footing alongside the weight of the evidence, making consensus look like open debate.',
+    en: 'Staging a lopsided body of evidence as a balanced controversy: an empirically weak minority view is given equal footing with the established state of knowledge, making consensus look like open debate.',
   },
   category: 'logical_fallacy',
   difficulty: 'intermediate',

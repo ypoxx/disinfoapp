@@ -1,0 +1,130 @@
+{
+ "entry": "loss_aversion",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-1, scenario.en: \"defends renewing the media monitoring contract solely like this:\" ist ein Kalk von \"verteidigt … ausschließlich so\" — kein idiomatisches Fach-Englisch (Charta: EN-Fassung). Idiomatisch z. B.: \"makes his entire case for renewal like this:\" oder \"defends the renewal on one ground only:\".",
+    "spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-2, explanation.en: \"it unravels at the latest after migration\" übernimmt die deutsche Wortstellung von \"fliegt spätestens nach der Migration auf\". Idiomatisch: \"it unravels after the migration at the latest\" oder schärfer \"it unravels the moment the migration completes\".",
+    "Formelhafte Wiederholung über beide Dateien: \"kein Selbstläufer\" steht dreimal nahezu wortgleich — spin/content/techniques/loss-aversion.ts, evidence.findings (\"nicht als Selbstläufer\"), pilot-loss-aversion.ts p3-loss_aversion-2 explanation.de (\"kontextabhängig und kein Selbstläufer\") und p3-loss_aversion-3 explanation.de (\"kontextabhängig ist und kein Selbstläufer\"). Wer Eintrag und Übungen nacheinander liest, erlebt die Wendung als Textbaustein — genau das Generische, auf das die Zielgruppe allergisch reagiert. Die EN-Fassung variiert bereits (\"rather than guaranteed\" / \"not a given\"); DE entsprechend variieren.",
+    "spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-3, scenario.de/en: \"beides haben Sie sich über Jahre aufgebaut\" / \"both of which you have built up over years\" — Kollokationsfehler: Einen akkreditierten Presseausweis baut man nicht auf, man erwirbt/hält/verlängert ihn. Einer PR-Leiterin fällt das als unpräzise auf. Fix: \"aufgebaut\" auf den Verzeichniseintrag bzw. das Standing beziehen, für den Presseausweis \"erworben\" o. ä.",
+    "spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-3, explanation.en: \"a renewal deadline hangs in the air\" — im Englischen hängen Fragen oder Spannung \"in the air\", eine Frist \"looms\" oder \"is on the table\". Idiomatisch: \"because a renewal deadline is looming\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-1, scenario.en: \"defends renewing the media monitoring contract solely like this:\" ist ein Kalk von \"verteidigt … ausschließlich so\" — kein idiomatisches Fach-Englisch (Charta: EN-Fassung). Idiomatisch z. B.: \"makes his entire case for renewal like this:\" oder \"defends the renewal on one ground only:\".",
+  "Stil: spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-2, explanation.en: \"it unravels at the latest after migration\" übernimmt die deutsche Wortstellung von \"fliegt spätestens nach der Migration auf\". Idiomatisch: \"it unravels after the migration at the latest\" oder schärfer \"it unravels the moment the migration completes\".",
+  "Stil: Formelhafte Wiederholung über beide Dateien: \"kein Selbstläufer\" steht dreimal nahezu wortgleich — spin/content/techniques/loss-aversion.ts, evidence.findings (\"nicht als Selbstläufer\"), pilot-loss-aversion.ts p3-loss_aversion-2 explanation.de (\"kontextabhängig und kein Selbstläufer\") und p3-loss_aversion-3 explanation.de (\"kontextabhängig ist und kein Selbstläufer\"). Wer Eintrag und Übungen nacheinander liest, erlebt die Wendung als Textbaustein — genau das Generische, auf das die Zielgruppe allergisch reagiert. Die EN-Fassung variiert bereits (\"rather than guaranteed\" / \"not a given\"); DE entsprechend variieren.",
+  "Stil: spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-3, scenario.de/en: \"beides haben Sie sich über Jahre aufgebaut\" / \"both of which you have built up over years\" — Kollokationsfehler: Einen akkreditierten Presseausweis baut man nicht auf, man erwirbt/hält/verlängert ihn. Einer PR-Leiterin fällt das als unpräzise auf. Fix: \"aufgebaut\" auf den Verzeichniseintrag bzw. das Standing beziehen, für den Presseausweis \"erworben\" o. ä.",
+  "Stil: spin/content/exercises/pilot-loss-aversion.ts, Übung p3-loss_aversion-3, explanation.en: \"a renewal deadline hangs in the air\" — im Englischen hängen Fragen oder Spannung \"in the air\", eine Frist \"looms\" oder \"is on the table\". Idiomatisch: \"because a renewal deadline is looming\"."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "loss_aversion",
+    "confident": true,
+    "secondGuess": "framing"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-loss-aversion.ts, p3-loss_aversion-1, explanation (de+en): Die Distraktor-Aufklärung zu Verknappung — ‚weil \"verlieren wir\" nach einem einmaligen Angebot klingt' / ‚because \"we lose\" sounds like a one-time offer' — begründet die Plausibilität falsch: Der Verknappungs-Sog liegt im Zeitdruck von ‚Wenn wir JETZT kündigen' (Frist-Logik, wie p3-3 es korrekt macht), nicht im Verlustvokabular. Verlustvokabular klingt gerade nicht nach einem einmaligen Angebot; die Aufklärung verwischt so die Abgrenzung, die sie leisten soll, und wirkt konstruiert. Fix: Plausibilität über den Jetzt-/Frist-Druck begründen, dann abgrenzen (Verknappung = begrenzte Verfügbarkeit, nicht Gewicht drohender Verluste).",
+    "spin/content/exercises/pilot-loss-aversion.ts, p3-loss_aversion-3, explanation.en: ‚because a renewal deadline is looming' behauptet eine unmittelbar bevorstehende Frist, die weder im Szenario vorkommt noch der DE-Fassung entspricht (‚weil eine Verlängerungsfrist im Raum steht' — bewusst implizit). Nicht bedeutungsgleich; wer das Szenario gegenprüft, findet keine Frist. Zudem kollidiert ‚looming' stilistisch mit dem Fachidiom ‚losses loom larger' im selben Absatz. Fix z. B.: ‚because a renewal deadline is implicitly in play'."
+   ]
+  },
+  "stillOpen": [
+   "Stil: spin/content/exercises/pilot-loss-aversion.ts, p3-loss_aversion-1, explanation (de+en): Die Distraktor-Aufklärung zu Verknappung — ‚weil \"verlieren wir\" nach einem einmaligen Angebot klingt' / ‚because \"we lose\" sounds like a one-time offer' — begründet die Plausibilität falsch: Der Verknappungs-Sog liegt im Zeitdruck von ‚Wenn wir JETZT kündigen' (Frist-Logik, wie p3-3 es korrekt macht), nicht im Verlustvokabular. Verlustvokabular klingt gerade nicht nach einem einmaligen Angebot; die Aufklärung verwischt so die Abgrenzung, die sie leisten soll, und wirkt konstruiert. Fix: Plausibilität über den Jetzt-/Frist-Druck begründen, dann abgrenzen (Verknappung = begrenzte Verfügbarkeit, nicht Gewicht drohender Verluste).",
+   "Stil: spin/content/exercises/pilot-loss-aversion.ts, p3-loss_aversion-3, explanation.en: ‚because a renewal deadline is looming' behauptet eine unmittelbar bevorstehende Frist, die weder im Szenario vorkommt noch der DE-Fassung entspricht (‚weil eine Verlängerungsfrist im Raum steht' — bewusst implizit). Nicht bedeutungsgleich; wer das Szenario gegenprüft, findet keine Frist. Zudem kollidiert ‚looming' stilistisch mit dem Fachidiom ‚losses loom larger' im selben Absatz. Fix z. B.: ‚because a renewal deadline is implicitly in play'."
+  ]
+ },
+ "status": "flagged",
+ "postFixNote": "Nach dem Prüflauf direkt behoben (Commit R3-Finalisierung): alle offenen Stil-/Idiomatik-Beanstandungen.",
+ "finalStatus": "passed_after_manual_fix"
+}

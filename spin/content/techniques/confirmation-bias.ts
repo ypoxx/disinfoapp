@@ -27,7 +27,7 @@ export const confirmationBias: Technique = {
     studies: [
       'Nickerson (1998) - Confirmation Bias: A Ubiquitous Phenomenon in Many Guises'
     ],
-    findings: 'Der Grundeffekt — belief-konforme Suche, Deutung und Erinnerung von Information — ist über viele Domänen repliziert; Nickersons Übersichtsarbeit (1998) bündelt Befunde aus Labor- und Feldstudien und gilt als Standardreferenz. Effektgröße und Robustheit sind allerdings stark kontextabhängig, und die Belege stammen überwiegend aus WEIRD-Stichproben. Die Taxonomie stuft die Konfidenz deshalb als moderat ein.',
+    findings: 'Der Grundeffekt — belief-konforme Suche, Deutung und Erinnerung von Information — ist über viele Domänen repliziert; Nickersons Übersichtsarbeit (1998) bündelt Befunde aus Labor- und Feldstudien und gilt als Standardreferenz. Effektgröße und Robustheit sind allerdings stark kontextabhängig, und die Belege stammen überwiegend aus WEIRD-Stichproben (western, educated, industrialized, rich, democratic — also vor allem westliche Studierende). Die Taxonomie stuft die Konfidenz deshalb als moderat ein.',
     uncertainty: {
       confidence: 0.65,
       sampleSize: '',

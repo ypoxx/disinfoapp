@@ -1,0 +1,137 @@
+{
+ "entry": "false_balance",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "false_balance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "false_balance",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "false_balance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "distraktor": {
+   "pass": false,
+   "objections": [
+    "p3-false_balance-2: Option 1 (Absage) ist ernsthaft als ebenfalls richtig verteidigbar. „Einzelkritikern keine 1:1-Bühne bieten\" ist etablierte Science-Communication-Praxis (No-Platforming von Randpositionen in Streitgesprächs-Formaten), und die Empirie stützt sie sogar: Koehler (2016, JEP:Applied) zeigt, dass Weight-of-Evidence-Einordnung — genau das Mittel der als korrekt markierten Option 0 — den False-Balance-Formateffekt nur teilweise korrigiert. Die Musterlösung kontert nur mit dem Leerer-Stuhl-Risiko, einer umstrittenen strategischen Abwägung, keinem Kategorienfehler; das Item unterscheidet damit nach Berufsauffassung statt nach Technik-Kompetenz. Fix: Option 1 eindeutig fehlerhaft machen — z. B. reine Verweigerung ohne Alternativangebot plus falsche Prämisse („dann wird der Beitrag gar nicht gesendet\") — oder im Szenario festschreiben, dass der Beitrag in jedem Fall läuft, was die Absage-Verteidigung schließt.",
+    "p3-false_balance-2 (Distraktor-Qualität, minor): Option 4 verrät sich durch den selbstbelastenden Nachsatz „so kontrollieren wir die Botschaft vollständig\" — testerfahrene Nutzer eliminieren sie am Framing statt am Inhalt. Fix: Nachsatz streichen und die Handlung neutral formulieren („Ich biete der Redaktion stattdessen ein ausführliches Exklusivinterview an\"); die Explanation trägt die Widerlegung bereits.",
+    "p3-false_balance-3 (Gimme-Risiko): Die Stem-Begründung „So wirkt der Artikel ausgewogen\" matcht nahezu wörtlich auf die korrekte Option „False Balance\" — bei nur zwei Optionen ist das Item per Wort-Abgleich lösbar (Rateniveau 50 % plus lexikalischer Hinweis). Als Beginner-Scaffolding fürs Warning-Neuron „Ausgewogenheit als Argument\" vertretbar, unter der No-Gimme-Latte aber zu beanstanden. Fix: Begründung ohne Balance-Vokabular formulieren (z. B. „So kommt jede Sicht mal dran\" / „So machen wir es niemandem recht und niemandem unrecht\"), Muster-Erkennung statt Wort-Erkennung erzwingen.",
+    "p3-false_balance-1 (Distraktor-Qualität, minor): „Strohmann-Argument\" hat keinerlei Anker im Szenario — nichts wird verzerrt wiedergegeben — und ist damit Füllmaterial; die Diskrimination tragen allein Cherry-Picking und Falsches Dilemma. Das Item selbst ist eindeutig (Gegenseite wird gezeigt, nur falsch gewichtet → kein Cherry-Picking; keine erzwungene Wahl → kein Dilemma), aber ein vierter verwechselbarer Nachbar (z. B. „Paltering / Halbwahrheit\" oder ein Autoritäts-/Einzelstimmen-Muster) würde es härten."
+   ]
+  },
+  "fach": {
+   "objections": [],
+   "pass": true
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "pilot-false-balance.ts, p3-false_balance-1, explanation (de+en): Erklärungs-Bauplan Punkt 3 nur teilweise erfüllt. Plausibilitäts-Aufklärung gibt es nur für Cherry-Picking; für 'Falsches Dilemma' und 'Strohmann-Argument' steht reine Abgrenzung ohne 'wirkt plausibel, weil…': 'Ein falsches Dilemma verengt Handlungsoptionen künstlich auf zwei; hier geht es nicht um Optionen, sondern um Evidenzgewichtung. Ein Strohmann würde die Position der Kritiker verzerrt wiedergeben…'. Übung 2 zeigt das geforderte Muster für alle drei Distraktoren — hier nachziehen (z. B. Falsches Dilemma wirkt plausibel, weil das Factsheet genau zwei Seiten zeigt).",
+    "pilot-false-balance.ts, p3-false_balance-2, explanation.en: 'the segment airs without you anyway, then with an empty chair and none of your context' — 'none of your context' ist kein idiomatisches Fach-Englisch für 'ohne eure Einordnung' (liest sich als Übersetzungsdeutsch). Vorschlag: 'with an empty chair and no one to put the criticism in context' oder 'without your framing'.",
+    "pilot-false-balance.ts, p3-false_balance-1, explanation.en: 'seeing \"both sides\" at equal size, readers may infer a divided field' — 'at equal size' ist unidiomatisch (DE: 'Wer beide Seiten gleich groß sieht'). Vorschlag: 'seeing both sides given equal space' oder 'presented at equal length' (analog zum Szenario-Text 'at equal length and in identical layout').",
+    "pilot-false-balance.ts, p3-false_balance-2, explanation (de+en): Evidenz-Ehrlichkeit inkonsistent. 'das Format legt dem Publikum umstritten nahe und kann hängen bleiben' behauptet eine Publikumswirkung ohne den Vorläufigkeits-Marker, den Übung 1 ('dieser Wirkungsweg ist plausibel, aber nicht direkt belegt') und Übung 3 ('die Einstellungswirkung gilt als plausibel, nicht als gesichert') setzen; laut findings des Technik-Eintrags (evidenceTier weak) ist die Wirkung nicht etabliert. Kurzen Vorläufigkeits-Zusatz ergänzen."
+   ]
+  }
+ },
+ "objections": [
+  "Distraktor: p3-false_balance-2: Option 1 (Absage) ist ernsthaft als ebenfalls richtig verteidigbar. „Einzelkritikern keine 1:1-Bühne bieten\" ist etablierte Science-Communication-Praxis (No-Platforming von Randpositionen in Streitgesprächs-Formaten), und die Empirie stützt sie sogar: Koehler (2016, JEP:Applied) zeigt, dass Weight-of-Evidence-Einordnung — genau das Mittel der als korrekt markierten Option 0 — den False-Balance-Formateffekt nur teilweise korrigiert. Die Musterlösung kontert nur mit dem Leerer-Stuhl-Risiko, einer umstrittenen strategischen Abwägung, keinem Kategorienfehler; das Item unterscheidet damit nach Berufsauffassung statt nach Technik-Kompetenz. Fix: Option 1 eindeutig fehlerhaft machen — z. B. reine Verweigerung ohne Alternativangebot plus falsche Prämisse („dann wird der Beitrag gar nicht gesendet\") — oder im Szenario festschreiben, dass der Beitrag in jedem Fall läuft, was die Absage-Verteidigung schließt.",
+  "Distraktor: p3-false_balance-2 (Distraktor-Qualität, minor): Option 4 verrät sich durch den selbstbelastenden Nachsatz „so kontrollieren wir die Botschaft vollständig\" — testerfahrene Nutzer eliminieren sie am Framing statt am Inhalt. Fix: Nachsatz streichen und die Handlung neutral formulieren („Ich biete der Redaktion stattdessen ein ausführliches Exklusivinterview an\"); die Explanation trägt die Widerlegung bereits.",
+  "Distraktor: p3-false_balance-3 (Gimme-Risiko): Die Stem-Begründung „So wirkt der Artikel ausgewogen\" matcht nahezu wörtlich auf die korrekte Option „False Balance\" — bei nur zwei Optionen ist das Item per Wort-Abgleich lösbar (Rateniveau 50 % plus lexikalischer Hinweis). Als Beginner-Scaffolding fürs Warning-Neuron „Ausgewogenheit als Argument\" vertretbar, unter der No-Gimme-Latte aber zu beanstanden. Fix: Begründung ohne Balance-Vokabular formulieren (z. B. „So kommt jede Sicht mal dran\" / „So machen wir es niemandem recht und niemandem unrecht\"), Muster-Erkennung statt Wort-Erkennung erzwingen.",
+  "Distraktor: p3-false_balance-1 (Distraktor-Qualität, minor): „Strohmann-Argument\" hat keinerlei Anker im Szenario — nichts wird verzerrt wiedergegeben — und ist damit Füllmaterial; die Diskrimination tragen allein Cherry-Picking und Falsches Dilemma. Das Item selbst ist eindeutig (Gegenseite wird gezeigt, nur falsch gewichtet → kein Cherry-Picking; keine erzwungene Wahl → kein Dilemma), aber ein vierter verwechselbarer Nachbar (z. B. „Paltering / Halbwahrheit\" oder ein Autoritäts-/Einzelstimmen-Muster) würde es härten.",
+  "Stil: pilot-false-balance.ts, p3-false_balance-1, explanation (de+en): Erklärungs-Bauplan Punkt 3 nur teilweise erfüllt. Plausibilitäts-Aufklärung gibt es nur für Cherry-Picking; für 'Falsches Dilemma' und 'Strohmann-Argument' steht reine Abgrenzung ohne 'wirkt plausibel, weil…': 'Ein falsches Dilemma verengt Handlungsoptionen künstlich auf zwei; hier geht es nicht um Optionen, sondern um Evidenzgewichtung. Ein Strohmann würde die Position der Kritiker verzerrt wiedergeben…'. Übung 2 zeigt das geforderte Muster für alle drei Distraktoren — hier nachziehen (z. B. Falsches Dilemma wirkt plausibel, weil das Factsheet genau zwei Seiten zeigt).",
+  "Stil: pilot-false-balance.ts, p3-false_balance-2, explanation.en: 'the segment airs without you anyway, then with an empty chair and none of your context' — 'none of your context' ist kein idiomatisches Fach-Englisch für 'ohne eure Einordnung' (liest sich als Übersetzungsdeutsch). Vorschlag: 'with an empty chair and no one to put the criticism in context' oder 'without your framing'.",
+  "Stil: pilot-false-balance.ts, p3-false_balance-1, explanation.en: 'seeing \"both sides\" at equal size, readers may infer a divided field' — 'at equal size' ist unidiomatisch (DE: 'Wer beide Seiten gleich groß sieht'). Vorschlag: 'seeing both sides given equal space' oder 'presented at equal length' (analog zum Szenario-Text 'at equal length and in identical layout').",
+  "Stil: pilot-false-balance.ts, p3-false_balance-2, explanation (de+en): Evidenz-Ehrlichkeit inkonsistent. 'das Format legt dem Publikum umstritten nahe und kann hängen bleiben' behauptet eine Publikumswirkung ohne den Vorläufigkeits-Marker, den Übung 1 ('dieser Wirkungsweg ist plausibel, aber nicht direkt belegt') und Übung 3 ('die Einstellungswirkung gilt als plausibel, nicht als gesichert') setzen; laut findings des Technik-Eintrags (evidenceTier weak) ist die Wirkung nicht etabliert. Kurzen Vorläufigkeits-Zusatz ergänzen."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "false_balance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "false_balance",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-false-balance.ts, Übung p3-false_balance-2, Feld explanation (de+en): Doppelter Takeaway unvollständig — der Baustein 'legitim einsetzen' fehlt. Übung 1 und 3 haben ihn explizit ('Legitim ist das Format dort, wo die Fachdebatte tatsächlich offen ist' bzw. 'Legitim ist das Streitgespräch dort, wo tatsächlich Dissens unter Fachleuten besteht'); Übung 2 streift nur das 'legitime journalistische Interesse an Gegenstimmen', sagt aber nirgends, wann das 1:1-Format selbst legitim wäre (echter Fachdissens). Der Erklärungs-Bauplan verlangt beide Takeaways in JEDER Übungs-Erklärung; die seriousMode-Ausnahme greift hier nicht.",
+    "spin/content/exercises/pilot-false-balance.ts, Übungen p3-false_balance-1 und -3, Feld explanation (de): Konter-Takeaway im unpersönlichen Infinitiv statt der für Übungen vorgeschriebenen Du-Anrede — Ü1: 'Erkennen und kontern: nach dem Mengenverhältnis fragen [...] und die Gewichtung explizit machen', Ü3: 'vor der Formatwahl das Mengenverhältnis der Belege prüfen und die Gewichtung im Text benennen'. Die Charta gibt die Takeaways in Du-Form vor ('Daran erkennst du es / so entschärfst du es'). Die EN-Fassung adressiert bereits direkt ('ask about the ratio', 'check the actual ratio') — DE und EN divergieren damit zusätzlich im Register. Ü2 ('dein Studienleiter') zeigt die richtige Form.",
+    "spin/content/techniques/false-balance.ts, Feld description (en): 'an empirically weak minority view is given equal footing alongside the weight of the evidence' — schiefes Bild: 'equal footing' verlangt ein Gegenüber ('equal footing WITH the established science'); 'the weight of the evidence' ist keine Seite, neben der etwas stehen kann. Verschiebt zudem das deutsche 'neben dem Stand des Wissens' leicht. Idiomatischer: 'is given equal footing with the established state of knowledge'. Technik-Zuordnung bleibt erhalten, aber unterhalb des Charta-Anspruchs an idiomatisches Fach-Englisch.",
+    "spin/content/exercises/pilot-false-balance.ts, Übung p3-false_balance-2, Feld explanation (en): 'the segment will air either way — then with an empty chair' ist Translationese (dt. 'dann mit leerem Stuhl'); nach 'either way' wirkt 'then' unenglisch. Idiomatisch z. B. '— in that case with an empty chair' oder '— only now with an empty chair'. Kleiner Punkt, aber von der Charta gefordertes idiomatisches Fach-Englisch."
+   ]
+  },
+  "stillOpen": [
+   "Stil: spin/content/exercises/pilot-false-balance.ts, Übung p3-false_balance-2, Feld explanation (de+en): Doppelter Takeaway unvollständig — der Baustein 'legitim einsetzen' fehlt. Übung 1 und 3 haben ihn explizit ('Legitim ist das Format dort, wo die Fachdebatte tatsächlich offen ist' bzw. 'Legitim ist das Streitgespräch dort, wo tatsächlich Dissens unter Fachleuten besteht'); Übung 2 streift nur das 'legitime journalistische Interesse an Gegenstimmen', sagt aber nirgends, wann das 1:1-Format selbst legitim wäre (echter Fachdissens). Der Erklärungs-Bauplan verlangt beide Takeaways in JEDER Übungs-Erklärung; die seriousMode-Ausnahme greift hier nicht.",
+   "Stil: spin/content/exercises/pilot-false-balance.ts, Übungen p3-false_balance-1 und -3, Feld explanation (de): Konter-Takeaway im unpersönlichen Infinitiv statt der für Übungen vorgeschriebenen Du-Anrede — Ü1: 'Erkennen und kontern: nach dem Mengenverhältnis fragen [...] und die Gewichtung explizit machen', Ü3: 'vor der Formatwahl das Mengenverhältnis der Belege prüfen und die Gewichtung im Text benennen'. Die Charta gibt die Takeaways in Du-Form vor ('Daran erkennst du es / so entschärfst du es'). Die EN-Fassung adressiert bereits direkt ('ask about the ratio', 'check the actual ratio') — DE und EN divergieren damit zusätzlich im Register. Ü2 ('dein Studienleiter') zeigt die richtige Form.",
+   "Stil: spin/content/techniques/false-balance.ts, Feld description (en): 'an empirically weak minority view is given equal footing alongside the weight of the evidence' — schiefes Bild: 'equal footing' verlangt ein Gegenüber ('equal footing WITH the established science'); 'the weight of the evidence' ist keine Seite, neben der etwas stehen kann. Verschiebt zudem das deutsche 'neben dem Stand des Wissens' leicht. Idiomatischer: 'is given equal footing with the established state of knowledge'. Technik-Zuordnung bleibt erhalten, aber unterhalb des Charta-Anspruchs an idiomatisches Fach-Englisch.",
+   "Stil: spin/content/exercises/pilot-false-balance.ts, Übung p3-false_balance-2, Feld explanation (en): 'the segment will air either way — then with an empty chair' ist Translationese (dt. 'dann mit leerem Stuhl'); nach 'either way' wirkt 'then' unenglisch. Idiomatisch z. B. '— in that case with an empty chair' oder '— only now with an empty chair'. Kleiner Punkt, aber von der Charta gefordertes idiomatisches Fach-Englisch."
+  ]
+ },
+ "status": "flagged",
+ "postFixNote": "Nach dem Prüflauf direkt behoben (Commit R3-Finalisierung): alle offenen Stil-/Idiomatik-Beanstandungen.",
+ "finalStatus": "passed_after_manual_fix"
+}

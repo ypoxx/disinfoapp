@@ -70,6 +70,160 @@
       "generatedAt": "2026-07-18T00:54:56.329Z",
       "evidenceTier": "moderate",
       "category": "ai_influence"
+    },
+    "representativeness_heuristic": {
+      "file": "content/techniques/representativeness-heuristic.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.318Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "endowment_effect": {
+      "file": "content/techniques/endowment-effect.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.324Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "identity_provenance_deception": {
+      "file": "content/techniques/identity-provenance-deception.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.325Z",
+      "evidenceTier": "moderate",
+      "category": "ai_influence"
+    },
+    "integrity_clash_laundering": {
+      "file": "content/techniques/integrity-clash-laundering.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.325Z",
+      "evidenceTier": "moderate",
+      "category": "ai_influence"
+    },
+    "automation_bias_overreliance": {
+      "file": "content/techniques/automation-bias-overreliance.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.326Z",
+      "evidenceTier": "moderate",
+      "category": "ai_influence"
+    },
+    "anthropomorphic_trust_cues": {
+      "file": "content/techniques/anthropomorphic-trust-cues.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.326Z",
+      "evidenceTier": "frontier",
+      "category": "ai_influence"
+    },
+    "drip_pricing": {
+      "file": "content/techniques/drip-pricing.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.327Z",
+      "evidenceTier": "moderate",
+      "category": "dark_patterns"
+    },
+    "sneaking": {
+      "file": "content/techniques/sneaking.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.327Z",
+      "evidenceTier": "weak",
+      "category": "dark_patterns"
+    },
+    "bait_and_switch": {
+      "file": "content/techniques/bait-and-switch.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.328Z",
+      "evidenceTier": "weak",
+      "category": "dark_patterns"
+    },
+    "price_comparison_prevention": {
+      "file": "content/techniques/price-comparison-prevention.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.329Z",
+      "evidenceTier": "weak",
+      "category": "dark_patterns"
+    },
+    "consent_and_privacy_dark_patterns": {
+      "file": "content/techniques/consent-and-privacy-dark-patterns.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.330Z",
+      "evidenceTier": "moderate",
+      "category": "dark_patterns"
+    },
+    "door_in_the_face": {
+      "file": "content/techniques/door-in-the-face.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.331Z",
+      "evidenceTier": "weak",
+      "category": "cognitive_bias"
+    },
+    "default_status_quo": {
+      "file": "content/techniques/default-status-quo.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.331Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "sludge": {
+      "file": "content/techniques/sludge.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.332Z",
+      "evidenceTier": "moderate",
+      "category": "dark_patterns"
+    },
+    "subscription_trap_obstruction": {
+      "file": "content/techniques/subscription-trap-obstruction.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.332Z",
+      "evidenceTier": "moderate",
+      "category": "dark_patterns"
+    },
+    "unity_identity": {
+      "file": "content/techniques/unity-identity.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.333Z",
+      "evidenceTier": "weak",
+      "category": "social_dynamics"
+    },
+    "guilt_by_association": {
+      "file": "content/techniques/guilt-by-association.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.335Z",
+      "evidenceTier": "weak",
+      "category": "logical_fallacy"
+    },
+    "cognitive_dissonance_induction": {
+      "file": "content/techniques/cognitive-dissonance-induction.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.336Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "guilt_appeals": {
+      "file": "content/techniques/guilt-appeals.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.336Z",
+      "evidenceTier": "moderate",
+      "category": "emotional_manipulation"
+    },
+    "gamification_variable_reward": {
+      "file": "content/techniques/gamification-variable-reward.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.337Z",
+      "evidenceTier": "weak",
+      "category": "digital_influence"
+    },
+    "doomscrolling_fomo_engineering": {
+      "file": "content/techniques/doomscrolling-fomo-engineering.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.337Z",
+      "evidenceTier": "weak",
+      "category": "digital_influence"
+    },
+    "attention_engagement_loops": {
+      "file": "content/techniques/attention-engagement-loops.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T09:10:41.338Z",
+      "evidenceTier": "weak",
+      "category": "digital_influence"
     }
   }
 }

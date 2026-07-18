@@ -195,6 +195,11 @@ export function ProfilePage() {
             </div>
           </div>
         </div>
+
+        {/* Transparency: the app adapts silently — say so, once, in plain language */}
+        <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mt-3 px-1">
+          {t('profile.adaptiveNote')}
+        </p>
       </section>
     </div>
   );

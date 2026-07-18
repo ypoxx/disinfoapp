@@ -237,9 +237,14 @@ export interface Exercise {
   explanation: LocalizedText;
   /** Points awarded for correct answer */
   points: number;
-  /** Optional time limit in seconds */
-  timeLimit?: number;
-  /** Related technique IDs (for adaptive learning) */
+  /**
+   * The ONE technique this exercise primarily trains. Drives gating,
+   * interleaving, mastery credit and category colour. Must be contained
+   * in relatedTechniques. Falls back to relatedTechniques[0] when unset
+   * (legacy items).
+   */
+  primaryTechniqueId?: string;
+  /** Related technique IDs (context; secondary techniques in the scenario) */
   relatedTechniques: string[];
 }
 

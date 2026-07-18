@@ -14,6 +14,16 @@ interface KnowledgeState {
   techniques: Record<string, TechniqueMastery>;
 
   /**
+   * exerciseId → ISO date of the last answer. No-repeat memory: the
+   * session builder excludes exercises answered within the cooldown
+   * window (Ausbau-Plan R2).
+   */
+  answeredExercises: Record<string, string>;
+
+  /** Record answered exercise IDs at session end */
+  recordAnswered: (exerciseIds: string[]) => void;
+
+  /**
    * Mark a technique as introduced (learn item). Creates the SM-2 entry so
    * the technique enters the review cycle and is never re-introduced.
    */
@@ -24,9 +34,6 @@ interface KnowledgeState {
    * Exactly one SM-2 update per technique.
    */
   applySessionOutcomes: (outcomes: Record<string, SessionOutcome>) => void;
-
-  /** Record a single standalone answer (diagnostic quiz seeding) */
-  recordEncounter: (techniqueId: string, correct: boolean) => void;
 
   /** Get mastery for a specific technique */
   getMastery: (techniqueId: string) => TechniqueMastery | undefined;
@@ -45,6 +52,17 @@ export const useKnowledgeStore = create<KnowledgeState>()(
   persist(
     (set, get) => ({
       techniques: {},
+      answeredExercises: {},
+
+      recordAnswered: (exerciseIds) => {
+        if (exerciseIds.length === 0) return;
+        const now = new Date().toISOString();
+        set((s) => {
+          const answeredExercises = { ...s.answeredExercises };
+          for (const id of exerciseIds) answeredExercises[id] = now;
+          return { answeredExercises };
+        });
+      },
 
       markSeen: (techniqueId) => {
         if (get().techniques[techniqueId]) return;
@@ -69,12 +87,6 @@ export const useKnowledgeStore = create<KnowledgeState>()(
         });
       },
 
-      recordEncounter: (techniqueId, correct) => {
-        get().applySessionOutcomes({
-          [techniqueId]: { correct: correct ? 1 : 0, total: 1 },
-        });
-      },
-
       getMastery: (techniqueId) => get().techniques[techniqueId],
 
       getDueReviews: () => {
@@ -96,15 +108,20 @@ export const useKnowledgeStore = create<KnowledgeState>()(
     }),
     {
       name: 'spin-knowledge',
-      version: 1,
+      version: 2,
       // v0 → v1: peakRepetitions introduced (optional, seeded from repetitions)
+      // v1 → v2: answeredExercises no-repeat memory introduced
       migrate: (persisted) => {
-        const state = persisted as { techniques?: Record<string, TechniqueMastery> };
+        const state = persisted as {
+          techniques?: Record<string, TechniqueMastery>;
+          answeredExercises?: Record<string, string>;
+        };
         if (state?.techniques) {
           for (const m of Object.values(state.techniques)) {
             if (m.peakRepetitions === undefined) m.peakRepetitions = m.repetitions;
           }
         }
+        if (!state.answeredExercises) state.answeredExercises = {};
         return state as KnowledgeState;
       },
     }

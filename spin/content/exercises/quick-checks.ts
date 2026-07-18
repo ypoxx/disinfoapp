@@ -29,7 +29,6 @@ export const quickChecks: Exercise[] = [
       en: 'Classic manipulation techniques: Unsubstantiated claim, conspiracy narrative ("government is hiding"), urgency appeal ("before it gets deleted"), emotional language.',
     },
     points: 5,
-    timeLimit: 10,
     relatedTechniques: ['emotional_appeal', 'scarcity', 'reactance_theory'],
   },
   {
@@ -60,7 +59,6 @@ export const quickChecks: Exercise[] = [
       en: 'Likely factual: Concrete figures, multiple independent sources, full report with methodology linked. Of course, the source "envirotrust.org" should still be checked through lateral reading.',
     },
     points: 5,
-    timeLimit: 10,
     relatedTechniques: ['authority'],
   },
   {
@@ -91,7 +89,6 @@ export const quickChecks: Exercise[] = [
       en: 'Warning signs: Anonymous source ("an insider"), social proof manipulation ("50,000 have shared"), anti-media narrative, no concrete evidence, emotional appeal.',
     },
     points: 5,
-    timeLimit: 10,
     relatedTechniques: ['social_proof', 'reactance_theory', 'authority'],
   },
   {
@@ -122,7 +119,6 @@ export const quickChecks: Exercise[] = [
       en: 'Classic market manipulation: Vague claims ("secret meeting"), unsubstantiated "proof", call to action to sell stock, hashtag campaign for virality.',
     },
     points: 5,
-    timeLimit: 10,
     relatedTechniques: ['scarcity', 'emotional_appeal', 'framing'],
   },
 ];

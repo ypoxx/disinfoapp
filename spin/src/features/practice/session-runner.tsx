@@ -32,7 +32,7 @@ interface CompletionData {
 
 function categoryOfItem(item: SessionItem): TechniqueCategory | null {
   if (item.type === 'learn' || item.type === 'review') return item.technique.category;
-  const techId = item.exercise.relatedTechniques[0];
+  const techId = item.exercise.primaryTechniqueId ?? item.exercise.relatedTechniques[0];
   return allTechniques.find((t) => t.id === techId)?.category ?? null;
 }
 
@@ -77,11 +77,13 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
     const timeSpent = Math.round((Date.now() - itemStartTime.current) / 1000);
     const ex = currentItem.exercise;
 
-    // Credit every related technique (aggregation happens per technique).
-    // Partial multi-select credit flows in as a fraction.
-    for (const techniqueId of ex.relatedTechniques) {
-      const o = outcomesRef.current[techniqueId] ?? { correct: 0, total: 0 };
-      outcomesRef.current[techniqueId] = {
+    // Mastery credit goes to the ONE primary technique — crediting all
+    // relatedTechniques smears mastery across secondary mentions
+    // (Content-Offensive §7.2). Partial multi-select credit is a fraction.
+    const primary = ex.primaryTechniqueId ?? ex.relatedTechniques[0];
+    if (primary) {
+      const o = outcomesRef.current[primary] ?? { correct: 0, total: 0 };
+      outcomesRef.current[primary] = {
         correct: o.correct + result.score,
         total: o.total + 1,
       };
@@ -92,7 +94,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       correct: result.correct,
       score: result.score,
       timeSpent,
-      techniqueId: ex.relatedTechniques[0],
+      techniqueId: primary,
     }]);
   }, [resolution, currentItem, currentIndex]);
 
@@ -107,6 +109,14 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
     );
 
     knowledge.applySessionOutcomes(outcomes);
+
+    // No-repeat memory + flow-corridor signal
+    const answeredIds = results
+      .map((r) => session.items[r.itemIndex])
+      .filter((it): it is Extract<SessionItem, { type: 'exercise' }> => it?.type === 'exercise')
+      .map((it) => it.exercise.id);
+    knowledge.recordAnswered(answeredIds);
+    progress.pushRecentScores(results.map((r) => r.score));
 
     const after = useKnowledgeStore.getState();
     const deltas: MasteryDelta[] = touchedIds
@@ -146,7 +156,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       deltas,
       overallMastery: after.getOverallMastery(),
     });
-  }, [session.id, results, knowledge, progress]);
+  }, [session.id, session.items, results, knowledge, progress]);
 
   const handleNext = useCallback(() => {
     if (!currentItem) return;

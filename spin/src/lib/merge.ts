@@ -15,6 +15,7 @@ export interface PersistEnvelope<T> {
 
 interface KnowledgeSnapshot {
   techniques?: Record<string, TechniqueMastery>;
+  answeredExercises?: Record<string, string>;
 }
 
 interface ProgressSnapshot {
@@ -24,6 +25,7 @@ interface ProgressSnapshot {
   totalPracticeTime?: number;
   sessionsCompleted?: number;
   totalQuestionsAnswered?: number;
+  recentScores?: number[];
 }
 
 /** Per technique: the entry practiced more recently wins */
@@ -38,7 +40,14 @@ export function mergeKnowledge(
       merged[id] = localEntry;
     }
   }
-  return { techniques: merged };
+
+  // Per exercise: the most recent answer timestamp wins (no-repeat memory)
+  const answered: Record<string, string> = { ...(cloud.answeredExercises ?? {}) };
+  for (const [id, ts] of Object.entries(local.answeredExercises ?? {})) {
+    if (!answered[id] || ts >= answered[id]) answered[id] = ts;
+  }
+
+  return { techniques: merged, answeredExercises: answered };
 }
 
 /** Monotonic counters take the max, badges union, streak = most recent */
@@ -69,6 +78,11 @@ export function mergeProgress(
       local.totalQuestionsAnswered ?? 0,
       cloud.totalQuestionsAnswered ?? 0
     ),
+    // Rolling corridor window: the more active snapshot carries the signal
+    recentScores:
+      (local.totalQuestionsAnswered ?? 0) >= (cloud.totalQuestionsAnswered ?? 0)
+        ? local.recentScores ?? []
+        : cloud.recentScores ?? [],
   };
 }
 

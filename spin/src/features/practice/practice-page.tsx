@@ -3,35 +3,42 @@ import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
-import { buildSession } from '@/engine/session-builder';
+import { useProgressStore } from '@/stores/progress-store';
+import { buildSession, type SessionType } from '@/engine/session-builder';
 import type { Session } from '@/engine/types';
 import { SessionRunner } from './session-runner';
 
 export function PracticePage() {
   const { t } = useTranslation();
-  const { getDueReviews, techniques: knowledgeState } = useKnowledgeStore();
+  const { getDueReviews, techniques: knowledgeState, answeredExercises } = useKnowledgeStore();
+  const recentScores = useProgressStore((s) => s.recentScores);
   const [activeSession, setActiveSession] = useState<Session | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const dueCount = getDueReviews().length;
 
-  const startSession = (type: 'daily' | 'quick', category?: string) => {
+  const startSession = (type: SessionType, category?: string) => {
     const session = buildSession({
       knowledgeState,
+      answeredExercises,
+      recentScores,
+      sessionType: type,
       maxItems: type === 'quick' ? 5 : 7,
       category,
     });
     setActiveSession(session);
   };
 
-  // Deep links: /practice?start=daily | /practice?category=<cat>
+  // Deep links: /practice?start=daily|quick|refresh | /practice?category=<cat>
   const startParam = searchParams.get('start');
   const categoryParam = searchParams.get('category');
   useEffect(() => {
     if (activeSession) return;
     if (startParam) {
       setSearchParams({}, { replace: true });
-      startSession(startParam === 'quick' ? 'quick' : 'daily');
+      const type: SessionType =
+        startParam === 'quick' ? 'quick' : startParam === 'refresh' ? 'refresh' : 'daily';
+      startSession(type);
     } else if (categoryParam) {
       setSearchParams({}, { replace: true });
       startSession('daily', categoryParam);
@@ -97,6 +104,27 @@ export function PracticePage() {
           <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
         </span>
       </button>
+
+      {/* Auffrischen — appears when the review backlog builds up */}
+      {dueCount >= 3 && (
+        <button
+          onClick={() => startSession('refresh')}
+          className="w-full text-left rule-2 bg-[var(--color-bg-surface)] p-5 rounded-[var(--radius-md)] group
+            hover:bg-[var(--color-bg-muted)] transition-colors duration-100"
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="mono-label text-[var(--color-text-muted)]">03</span>
+            <span className="mono-label text-[var(--color-accent-text)]">
+              {dueCount} {t('today.dueReviews')}
+            </span>
+          </div>
+          <span className="type-display text-lg block">{t('practice.refreshSession')}</span>
+          <span className="flex items-center gap-1.5 text-sm font-bold mt-3 text-[var(--color-text-secondary)]">
+            {t('today.startSession')}
+            <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
+          </span>
+        </button>
+      )}
     </div>
   );
 }

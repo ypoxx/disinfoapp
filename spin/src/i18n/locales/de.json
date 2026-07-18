@@ -90,7 +90,8 @@
     "tagMissed": "Übersehen",
     "tagFalsePick": "Falsch gewählt",
     "partialDetail": "{{hits}} von {{total}} getroffen · {{falsePicks}} falsch gewählt · {{missed}} übersehen",
-    "solutionIs": "Lösung: {{letters}}"
+    "solutionIs": "Lösung: {{letters}}",
+    "refreshSession": "Auffrischen"
   },
   "library": {
     "title": "Bibliothek",
@@ -137,41 +138,21 @@
     "longestStreak": "Längste Serie",
     "signInPrompt": "Melde dich an, um deinen Fortschritt geräteübergreifend zu synchronisieren.",
     "signInWithGoogle": "Mit Google anmelden",
-    "syncError": "Synchronisierung fehlgeschlagen — dein Fortschritt ist lokal gespeichert."
+    "syncError": "Synchronisierung fehlgeschlagen — dein Fortschritt ist lokal gespeichert.",
+    "adaptiveNote": "SPIN passt Auswahl und Schwierigkeit der Übungen automatisch an dein Niveau an."
   },
   "onboarding": {
     "posterLine1": "Überzeugung ist ein",
     "posterHighlight": "Handwerk.",
     "description": "Lerne die Überzeugungstechniken, die Kommunikationsprofis kennen sollten — evidenzbasiert, in wenigen Minuten am Tag.",
     "letsGo": "Los geht's",
-    "diagnosticTitle": "Kurzer Check",
-    "diagnosticDesc": "3 Fragen, um deinen Wissensstand einzuschätzen",
-    "skip": "Überspringen",
-    "viewResult": "Ergebnis ansehen",
     "noAccountNeeded": "Kein Account nötig · Fortschritt wird lokal gespeichert",
     "benefit1Title": "27 Techniken",
     "benefit1Desc": "Evidenzbasiert und praxisnah",
     "benefit2Title": "3–5 Minuten pro Tag",
     "benefit2Desc": "Microlearning mit Spaced Repetition",
     "benefit3Title": "Adaptiv",
-    "benefit3Desc": "Passt sich deinem Wissen an",
-    "result": {
-      "title": "{{score}}/{{total}} richtig",
-      "skippedTitle": "Alles klar.",
-      "continue": "SPIN entdecken",
-      "level": {
-        "advanced": "Fortgeschritten",
-        "intermediate": "Einsteiger mit Grundwissen",
-        "beginner": "Einsteiger",
-        "skipped": "Check übersprungen"
-      },
-      "message": {
-        "advanced": "Du kennst dich bereits gut aus. SPIN bringt dich mit fortgeschrittenen Techniken und Spaced Repetition auf Expertenniveau.",
-        "intermediate": "Gute Basis! SPIN hilft dir, alle 27 Techniken systematisch zu meistern — in nur wenigen Minuten am Tag.",
-        "beginner": "Perfekter Startpunkt! SPIN führt dich Schritt für Schritt durch alle Überzeugungstechniken, die Kommunikatoren kennen sollten.",
-        "skipped": "Kein Problem — SPIN passt sich beim Üben automatisch an dein Wissen an. Starte einfach mit deiner ersten Übung."
-      }
-    }
+    "benefit3Desc": "Passt sich deinem Wissen an"
   },
   "categories": {
     "cognitive_bias": "Kognitive Verzerrungen",

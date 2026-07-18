@@ -100,7 +100,12 @@
     "techniques": "techniques",
     "difficulty": "Difficulty",
     "effectiveness": "Effectiveness",
-    "evidence": "Evidence",
+    "evidence": {
+      "robust": "Robustly evidenced",
+      "moderate": "Moderately evidenced",
+      "weak": "Weakly evidenced",
+      "frontier": "Frontier — barely tested"
+    },
     "examples": "Examples",
     "relatedTechniques": "Related techniques",
     "warningSignals": "Warning signals",
@@ -115,7 +120,12 @@
     "noResultsTitle": "No results.",
     "noResultsBody": "No technique matches your search.",
     "resetFilters": "Reset filters",
-    "notFound": "Technique not found"
+    "notFound": "Technique not found",
+    "radarShelf": "Radar",
+    "radarExplainer": "New and weakly evidenced terms — term knowledge, no effect claims.",
+    "evidenceTier": "Evidence",
+    "paths": "Learning paths",
+    "pathTechniques": "techniques"
   },
   "profile": {
     "title": "Profile",
@@ -160,7 +170,11 @@
     "emotional_manipulation": "Emotional Influence",
     "logical_fallacy": "Logical Fallacies",
     "nlp": "NLP Techniques",
-    "digital_influence": "Digital Influence"
+    "digital_influence": "Digital Influence",
+    "dark_patterns": "Dark Patterns",
+    "ai_influence": "AI & Synthetic Media",
+    "influence_ops": "Coordinated Campaigns",
+    "coercive_control": "Coercion & Control"
   },
   "difficulty": {
     "beginner": "Beginner",

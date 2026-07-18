@@ -78,10 +78,15 @@ export function TechniqueDetailPage() {
         <div className="relative space-y-3">
           <span className="mono-label">{t(`categories.${technique.category}`)}</span>
           <h1 className="type-display text-xl">{tContent(technique.name, lang)}</h1>
-          <div className="flex items-center gap-3 pt-1">
+          <div className="flex items-center gap-3 pt-1 flex-wrap">
             <span className="mono-label border-2 px-2 py-1" style={{ borderColor: 'currentColor' }}>
               {t(`difficulty.${technique.difficulty}`)}
             </span>
+            {technique.evidenceTier && (
+              <span className="mono-label border-2 px-2 py-1" style={{ borderColor: 'currentColor' }}>
+                {t(`library.evidence.${technique.evidenceTier}`)}
+              </span>
+            )}
             {mastery && (
               <span className="mono-label border-2 px-2 py-1" style={{ borderColor: 'currentColor' }}>
                 {t('profile.mastery')} {mastery.masteryLevel}/100

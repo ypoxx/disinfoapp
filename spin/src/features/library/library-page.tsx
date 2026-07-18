@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { techniques } from '@content/techniques';
+import { learningPaths, techniquesInPath } from '@content/paths';
 import { t as tContent, type TechniqueCategory } from '@content/types';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 
@@ -11,19 +12,25 @@ export function LibraryPage() {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<TechniqueCategory | null>(null);
+  const [selectedPath, setSelectedPath] = useState<string | null>(null);
   const { techniques: knowledge } = useKnowledgeStore();
 
   const lang = i18n.language;
+
+  const activePath = learningPaths.find((p) => p.id === selectedPath);
+  const pathIds = activePath ? new Set(techniquesInPath(activePath)) : null;
 
   const filtered = techniques.filter((tech) => {
     const matchesSearch = !search ||
       tContent(tech.name, lang).toLowerCase().includes(search.toLowerCase()) ||
       tContent(tech.description, lang).toLowerCase().includes(search.toLowerCase());
     const matchesCategory = !selectedCategory || tech.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesPath = !pathIds || pathIds.has(tech.id);
+    return matchesSearch && matchesCategory && matchesPath;
   });
 
   const categories = [...new Set(techniques.map((tech) => tech.category))];
+  const visiblePaths = learningPaths.filter((p) => techniquesInPath(p).length > 0);
 
   return (
     <div className="space-y-4">
@@ -55,6 +62,41 @@ export function LibraryPage() {
             placeholder:text-[var(--color-text-muted)]"
         />
       </div>
+
+      {/* Learning paths — curated shelves through the catalogue */}
+      {visiblePaths.length > 1 && (
+        <div className="space-y-2">
+          <p className="mono-label text-[var(--color-text-muted)]">{t('library.paths')}</p>
+          <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 scrollbar-hide" role="group" aria-label={t('library.paths')}>
+            {visiblePaths.map((p) => {
+              const count = techniquesInPath(p).length;
+              const active = selectedPath === p.id;
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setSelectedPath(active ? null : p.id)}
+                  aria-pressed={active}
+                  className={`text-left px-3 py-2 shrink-0 border-2 rounded-[var(--radius-md)] min-h-[3.25rem] min-w-[9rem] transition-colors duration-100
+                    ${active
+                      ? 'bg-[var(--color-bg-inverse)] border-[var(--color-bg-inverse)] text-[var(--color-text-inverse)]'
+                      : 'border-[var(--color-border-hairline)] hover:border-[var(--color-border)] bg-[var(--color-bg-surface)]'
+                    }`}
+                >
+                  <span className="block font-bold text-sm">{tContent(p.name, lang)}</span>
+                  <span className={`mono-label ${active ? 'opacity-70' : 'text-[var(--color-text-muted)]'}`}>
+                    {count} {t('library.pathTechniques')}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          {activePath?.isRadar && (
+            <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
+              {t('library.radarExplainer')}
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Category filter chips — each category owns its poster hue */}
       <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 scrollbar-hide" role="group" aria-label={t('library.allCategories')}>
@@ -113,6 +155,11 @@ export function LibraryPage() {
                   <span className="flex-1 min-w-0">
                     <span className="block font-bold text-sm group-hover:underline decoration-2 decoration-[var(--color-accent)] underline-offset-4">
                       {tContent(tech.name, lang)}
+                      {tech.evidenceTier === 'frontier' && (
+                        <span className="mono-label ml-2 align-middle border-2 border-[var(--color-signal)] text-[var(--color-accent-text)] px-1.5 py-0.5">
+                          {t('library.radarShelf')}
+                        </span>
+                      )}
                     </span>
                     <span className="block text-xs text-[var(--color-text-secondary)] line-clamp-1 mt-0.5">
                       {tContent(tech.description, lang)}
@@ -138,7 +185,7 @@ export function LibraryPage() {
           <p className="type-display text-lg">{t('library.noResultsTitle')}</p>
           <p className="text-sm text-[var(--color-text-secondary)]">{t('library.noResultsBody')}</p>
           <button
-            onClick={() => { setSearch(''); setSelectedCategory(null); }}
+            onClick={() => { setSearch(''); setSelectedCategory(null); setSelectedPath(null); }}
             className="mono-label text-[var(--color-accent-text)] underline underline-offset-4 decoration-2 min-h-[2.75rem]"
           >
             {t('library.resetFilters')}

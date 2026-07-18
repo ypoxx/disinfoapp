@@ -49,7 +49,20 @@ export type TechniqueCategory =
   | 'emotional_manipulation'
   | 'logical_fallacy'
   | 'nlp'
-  | 'digital_influence';
+  | 'digital_influence'
+  | 'dark_patterns'
+  | 'ai_influence'
+  | 'influence_ops'
+  | 'coercive_control';
+
+/**
+ * Evidence tier, derived deterministically from the persuasion taxonomy
+ * (content/source/): evidenceConfidence high → robust, moderate → moderate,
+ * low → weak, very_low or majority-provisional sources → frontier.
+ * Frontier entries are taught as TERM knowledge (name the pattern), never
+ * as claimed effects (Ausbau-Plan, PO-Entscheidung #1).
+ */
+export type EvidenceTier = 'robust' | 'moderate' | 'weak' | 'frontier';
 
 // ----------------------------------------------------------
 // Evidence
@@ -89,6 +102,13 @@ export interface Technique {
   warningNeurons: string[];
   /** Taxonomy group memberships */
   taxonomyGroups: string[];
+  /** Evidence tier from the taxonomy source (undefined on legacy entries = robust-ish default display) */
+  evidenceTier?: EvidenceTier;
+  /**
+   * Serious-mode entries (coercive_control category): no playful framing,
+   * exercises are recognition/awareness only, never "apply this"
+   */
+  seriousMode?: boolean;
   /** Optional image */
   image?: {
     src: string;
@@ -123,6 +143,25 @@ export interface TechniqueRelationship {
   type: RelationshipType;
   strength: number; // 0-1
   description: LocalizedText;
+}
+
+// ----------------------------------------------------------
+// Learning Paths
+// ----------------------------------------------------------
+
+/**
+ * A curated, ordered sequence of techniques — the navigation unit for a
+ * catalogue of 135 entries (Ausbau-Plan R3). Paths drive the library
+ * shelves; the Radar path collects frontier-tier terms.
+ */
+export interface LearningPath {
+  id: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  /** Ordered technique IDs */
+  techniqueIds: string[];
+  /** Radar shelf: frontier/weakly-evidenced terms, taught as term knowledge */
+  isRadar?: boolean;
 }
 
 // ----------------------------------------------------------

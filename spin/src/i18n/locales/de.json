@@ -100,7 +100,12 @@
     "techniques": "Techniken",
     "difficulty": "Schwierigkeit",
     "effectiveness": "Wirksamkeit",
-    "evidence": "Evidenz",
+    "evidence": {
+      "robust": "Robust belegt",
+      "moderate": "Moderat belegt",
+      "weak": "Schwach belegt",
+      "frontier": "Frontier — kaum geprüft"
+    },
     "examples": "Beispiele",
     "relatedTechniques": "Verwandte Techniken",
     "warningSignals": "Erkennungsmerkmale",
@@ -115,7 +120,12 @@
     "noResultsTitle": "Keine Treffer.",
     "noResultsBody": "Keine Technik passt zu deiner Suche.",
     "resetFilters": "Filter zurücksetzen",
-    "notFound": "Technik nicht gefunden"
+    "notFound": "Technik nicht gefunden",
+    "radarShelf": "Radar",
+    "radarExplainer": "Neue und noch schwach belegte Begriffe — Begriffswissen, kein Wirkversprechen.",
+    "evidenceTier": "Evidenz",
+    "paths": "Lernpfade",
+    "pathTechniques": "Techniken"
   },
   "profile": {
     "title": "Profil",
@@ -160,7 +170,11 @@
     "emotional_manipulation": "Emotionale Beeinflussung",
     "logical_fallacy": "Logische Fehlschlüsse",
     "nlp": "NLP-Techniken",
-    "digital_influence": "Digitale Einflussnahme"
+    "digital_influence": "Digitale Einflussnahme",
+    "dark_patterns": "Dark Patterns",
+    "ai_influence": "KI & synthetische Medien",
+    "influence_ops": "Koordinierte Kampagnen",
+    "coercive_control": "Zwang & Kontrolle"
   },
   "difficulty": {
     "beginner": "Einsteiger",

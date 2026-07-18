@@ -27,6 +27,17 @@ import { darkPatterns } from './dark-patterns';
 import { nudging } from './nudging';
 import { aiPersuasion } from './ai-persuasion';
 import { narrativePersuasion } from './narrative-persuasion';
+// Pilotwelle R3
+import { palteringHalfTruth } from './paltering-half-truth';
+import { agendaSetting } from './agenda-setting';
+import { cherryPicking } from './cherry-picking';
+import { falseBalance } from './false-balance';
+import { lossAversion } from './loss-aversion';
+import { decoyEffect } from './decoy-effect';
+import { availabilityHeuristic } from './availability-heuristic';
+import { confirmationBias } from './confirmation-bias';
+import { voiceCloningVishing } from './voice-cloning-vishing';
+import { sycophancy } from './sycophancy';
 
 export const techniques: Technique[] = [
   framing,
@@ -56,6 +67,17 @@ export const techniques: Technique[] = [
   nudging,
   aiPersuasion,
   narrativePersuasion,
+  // Pilotwelle R3
+  palteringHalfTruth,
+  agendaSetting,
+  cherryPicking,
+  falseBalance,
+  lossAversion,
+  decoyEffect,
+  availabilityHeuristic,
+  confirmationBias,
+  voiceCloningVishing,
+  sycophancy,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

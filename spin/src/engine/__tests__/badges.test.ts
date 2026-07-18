@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { techniques } from '@content/techniques';
 import { evaluateNewBadges, type BadgeContext } from '../badges';
 
 const BASE: BadgeContext = {
@@ -31,7 +32,8 @@ describe('evaluateNewBadges', () => {
   });
 
   it('awards mastery badges by mastered technique count', () => {
-    const ids = evaluateNewBadges({ ...BASE, masteredCount: 27 }).map((b) => b.id);
+    // master_all tracks the full (growing) catalogue
+    const ids = evaluateNewBadges({ ...BASE, masteredCount: techniques.length }).map((b) => b.id);
     expect(ids).toContain('master_10');
     expect(ids).toContain('master_20');
     expect(ids).toContain('master_all');

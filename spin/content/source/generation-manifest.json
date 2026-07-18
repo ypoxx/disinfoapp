@@ -1,0 +1,75 @@
+{
+  "taxonomyVersion": "21.0.1",
+  "entries": {
+    "paltering_half_truth": {
+      "file": "content/techniques/paltering-half-truth.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.322Z",
+      "evidenceTier": "moderate",
+      "category": "logical_fallacy"
+    },
+    "agenda_setting": {
+      "file": "content/techniques/agenda-setting.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.325Z",
+      "evidenceTier": "moderate",
+      "category": "digital_influence"
+    },
+    "cherry_picking": {
+      "file": "content/techniques/cherry-picking.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.325Z",
+      "evidenceTier": "weak",
+      "category": "logical_fallacy"
+    },
+    "false_balance": {
+      "file": "content/techniques/false-balance.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.326Z",
+      "evidenceTier": "weak",
+      "category": "logical_fallacy"
+    },
+    "loss_aversion": {
+      "file": "content/techniques/loss-aversion.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.326Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "decoy_effect": {
+      "file": "content/techniques/decoy-effect.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.327Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "availability_heuristic": {
+      "file": "content/techniques/availability-heuristic.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.327Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "confirmation_bias": {
+      "file": "content/techniques/confirmation-bias.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.328Z",
+      "evidenceTier": "moderate",
+      "category": "cognitive_bias"
+    },
+    "voice_cloning_vishing": {
+      "file": "content/techniques/voice-cloning-vishing.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.328Z",
+      "evidenceTier": "moderate",
+      "category": "ai_influence"
+    },
+    "sycophancy": {
+      "file": "content/techniques/sycophancy.ts",
+      "taxonomyVersion": "21.0.1",
+      "generatedAt": "2026-07-18T00:54:56.329Z",
+      "evidenceTier": "moderate",
+      "category": "ai_influence"
+    }
+  }
+}

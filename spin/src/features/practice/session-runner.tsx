@@ -6,7 +6,7 @@ import { X, ArrowRight } from 'lucide-react';
 import { Button } from '@/design/components/button';
 import { Card } from '@/design/components/card';
 import { SegmentProgress } from '@/design/components/segment-progress';
-import { QuizOption } from '@/design/components/quiz-option';
+import { QuizBlock, type QuizResolution } from '@/design/components/quiz-block';
 import { t as tContent, type TechniqueCategory } from '@content/types';
 import { techniques as allTechniques } from '@content/techniques';
 import type { Session, SessionItem, ItemResult } from '@/engine/types';
@@ -44,8 +44,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [results, setResults] = useState<ItemResult[]>([]);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [showFeedback, setShowFeedback] = useState(false);
+  const [resolution, setResolution] = useState<QuizResolution | null>(null);
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [completion, setCompletion] = useState<CompletionData | null>(null);
   const itemStartTime = useRef(0);
@@ -70,32 +69,32 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
   const planeColor = category ? `var(--color-cat-${category})` : 'var(--color-accent)';
   const planeInk = category ? `var(--color-cat-${category}-ink)` : 'var(--color-accent-ink)';
 
-  const handleAnswer = useCallback((optionIndex: number) => {
-    if (showFeedback || !currentItem || currentItem.type !== 'exercise') return;
+  const handleResolve = useCallback((result: QuizResolution) => {
+    if (resolution || !currentItem || currentItem.type !== 'exercise') return;
 
-    setSelectedAnswer(optionIndex);
-    setShowFeedback(true);
+    setResolution(result);
 
     const timeSpent = Math.round((Date.now() - itemStartTime.current) / 1000);
     const ex = currentItem.exercise;
-    const correct = ex.correctAnswers.includes(optionIndex);
 
-    // Credit every related technique (aggregation happens per technique)
+    // Credit every related technique (aggregation happens per technique).
+    // Partial multi-select credit flows in as a fraction.
     for (const techniqueId of ex.relatedTechniques) {
       const o = outcomesRef.current[techniqueId] ?? { correct: 0, total: 0 };
       outcomesRef.current[techniqueId] = {
-        correct: o.correct + (correct ? 1 : 0),
+        correct: o.correct + result.score,
         total: o.total + 1,
       };
     }
 
     setResults((prev) => [...prev, {
       itemIndex: currentIndex,
-      correct,
+      correct: result.correct,
+      score: result.score,
       timeSpent,
       techniqueId: ex.relatedTechniques[0],
     }]);
-  }, [showFeedback, currentItem, currentIndex]);
+  }, [resolution, currentItem, currentIndex]);
 
   const completeSession = useCallback(() => {
     const summary = calculateSessionSummary(session.id, results);
@@ -166,8 +165,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       completeSession();
     } else {
       setCurrentIndex((prev) => prev + 1);
-      setSelectedAnswer(null);
-      setShowFeedback(false);
+      setResolution(null);
       itemStartTime.current = Date.now();
     }
   }, [currentItem, currentIndex, session.items.length, knowledge, completeSession]);
@@ -181,11 +179,14 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
   };
 
   const feedbackAnnouncement = useMemo(() => {
-    if (!showFeedback || !currentItem || currentItem.type !== 'exercise') return '';
-    const correct = selectedAnswer !== null && currentItem.exercise.correctAnswers.includes(selectedAnswer);
-    const verdict = correct ? t('common.correct') : t('common.incorrect');
+    if (!resolution || !currentItem || currentItem.type !== 'exercise') return '';
+    const verdict = resolution.correct
+      ? t('practice.verdictCorrect')
+      : resolution.score > 0
+        ? t('practice.verdictPartial')
+        : t('practice.verdictIncorrect');
     return `${verdict}. ${tContent(currentItem.exercise.explanation, lang)}`;
-  }, [showFeedback, currentItem, selectedAnswer, t, lang]);
+  }, [resolution, currentItem, t, lang]);
 
   if (completion) {
     return (
@@ -243,9 +244,8 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
                   item={currentItem}
                   lang={lang}
                   t={t}
-                  selectedAnswer={selectedAnswer}
-                  showFeedback={showFeedback}
-                  onSelect={handleAnswer}
+                  resolved={!!resolution}
+                  onResolve={handleResolve}
                   planeColor={planeColor}
                   planeInk={planeInk}
                   reduceMotion={!!reduceMotion}
@@ -257,7 +257,7 @@ export function SessionRunner({ session, onComplete }: SessionRunnerProps) {
       </div>
 
       {/* Bottom action — show immediately for learn/review, after feedback for exercises */}
-      {(currentItem?.type !== 'exercise' || showFeedback) && (
+      {(currentItem?.type !== 'exercise' || resolution) && (
         <motion.div
           initial={reduceMotion ? false : { y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -314,15 +314,14 @@ interface ItemViewProps {
   item: SessionItem;
   lang: string;
   t: (key: string) => string;
-  selectedAnswer: number | null;
-  showFeedback: boolean;
-  onSelect: (idx: number) => void;
+  resolved: boolean;
+  onResolve: (result: QuizResolution) => void;
   planeColor: string;
   planeInk: string;
   reduceMotion: boolean;
 }
 
-function ItemView({ item, lang, t, selectedAnswer, showFeedback, onSelect, planeColor, planeInk, reduceMotion }: ItemViewProps) {
+function ItemView({ item, lang, t, resolved, onResolve, planeColor, planeInk, reduceMotion }: ItemViewProps) {
   switch (item.type) {
     case 'learn':
       return (
@@ -376,31 +375,13 @@ function ItemView({ item, lang, t, selectedAnswer, showFeedback, onSelect, plane
               <p className="text-sm leading-relaxed">{tContent(ex.scenario, lang)}</p>
             </Card>
           )}
-          <div className="space-y-2" role="group" aria-label={tContent(ex.question, lang)}>
-            {ex.options.map((opt, i) => {
-              let state: 'default' | 'selected' | 'correct' | 'incorrect' | 'dimmed' = 'default';
-              if (showFeedback) {
-                if (ex.correctAnswers.includes(i)) state = 'correct';
-                else if (i === selectedAnswer) state = 'incorrect';
-                else state = 'dimmed';
-              } else if (i === selectedAnswer) {
-                state = 'selected';
-              }
-
-              return (
-                <QuizOption
-                  key={i}
-                  index={i}
-                  label={tContent(opt, lang)}
-                  state={state}
-                  tag={t('practice.verdictTag')}
-                  onClick={() => onSelect(i)}
-                  disabled={showFeedback}
-                />
-              );
-            })}
-          </div>
-          {showFeedback && (
+          <QuizBlock
+            options={ex.options.map((opt) => tContent(opt, lang))}
+            correctAnswers={ex.correctAnswers}
+            groupLabel={tContent(ex.question, lang)}
+            onResolve={onResolve}
+          />
+          {resolved && (
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}

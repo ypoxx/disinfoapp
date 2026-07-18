@@ -1,4 +1,5 @@
 import type { Badge, BadgeRarity, BadgeCategory } from './types';
+import { techniques } from './techniques';
 
 export const badges: Badge[] = [
   // Streak Badges
@@ -67,11 +68,12 @@ export const badges: Badge[] = [
   {
     id: 'master_all',
     name: { de: 'Grandmaster', en: 'Grandmaster' },
-    description: { de: 'Alle 27 Techniken gemeistert', en: 'Mastered all 27 techniques' },
+    description: { de: 'Alle Techniken gemeistert', en: 'Mastered all techniques' },
     icon: 'crown',
     rarity: 'legendary',
     category: 'mastery',
-    requirement: { type: 'mastered_techniques', value: 27 },
+    // Tracks the full catalogue — grows automatically as techniques are added
+    requirement: { type: 'mastered_techniques', value: techniques.length },
     points: 200,
   },
 

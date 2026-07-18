@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/design/components/button';
-import { QuizOption } from '@/design/components/quiz-option';
+import { QuizBlock, type QuizResolution } from '@/design/components/quiz-block';
 import { SegmentProgress } from '@/design/components/segment-progress';
 import { Card } from '@/design/components/card';
 import { t as tContent } from '@content/types';
@@ -36,8 +36,8 @@ const diagnosticQuestions = [
     ],
     correctAnswer: 1,
     explanation: {
-      de: 'Richtig! Verknappung erzeugt Dringlichkeit durch begrenzte Verfügbarkeit. Der Käufer soll schnell handeln, bevor das Produkt "weg" ist.',
-      en: 'Correct! Scarcity creates urgency through limited availability. The buyer should act fast before the product is "gone".',
+      de: 'Verknappung erzeugt Dringlichkeit durch begrenzte Verfügbarkeit. Der Käufer soll schnell handeln, bevor das Produkt "weg" ist.',
+      en: 'Scarcity creates urgency through limited availability. The buyer should act fast before the product is "gone".',
     },
     techniqueId: 'scarcity',
   },
@@ -85,21 +85,18 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
   const reduce = !!useReducedMotion();
 
   const [currentQ, setCurrentQ] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [showFeedback, setShowFeedback] = useState(false);
+  const [resolution, setResolution] = useState<QuizResolution | null>(null);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<{ techniqueId: string; correct: boolean }[]>([]);
 
   const question = diagnosticQuestions[currentQ];
 
-  const handleSelect = useCallback((idx: number) => {
-    if (showFeedback) return;
-    setSelectedAnswer(idx);
-    setShowFeedback(true);
-  }, [showFeedback]);
+  const handleResolve = useCallback((result: QuizResolution) => {
+    setResolution(result);
+  }, []);
 
   const handleNext = () => {
-    const correct = selectedAnswer === question.correctAnswer;
+    const correct = !!resolution?.correct;
     const newScore = score + (correct ? 1 : 0);
     const newAnswers = [...answers, { techniqueId: question.techniqueId, correct }];
 
@@ -109,8 +106,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
       setScore(newScore);
       setAnswers(newAnswers);
       setCurrentQ(prev => prev + 1);
-      setSelectedAnswer(null);
-      setShowFeedback(false);
+      setResolution(null);
     }
   };
 
@@ -118,8 +114,8 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
     onComplete({ score: 0, answers: [], skipped: true });
   };
 
-  const feedbackText = showFeedback
-    ? `${selectedAnswer === question.correctAnswer ? t('common.correct') : t('common.incorrect')}. ${tContent(question.explanation, lang)}`
+  const feedbackText = resolution
+    ? `${resolution.correct ? t('practice.verdictCorrect') : t('practice.verdictIncorrect')}. ${tContent(question.explanation, lang)}`
     : '';
 
   return (
@@ -139,7 +135,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
         </div>
         <SegmentProgress
           total={diagnosticQuestions.length}
-          done={currentQ + (showFeedback ? 1 : 0)}
+          done={currentQ + (resolution ? 1 : 0)}
           active={currentQ}
         />
       </div>
@@ -161,32 +157,14 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
               {tContent(question.question, lang)}
             </h2>
 
-            <div className="space-y-2">
-              {question.options.map((opt, i) => {
-                let state: 'default' | 'selected' | 'correct' | 'incorrect' | 'dimmed' = 'default';
-                if (showFeedback) {
-                  if (i === question.correctAnswer) state = 'correct';
-                  else if (i === selectedAnswer) state = 'incorrect';
-                  else state = 'dimmed';
-                } else if (i === selectedAnswer) {
-                  state = 'selected';
-                }
+            <QuizBlock
+              options={question.options.map((opt) => tContent(opt, lang))}
+              correctAnswers={[question.correctAnswer]}
+              groupLabel={tContent(question.question, lang)}
+              onResolve={handleResolve}
+            />
 
-                return (
-                  <QuizOption
-                    key={i}
-                    index={i}
-                    label={tContent(opt, lang)}
-                    state={state}
-                    tag={t('practice.verdictTag')}
-                    onClick={() => handleSelect(i)}
-                    disabled={showFeedback}
-                  />
-                );
-              })}
-            </div>
-
-            {showFeedback && (
+            {resolution && (
               <motion.div
                 initial={reduce ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -203,7 +181,7 @@ export function DiagnosticQuiz({ onComplete }: DiagnosticQuizProps) {
       </div>
 
       {/* Next button */}
-      {showFeedback && (
+      {resolution && (
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

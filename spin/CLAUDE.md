@@ -105,7 +105,7 @@ npm run preview   # Production-Build vorschauen
 
 ## Sprachen
 
-DE, EN, HU, PL, SK, HR, EL, MK, CNR — vollständig übersetzt (Interface + Inhalte).
+**Aktiv: DE, EN** (Interface + Inhalte). Die 7 weiteren Locale-Dateien (HU, PL, SK, HR, EL, MK, CNR) liegen in `src/i18n/locales/`, sind aber bewusst NICHT eingebunden — sie sind veraltete Kopien der alten App und werden erst mit der Übersetzungswelle (R7, siehe `docs/ausbau-plan.md`) übersetzt und aktiviert.
 
 ## Kontext
 

@@ -33,40 +33,9 @@ export const quickChecks: Exercise[] = [
     relatedTechniques: ['emotional_appeal', 'scarcity', 'reactance_theory'],
   },
   {
-    id: 'qc-2',
-    type: 'quick-check',
-    difficulty: 'beginner',
-    question: {
-      de: 'Welche Technik wird hier eingesetzt?',
-      en: 'What technique is being used here?',
-    },
-    scenario: {
-      de: 'Robert Koch-Institut (@raborki): Aktuelle Influenza-Zahlen für KW 12: 3.421 laborbestätigte Fälle. Trend rückläufig. Detaillierter Wochenbericht: rki.de/influenza',
-      en: 'Robert Koch Institute (@raborki): Current influenza figures for calendar week 12: 3,421 lab-confirmed cases. Trend declining. Detailed weekly report: rki.de/influenza',
-    },
-    options: [
-      {
-        de: 'Manipulationstechniken erkennbar',
-        en: 'Manipulation techniques detected',
-      },
-      {
-        de: 'Sachliche Kommunikation',
-        en: 'Factual communication',
-      },
-    ],
-    correctAnswers: [1],
-    explanation: {
-      de: 'Sachliche Kommunikation: Offizielle Institution, konkrete Zahlen, Quellenangabe, sachlicher Ton, keine emotionale Sprache.',
-      en: 'Factual communication: Official institution, concrete figures, source referenced, neutral tone, no emotional language.',
-    },
-    points: 5,
-    timeLimit: 10,
-    relatedTechniques: [],
-  },
-  {
     id: 'qc-3',
     type: 'quick-check',
-    difficulty: 'intermediate',
+    difficulty: 'beginner',
     question: {
       de: 'Welche Technik wird hier eingesetzt?',
       en: 'What technique is being used here?',
@@ -97,7 +66,7 @@ export const quickChecks: Exercise[] = [
   {
     id: 'qc-4',
     type: 'quick-check',
-    difficulty: 'intermediate',
+    difficulty: 'beginner',
     question: {
       de: 'Welche Technik wird hier eingesetzt?',
       en: 'What technique is being used here?',
@@ -126,40 +95,9 @@ export const quickChecks: Exercise[] = [
     relatedTechniques: ['social_proof', 'reactance_theory', 'authority'],
   },
   {
-    id: 'qc-5',
-    type: 'quick-check',
-    difficulty: 'advanced',
-    question: {
-      de: 'Welche Technik wird hier eingesetzt?',
-      en: 'What technique is being used here?',
-    },
-    scenario: {
-      de: 'Laut einer Erhebung des Meinungsforschungsinstituts Infratest dimap im Auftrag der ARD sind 62% der Befragten mit der Arbeit der Bundesregierung unzufrieden. Die Befragung wurde am 15.3. unter 1.204 Wahlberechtigten durchgeführt.',
-      en: 'According to a survey by the polling institute Infratest dimap, commissioned by ARD, 62% of respondents are dissatisfied with the federal government\'s performance. The survey was conducted on March 15 among 1,204 eligible voters.',
-    },
-    options: [
-      {
-        de: 'Manipulationstechniken erkennbar',
-        en: 'Manipulation techniques detected',
-      },
-      {
-        de: 'Sachliche Kommunikation',
-        en: 'Factual communication',
-      },
-    ],
-    correctAnswers: [1],
-    explanation: {
-      de: 'Sachlich: Renommiertes Institut, klarer Auftraggeber, konkrete Stichprobengröße und Datum, sachliche Darstellung. Kommunikationsprofis sollten solche Umfragen einordnen können.',
-      en: 'Factual: Reputable institute, clearly stated commissioner, specific sample size and date, neutral presentation. Communication professionals should be able to contextualize such surveys.',
-    },
-    points: 5,
-    timeLimit: 10,
-    relatedTechniques: [],
-  },
-  {
     id: 'qc-6',
     type: 'quick-check',
-    difficulty: 'advanced',
+    difficulty: 'beginner',
     question: {
       de: 'Welche Technik wird hier eingesetzt?',
       en: 'What technique is being used here?',

@@ -19,6 +19,8 @@ export interface Session {
 export interface ItemResult {
   itemIndex: number;
   correct: boolean;
+  /** Partial credit 0..1 (multi-select); equals 1 iff correct */
+  score: number;
   timeSpent: number; // seconds
   techniqueId?: string;
 }

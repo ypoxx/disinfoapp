@@ -78,7 +78,19 @@
     "exitConfirmTitle": "Session wirklich beenden?",
     "exitConfirmBody": "Dein Fortschritt in dieser Session geht verloren. Sie dauert nur noch wenige Momente.",
     "exitConfirmStay": "Weitermachen",
-    "exitConfirmLeave": "Beenden"
+    "exitConfirmLeave": "Beenden",
+    "multiHint": "Mehrfachauswahl — wähle alle zutreffenden Antworten",
+    "checkAnswer": "Prüfen",
+    "verdictCorrect": "Richtig",
+    "verdictPartial": "Teilweise richtig",
+    "verdictIncorrect": "Falsch",
+    "tagYourChoice": "Deine Wahl",
+    "tagSolution": "Lösung",
+    "tagHit": "Getroffen",
+    "tagMissed": "Übersehen",
+    "tagFalsePick": "Falsch gewählt",
+    "partialDetail": "{{hits}} von {{total}} getroffen · {{falsePicks}} falsch gewählt · {{missed}} übersehen",
+    "solutionIs": "Lösung: {{letters}}"
   },
   "library": {
     "title": "Bibliothek",

@@ -78,7 +78,19 @@
     "exitConfirmTitle": "Really exit this session?",
     "exitConfirmBody": "Your progress in this session will be lost. It only takes a few more moments.",
     "exitConfirmStay": "Keep going",
-    "exitConfirmLeave": "Exit"
+    "exitConfirmLeave": "Exit",
+    "multiHint": "Multiple choice — select all that apply",
+    "checkAnswer": "Check",
+    "verdictCorrect": "Correct",
+    "verdictPartial": "Partially correct",
+    "verdictIncorrect": "Incorrect",
+    "tagYourChoice": "Your choice",
+    "tagSolution": "Solution",
+    "tagHit": "Hit",
+    "tagMissed": "Missed",
+    "tagFalsePick": "Wrong pick",
+    "partialDetail": "{{hits}} of {{total}} found · {{falsePicks}} wrong picks · {{missed}} missed",
+    "solutionIs": "Solution: {{letters}}"
   },
   "library": {
     "title": "Library",

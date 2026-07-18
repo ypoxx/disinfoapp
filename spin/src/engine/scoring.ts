@@ -13,12 +13,14 @@ export function calculateSessionSummary(
 ): SessionSummary {
   const correctCount = results.filter(r => r.correct).length;
   const totalItems = results.length;
-  const accuracy = totalItems > 0 ? Math.round((correctCount / totalItems) * 100) : 0;
+  // Accuracy honours partial credit: a half-right multi-select counts half
+  const scoreSum = results.reduce((sum, r) => sum + r.score, 0);
+  const accuracy = totalItems > 0 ? Math.round((scoreSum / totalItems) * 100) : 0;
   const timeSpent = results.reduce((sum, r) => sum + r.timeSpent, 0);
 
   // Calculate XP
   let xp = totalItems * XP_PER_EXERCISE; // Base XP for attempting
-  xp += correctCount * XP_PER_CORRECT; // Bonus for correct answers
+  xp += Math.round(scoreSum * XP_PER_CORRECT); // Bonus scaled by (partial) correctness
 
   // Streak bonus: consecutive correct answers
   let currentStreak = 0;

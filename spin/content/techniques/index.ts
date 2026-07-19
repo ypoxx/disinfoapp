@@ -38,6 +38,29 @@ import { availabilityHeuristic } from './availability-heuristic';
 import { confirmationBias } from './confirmation-bias';
 import { voiceCloningVishing } from './voice-cloning-vishing';
 import { sycophancy } from './sycophancy';
+// Welle R4
+import { representativenessHeuristic } from './representativeness-heuristic';
+import { endowmentEffect } from './endowment-effect';
+import { identityProvenanceDeception } from './identity-provenance-deception';
+import { integrityClashLaundering } from './integrity-clash-laundering';
+import { automationBiasOverreliance } from './automation-bias-overreliance';
+import { anthropomorphicTrustCues } from './anthropomorphic-trust-cues';
+import { dripPricing } from './drip-pricing';
+import { sneaking } from './sneaking';
+import { baitAndSwitch } from './bait-and-switch';
+import { priceComparisonPrevention } from './price-comparison-prevention';
+import { consentAndPrivacyDarkPatterns } from './consent-and-privacy-dark-patterns';
+import { doorInTheFace } from './door-in-the-face';
+import { defaultStatusQuo } from './default-status-quo';
+import { sludge } from './sludge';
+import { subscriptionTrapObstruction } from './subscription-trap-obstruction';
+import { unityIdentity } from './unity-identity';
+import { guiltByAssociation } from './guilt-by-association';
+import { cognitiveDissonanceInduction } from './cognitive-dissonance-induction';
+import { guiltAppeals } from './guilt-appeals';
+import { gamificationVariableReward } from './gamification-variable-reward';
+import { doomscrollingFomoEngineering } from './doomscrolling-fomo-engineering';
+import { attentionEngagementLoops } from './attention-engagement-loops';
 
 export const techniques: Technique[] = [
   framing,
@@ -78,6 +101,29 @@ export const techniques: Technique[] = [
   confirmationBias,
   voiceCloningVishing,
   sycophancy,
+  // Welle R4
+  representativenessHeuristic,
+  endowmentEffect,
+  identityProvenanceDeception,
+  integrityClashLaundering,
+  automationBiasOverreliance,
+  anthropomorphicTrustCues,
+  dripPricing,
+  sneaking,
+  baitAndSwitch,
+  priceComparisonPrevention,
+  consentAndPrivacyDarkPatterns,
+  doorInTheFace,
+  defaultStatusQuo,
+  sludge,
+  subscriptionTrapObstruction,
+  unityIdentity,
+  guiltByAssociation,
+  cognitiveDissonanceInduction,
+  guiltAppeals,
+  gamificationVariableReward,
+  doomscrollingFomoEngineering,
+  attentionEngagementLoops,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

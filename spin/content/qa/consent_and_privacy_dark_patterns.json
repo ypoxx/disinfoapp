@@ -1,0 +1,85 @@
+{
+ "entry": "consent_and_privacy_dark_patterns",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "default_status_quo"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "dark_patterns"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "default_status_quo"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "consent_and_privacy_dark_patterns",
+    "confident": true,
+    "secondGuess": "dark_patterns"
+   }
+  ],
+  "distraktor": {
+   "pass": false,
+   "objections": [
+    "w4-consent_and_privacy_dark_patterns-3: Die korrekte Option verrät sich selbst. Sie ist als einzige mit einem erklärenden Klammerzusatz versehen („progressive Profilbildung“), der lexikalisch direkt am Szenario andockt („Ihr Profil ist zu 60 % vollständig“ + schrittweise Feldabfrage). Wer die Technik nicht kennt, löst die Aufgabe per Wortabgleich Profil→Profilbildung; die beiden Distraktoren werden dadurch faktisch zu Gimmes. Fix: Klammerzusatz streichen und alle Optionen formal parallel halten (nur Techniknamen, keine Erklär-Parenthesen exklusiv bei der richtigen Antwort).",
+    "w4-consent_and_privacy_dark_patterns-3: Nach Streichung des Klammerzusatzes wird „Gamification / variable Belohnung“ ernsthaft als ebenfalls richtig verteidigbar — der 60-%-Fortschrittsbalken ist DAS Lehrbuchbeispiel einer Gamification-Mechanik und der auffälligste Hebel des Szenarios. Fix: den Privacy-Kern als eindeutiges Unterscheidungsmerkmal schärfen, z. B. die abgefragten Daten tauchen später in Sales-Anrufen auf oder werden an Sponsoren weitergegeben, während Zwecke nie genannt werden — dann ist Datenabschöpfung ohne informierte Einwilligung klar der Kern und Gamification nur das Vehikel. Zusätzlich passt die Teiloption „variable Belohnung“ überhaupt nicht (kein variabler Belohnungsplan im Szenario) und erleichtert das Ausschließen der Compound-Option; besser: „Gamification (Fortschritts-/Vollständigkeitsanzeige)“.",
+    "w4-consent_and_privacy_dark_patterns-3 (nachrangig): Nur 3 Optionen, während Übung 1 und 2 vier haben. Ein vierter plausibler Nachbar würde die Ratewahrscheinlichkeit senken — aber vorsichtig wählen: Foot-in-the-door/Salami-Taktik wäre hier selbst zu gut verteidigbar (schrittweise eskalierende Abfragen sind exakt dieser Mechanismus) und würde neue Ambiguität erzeugen. Geeigneter wäre z. B. „Subscription Trap / Obstruction (Roach Motel)“ analog zu Übung 1: verwechselbar über den schrumpfenden Überspringen-Link, aber klar abgrenzbar, weil es weder um Abo noch um Kündigung geht."
+   ]
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/techniques/consent-and-privacy-dark-patterns.ts, examples[2]: Kanal fehlt. \"Die Eventmanagerin meldet dem Projektleiter des App-Dienstleisters…\" nennt Rollen und Situation (Test der Teilnehmer-App vor dem Kundenkongress), aber keinen Kanal — Beispiele 1 und 2 haben \"Review-Call\" bzw. \"Marketingrunde\". Behebbar z. B. mit \"…meldet im Bug-Review-Call / per Ticket…\". Verstoß gegen die Beispiel-Regel (Kanal + Rollen + Situation in JEDEM Beispiel).",
+    "spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-2, explanation.de: Schließendes Anführungszeichen fehlt in \"(„monatliches Branchenbriefing statt „Informationen von Partnern\")\" — korrekt wäre \"(„monatliches Branchenbriefing\" statt „Informationen von Partnern\")\". Bei einer Zielgruppe, die genau liest, fällt so ein Satzzeichenfehler auf.",
+    "spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-2, options[0].en: \"the whitepaper is available for the email address alone\" ist eine wörtliche, unidiomatische Übertragung von \"Das Whitepaper gibt es gegen die E-Mail-Adresse\" — auf Englisch missverständlich (klingt nach \"nur für diese Adresse verfügbar\"). Idiomatisch: \"the whitepaper is available in exchange for the email address\" o. ä. Verstoß gegen die EN-Regel (kein wörtliches Übersetzen).",
+    "spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-3, scenario.de und scenario.en: Falsche Verbrichtung — \"wofür die Angaben genutzt werden, fragt kein Dialog erneut ab\" bzw. \"no dialog ever asks again what the details will be used for\": Ein Dialog fragt den Zweck nicht beim Nutzer AB, er NENNT ihn. Gemeint ist \"…nennt kein Dialog erneut\" / \"no dialog ever states again what the details will be used for\". Die EN-Fassung spiegelt denselben Logikfehler wörtlich — genau die Sorte Unschärfe, die der Zielgruppe auffällt."
+   ]
+  }
+ },
+ "objections": [
+  "Distraktor: w4-consent_and_privacy_dark_patterns-3: Die korrekte Option verrät sich selbst. Sie ist als einzige mit einem erklärenden Klammerzusatz versehen („progressive Profilbildung“), der lexikalisch direkt am Szenario andockt („Ihr Profil ist zu 60 % vollständig“ + schrittweise Feldabfrage). Wer die Technik nicht kennt, löst die Aufgabe per Wortabgleich Profil→Profilbildung; die beiden Distraktoren werden dadurch faktisch zu Gimmes. Fix: Klammerzusatz streichen und alle Optionen formal parallel halten (nur Techniknamen, keine Erklär-Parenthesen exklusiv bei der richtigen Antwort).",
+  "Distraktor: w4-consent_and_privacy_dark_patterns-3: Nach Streichung des Klammerzusatzes wird „Gamification / variable Belohnung“ ernsthaft als ebenfalls richtig verteidigbar — der 60-%-Fortschrittsbalken ist DAS Lehrbuchbeispiel einer Gamification-Mechanik und der auffälligste Hebel des Szenarios. Fix: den Privacy-Kern als eindeutiges Unterscheidungsmerkmal schärfen, z. B. die abgefragten Daten tauchen später in Sales-Anrufen auf oder werden an Sponsoren weitergegeben, während Zwecke nie genannt werden — dann ist Datenabschöpfung ohne informierte Einwilligung klar der Kern und Gamification nur das Vehikel. Zusätzlich passt die Teiloption „variable Belohnung“ überhaupt nicht (kein variabler Belohnungsplan im Szenario) und erleichtert das Ausschließen der Compound-Option; besser: „Gamification (Fortschritts-/Vollständigkeitsanzeige)“.",
+  "Distraktor: w4-consent_and_privacy_dark_patterns-3 (nachrangig): Nur 3 Optionen, während Übung 1 und 2 vier haben. Ein vierter plausibler Nachbar würde die Ratewahrscheinlichkeit senken — aber vorsichtig wählen: Foot-in-the-door/Salami-Taktik wäre hier selbst zu gut verteidigbar (schrittweise eskalierende Abfragen sind exakt dieser Mechanismus) und würde neue Ambiguität erzeugen. Geeigneter wäre z. B. „Subscription Trap / Obstruction (Roach Motel)“ analog zu Übung 1: verwechselbar über den schrumpfenden Überspringen-Link, aber klar abgrenzbar, weil es weder um Abo noch um Kündigung geht.",
+  "Stil: spin/content/techniques/consent-and-privacy-dark-patterns.ts, examples[2]: Kanal fehlt. \"Die Eventmanagerin meldet dem Projektleiter des App-Dienstleisters…\" nennt Rollen und Situation (Test der Teilnehmer-App vor dem Kundenkongress), aber keinen Kanal — Beispiele 1 und 2 haben \"Review-Call\" bzw. \"Marketingrunde\". Behebbar z. B. mit \"…meldet im Bug-Review-Call / per Ticket…\". Verstoß gegen die Beispiel-Regel (Kanal + Rollen + Situation in JEDEM Beispiel).",
+  "Stil: spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-2, explanation.de: Schließendes Anführungszeichen fehlt in \"(„monatliches Branchenbriefing statt „Informationen von Partnern\")\" — korrekt wäre \"(„monatliches Branchenbriefing\" statt „Informationen von Partnern\")\". Bei einer Zielgruppe, die genau liest, fällt so ein Satzzeichenfehler auf.",
+  "Stil: spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-2, options[0].en: \"the whitepaper is available for the email address alone\" ist eine wörtliche, unidiomatische Übertragung von \"Das Whitepaper gibt es gegen die E-Mail-Adresse\" — auf Englisch missverständlich (klingt nach \"nur für diese Adresse verfügbar\"). Idiomatisch: \"the whitepaper is available in exchange for the email address\" o. ä. Verstoß gegen die EN-Regel (kein wörtliches Übersetzen).",
+  "Stil: spin/content/exercises/wave4-consent-and-privacy-dark-patterns.ts, w4-consent_and_privacy_dark_patterns-3, scenario.de und scenario.en: Falsche Verbrichtung — \"wofür die Angaben genutzt werden, fragt kein Dialog erneut ab\" bzw. \"no dialog ever asks again what the details will be used for\": Ein Dialog fragt den Zweck nicht beim Nutzer AB, er NENNT ihn. Gemeint ist \"…nennt kein Dialog erneut\" / \"no dialog ever states again what the details will be used for\". Die EN-Fassung spiegelt denselben Logikfehler wörtlich — genau die Sorte Unschärfe, die der Zielgruppe auffällt."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

@@ -1,0 +1,136 @@
+{
+ "entry": "endowment_effect",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "default_status_quo",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"the head of communications is no longer negotiating an upgrade, but — in feel — the surrender of something of his own\" — \"in feel\" ist ein wörtlicher Kalque von \"gefühlt\" und im Englischen nicht idiomatisch. Fix z. B.: \"is, in effect, no longer negotiating an upgrade but the surrender of something of his own\".",
+    "wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"pull the price into the same meeting\" — Kalque von \"hol den Preis in denselben Termin\". Idiomatisch: \"insist the price is discussed in the same meeting\" o. ä.",
+    "wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"the sales rep now prices the giving-up\" — Kalque von \"bepreist das Hergeben\"; gleiches Muster in w4-endowment_effect-2, explanation.en: \"the offer prices keeping rather than acquiring\". Idiomatisch: \"puts a price on giving it up\" / \"prices retention, not acquisition\".",
+    "wave4-endowment-effect.ts, w4-endowment_effect-2, explanation.en: \"feels like the natural price of not losing\" (Kalque von \"der natürliche Preis des Nicht-Verlierens\") und \"confuses effort invested with value ahead\" (\"value ahead\" ist kein idiomatisches Englisch; gemeint ist \"future value\"). Zusätzlich w4-endowment_effect-1, explanation.en: \"a gift that obliges a return favour\" — unidiomatisch, besser \"a gift that creates an obligation to reciprocate\".",
+    "wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.de: Takeaway \"Legitim einsetzen\" ist nicht in Du-Form: \"Eine Testphase, in der Kundinnen das Produkt real erleben, ist seriöses Handwerk — professionell bleibt sie, wenn …\". Die Charta gibt für diesen Takeaway explizit Du-Anrede vor (\"So nutzt du das professionell …\"); w4-endowment_effect-2 macht es richtig (\"Auch du darfst …\").",
+    "wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.de: Gleicher Registerbruch — \"Optionen mit dem Kundenlogo zu visualisieren ist normales Handwerk — professionell bleibt es, wenn …\" statt Du-Form im Legitim-einsetzen-Takeaway.",
+    "wave4-endowment-effect.ts, explanation.de aller drei Übungen: identische Satzschablonen wiederholen sich über das ganze Set — dreimal \"professionell bleibt es/sie, wenn …\" (w4-1, w4-2, w4-3) und dreimal \"… wirkt plausibel, weil …\"; in der EN-Fassung zweimal \"seems close because\" (w4-1, w4-3). Für die Zielgruppe (liest genau, reagiert allergisch auf Plattes) fällt das als Baukasten auf — Formulierungen pro Übung variieren.",
+    "wave4-endowment-effect.ts, w4-endowment_effect-2, scenario.de/en: einziges Beispiel ohne benannten Kanal — \"Der Anbieter ruft für die Verlängerung deutlich mehr auf … das Angebot verweist prominent auf …\" nennt Rollen und Situation, aber kein Medium (E-Mail? Angebots-PDF? Call?). Beispiel-Regel verlangt Kanal + Rollen + Situation; behebbar z. B. mit \"Das schriftliche Verlängerungsangebot per E-Mail verweist …\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"the head of communications is no longer negotiating an upgrade, but — in feel — the surrender of something of his own\" — \"in feel\" ist ein wörtlicher Kalque von \"gefühlt\" und im Englischen nicht idiomatisch. Fix z. B.: \"is, in effect, no longer negotiating an upgrade but the surrender of something of his own\".",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"pull the price into the same meeting\" — Kalque von \"hol den Preis in denselben Termin\". Idiomatisch: \"insist the price is discussed in the same meeting\" o. ä.",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"the sales rep now prices the giving-up\" — Kalque von \"bepreist das Hergeben\"; gleiches Muster in w4-endowment_effect-2, explanation.en: \"the offer prices keeping rather than acquiring\". Idiomatisch: \"puts a price on giving it up\" / \"prices retention, not acquisition\".",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-2, explanation.en: \"feels like the natural price of not losing\" (Kalque von \"der natürliche Preis des Nicht-Verlierens\") und \"confuses effort invested with value ahead\" (\"value ahead\" ist kein idiomatisches Englisch; gemeint ist \"future value\"). Zusätzlich w4-endowment_effect-1, explanation.en: \"a gift that obliges a return favour\" — unidiomatisch, besser \"a gift that creates an obligation to reciprocate\".",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.de: Takeaway \"Legitim einsetzen\" ist nicht in Du-Form: \"Eine Testphase, in der Kundinnen das Produkt real erleben, ist seriöses Handwerk — professionell bleibt sie, wenn …\". Die Charta gibt für diesen Takeaway explizit Du-Anrede vor (\"So nutzt du das professionell …\"); w4-endowment_effect-2 macht es richtig (\"Auch du darfst …\").",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.de: Gleicher Registerbruch — \"Optionen mit dem Kundenlogo zu visualisieren ist normales Handwerk — professionell bleibt es, wenn …\" statt Du-Form im Legitim-einsetzen-Takeaway.",
+  "Stil: wave4-endowment-effect.ts, explanation.de aller drei Übungen: identische Satzschablonen wiederholen sich über das ganze Set — dreimal \"professionell bleibt es/sie, wenn …\" (w4-1, w4-2, w4-3) und dreimal \"… wirkt plausibel, weil …\"; in der EN-Fassung zweimal \"seems close because\" (w4-1, w4-3). Für die Zielgruppe (liest genau, reagiert allergisch auf Plattes) fällt das als Baukasten auf — Formulierungen pro Übung variieren.",
+  "Stil: wave4-endowment-effect.ts, w4-endowment_effect-2, scenario.de/en: einziges Beispiel ohne benannten Kanal — \"Der Anbieter ruft für die Verlängerung deutlich mehr auf … das Angebot verweist prominent auf …\" nennt Rollen und Situation, aber kein Medium (E-Mail? Angebots-PDF? Call?). Beispiel-Regel verlangt Kanal + Rollen + Situation; behebbar z. B. mit \"Das schriftliche Verlängerungsangebot per E-Mail verweist …\"."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "endowment_effect",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "endowment_effect",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "endowment_effect",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "endowment_effect",
+    "secondGuess": "default_status_quo",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"the endowment effect is the specific lever that ownership was deliberately manufactured first\" ist ein Kalk der deutschen Konstruktion \"der spezifische Hebel, dass…\" — \"the lever that + Aussagesatz\" ist im Englischen ungrammatisch. Idiomatisch z. B.: \"the specific lever here is that ownership was deliberately manufactured first\".",
+    "spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"which is what makes the good seem so valuable at all\" — \"at all\" ist eine Wort-für-Wort-Übertragung von \"überhaupt\" und funktioniert mit \"so valuable\" nicht. Idiomatisch: \"which is what makes the good seem valuable in the first place\".",
+    "spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"since the later giving-up weighs heavily\" ist eine unidiomatische Nominalisierung nach dem Muster von \"das spätere Aufgeben wiegt schwer\". Idiomatisch z. B.: \"since giving it up later weighs heavy\" oder \"since the prospect of giving it up later looms large\"."
+   ]
+  },
+  "stillOpen": [
+   "Stil: spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"the endowment effect is the specific lever that ownership was deliberately manufactured first\" ist ein Kalk der deutschen Konstruktion \"der spezifische Hebel, dass…\" — \"the lever that + Aussagesatz\" ist im Englischen ungrammatisch. Idiomatisch z. B.: \"the specific lever here is that ownership was deliberately manufactured first\".",
+   "Stil: spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-1, explanation.en: \"which is what makes the good seem so valuable at all\" — \"at all\" ist eine Wort-für-Wort-Übertragung von \"überhaupt\" und funktioniert mit \"so valuable\" nicht. Idiomatisch: \"which is what makes the good seem valuable in the first place\".",
+   "Stil: spin/content/exercises/wave4-endowment-effect.ts, w4-endowment_effect-3, explanation.en: \"since the later giving-up weighs heavily\" ist eine unidiomatische Nominalisierung nach dem Muster von \"das spätere Aufgeben wiegt schwer\". Idiomatisch z. B.: \"since giving it up later weighs heavy\" oder \"since the prospect of giving it up later looms large\"."
+  ]
+ },
+ "status": "flagged",
+ "finalStatus": "flagged"
+}

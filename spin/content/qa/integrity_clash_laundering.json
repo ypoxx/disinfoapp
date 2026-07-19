@@ -1,0 +1,79 @@
+{
+ "entry": "integrity_clash_laundering",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": true,
+    "secondGuess": "automation_bias_overreliance"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "integrity_clash_laundering",
+    "confident": false,
+    "secondGuess": "automation_bias_overreliance"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "objections": [],
+   "pass": true
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "/home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-2, Feld explanation.en: '\"signature intact\" is illegitimately turned into \"content true\"' — wörtliche Spiegelung des deutschen Wortspiels („Aus ‚Signatur intakt' wird unzulässig ‚Inhalt wahr'\"). „content true\" ist kein idiomatisches Englisch, und „illegitimately\" trifft „unzulässig\" (hier: logisch nicht gedeckter Schluss) schief — es klingt nach Rechtsverstoß. Vorschlag: '\"signature intact\" quietly becomes \"the content is genuine\" — an inference the signal cannot support.'",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-1, Feld explanation.en: 'look for screen-capture artefacts such as moiré or reflections' — nicht bedeutungsgleich mit DE „Abfilm-Spuren\". „Screen capture\" bezeichnet im Englischen die digitale Bildschirmaufzeichnung, die weder Moiré noch Reflexe erzeugt; gemeint ist das Abfilmen eines physischen Bildschirms. Das Szenario derselben Übung sagt es korrekt ('filmed off a screen'). Vorschlag: 'look for signs the clip was re-shot off a screen, such as moiré patterns or reflections.'",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Felder explanation.en (Übungen -1 und -3): EN mischt britische und amerikanische Schreibvarianten innerhalb derselben Texte — 'neighbour' und 'artefacts' (BrE) neben 'check mark' (AmE, BrE wäre 'tick'). Für „idiomatisches Fach-Englisch gleicher Präzision\" eine Varietät wählen und durchziehen.",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-3, Feld explanation.en: 'a statement is being planted on the CEO' — ungebräuchliche Kollokation (man 'plants a story/evidence', aber kein 'statement on someone'); wirkt wie eine Verlegenheitsübersetzung von „untergeschoben\". Idiomatischer: 'a fabricated statement is being attributed to the CEO' oder 'words are being put in the CEO's mouth'."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 2: nur unsicher erkannt (secondGuess: automation_bias_overreliance) — eindeutiger machen",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-2, Feld explanation.en: '\"signature intact\" is illegitimately turned into \"content true\"' — wörtliche Spiegelung des deutschen Wortspiels („Aus ‚Signatur intakt' wird unzulässig ‚Inhalt wahr'\"). „content true\" ist kein idiomatisches Englisch, und „illegitimately\" trifft „unzulässig\" (hier: logisch nicht gedeckter Schluss) schief — es klingt nach Rechtsverstoß. Vorschlag: '\"signature intact\" quietly becomes \"the content is genuine\" — an inference the signal cannot support.'",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-1, Feld explanation.en: 'look for screen-capture artefacts such as moiré or reflections' — nicht bedeutungsgleich mit DE „Abfilm-Spuren\". „Screen capture\" bezeichnet im Englischen die digitale Bildschirmaufzeichnung, die weder Moiré noch Reflexe erzeugt; gemeint ist das Abfilmen eines physischen Bildschirms. Das Szenario derselben Übung sagt es korrekt ('filmed off a screen'). Vorschlag: 'look for signs the clip was re-shot off a screen, such as moiré patterns or reflections.'",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Felder explanation.en (Übungen -1 und -3): EN mischt britische und amerikanische Schreibvarianten innerhalb derselben Texte — 'neighbour' und 'artefacts' (BrE) neben 'check mark' (AmE, BrE wäre 'tick'). Für „idiomatisches Fach-Englisch gleicher Präzision\" eine Varietät wählen und durchziehen.",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-integrity-clash-laundering.ts, Übung w4-integrity_clash_laundering-3, Feld explanation.en: 'a statement is being planted on the CEO' — ungebräuchliche Kollokation (man 'plants a story/evidence', aber kein 'statement on someone'); wirkt wie eine Verlegenheitsübersetzung von „untergeschoben\". Idiomatischer: 'a fabricated statement is being attributed to the CEO' oder 'words are being put in the CEO's mouth'."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

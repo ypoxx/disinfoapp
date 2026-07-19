@@ -1,0 +1,70 @@
+{
+ "entry": "doomscrolling_fomo_engineering",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": false,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 1: nur unsicher erkannt (secondGuess: attention_engagement_loops) — eindeutiger machen"
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

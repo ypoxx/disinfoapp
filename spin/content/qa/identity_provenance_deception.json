@@ -1,0 +1,120 @@
+{
+ "entry": "identity_provenance_deception",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "identity_provenance_deception",
+    "secondGuess": "authority",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "social_proof",
+    "secondGuess": "identity_provenance_deception",
+    "confident": false
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true,
+    "secondGuess": "authority"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "social_proof",
+    "confident": false,
+    "secondGuess": "identity_provenance_deception"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "identity-provenance-deception.ts, Feld examples: Alle drei Beispiele nutzen Du-Anrede — „während dein Mandant Ziel einer Übernahme ist\" (examples[0]), „Anruf einer Agenturjournalistin bei dir als Pressesprecher\" (examples[1]), „präsentiert dir als Kommunikationsleiterin\" (examples[2]). Die Charta reserviert Du-Anrede für Übungen und UI und verlangt neutrale Beschreibung in Technik-Einträgen; das Muster der Beispiel-Regel ist dritte Person („Sprecherin → Fachjournalist…\"). Die redaktionell geprüften Schwester-Einträge (voice-cloning-vishing.ts, integrity-clash-laundering.ts) formulieren dieselbe Miniatur-Qualität neutral („Anruf bei der Referentin der Pressestelle…\"). Behebung: Beispiele in dritte Person umschreiben, Kanal+Rollen+Situation bleiben erhalten.",
+    "wave4-identity-provenance-deception.ts, Übung w4-identity_provenance_deception-2, options[0].en und explanation.en: „guaranteed placements are plannable\" und „plannability and credibility are legitimate goals\" sind wörtliche Übersetzungen von „planbar/Planbarkeit\" — kein idiomatisches Fach-Englisch (Charta: EN-Fassung, kein wörtliches Übersetzen). Behebung z. B.: „guaranteed placements give you predictability\" bzw. „predictability and credibility are legitimate goals\".",
+    "wave4-identity-provenance-deception.ts, Übung w4-identity_provenance_deception-3, scenario.en: „the working student briefs you\" ist Denglisch — „working student\" ist der Werkstudenten-Kalk und heißt für Muttersprachler nur „ein Student, der arbeitet\". Idiomatisch: „the student intern briefs you\" oder „the student assistant on the monitoring desk briefs you\".",
+    "identity-provenance-deception.ts, Feld evidence.studies: „Union (2024) - Regulation (EU) 2024/1689…\" und „Authenticity (2026) - C2PA Technical Specification v2.4\" — die Institutions-Autoren sind auf das letzte Wort gekürzt (Taxonomie-Quelle: „European Union\" bzw. „Coalition for Content Provenance and Authenticity\"). Für die genau lesende Zielgruppe wirkt das wie ein Parser-Fehler. Derselbe Artefakt steht auch in integrity-clash-laundering.ts — vermutlich ein Import-Pipeline-Problem, das über diesen Eintrag hinaus korrigiert werden sollte."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer A, Beispiel 2: als 'social_proof' erkannt statt 'identity_provenance_deception' — Beispiel schärfen, sodass die Zieltechnik dominiert",
+  "Blindprüfer B, Beispiel 2: als 'social_proof' erkannt statt 'identity_provenance_deception' — Beispiel schärfen, sodass die Zieltechnik dominiert",
+  "Stil: identity-provenance-deception.ts, Feld examples: Alle drei Beispiele nutzen Du-Anrede — „während dein Mandant Ziel einer Übernahme ist\" (examples[0]), „Anruf einer Agenturjournalistin bei dir als Pressesprecher\" (examples[1]), „präsentiert dir als Kommunikationsleiterin\" (examples[2]). Die Charta reserviert Du-Anrede für Übungen und UI und verlangt neutrale Beschreibung in Technik-Einträgen; das Muster der Beispiel-Regel ist dritte Person („Sprecherin → Fachjournalist…\"). Die redaktionell geprüften Schwester-Einträge (voice-cloning-vishing.ts, integrity-clash-laundering.ts) formulieren dieselbe Miniatur-Qualität neutral („Anruf bei der Referentin der Pressestelle…\"). Behebung: Beispiele in dritte Person umschreiben, Kanal+Rollen+Situation bleiben erhalten.",
+  "Stil: wave4-identity-provenance-deception.ts, Übung w4-identity_provenance_deception-2, options[0].en und explanation.en: „guaranteed placements are plannable\" und „plannability and credibility are legitimate goals\" sind wörtliche Übersetzungen von „planbar/Planbarkeit\" — kein idiomatisches Fach-Englisch (Charta: EN-Fassung, kein wörtliches Übersetzen). Behebung z. B.: „guaranteed placements give you predictability\" bzw. „predictability and credibility are legitimate goals\".",
+  "Stil: wave4-identity-provenance-deception.ts, Übung w4-identity_provenance_deception-3, scenario.en: „the working student briefs you\" ist Denglisch — „working student\" ist der Werkstudenten-Kalk und heißt für Muttersprachler nur „ein Student, der arbeitet\". Idiomatisch: „the student intern briefs you\" oder „the student assistant on the monitoring desk briefs you\".",
+  "Stil: identity-provenance-deception.ts, Feld evidence.studies: „Union (2024) - Regulation (EU) 2024/1689…\" und „Authenticity (2026) - C2PA Technical Specification v2.4\" — die Institutions-Autoren sind auf das letzte Wort gekürzt (Taxonomie-Quelle: „European Union\" bzw. „Coalition for Content Provenance and Authenticity\"). Für die genau lesende Zielgruppe wirkt das wie ein Parser-Fehler. Derselbe Artefakt steht auch in integrity-clash-laundering.ts — vermutlich ein Import-Pipeline-Problem, das über diesen Eintrag hinaus korrigiert werden sollte."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "identity_provenance_deception",
+    "secondGuess": "authority",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "identity_provenance_deception",
+    "secondGuess": "synthetic_media",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true,
+    "secondGuess": "authority"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "identity_provenance_deception",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "identity_provenance_deception",
+    "confident": false,
+    "secondGuess": "social_proof"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  },
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "passed_round2"
+}

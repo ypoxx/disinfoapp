@@ -1,0 +1,58 @@
+{
+ "entry": "sludge",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sludge",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sludge",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sludge",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sludge",
+    "confident": true,
+    "secondGuess": "dark_patterns"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sludge",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sludge",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [],
+ "status": "passed_round1",
+ "finalStatus": "passed_round1"
+}

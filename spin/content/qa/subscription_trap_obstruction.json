@@ -1,0 +1,82 @@
+{
+ "entry": "subscription_trap_obstruction",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "subscription_trap_obstruction",
+    "confident": true,
+    "secondGuess": "sludge"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, explanation.en: \"retention belongs in the product, not in the exit door\" — wörtliche Übersetzung von „Kundenbindung gehört in das Produkt, nicht in die Ausgangstür\". „In the exit door\" ist im Englischen unidiomatisch; z. B. \"retention belongs in the product, not at the exit\" oder \"not bolted to the exit\".",
+    "wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-2, scenario.en: \"In the product stand-up, the growth manager presents his 'retention project'\" — „Produkt-Jour-fixe\" ist kein Stand-up. In einem Stand-up präsentiert niemand ein Deck mit Churn-Prognose; die Szene wird im EN unglaubwürdig. Bedeutungsgleich wäre \"product sync\" oder \"product review meeting\".",
+    "wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, scenario.en: \"the barely used media coverage subscription\" für „Medienresonanz-Abo\" — liest sich als Abo von Berichterstattung statt als Monitoring-Tool. Der Fachterm für die Zielgruppe ist \"media monitoring subscription\" (auch in der Technique-Datei-Terminologie konsistent halten).",
+    "wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-2, explanation.en: \"spares you the complaint waves that ultimately land in the communications department\" — „complaint waves\" ist ein Calque von „Beschwerdewellen\"; idiomatisch: \"waves of complaints\" oder \"the flood of complaints\".",
+    "wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, explanation.en: \"here the price is right from the start\" — unfreiwilliges Game-Show-Echo („The Price Is Right\") in einem sonst präzisen Text; besser \"the price is stated accurately from the outset\".",
+    "Dublette zwischen subscription-trap-obstruction.ts (examples[0]) und wave4-subscription-trap-obstruction.ts (Übung 1, scenario.de/en): nahezu identische Miniatur bis in die Details („aus Sicherheitsgründen\", „werktags 9 bis 13 Uhr\", Fünf-Minuten-Checkout, fehlender Kündigungsbereich, FAQ→Hotline). Wer den Bibliothekseintrag gelesen hat, erkennt die Übung am Wortlaut statt am Muster — Übungsszenario variieren (anderer Kanal, andere Rollen, andere Hürde, z. B. Postweg oder Terminvergabe statt Hotline)."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, explanation.en: \"retention belongs in the product, not in the exit door\" — wörtliche Übersetzung von „Kundenbindung gehört in das Produkt, nicht in die Ausgangstür\". „In the exit door\" ist im Englischen unidiomatisch; z. B. \"retention belongs in the product, not at the exit\" oder \"not bolted to the exit\".",
+  "Stil: wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-2, scenario.en: \"In the product stand-up, the growth manager presents his 'retention project'\" — „Produkt-Jour-fixe\" ist kein Stand-up. In einem Stand-up präsentiert niemand ein Deck mit Churn-Prognose; die Szene wird im EN unglaubwürdig. Bedeutungsgleich wäre \"product sync\" oder \"product review meeting\".",
+  "Stil: wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, scenario.en: \"the barely used media coverage subscription\" für „Medienresonanz-Abo\" — liest sich als Abo von Berichterstattung statt als Monitoring-Tool. Der Fachterm für die Zielgruppe ist \"media monitoring subscription\" (auch in der Technique-Datei-Terminologie konsistent halten).",
+  "Stil: wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-2, explanation.en: \"spares you the complaint waves that ultimately land in the communications department\" — „complaint waves\" ist ein Calque von „Beschwerdewellen\"; idiomatisch: \"waves of complaints\" oder \"the flood of complaints\".",
+  "Stil: wave4-subscription-trap-obstruction.ts, Übung w4-subscription_trap_obstruction-1, explanation.en: \"here the price is right from the start\" — unfreiwilliges Game-Show-Echo („The Price Is Right\") in einem sonst präzisen Text; besser \"the price is stated accurately from the outset\".",
+  "Stil: Dublette zwischen subscription-trap-obstruction.ts (examples[0]) und wave4-subscription-trap-obstruction.ts (Übung 1, scenario.de/en): nahezu identische Miniatur bis in die Details („aus Sicherheitsgründen\", „werktags 9 bis 13 Uhr\", Fünf-Minuten-Checkout, fehlender Kündigungsbereich, FAQ→Hotline). Wer den Bibliothekseintrag gelesen hat, erkennt die Übung am Wortlaut statt am Muster — Übungsszenario variieren (anderer Kanal, andere Rollen, andere Hürde, z. B. Postweg oder Terminvergabe statt Hotline)."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

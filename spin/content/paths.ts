@@ -31,6 +31,7 @@ export const learningPaths: LearningPath[] = [
     techniqueIds: [
       'ad_hominem', 'straw_man', 'false_dichotomy', 'equivocation',
       'paltering_half_truth', 'cherry_picking', 'false_balance', 'agenda_setting',
+      'guilt_by_association',
     ],
   },
   {
@@ -42,6 +43,8 @@ export const learningPaths: LearningPath[] = [
     },
     techniqueIds: [
       'loss_aversion', 'decoy_effect', 'availability_heuristic', 'confirmation_bias',
+      'representativeness_heuristic', 'endowment_effect', 'default_status_quo',
+      'cognitive_dissonance_induction', 'door_in_the_face',
     ],
   },
   {
@@ -55,6 +58,11 @@ export const learningPaths: LearningPath[] = [
       'digital_influence', 'microtargeting', 'dark_patterns', 'synthetic_media',
       'visual_manipulation', 'ai_persuasion', 'voice_cloning_vishing', 'sycophancy',
       'pacing_and_leading', 'embedded_commands',
+      'drip_pricing', 'sneaking', 'bait_and_switch', 'price_comparison_prevention',
+      'consent_and_privacy_dark_patterns', 'sludge', 'subscription_trap_obstruction',
+      'gamification_variable_reward', 'doomscrolling_fomo_engineering', 'attention_engagement_loops',
+      'identity_provenance_deception', 'integrity_clash_laundering',
+      'automation_bias_overreliance', 'anthropomorphic_trust_cues',
     ],
   },
   {

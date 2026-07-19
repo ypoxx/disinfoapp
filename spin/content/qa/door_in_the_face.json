@@ -1,0 +1,78 @@
+{
+ "entry": "door_in_the_face",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "door_in_the_face",
+    "confident": true,
+    "secondGuess": "reciprocity"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-2, scenario.en: \"We have come a long way towards you\" ist ein Calque von „Wir sind Ihnen weit entgegengekommen\" — idiomatisch heißt \"come a long way\" „viel erreicht\", nicht „entgegengekommen\"; nativ wäre z. B. \"We've gone a long way to meet you\". Ebenso \"A gesture from your side\" (Calque von „von Ihrer Seite\"; idiomatisch: \"a gesture on your part\"). Die Zitatrede des Account-Managers klingt übersetzt, nicht nativ.",
+    "spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-2, explanation.en: 'Negotiating on \"measured against the opening offer\" sounds like smart tactics' ist grammatisch gebrochen — die DE-Nominalkonstruktion („Das Weiterverhandeln ‚gemessen am Erstangebot'\") wurde wörtlich übertragen statt idiomatisch aufgelöst (z. B. \"Haggling a few points off the 45,000 sounds like smart tactics\"). Im selben Feld: \"strips the staged concession of its obliging force\" — \"obliging\" bedeutet „zuvorkommend\", nicht „verpflichtend\"; korrekt wäre \"its power to oblige\" oder \"its binding force\".",
+    "spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-3, scenario.en: \"But then you'll at least take the current week?\" ist ohne Objekt missverständlich (lesbar als „die Woche freinehmen\") und damit nicht bedeutungsgleich zur DE-Fassung (das Verschlagworten der laufenden Woche übernehmen); z. B. \"But then you'll at least cover the current week's clippings?\". Im selben Feld ist \"I know it's a big one\" für „das ist ein Brocken\" blass — idiomatisch: \"I know it's a big ask\".",
+    "spin/content/exercises/wave4-door-in-the-face.ts, explanation.de von w4-door_in_the_face-1 und w4-door_in_the_face-2: nahezu wortgleiche Wiederholung „Dein Nein … erzeugt keine Schuld, die du begleichen müsstest\" / „dein Nein hat keine Schuld erzeugt, die du begleichen müsstest\" — innerhalb derselben Übungswelle wirkt der wiederkehrende Signatursatz schablonenhaft; eine der beiden Stellen umformulieren (Übung 3 zeigt mit „verpflichtet dich zu nichts\" bereits eine Variante)."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-2, scenario.en: \"We have come a long way towards you\" ist ein Calque von „Wir sind Ihnen weit entgegengekommen\" — idiomatisch heißt \"come a long way\" „viel erreicht\", nicht „entgegengekommen\"; nativ wäre z. B. \"We've gone a long way to meet you\". Ebenso \"A gesture from your side\" (Calque von „von Ihrer Seite\"; idiomatisch: \"a gesture on your part\"). Die Zitatrede des Account-Managers klingt übersetzt, nicht nativ.",
+  "Stil: spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-2, explanation.en: 'Negotiating on \"measured against the opening offer\" sounds like smart tactics' ist grammatisch gebrochen — die DE-Nominalkonstruktion („Das Weiterverhandeln ‚gemessen am Erstangebot'\") wurde wörtlich übertragen statt idiomatisch aufgelöst (z. B. \"Haggling a few points off the 45,000 sounds like smart tactics\"). Im selben Feld: \"strips the staged concession of its obliging force\" — \"obliging\" bedeutet „zuvorkommend\", nicht „verpflichtend\"; korrekt wäre \"its power to oblige\" oder \"its binding force\".",
+  "Stil: spin/content/exercises/wave4-door-in-the-face.ts, w4-door_in_the_face-3, scenario.en: \"But then you'll at least take the current week?\" ist ohne Objekt missverständlich (lesbar als „die Woche freinehmen\") und damit nicht bedeutungsgleich zur DE-Fassung (das Verschlagworten der laufenden Woche übernehmen); z. B. \"But then you'll at least cover the current week's clippings?\". Im selben Feld ist \"I know it's a big one\" für „das ist ein Brocken\" blass — idiomatisch: \"I know it's a big ask\".",
+  "Stil: spin/content/exercises/wave4-door-in-the-face.ts, explanation.de von w4-door_in_the_face-1 und w4-door_in_the_face-2: nahezu wortgleiche Wiederholung „Dein Nein … erzeugt keine Schuld, die du begleichen müsstest\" / „dein Nein hat keine Schuld erzeugt, die du begleichen müsstest\" — innerhalb derselben Übungswelle wirkt der wiederkehrende Signatursatz schablonenhaft; eine der beiden Stellen umformulieren (Übung 3 zeigt mit „verpflichtet dich zu nichts\" bereits eine Variante)."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

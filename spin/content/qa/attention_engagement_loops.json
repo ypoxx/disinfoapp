@@ -1,0 +1,79 @@
+{
+ "entry": "attention_engagement_loops",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "attention_engagement_loops",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "attention_engagement_loops",
+    "secondGuess": "doomscrolling_fomo_engineering",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "attention_engagement_loops",
+    "secondGuess": "doomscrolling_fomo_engineering",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "attention_engagement_loops",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "attention_engagement_loops",
+    "confident": true,
+    "secondGuess": "dark_patterns"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "attention_engagement_loops",
+    "confident": false,
+    "secondGuess": "doomscrolling_fomo_engineering"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-2: \"reason-free win-back notifications\" und \"reason-free win-backs\" sind wörtliche Calques von \"anlasslos\" — keine englische Kollokation. Idiomatisch: \"unprompted win-back notifications\" / \"unprompted win-backs\".",
+    "spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-3: \"switch off reason-free win-back messages\" — derselbe Calque; idiomatisch z. B. \"switch off unprompted win-back messages\".",
+    "spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-1: \"Dark patterns fits as the neighbourhood\" ist eine wörtliche Übertragung von \"passt als Nachbarschaft\" und grammatisch schief. Idiomatisch: \"Dark patterns sits in the right neighbourhood\" o. ä.",
+    "spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-3: \"here the architecture retains, not the affect\" — intransitives \"retains\" ist ein Calque von \"hier hält die Architektur, nicht der Affekt\". Idiomatisch: \"here it is the architecture doing the holding, not the affect\". Gleiche Konstruktion am Ende von explanation.en der Übung 1 (\"the architecture retains rather than tricks\") mitkorrigieren.",
+    "spin/content/exercises/wave4-attention-engagement-loops.ts, options.en von w4-attention_engagement_loops-2, Option 2: \"time in app is the hardest currency of attention\" — \"hardest currency\" ist ein Calque von \"härteste Währung\"; die englische Wendung ist \"hard currency\" (\"time in app is the hard currency of attention\")."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 2: nur unsicher erkannt (secondGuess: doomscrolling_fomo_engineering) — eindeutiger machen",
+  "Stil: spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-2: \"reason-free win-back notifications\" und \"reason-free win-backs\" sind wörtliche Calques von \"anlasslos\" — keine englische Kollokation. Idiomatisch: \"unprompted win-back notifications\" / \"unprompted win-backs\".",
+  "Stil: spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-3: \"switch off reason-free win-back messages\" — derselbe Calque; idiomatisch z. B. \"switch off unprompted win-back messages\".",
+  "Stil: spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-1: \"Dark patterns fits as the neighbourhood\" ist eine wörtliche Übertragung von \"passt als Nachbarschaft\" und grammatisch schief. Idiomatisch: \"Dark patterns sits in the right neighbourhood\" o. ä.",
+  "Stil: spin/content/exercises/wave4-attention-engagement-loops.ts, explanation.en von w4-attention_engagement_loops-3: \"here the architecture retains, not the affect\" — intransitives \"retains\" ist ein Calque von \"hier hält die Architektur, nicht der Affekt\". Idiomatisch: \"here it is the architecture doing the holding, not the affect\". Gleiche Konstruktion am Ende von explanation.en der Übung 1 (\"the architecture retains rather than tricks\") mitkorrigieren.",
+  "Stil: spin/content/exercises/wave4-attention-engagement-loops.ts, options.en von w4-attention_engagement_loops-2, Option 2: \"time in app is the hardest currency of attention\" — \"hardest currency\" ist ein Calque von \"härteste Währung\"; die englische Wendung ist \"hard currency\" (\"time in app is the hard currency of attention\")."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

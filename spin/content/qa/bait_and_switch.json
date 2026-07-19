@@ -1,0 +1,82 @@
+{
+ "entry": "bait_and_switch",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "sneaking"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "scarcity"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "dark_patterns"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "bait_and_switch",
+    "confident": true,
+    "secondGuess": "sneaking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "objections": [
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-2, explanation.en: \"it may hurt your communications goals harder than the organizer\" ist eine wörtliche Übertragung von \"kann deine Kommunikationsziele härter treffen als den Veranstalter\" — \"hurt ... harder\" ist unidiomatisch und der Vergleich mehrdeutig; idiomatisch z. B. \"it may hit your communications goals harder than it hits the organizer\".",
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-3, explanation.en: \"mandatory fees supplied step by step\" ist eine wörtliche Übertragung von \"schrittweise nachgereichte Pflichtgebühren\" — Gebühren werden im Englischen nicht \"supplied\"; Übung 1 verwendet selbst die idiomatische Form \"mandatory fees are added step by step\", die hier ebenfalls stehen sollte (z. B. \"added/tacked on step by step\").",
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, explanation.en: \"the ad running on unchanged shows the bait is meant to keep doing its job\" ist gestelzt und liest sich als Kalk von \"die Werbung läuft unverändert weiter\"; idiomatisch z. B. \"the ad continuing to run unchanged shows the bait is meant to keep doing its job\".",
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-2, explanation.en: \"the advertised Compact package won the budgeting and internal approval\" ist wörtlich aus \"hat Budgetierung und interne Freigabe gewonnen\" übertragen — \"won the budgeting\" ist kein idiomatisches Englisch; z. B. \"secured the budget and internal sign-off\".",
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, scenario.en: \"the sponsoring lead replies\" ist Denglisch aus \"Sponsoring-Verantwortliche\" — das Fachgebiet heißt im Englischen \"sponsorship\"; idiomatisch \"the sponsorship lead/manager replies\".",
+    "spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, explanation (de und en): Die Distraktor-Aufklärung zu Sneaking (\"Sneaking läge vor, wenn Posten verdeckt in den Auftrag rutschten…\") liefert nur die Abgrenzung, aber nicht, warum die Option plausibel wirkte (Bauplan Punkt 3) — anders als bei Drip Pricing (\"wirkt plausibel, weil…\") und Köder-Effekt (\"klingt nach demselben Köder\"). Gerade hier nötig, weil der Technik-Eintrag Bait-and-Switch selbst als Sneaking-Untertyp nach Gray et al. (2018) ausweist; ein Halbsatz zur Plausibilität (z. B. \"liegt nahe, weil Gray et al. Bait-and-Switch dem Sneaking zuordnen\") behebt das."
+   ],
+   "pass": false
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-2, explanation.en: \"it may hurt your communications goals harder than the organizer\" ist eine wörtliche Übertragung von \"kann deine Kommunikationsziele härter treffen als den Veranstalter\" — \"hurt ... harder\" ist unidiomatisch und der Vergleich mehrdeutig; idiomatisch z. B. \"it may hit your communications goals harder than it hits the organizer\".",
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-3, explanation.en: \"mandatory fees supplied step by step\" ist eine wörtliche Übertragung von \"schrittweise nachgereichte Pflichtgebühren\" — Gebühren werden im Englischen nicht \"supplied\"; Übung 1 verwendet selbst die idiomatische Form \"mandatory fees are added step by step\", die hier ebenfalls stehen sollte (z. B. \"added/tacked on step by step\").",
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, explanation.en: \"the ad running on unchanged shows the bait is meant to keep doing its job\" ist gestelzt und liest sich als Kalk von \"die Werbung läuft unverändert weiter\"; idiomatisch z. B. \"the ad continuing to run unchanged shows the bait is meant to keep doing its job\".",
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-2, explanation.en: \"the advertised Compact package won the budgeting and internal approval\" ist wörtlich aus \"hat Budgetierung und interne Freigabe gewonnen\" übertragen — \"won the budgeting\" ist kein idiomatisches Englisch; z. B. \"secured the budget and internal sign-off\".",
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, scenario.en: \"the sponsoring lead replies\" ist Denglisch aus \"Sponsoring-Verantwortliche\" — das Fachgebiet heißt im Englischen \"sponsorship\"; idiomatisch \"the sponsorship lead/manager replies\".",
+  "Stil: spin/content/exercises/wave4-bait-and-switch.ts, w4-bait_and_switch-1, explanation (de und en): Die Distraktor-Aufklärung zu Sneaking (\"Sneaking läge vor, wenn Posten verdeckt in den Auftrag rutschten…\") liefert nur die Abgrenzung, aber nicht, warum die Option plausibel wirkte (Bauplan Punkt 3) — anders als bei Drip Pricing (\"wirkt plausibel, weil…\") und Köder-Effekt (\"klingt nach demselben Köder\"). Gerade hier nötig, weil der Technik-Eintrag Bait-and-Switch selbst als Sneaking-Untertyp nach Gray et al. (2018) ausweist; ein Halbsatz zur Plausibilität (z. B. \"liegt nahe, weil Gray et al. Bait-and-Switch dem Sneaking zuordnen\") behebt das."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

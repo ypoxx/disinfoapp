@@ -25,7 +25,7 @@ export const representativenessHeuristic: Technique = {
   ],
   evidence: {
     studies: [
-      'Tversky et al. (1974) - Judgment under Uncertainty: Heuristics and Biases'
+      'Tversky & Kahneman (1974) - Judgment under Uncertainty: Heuristics and Biases'
     ],
     findings: 'Tversky und Kahneman (1974) beschreiben die Repräsentativitätsheuristik anhand von Urteilsexperimenten, in denen Versuchspersonen die Wahrscheinlichkeit einer Kategorienzugehörigkeit nach der Ähnlichkeit zum Prototyp schätzten und vorgegebene Basisraten dabei weitgehend ignorierten (klassisch im Ingenieur-Jurist-Paradigma). Der Grundeffekt ist vielfach repliziert; wie stark Basisraten vernachlässigt werden, hängt allerdings deutlich von Aufgabenformat und Kontext ab, und die klassischen Befunde stammen überwiegend aus WEIRD-Stichproben (moderate Evidenz).',
     uncertainty: {

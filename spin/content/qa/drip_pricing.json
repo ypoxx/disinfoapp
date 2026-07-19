@@ -1,0 +1,81 @@
+{
+ "entry": "drip_pricing",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "price_comparison_prevention"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "drip_pricing",
+    "confident": true,
+    "secondGuess": "sneaking"
+   }
+  ],
+  "distraktor": {
+   "pass": false,
+   "objections": [
+    "w4-drip_pricing-3: 'Verknappung' ist ein Gimme-Distraktor ohne jeden Szenario-Anker (keine limitierten Plätze, kein Zeitdruck, kein Countdown) und stammt als einzige Option nicht aus der Dark-Pattern-Familie — per Ausschluss sofort eliminierbar, wodurch die Übung zur Binärfrage Drip vs. Sneaking kollabiert (verschärft durch nur 3 statt 4 Optionen). Ersetzen durch einen verwechselbaren Nachbarn mit Textanker, z.B. 'Comparison Prevention (Vergleichsverhinderung)' (Anker: 'dann sieht der Einstieg günstiger aus als beim Wettbewerb' — dennoch abgrenzbar, weil hier die Kosten im Prozess offengelegt werden statt unvergleichbar gemacht) oder 'Bait-and-Switch' (Anker: Lockpreis 'ab 890 Euro' — abgrenzbar, weil kein Angebotsaustausch stattfindet)."
+   ]
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, explanation.de: „und die „fast fertige“ Form ist ein versunkener Aufwand“ — Anglizismus: „Form“ statt „Formular“ (das Szenario selbst sagt korrekt „Bin fast durch mit dem Formular“). Fällt der Zielgruppe sofort als Übersetzungsrest auf; behebbar durch „das ‚fast fertige‘ Formular“.",
+    "spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, explanation.de + explanation.en: „die fast investierte Formularzeit soll den Abschluss … tragen“ bzw. „the nearly invested form-filling time is meant to carry the purchase“ — schiefe Konstruktion: Die Zeit ist bereits investiert, das Formular ist fast fertig; „fast investiert“/„nearly invested“ ist unlogisch, und die EN-Fassung spiegelt die Schieflage wörtlich statt idiomatisch (Verstoß gegen „kein wörtliches Übersetzen“). Fix: „die bereits investierte Formularzeit“ / „the time already sunk into the form“.",
+    "spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, scenario.en: „the final price is now above the second-ranked provider“ — vergleicht einen Preis mit einem Anbieter; das DE-Original hat korrekt „über dem des zweitplatzierten Anbieters“. Fix: „above the second-ranked provider’s“ oder „above that of the second-ranked provider“.",
+    "spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-3, explanation.de + explanation.en: „hält der Rechtslage stand, denn Drip Pricing ist in mehreren Märkten regulierte Praxis“ / „since drip pricing is regulated practice in several markets“ — mehrdeutig: „regulierte Praxis“ lässt sich als „zulässige, geregelte Praxis“ lesen, gemeint ist das Gegenteil (Gegenstand von Verboten/Regulierung). Fix z. B.: „denn Drip Pricing ist in mehreren Märkten bereits Gegenstand von Regulierung“ / „since several markets already regulate against drip pricing“."
+   ]
+  }
+ },
+ "objections": [
+  "Distraktor: w4-drip_pricing-3: 'Verknappung' ist ein Gimme-Distraktor ohne jeden Szenario-Anker (keine limitierten Plätze, kein Zeitdruck, kein Countdown) und stammt als einzige Option nicht aus der Dark-Pattern-Familie — per Ausschluss sofort eliminierbar, wodurch die Übung zur Binärfrage Drip vs. Sneaking kollabiert (verschärft durch nur 3 statt 4 Optionen). Ersetzen durch einen verwechselbaren Nachbarn mit Textanker, z.B. 'Comparison Prevention (Vergleichsverhinderung)' (Anker: 'dann sieht der Einstieg günstiger aus als beim Wettbewerb' — dennoch abgrenzbar, weil hier die Kosten im Prozess offengelegt werden statt unvergleichbar gemacht) oder 'Bait-and-Switch' (Anker: Lockpreis 'ab 890 Euro' — abgrenzbar, weil kein Angebotsaustausch stattfindet).",
+  "Stil: spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, explanation.de: „und die „fast fertige“ Form ist ein versunkener Aufwand“ — Anglizismus: „Form“ statt „Formular“ (das Szenario selbst sagt korrekt „Bin fast durch mit dem Formular“). Fällt der Zielgruppe sofort als Übersetzungsrest auf; behebbar durch „das ‚fast fertige‘ Formular“.",
+  "Stil: spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, explanation.de + explanation.en: „die fast investierte Formularzeit soll den Abschluss … tragen“ bzw. „the nearly invested form-filling time is meant to carry the purchase“ — schiefe Konstruktion: Die Zeit ist bereits investiert, das Formular ist fast fertig; „fast investiert“/„nearly invested“ ist unlogisch, und die EN-Fassung spiegelt die Schieflage wörtlich statt idiomatisch (Verstoß gegen „kein wörtliches Übersetzen“). Fix: „die bereits investierte Formularzeit“ / „the time already sunk into the form“.",
+  "Stil: spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-2, scenario.en: „the final price is now above the second-ranked provider“ — vergleicht einen Preis mit einem Anbieter; das DE-Original hat korrekt „über dem des zweitplatzierten Anbieters“. Fix: „above the second-ranked provider’s“ oder „above that of the second-ranked provider“.",
+  "Stil: spin/content/exercises/wave4-drip-pricing.ts, w4-drip_pricing-3, explanation.de + explanation.en: „hält der Rechtslage stand, denn Drip Pricing ist in mehreren Märkten regulierte Praxis“ / „since drip pricing is regulated practice in several markets“ — mehrdeutig: „regulierte Praxis“ lässt sich als „zulässige, geregelte Praxis“ lesen, gemeint ist das Gegenteil (Gegenstand von Verboten/Regulierung). Fix z. B.: „denn Drip Pricing ist in mehreren Märkten bereits Gegenstand von Regulierung“ / „since several markets already regulate against drip pricing“."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

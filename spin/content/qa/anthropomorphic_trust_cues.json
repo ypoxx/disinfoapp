@@ -1,0 +1,118 @@
+{
+ "entry": "anthropomorphic_trust_cues",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "secondGuess": "identity_provenance_deception",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "secondGuess": "identity_provenance_deception",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "secondGuess": "emotional_appeal",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/techniques/anthropomorphic-trust-cues.ts, Feld `examples` (alle drei Beispiele): Du-Anrede im Technik-Eintrag — \"Vertriebsleiter → dich als Leiterin Kundenkommunikation\", \"HR-Projektleiterin → dich als Leiter interne Kommunikation\", \"Produktmanager → dich als Kommunikationsberaterin\". Die Charta verlangt \"Du-Anrede in Übungen und UI, neutrale Beschreibung in Technik-Einträgen\"; das Muster der Beispiel-Regel ist dritte Person (\"Sprecherin → Fachjournalist\"). Korpus-Abgleich bestätigt: Dies ist die einzige Technik-Datei im Bestand mit \"dich als\" (vgl. sycophancy.ts: \"Krisen-Q&A, Sprecher → unternehmensinterner KI-Assistent\"). Fix: Rollen neutral benennen, z. B. \"Produktdemo eines Chatbot-Anbieters, Vertriebsleiter → Leiterin Kundenkommunikation: …\" — Kanal+Rollen+Situation bleiben dabei erhalten.",
+    "spin/content/exercises/wave4-anthropomorphic-trust-cues.ts, Übung w4-anthropomorphic_trust_cues-1, Feld `explanation.en`: wörtliche Übersetzung — \"'Emma' poses not as an existing person or organisation, but as a human as such\" ist ein Calque von \"als Mensch schlechthin\"; \"as a human as such\" ist kein idiomatisches Englisch und lässt EN-Leser stolpern. Fix z. B.: \"'Emma' doesn't pose as any existing person or organisation — just as a generic human being.\""
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/techniques/anthropomorphic-trust-cues.ts, Feld `examples` (alle drei Beispiele): Du-Anrede im Technik-Eintrag — \"Vertriebsleiter → dich als Leiterin Kundenkommunikation\", \"HR-Projektleiterin → dich als Leiter interne Kommunikation\", \"Produktmanager → dich als Kommunikationsberaterin\". Die Charta verlangt \"Du-Anrede in Übungen und UI, neutrale Beschreibung in Technik-Einträgen\"; das Muster der Beispiel-Regel ist dritte Person (\"Sprecherin → Fachjournalist\"). Korpus-Abgleich bestätigt: Dies ist die einzige Technik-Datei im Bestand mit \"dich als\" (vgl. sycophancy.ts: \"Krisen-Q&A, Sprecher → unternehmensinterner KI-Assistent\"). Fix: Rollen neutral benennen, z. B. \"Produktdemo eines Chatbot-Anbieters, Vertriebsleiter → Leiterin Kundenkommunikation: …\" — Kanal+Rollen+Situation bleiben dabei erhalten.",
+  "Stil: spin/content/exercises/wave4-anthropomorphic-trust-cues.ts, Übung w4-anthropomorphic_trust_cues-1, Feld `explanation.en`: wörtliche Übersetzung — \"'Emma' poses not as an existing person or organisation, but as a human as such\" ist ein Calque von \"als Mensch schlechthin\"; \"as a human as such\" ist kein idiomatisches Englisch und lässt EN-Leser stolpern. Fix z. B.: \"'Emma' doesn't pose as any existing person or organisation — just as a generic human being.\""
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "emotional_appeal"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "anthropomorphic_trust_cues",
+    "confident": true,
+    "secondGuess": "emotional_appeal"
+   }
+  ],
+  "distraktor": {
+   "objections": [
+    "w4-anthropomorphic_trust_cues-1: Der Distraktor „Identitäts- und Herkunftstäuschung\" ist ernsthaft als ebenfalls richtig verteidigbar. Die eigene Technik-Definition der App (spin/content/techniques/identity-provenance-deception.ts) lautet: „Täuschung darüber, wer spricht und woher ein Inhalt stammt: erfundene Expertinnen, … verschwiegene KI-Generierung …\" — und das Szenario liefert exakt diese Elemente: eine erfundene Persona „Emma\" mit Porträtfoto, nirgends offengelegte KI, plus aktive Ausweichantwort auf die Menschenfrage. Die Abgrenzung in der Explanation ist zudem sachlich falsch: Sie behauptet, Identitätstäuschung „würde jedoch eine fremde, reale Identität kapern\" — die Technik-Datei nennt aber ausdrücklich ERFUNDENE Identitäten (Beispiel 3: die fingierte „Dr. Katrin M.\", Foto KI-generiert). Fix: Explanation-Diskriminator korrigieren (Identitätstäuschung = fingierter, überprüfbar inszenierter Absender/Quelle mit gefälschter Prüfspur — real ODER erfunden; hier dagegen Täuschung über die Kategorie Mensch-vs-Maschine durch Gestaltungssignale, was per warningNeuron „Die direkte Frage … ausweichend beantwortet\" kanonisch bei anthropomorphic_trust_cues liegt) und idealerweise die Trennschärfe im Szenario erhöhen, z. B. klarstellen, dass „Emma\" keine überprüfbare Identität/Prüfspur beansprucht.",
+    "w4-anthropomorphic_trust_cues-2: Kein Gimme-Distraktor inhaltlich (A = naive Compliance mit plausibler Begründung, C = starker Near-Miss „Offenlegung vergraben\", D = plausible Überkorrektur — gute Streuung), aber die korrekte Option B ist mit Abstand die längste und detaillierteste Option (vier Maßnahmen + Dokumentation) und damit über den Längen-Cue auch ohne Fachwissen erratbar. Fix: B straffen (z. B. „…benennt seine Grenzen samt Übergabe an Menschen\" als Kern belassen, Dokumentationsklausel kürzen) oder die Distraktoren auf vergleichbare Länge und Detailtiefe bringen (etwa C um eine Begründung/Maßnahme ergänzen)."
+   ],
+   "pass": false
+  },
+  "stil": null,
+  "stillOpen": [
+   "Distraktor: w4-anthropomorphic_trust_cues-1: Der Distraktor „Identitäts- und Herkunftstäuschung\" ist ernsthaft als ebenfalls richtig verteidigbar. Die eigene Technik-Definition der App (spin/content/techniques/identity-provenance-deception.ts) lautet: „Täuschung darüber, wer spricht und woher ein Inhalt stammt: erfundene Expertinnen, … verschwiegene KI-Generierung …\" — und das Szenario liefert exakt diese Elemente: eine erfundene Persona „Emma\" mit Porträtfoto, nirgends offengelegte KI, plus aktive Ausweichantwort auf die Menschenfrage. Die Abgrenzung in der Explanation ist zudem sachlich falsch: Sie behauptet, Identitätstäuschung „würde jedoch eine fremde, reale Identität kapern\" — die Technik-Datei nennt aber ausdrücklich ERFUNDENE Identitäten (Beispiel 3: die fingierte „Dr. Katrin M.\", Foto KI-generiert). Fix: Explanation-Diskriminator korrigieren (Identitätstäuschung = fingierter, überprüfbar inszenierter Absender/Quelle mit gefälschter Prüfspur — real ODER erfunden; hier dagegen Täuschung über die Kategorie Mensch-vs-Maschine durch Gestaltungssignale, was per warningNeuron „Die direkte Frage … ausweichend beantwortet\" kanonisch bei anthropomorphic_trust_cues liegt) und idealerweise die Trennschärfe im Szenario erhöhen, z. B. klarstellen, dass „Emma\" keine überprüfbare Identität/Prüfspur beansprucht.",
+   "Distraktor: w4-anthropomorphic_trust_cues-2: Kein Gimme-Distraktor inhaltlich (A = naive Compliance mit plausibler Begründung, C = starker Near-Miss „Offenlegung vergraben\", D = plausible Überkorrektur — gute Streuung), aber die korrekte Option B ist mit Abstand die längste und detaillierteste Option (vier Maßnahmen + Dokumentation) und damit über den Längen-Cue auch ohne Fachwissen erratbar. Fix: B straffen (z. B. „…benennt seine Grenzen samt Übergabe an Menschen\" als Kern belassen, Dokumentationsklausel kürzen) oder die Distraktoren auf vergleichbare Länge und Detailtiefe bringen (etwa C um eine Begründung/Maßnahme ergänzen)."
+  ]
+ },
+ "status": "flagged",
+ "finalStatus": "flagged"
+}

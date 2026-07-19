@@ -1,0 +1,76 @@
+{
+ "entry": "default_status_quo",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "social_proof"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "sneaking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "default_status_quo",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-1, explanation.en: \"say, the most data-sparing or the most commonly chosen variant\" — \"data-sparing\" ist eine wörtliche Übertragung von \"datensparsamste\" (deutsches Datenschutz-Konzept); idiomatisch wäre z. B. \"the most privacy-friendly option\" oder \"the data-minimising option\".",
+    "spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-2, explanation.en: \"a meeting before the deadline replaces the automatism with an active decision point\" — \"automatism\" ist ein Kalk aus \"Automatismus\"; im Englischen bezeichnet automatism unwillkürliches Handeln (Psychologie/Recht), nicht einen automatischen Prozess. Idiomatisch: \"replaces the auto-renewal with an active decision point\" oder \"takes the renewal off autopilot\".",
+    "spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-3, explanation.en: \"no friction is needed, the mere pre-setting does the work\" — \"the mere pre-setting\" ist eine wörtliche Übersetzung von \"die bloße Voreinstellung\"; als Substantiv unidiomatisch. Idiomatisch: \"the default alone does the work\" oder \"the default setting alone is enough\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-1, explanation.en: \"say, the most data-sparing or the most commonly chosen variant\" — \"data-sparing\" ist eine wörtliche Übertragung von \"datensparsamste\" (deutsches Datenschutz-Konzept); idiomatisch wäre z. B. \"the most privacy-friendly option\" oder \"the data-minimising option\".",
+  "Stil: spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-2, explanation.en: \"a meeting before the deadline replaces the automatism with an active decision point\" — \"automatism\" ist ein Kalk aus \"Automatismus\"; im Englischen bezeichnet automatism unwillkürliches Handeln (Psychologie/Recht), nicht einen automatischen Prozess. Idiomatisch: \"replaces the auto-renewal with an active decision point\" oder \"takes the renewal off autopilot\".",
+  "Stil: spin/content/exercises/wave4-default-status-quo.ts, w4-default_status_quo-3, explanation.en: \"no friction is needed, the mere pre-setting does the work\" — \"the mere pre-setting\" ist eine wörtliche Übersetzung von \"die bloße Voreinstellung\"; als Substantiv unidiomatisch. Idiomatisch: \"the default alone does the work\" oder \"the default setting alone is enough\"."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "revised_unverified",
+ "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+}

@@ -82,6 +82,26 @@ import { compositionDivision } from './composition-division';
 import { middleGroundFallacy } from './middle-ground-fallacy';
 import { loadedQuestion } from './loaded-question';
 import { conspiracyTheoryNarratives } from './conspiracy-theory-narratives';
+// Welle R5b
+import { parasocialManipulation } from './parasocial-manipulation';
+import { footInTheDoor } from './foot-in-the-door';
+import { mereExposureEffect } from './mere-exposure-effect';
+import { behavioralMimicry } from './behavioral-mimicry';
+import { butYouAreFree } from './but-you-are-free';
+import { sunkCostEscalation } from './sunk-cost-escalation';
+import { stereotyping } from './stereotyping';
+import { primacyOrderEffects } from './primacy-order-effects';
+import { groupthink } from './groupthink';
+import { conditioningClassicalOperant } from './conditioning-classical-operant';
+import { salamiTacticsGradualism } from './salami-tactics-gradualism';
+import { hyperbolicDiscounting } from './hyperbolic-discounting';
+import { haloEffect } from './halo-effect';
+import { negativityBias } from './negativity-bias';
+import { optimismBias } from './optimism-bias';
+import { peakEndRule } from './peak-end-rule';
+import { ikeaEffect } from './ikea-effect';
+import { mentalAccounting } from './mental-accounting';
+import { nemawashi } from './nemawashi';
 
 export const techniques: Technique[] = [
   framing,
@@ -166,6 +186,26 @@ export const techniques: Technique[] = [
   middleGroundFallacy,
   loadedQuestion,
   conspiracyTheoryNarratives,
+  // Welle R5b
+  parasocialManipulation,
+  footInTheDoor,
+  mereExposureEffect,
+  behavioralMimicry,
+  butYouAreFree,
+  sunkCostEscalation,
+  stereotyping,
+  primacyOrderEffects,
+  groupthink,
+  conditioningClassicalOperant,
+  salamiTacticsGradualism,
+  hyperbolicDiscounting,
+  haloEffect,
+  negativityBias,
+  optimismBias,
+  peakEndRule,
+  ikeaEffect,
+  mentalAccounting,
+  nemawashi,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

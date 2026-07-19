@@ -21,7 +21,7 @@ export const mentalAccounting: Technique = {
   examples: [
     'E-Mail-Kampagne eines Reiseportals an Bestandskunden: Der Kampagnenmanager textet die Betreffzeile „Ihre Steuerrückerstattung ist da — gönnen Sie sich damit die Reise, die aus dem Haushaltsbudget nie drin wäre." Dieselben Euro werden als „Extra-Konto" etikettiert, das lockerer ausgegeben werden dürfe als reguläres Einkommen.',
     'Budgetplanungsgespräch: Der Bereichsleiter Vertrieb wirbt beim CFO dafür, das neue CRM-Tool „aus dem Digitalisierungstopf statt aus dem Vertriebsbudget" zu finanzieren — „im Vertriebsbudget wäre die Summe ein Großposten, im Digitalisierungstopf geht sie zwischen den anderen Positionen unter." Der identische Betrag wird je nach Konto anders gewichtet.',
-    'Webinar einer Anlageplattform für Privatanleger: Die Moderatorin rät im Chat „Die Kursgewinne dieses Jahres sind quasi Hausgeld — reinvestieren Sie die ruhig offensiv, Ihr eingesetztes Kapital bleibt davon ja unberührt." Realisierte Gewinne werden als separates Konto behandelt, für das riskantere Ausgaben legitim erscheinen (House-Money-Effekt).',
+    'Webinar einer Anlageplattform für Privatanleger: Die Moderatorin rät im Chat „Die Kursgewinne dieses Jahres sind quasi Spielgeld — reinvestieren Sie die ruhig offensiv, Ihr eingesetztes Kapital bleibt davon ja unberührt." Realisierte Gewinne werden als separates Konto behandelt, für das riskantere Ausgaben legitim erscheinen (House-Money-Effekt).',
   ],
   evidence: {
     studies: [
@@ -37,7 +37,7 @@ export const mentalAccounting: Technique = {
   },
   relatedTechniques: ['loss_aversion', 'framing', 'endowment_effect', 'decoy_effect'],
   warningNeurons: [
-    'Derselbe Geldbetrag wird je nach Herkunft anders eingeordnet — „Bonus", „Rückerstattung", „Hausgeld" statt schlicht „Geld"',
+    'Derselbe Geldbetrag wird je nach Herkunft anders eingeordnet — „Bonus", „Rückerstattung", „Spielgeld" statt schlicht „Geld"',
     'Ein Ausgabenvorschlag wird gezielt einem anderen Budgettopf zugeordnet, in dem die Summe kleiner oder folgenloser wirkt',
     'Eine Gesamtsumme wird in eine kleine Alltagseinheit umgerechnet („weniger als eine Tasse Kaffee am Tag"), statt als Jahres- oder Gesamtbetrag genannt',
     'Sondereinkünfte oder Gewinne werden als „extra" markiert, das man lockerer ausgeben dürfe als reguläres Einkommen',

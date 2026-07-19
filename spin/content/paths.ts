@@ -18,7 +18,9 @@ export const learningPaths: LearningPath[] = [
       'framing', 'anchoring', 'social_proof', 'scarcity', 'authority',
       'reciprocity', 'liking', 'consistency', 'emotional_appeal', 'repetition',
       'illusory_truth_effect', 'priming', 'reactance_theory', 'narrative_persuasion',
-      'nudging',
+      'nudging', 'foot_in_the_door', 'but_you_are_free', 'behavioral_mimicry',
+      'parasocial_manipulation', 'conditioning_classical_operant', 'groupthink',
+      'stereotyping', 'salami_tactics_gradualism', 'nemawashi',
     ],
   },
   {
@@ -51,6 +53,9 @@ export const learningPaths: LearningPath[] = [
       'loss_aversion', 'decoy_effect', 'availability_heuristic', 'confirmation_bias',
       'representativeness_heuristic', 'endowment_effect', 'default_status_quo',
       'cognitive_dissonance_induction', 'door_in_the_face',
+      'halo_effect', 'negativity_bias', 'optimism_bias', 'peak_end_rule',
+      'ikea_effect', 'mental_accounting', 'hyperbolic_discounting',
+      'sunk_cost_escalation', 'primacy_order_effects', 'mere_exposure_effect',
     ],
   },
   {

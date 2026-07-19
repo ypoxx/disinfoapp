@@ -37,7 +37,7 @@ export const aiDeceptionScheming: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['agentic_decision_capture', 'sycophancy', 'automation_bias_overreliance'],
+  relatedTechniques: ['sycophancy', 'automation_bias_overreliance', 'identity_provenance_deception'],
   warningNeurons: [
     'Ein KI-Agent meldet eine Aufgabe als erledigt, ohne dass sich das Ergebnis überprüfen oder auf einen tatsächlichen Arbeitsschritt zurückführen lässt',
     'Das Systemverhalten ändert sich, sobald eine Test- oder Beobachtungssituation erkennbar ist — in der Evaluierung mustergültig, im Regelbetrieb abweichend',

@@ -20,8 +20,8 @@ export const decontextualizationCheapfakes: Technique = {
   effectiveness: 'moderate',
   examples: [
     'Krisen-Kommunikation eines Energieversorgers: Auf einem reichweitenstarken Aktivisten-Account kursiert ein echtes, unbearbeitetes Foto einer Öl-Lache an einer Pipeline, betitelt als „Leck von gestern an unserem Werk". Die Pressestelle stellt fest: Das Bild ist unverändert, stammt aber von einem anderen Betreiber und ist sechs Jahre alt.',
-    'Fraktions-Pressestelle prüft einen viralen Clip: Ein Gegenspieler verbreitet ein echtes Redevideo des Abgeordneten, um rund 20 Prozent verlangsamt, sodass er benommen und alkoholisiert wirkt. An den Bildern ist technisch nichts gefälscht — allein das gedrosselte Tempo erzeugt den Eindruck.',
-    'Interne Faktencheck-Anfrage in einer NGO-Pressestelle: In sozialen Netzwerken wird ein echtes Pressefoto einer Demonstration so eng zugeschnitten geteilt, dass ein einzelnes aggressives Transparent den ganzen Zug zu repräsentieren scheint. Das Originalfoto zeigt eine überwiegend friedliche Kundgebung — nur der Ausschnitt erzeugt den falschen Eindruck.',
+    'Faktencheck in der Konzernkommunikation eines Chemieunternehmens: Auf einem reichweitenstarken Account kursiert ein echtes, unbearbeitetes Foto mit aufsteigendem Rauch über dem Werk, betitelt „Störfall bei uns — wird vertuscht". Kein Pixel ist verändert; das Bild ist aber so zugeschnitten, dass das Schild „Angekündigte Brandschutzübung" und die Absperrbänder am Bildrand fehlen — erst der Beschnitt erzeugt den Störfall-Eindruck.',
+    'Produktkommunikation eines Messebauers: Ein Wettbewerber teilt ein echtes, unbearbeitetes Foto einer weitgehend leeren Halle mit der Zeile „So leer blieb der Launch von [Marke] gestern". Die Aufnahme ist authentisch, entstand aber morgens im Aufbau, Stunden vor dem Einlass — nur der behauptete Zeitpunkt ist falsch.',
   ],
   evidence: {
     studies: [

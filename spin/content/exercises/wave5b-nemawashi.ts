@@ -30,7 +30,7 @@ export const wave5bNemawashi: Exercise[] = [
     },
     points: 10,
     primaryTechniqueId: 'nemawashi',
-    relatedTechniques: ['nemawashi', 'groupthink', 'social_proof', 'foot_in_the_door'],
+    relatedTechniques: ['nemawashi', 'social_proof'],
   },
   {
     id: 'wave5b-nemawashi-2',
@@ -50,22 +50,22 @@ export const wave5bNemawashi: Exercise[] = [
         en: 'I run the pre-talks transparently: I gather the genuine concerns individually and bring them into the assembly with the outcome genuinely open — pre-alignment yes, but the decision is made in the assembly, with a real chance to object.',
       },
       {
-        de: 'Ich sichere mir das Ja der Wortführer einzeln, sodass in der Versammlung kein offener Einwand mehr fällt.',
-        en: 'I lock in the spokespeople\'s yes one by one, so that no open objection is raised in the assembly.',
+        de: 'Ich lege die Wortführer in den Einzelgesprächen mit gezielten Zugeständnissen auf ein Ja fest — nicht um ihre Einwände wirklich aufzunehmen, sondern damit in der Versammlung keine kritische Stimme mehr aufkommt und die Sache als erledigt gilt.',
+        en: 'In the one-on-ones I pin the spokespeople to a yes with targeted concessions — not to genuinely take up their objections but to ensure no critical voice can surface in the assembly and the matter counts as settled.',
       },
       {
         de: 'Ich stelle den Wortführern vorab eine deutlich strengere Variante in Aussicht, damit die eigentliche Regelung im Termin als Entgegenkommen wirkt.',
         en: 'I float a markedly stricter version to the spokespeople beforehand, so the actual policy lands as a concession at the meeting.',
       },
       {
-        de: 'Ich schicke vorab die fertige Regelung an alle mit der Bitte, ihr im Termin zuzustimmen.',
-        en: 'I email everyone the finished policy in advance with a request to approve it at the meeting.',
+        de: 'Ich schicke die fertige Regelung vorab an alle Beschäftigten mit der Bitte, ihr im Termin zuzustimmen — dann ist die Sache schon vor der ersten Wortmeldung entschieden.',
+        en: 'I email the finished policy to all staff in advance with a request to approve it at the meeting — that way the matter is decided before the first word is spoken.',
       },
     ],
     correctAnswers: [0],
     explanation: {
-      de: 'Der Hebel von Nemawashi ist die vorgelagerte Einzelabstimmung: Wer vorab zugesagt hat, widerspricht im Plenum nicht mehr. Option 0 und Option 1 sind beide Nemawashi — die Technik ist dieselbe; entscheidend ist allein, ob der Ausgang offen bleibt. Mit Option 0 nutzt du den legitimen Kern (Bedenken früh hören) und schützt zugleich das Verfahren: So schützt du die Versammlung, indem die Entscheidung sichtbar dort fällt und Widerspruch bis zuletzt möglich bleibt. Option 1 klingt effizient, ist aber die manipulative Variante — du stellst „keine offenen Einwände" über eine echte Aussprache und beschädigst die Glaubwürdigkeit des Gremiums, sobald es auffällt. Option 2 ist gar keine Vorabstimmung, sondern Door-in-the-face: Du ankerst mit einer harten Scheinvariante, damit die eigentliche Regelung als Zugeständnis wirkt. Option 3 ist dieselbe Schein-Beteiligung in schriftlicher Form: Du sammelst Zustimmung ein, bevor überhaupt diskutiert wurde.',
-      en: 'The lever of nemawashi is pre-emptive one-on-one alignment: whoever has agreed beforehand no longer objects in the plenary. Options 0 and 1 are both nemawashi — the technique is the same; all that matters is whether the outcome stays open. With option 0 you use the legitimate core (hear concerns early) while protecting the process: you protect the assembly by making the decision visibly there and keeping objection possible to the last. Option 1 sounds efficient but is the manipulative variant — you put "no open objections" above a real discussion and damage the body\'s credibility the moment it shows. Option 2 is not pre-alignment at all but door-in-the-face: you anchor with a harsh sham version so the actual policy feels like a concession. Option 3 is the same staged participation in writing: you collect agreement before anything has even been discussed.',
+      de: 'Der Hebel von Nemawashi ist die vorgelagerte Einzelabstimmung: Wer vorab zugesagt hat, widerspricht im Plenum nicht mehr. Sowohl Option 0 als auch Option 1 holen Zustimmung vorab ein — die Technik ist dieselbe; die Frage hier ist nicht „Was ist Nemawashi?", sondern „Wie wendest du es verantwortlich an?". Entscheidend ist die Absicht: Option 0 nutzt die Vorgespräche, um echte Bedenken zu hören, und lässt die Entscheidung ergebnisoffen in der Versammlung fallen — so bleibt Widerspruch bis zuletzt möglich. Option 1 dreht dieselbe Vorabstimmung ins Manipulative: Sie zielt nicht darauf, Einwände aufzunehmen, sondern sie mit Zugeständnissen stillzustellen, damit gar keine Aussprache mehr stattfindet — genau diese Unterdrückungsabsicht, nicht das bloße Vorab-Ja, macht sie falsch und beschädigt die Glaubwürdigkeit des Gremiums, sobald sie auffällt. Option 2 ist gar keine Vorabstimmung, sondern Door-in-the-face: Du ankerst mit einer harten Scheinvariante, damit die eigentliche Regelung als Zugeständnis wirkt. Option 3 sammelt Zustimmung schriftlich ein, bevor überhaupt diskutiert wurde — eine Schein-Beteiligung, die die Entscheidung schon vor der ersten Wortmeldung festzurrt.',
+      en: 'The lever of nemawashi is pre-emptive one-on-one alignment: whoever has agreed beforehand no longer objects in the plenary. Both option 0 and option 1 secure agreement in advance — the technique is the same; the question here is not "What is nemawashi?" but "How do you apply it responsibly?". What decides it is the intent: option 0 uses the pre-talks to hear genuine concerns and lets the decision fall with the outcome open in the assembly — so objection stays possible to the last. Option 1 turns the same pre-alignment manipulative: it aims not to take up objections but to silence them with concessions so that no discussion happens at all — it is precisely this intent to suppress debate, not the mere prior yes, that makes it wrong and damages the body\'s credibility the moment it shows. Option 2 is not pre-alignment at all but door-in-the-face: you anchor with a harsh sham version so the actual policy feels like a concession. Option 3 collects agreement in writing before anything has been discussed — a staged participation that locks in the decision before the first word is spoken.',
     },
     points: 10,
     primaryTechniqueId: 'nemawashi',
@@ -108,6 +108,6 @@ export const wave5bNemawashi: Exercise[] = [
     },
     points: 10,
     primaryTechniqueId: 'nemawashi',
-    relatedTechniques: ['nemawashi', 'social_proof', 'foot_in_the_door', 'groupthink'],
+    relatedTechniques: ['nemawashi', 'social_proof'],
   },
 ];

@@ -22,7 +22,7 @@ export const dataVoidsSeoManipulation: Technique = {
   },
   category: 'digital_influence',
   difficulty: 'advanced',
-  effectiveness: 'moderate',
+  effectiveness: 'low',
   examples: [
     'Krisenkommunikation vor der erwarteten Berichterstattung: Die beauftragte Agentur registriert für einen neu geprägten Kampagnenbegriff („[Marke]-Gate") vorab FAQ-Seiten, Blogposts und ein Glossar und optimiert sie auf genau diese Suchphrase — so dass Journalistinnen, die den frisch kursierenden Begriff googeln, zuerst auf die vom Auftraggeber gerahmten Inhalte stoßen, bevor unabhängige Quellen dazu existieren.',
     'Content-Team eines Nahrungsergänzungsmittel-Herstellers mit Blick auf KI-Suchassistenten: Zu einer seltenen Wirkstoff-Frage, für die kaum Fachliteratur existiert, produziert das Team strukturierte Ratgeber-Seiten im Frage-Antwort-Format, gezielt so aufgebaut, dass Chatbots sie als Quelle zitieren — die dünne Studienlage zum Wirkstoff bleibt dabei unerwähnt.',

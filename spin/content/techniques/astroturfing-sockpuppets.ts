@@ -19,16 +19,16 @@ export const astroturfingSockpuppets: Technique = {
   difficulty: 'advanced',
   effectiveness: 'moderate',
   examples: [
-    'Bürgerinitiative pro Windpark in der Lokalpresse: Unter dem Namen „Rückenwind für die Region" treten in Leserbriefen und Kommentarspalten scheinbar unabhängige Anwohner mit eigenen Namen und Alltagsgeschichten auf. Tatsächlich ist die Initiative von der Projektentwicklerin gegründet und finanziert; ihre Trägerschaft wird nirgends offengelegt.',
-    'App-Store-Bewertungen zu einer Banking-App: Eine beauftragte Agentur legt über Wochen Dutzende Profile mit erfundenen Nutzernamen an, die sich als unabhängige Kundinnen ausgeben und die App in individuellen Texten loben. Gesteuert werden alle Konten aus demselben Team, die Auftraggeberin bleibt ungenannt.',
-    'Wahlkampf auf X: Ein Team im Auftrag einer Kampagne betreibt fünfzehn Accounts mit gefälschten Alltagsbiografien („Krankenpflegerin aus Kassel", „Familienvater aus Ulm"), die sich gegenseitig bestätigen und dieselbe Botschaft als spontane Wählerstimmen verbreiten. Die gemeinsame Steuerung ist verdeckt.',
+    'Bürgerinitiative pro Windpark in der Lokalpresse: Unter dem Namen „Rückenwind für die Region" treten in Leserbriefen und Kommentarspalten ein Dutzend scheinbar unabhängige Anwohner mit je eigenem Namen und eigener Alltagsgeschichte auf und werben für das Projekt. Tatsächlich hat die Projektentwicklerin die Initiative gegründet und finanziert und steuert alle Stimmen aus einer Hand; die gemeinsame Trägerschaft wird nirgends offengelegt.',
+    'App-Store-Bewertungen zu einer Banking-App: Eine beauftragte Agentur legt über Wochen Dutzende Profile mit erfundenen Nutzernamen an, die sich als unabhängige Kundinnen ausgeben und die App in jeweils eigenen, individuell formulierten Rezensionen loben. Es werden keine bestehenden Beiträge geteilt oder hochgevotet, sondern durchweg neue Schein-Kundinnen erfunden; alle Konten laufen aus demselben Team, die Auftraggeberin bleibt ungenannt.',
+    'Fachforum für IT-Sicherheit vor einer Produkteinführung: Eine PR-Agentur betreibt im Auftrag eines Softwareherstellers ein Dutzend Profile, die sich als unabhängige Administratoren aus verschiedenen Unternehmen ausgeben — je mit erfundenem Berufsprofil und eigener Erfahrungsgeschichte — und das neue Tool als zufriedene Praktiker empfehlen. Die zentrale Steuerung und die Auftraggeberschaft bleiben verdeckt.',
   ],
   evidence: {
     studies: [
       'Rogers & Righetti (2025) - Coordinated inauthentic behaviour on Facebook? A typology of manufactured attention',
       'Zerback, Töpfl & Knöpfle (2021) - The disconcerting potential of online disinformation: Persuasive effects of astroturfing comments and three strategies for inoculation against them',
     ],
-    findings: 'Zerback et al. (2021) zeigen in einer Laborstudie (Einzelland), dass Astroturfing-Kommentare Meinungen leicht verschieben und Unsicherheit erhöhen können; die Effekte sind klein, wirken über sozialen Beweis und lassen sich durch Inokulation (Vorwarnung) dämpfen. Rogers & Righetti (2025) liefern eine überwiegend beschreibende Typologie koordinierter, künstlich erzeugter Aufmerksamkeit auf Plattformen. Die Belege sind begrenzt (Labor, WEIRD-Stichproben, deskriptiv); Astroturfing ist eher als Koordinations- und Infrastrukturhebel für sozialen Beweis zu verstehen denn als starker Direkteffekt (geringe Konfidenz).',
+    findings: 'Zerback et al. (2021) zeigen in einer Laborstudie (Einzelland), dass Astroturfing-Kommentare Meinungen leicht verschieben und Unsicherheit erhöhen können; die Effekte sind klein, wirken über Social Proof und lassen sich durch Inokulation (Vorwarnung) dämpfen. Rogers & Righetti (2025) liefern eine überwiegend beschreibende Typologie koordinierter, künstlich erzeugter Aufmerksamkeit auf Plattformen. Die Belege sind begrenzt (Labor, WEIRD-Stichproben, deskriptiv); Astroturfing ist eher als Koordinations- und Infrastrukturhebel für Social Proof zu verstehen denn als starker Direkteffekt (geringe Konfidenz).',
     uncertainty: {
       confidence: 0.4,
       sampleSize: 'Einzelne Laborstudie (Zerback et al. 2021) plus deskriptive Typologie',

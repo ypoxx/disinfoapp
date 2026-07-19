@@ -34,7 +34,7 @@ export const parasocialManipulation: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['liking', 'ai_companion_emotional_retention'],
+  relatedTechniques: ['liking'],
   warningNeurons: [
     'Eine öffentliche oder automatisierte Botschaft an viele wird als vertrauliche Nachricht an dich persönlich inszeniert („nur euch/dir sage ich das")',
     'Die gemeinsame „Geschichte" oder Dauer der Beziehung wird betont, kurz bevor etwas verkauft, verlängert oder erbeten wird („wir kennen uns seit Jahren")',

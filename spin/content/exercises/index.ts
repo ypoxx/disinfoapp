@@ -69,6 +69,26 @@ import { wave5aCompositionDivision } from './wave5a-composition-division';
 import { wave5aMiddleGroundFallacy } from './wave5a-middle-ground-fallacy';
 import { wave5aLoadedQuestion } from './wave5a-loaded-question';
 import { wave5aConspiracyTheoryNarratives } from './wave5a-conspiracy-theory-narratives';
+// Welle R5b
+import { wave5bParasocialManipulation } from './wave5b-parasocial-manipulation';
+import { wave5bFootInTheDoor } from './wave5b-foot-in-the-door';
+import { wave5bMereExposureEffect } from './wave5b-mere-exposure-effect';
+import { wave5bBehavioralMimicry } from './wave5b-behavioral-mimicry';
+import { wave5bButYouAreFree } from './wave5b-but-you-are-free';
+import { wave5bSunkCostEscalation } from './wave5b-sunk-cost-escalation';
+import { wave5bStereotyping } from './wave5b-stereotyping';
+import { wave5bPrimacyOrderEffects } from './wave5b-primacy-order-effects';
+import { wave5bGroupthink } from './wave5b-groupthink';
+import { wave5bConditioningClassicalOperant } from './wave5b-conditioning-classical-operant';
+import { wave5bSalamiTacticsGradualism } from './wave5b-salami-tactics-gradualism';
+import { wave5bHyperbolicDiscounting } from './wave5b-hyperbolic-discounting';
+import { wave5bHaloEffect } from './wave5b-halo-effect';
+import { wave5bNegativityBias } from './wave5b-negativity-bias';
+import { wave5bOptimismBias } from './wave5b-optimism-bias';
+import { wave5bPeakEndRule } from './wave5b-peak-end-rule';
+import { wave5bIkeaEffect } from './wave5b-ikea-effect';
+import { wave5bMentalAccounting } from './wave5b-mental-accounting';
+import { wave5bNemawashi } from './wave5b-nemawashi';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -133,4 +153,24 @@ export const exercises: Exercise[] = [
   ...wave5aMiddleGroundFallacy,
   ...wave5aLoadedQuestion,
   ...wave5aConspiracyTheoryNarratives,
+  // Welle R5b
+  ...wave5bParasocialManipulation,
+  ...wave5bFootInTheDoor,
+  ...wave5bMereExposureEffect,
+  ...wave5bBehavioralMimicry,
+  ...wave5bButYouAreFree,
+  ...wave5bSunkCostEscalation,
+  ...wave5bStereotyping,
+  ...wave5bPrimacyOrderEffects,
+  ...wave5bGroupthink,
+  ...wave5bConditioningClassicalOperant,
+  ...wave5bSalamiTacticsGradualism,
+  ...wave5bHyperbolicDiscounting,
+  ...wave5bHaloEffect,
+  ...wave5bNegativityBias,
+  ...wave5bOptimismBias,
+  ...wave5bPeakEndRule,
+  ...wave5bIkeaEffect,
+  ...wave5bMentalAccounting,
+  ...wave5bNemawashi,
 ];

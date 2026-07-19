@@ -1,0 +1,8 @@
+{
+ "entry": "trick_wording",
+ "status": "flagged",
+ "open": [
+  "Stil: Datei: spin/content/techniques/trick-wording.ts | Feld: warningNeurons[1] | Zitat: „Du musst den Satz zweimal lesen, um zu wissen, welche Aktion dein ‚Nein‘ transportiert“ — Register-Bruch im Technik-Eintrag. Die Charta verlangt „neutrale Beschreibung in Technik-Einträgen“. Die drei übrigen Warnneuronen sind neutral gebaute Beschreibungssätze („Doppelte oder verschachtelte Verneinung …“, „Die intuitive Handlung … führt zum Gegenteil …“, „Ankreuzen und Leerlassen tauschen … die Bedeutung“), nur dieses eine springt in die Du-Anrede. Gemischtes Register in einer Parallelliste — eine PR-Leiterin liest das sofort als redaktionell nicht durchgezogen. Fix: neutral fassen, z. B. „Der Entscheidungssatz muss zweimal gelesen werden, um zu erkennen, welche Aktion das ‚Nein‘ transportiert“.",
+  "Stil: Datei: spin/content/exercises/wave5c-trick-wording.ts | Feld: wave5c-trick_wording-2, explanation.en (auch options[0].en: „… no pre-selection“) | Zitat: „an affirmative, pre-selection-free line makes consent unambiguous“ — „pre-selection-free“ ist eine Lehnübersetzung von „vorauswahlfrei“ und kein idiomatisches Fach-Englisch (Charta EN-Fassung: „idiomatisches Fach-Englisch gleicher Präzision“, „Kein wörtliches Übersetzen“). Nativ und präziser: „an affirmative line with nothing pre-checked“ bzw. „… with no pre-selected option“. Platt-verdächtig, weil das DE-Kompositum 1:1 durchkopiert wurde."
+ ]
+}

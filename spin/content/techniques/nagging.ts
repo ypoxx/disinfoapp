@@ -19,7 +19,7 @@ export const nagging: Technique = {
   difficulty: 'beginner',
   effectiveness: 'moderate',
   examples: [
-    'Onboarding eines Media-Monitoring-Tools im Comms-Team: Bei jedem Log-in der Werkstudentin schiebt sich ganzflächig der Dialog „Jetzt auf Pro upgraden?" vor die Oberfläche. Tippt sie „Nicht jetzt", erscheint er beim nächsten Aufruf erneut, danach nach jeder gespeicherten Suche — eine dauerhaft wirksame Nein-Option gibt es nicht, bis sie schließlich zustimmt, damit die Einblendung verschwindet.',
+    'Onboarding eines Media-Monitoring-Tools im Comms-Team: Bei jedem Log-in der Werkstudentin schiebt sich derselbe Dialog „Jetzt auf Pro upgraden?" vor die Oberfläche. Tippt sie „Nicht jetzt", ist er beim nächsten Log-in unverändert wieder da, danach nach jeder gespeicherten Suche — kein neues Argument, kein Rabatt, keine ablaufende Frist, nur dieselbe Bitte in immer kürzeren Abständen, bis sie schließlich upgradet, damit die Unterbrechungen aufhören.',
     'Newsroom-Website des Konzerns, Perspektive der Online-Redakteurin im Test: Wer die Tracking-Einwilligung ablehnt, bekommt das Consent-Banner bei jedem Seitenaufruf erneut vorgelegt; „Zustimmen" lässt es dauerhaft verschwinden, „Ablehnen" nur bis zum nächsten Klick. Dieselbe Frage kehrt so bei jedem Artikel zurück, ohne neues Argument und ohne Frist, bis ein Teil der Leser:innen aus Genervtheit zustimmt.',
     'Agenturauswahl beim Mittelständler: Nach dem „Aktuell kein Bedarf" der Pressesprecherin ruft der Vertriebler einer Nachrichtenagentur sie im Zwei-Tage-Takt erneut an — jedes Mal mit demselben Angebot und derselben Bitte um einen Termin, nicht mit einem neuen. Nach der achten identischen Nachfrage sagt sie den Termin zu, um die Anrufe zu beenden.',
   ],
@@ -40,7 +40,7 @@ export const nagging: Technique = {
     'Dieselbe Aufforderung kehrt nach einer Ablehnung unverändert zurück — bei jedem Log-in, Seitenaufruf oder Kontakt aufs Neue',
     'Ablehnen wirkt nur vorübergehend, Zustimmen dauerhaft — das Nein beendet die Frage nicht, das Ja schon',
     'Kein neues Argument, kein Rabatt, keine Frist — allein die Wiederholung soll den Widerstand aufzehren',
-    'Am Ende steht ein Ja, das erkennbar nur die Störung beenden soll, nicht aus Interesse fällt',
+    'Am Ende steht ein Ja, das erkennbar nur die Störung beenden soll und nicht aus Interesse kommt',
   ],
   taxonomyGroups: [],
   evidenceTier: 'weak',

@@ -19,7 +19,7 @@ export const fakeSocialProof: Technique = {
   difficulty: 'intermediate',
   effectiveness: 'moderate',
   examples: [
-    'Checkout-Seite eines Online-Modehändlers: Die Conversion-Managerin lässt vom Entwicklerteam ein Overlay einblenden — „Gerade sehen sich 17 Personen diesen Artikel an" —, dessen Zahl ein Skript bei jedem Seitenaufruf zufällig zwischen 8 und 25 würfelt; reale Sitzungsdaten stehen nicht dahinter.',
+    'Produktseite eines Online-Modehändlers: Die Conversion-Managerin lässt vom Entwicklerteam einen Aktivitätshinweis einblenden — „17 Personen sehen sich diesen Artikel gerade an" —, dessen Zahl ein Skript bei jedem Seitenaufruf zufällig zwischen 8 und 25 würfelt; reale Sitzungsdaten stehen nicht dahinter. Es gibt weder Countdown noch Knappheitshinweis — allein die vorgetäuschte Beliebtheit soll zum Kauf bewegen.',
     'Landingpage eines SaaS-Anbieters direkt über dem Kauf-Button: Der Growth-Marketer bindet ein Widget ein, das alle paar Sekunden meldet „Lena aus Hamburg hat soeben das Jahresabo gebucht" — Namen, Städte und Zeitpunkte stammen aus einer Zufallsliste, zugehörige Bestellungen gibt es nicht.',
     'Produktseite einer erst wenige Wochen alten Kosmetikmarke: Die E-Commerce-Leiterin lässt neben den Titel „von über 12.000 zufriedenen Kundinnen empfohlen" und 4,9 von 5 Sternen setzen — tatsächlich liegen erst rund 40 echte Bewertungen vor, Schnitt und Nutzerzahl sind frei gesetzt.',
   ],

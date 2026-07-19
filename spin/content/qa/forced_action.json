@@ -1,0 +1,9 @@
+{
+ "entry": "forced_action",
+ "status": "flagged",
+ "open": [
+  "Stil: Datei: spin/content/exercises/wave5c-forced-action.ts | Feld: wave5c-forced_action-1 → scenario.en | Zitat: \"'It lifts the qualified leads,' the project lead says.\" — Nicht idiomatisch. Das nackte 'lifts the qualified leads' (mit Artikel) liest sich als Übersetzungsartefakt; im Sales-/Comms-Register hieße es 'It boosts qualified leads' oder 'It drives up our qualified-lead numbers'. Die DE-Fassung 'Steigert die qualifizierten Leads' ist natürliches Jargon — die EN-Fassung verliert diese Natürlichkeit und untergräbt damit den 'realistisch konstruiert'-Hebel der Beispiel-Regel, gerade bei einem gesprochenen Zitat.",
+  "Stil: Datei: spin/content/exercises/wave5c-forced-action.ts | Feld: wave5c-forced_action-3 → explanation.en | Zitat: \"sludge means harmful friction meant to wear you off the goal\" — 'wear you off the goal' ist keine idiomatische Wendung (vermischt 'wear you down' und 'throw you off'). Inkonsistent mit derselben Erklärung in wave5c-forced_action-1, die den identischen Mechanismus korrekt mit 'wear you down' rendert. Fix z. B.: 'friction meant to wear down your resolve until you drop the goal' oder 'meant to drive you off the goal'.",
+  "Stil: Editorielle Nebenbemerkung (nicht blockierend, aber platt-verdächtig): Die drei Übungsszenarien in wave5c-forced-action.ts (Analystenstudien-PDF / LinkedIn-Teilzwang für Webinar-Aufzeichnung / 'App installieren zum Weiterlesen') sind praktisch deckungsgleich mit den drei examples[] in techniques/forced-action.ts. Jedes Beispiel erfüllt einzeln die Beispiel-Regel, aber über Eintrag + Übungsset hinweg werden nur dieselben drei Motive recycelt — für ein Publikum, das Präzision honoriert, wirkt das im Set repetitiv. Empfehlung: mindestens ein Übungsszenario mit frischem Kanal/Rollen (z. B. Paywall-Gate hinter Newsletter-Double-Opt-in im Redaktionsworkflow) variieren."
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "entry": "nagging",
+ "status": "flagged",
+ "open": [
+  "Distraktor: ALLGEMEIN: Alle drei korrekten Antworten sind eindeutig — ich kann keine falsche Option erfolgreich als 'richtig' verteidigen. Das Kriterium 'ohne Gimme-Distraktoren' ist aber nicht erfuellt, daher pass=false.",
+  "Distraktor: wave5c-nagging-1: 'Fake Urgency / Countdown' ist ein Gimme-Distraktor. Das Szenario eliminiert ihn selbst explizit ('kein Rabatt und keine ablaufende Frist locken'). Er ist per Textbaustein vor-ausgeschlossen — Fuellmaterial, kein verwechselbarer Nachbar.",
+  "Distraktor: wave5c-nagging-1: 'Confirmshaming' ist schwach. Es fehlt jede beschaemende Opt-out-Formulierung; der Text nennt sogar neutral 'Nein, danke'. Fuer Fortgeschrittene sofort per Abwesenheit eliminierbar, nur fuer Anfaenger grenzwertig plausibel.",
+  "Distraktor: wave5c-nagging-1: Einziger echter Nachbar ist 'Sludge / Bad Friction'. Den kann ich ernsthaft anverteidigen (dauernde, nicht dauerhaft abschaltbare Dialoge = Reibung im Arbeitsfluss), aber er unterliegt klar, weil der Mechanismus wiederholtes Anstupsen zu einer anbietergewuenschten Aktion ist, nicht Reibung gegen ein Nutzerziel. Ein einziger tragfaehiger Distraktor gegen zwei Fueller ist zu wenig. Empfehlung: Fake Urgency/Confirmshaming durch staerkere Nachbarn ersetzen (z. B. 'Forced Action/Forced Continuity' oder 'Nudging/Default-Steuerung').",
+  "Distraktor: wave5c-nagging-2: Distraktoren sind hier stark — Option 1 (Growth-Gier), Option 2 (falscher Kompromiss: 'freundlicher texten' behaelt aber die erzwingende Wiederholung, das 'Nein' gilt weiter nicht dauerhaft), Option 3 (Ueberkorrektur). Option 2 ist die, die ich am ehesten ernsthaft verteidigen kann. Sehr gut gebaut.",
+  "Distraktor: wave5c-nagging-2: ABER die korrekte Option 0 ist mit Abstand die laengste und detaillierteste (Nutzerfolgen + EU-Recht + Prinzip). Das triggert die klassische 'laengste/nuancierteste Antwort = richtig'-Heuristik; test-clevere Nutzer waehlen sie ohne Nagging-Verstaendnis. Zusaetzlich verraet Option 3 sich durch extreme Signalwoerter ('ersatzlos streichen', 'verbiete jede') als 'zu radikal = falsch'. Empfehlung: Antwortlaengen angleichen, Extremvokabular in Opt.3 entschaerfen.",
+  "Distraktor: wave5c-nagging-3: Strukturell fast identisch zu Uebung 1 (System fragt nach jedem Start, kein Nachlassen, gleiches Distraktor-Set). Zwei nahezu geklonte Items hintereinander schwaechen den Lerneffekt.",
+  "Distraktor: wave5c-nagging-3: 'Fake Urgency / Countdown' wieder per Text vor-eliminiert ('ohne Frist und ohne Zusatzargument') = Gimme. Damit bleibt effektiv nur eine 2-Wege-Wahl Nagging vs. Sludge."
+ ]
+}

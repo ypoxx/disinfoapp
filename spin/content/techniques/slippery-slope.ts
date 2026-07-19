@@ -34,7 +34,7 @@ export const slipperySlope: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['salami_tactics_gradualism', 'false_cause_post_hoc'],
+  relatedTechniques: ['false_cause_post_hoc'],
   warningNeurons: [
     'Signalwörter der Zwangsläufigkeit („zwangsläufig", „unweigerlich", „am Ende landen wir bei…") ohne Beleg für die Zwischenschritte',
     'Eine Kette von Wenn-dann-Stufen, bei der jede Stufe die nächste scheinbar automatisch auslöst',

@@ -61,6 +61,27 @@ import { guiltAppeals } from './guilt-appeals';
 import { gamificationVariableReward } from './gamification-variable-reward';
 import { doomscrollingFomoEngineering } from './doomscrolling-fomo-engineering';
 import { attentionEngagementLoops } from './attention-engagement-loops';
+// Welle R5a
+import { anaphora } from './anaphora';
+import { fearUncertaintyDoubt } from './fear-uncertainty-doubt';
+import { whataboutism } from './whataboutism';
+import { slipperySlope } from './slippery-slope';
+import { redHerring } from './red-herring';
+import { gishGallop } from './gish-gallop';
+import { motteAndBailey } from './motte-and-bailey';
+import { loadedLanguage } from './loaded-language';
+import { scapegoatingOthering } from './scapegoating-othering';
+import { doubleStandards } from './double-standards';
+import { beggingTheQuestion } from './begging-the-question';
+import { hastyGeneralization } from './hasty-generalization';
+import { falseCausePostHoc } from './false-cause-post-hoc';
+import { appealToIgnorance } from './appeal-to-ignorance';
+import { appealToNature } from './appeal-to-nature';
+import { appealToTradition } from './appeal-to-tradition';
+import { compositionDivision } from './composition-division';
+import { middleGroundFallacy } from './middle-ground-fallacy';
+import { loadedQuestion } from './loaded-question';
+import { conspiracyTheoryNarratives } from './conspiracy-theory-narratives';
 
 export const techniques: Technique[] = [
   framing,
@@ -124,6 +145,27 @@ export const techniques: Technique[] = [
   gamificationVariableReward,
   doomscrollingFomoEngineering,
   attentionEngagementLoops,
+  // Welle R5a
+  anaphora,
+  fearUncertaintyDoubt,
+  whataboutism,
+  slipperySlope,
+  redHerring,
+  gishGallop,
+  motteAndBailey,
+  loadedLanguage,
+  scapegoatingOthering,
+  doubleStandards,
+  beggingTheQuestion,
+  hastyGeneralization,
+  falseCausePostHoc,
+  appealToIgnorance,
+  appealToNature,
+  appealToTradition,
+  compositionDivision,
+  middleGroundFallacy,
+  loadedQuestion,
+  conspiracyTheoryNarratives,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

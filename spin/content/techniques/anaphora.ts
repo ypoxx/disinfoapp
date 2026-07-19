@@ -23,7 +23,7 @@ export const anaphora: Technique = {
   examples: [
     'Betriebsversammlung nach einem schwachen Quartal: Die Vorstandsvorsitzende schließt ihre Rede an die Belegschaft mit dreimal demselben Satzanfang: „Wir bleiben bei unserem Wort zu den Standorten. Wir bleiben bei unserem Wort zu den Löhnen. Wir bleiben bei unserem Wort zu euch."',
     'Pressestatement nach einem Produktrückruf: Vor den Wirtschaftsredaktionen beginnt der Unternehmenssprecher drei Sätze in Folge gleich: „Sicherheit steht über dem Termin. Sicherheit steht über dem Umsatz. Sicherheit steht über jeder Schlagzeile."',
-    'Kampagnen-Kickoff auf LinkedIn: Der Kommunikationschef eines Energie-Start-ups postet den Gründungsaufruf, jede Zeile mit demselben Auftakt: „Dafür stehen wir auf. Dafür arbeiten wir. Dafür treten wir an."',
+    'Kampagnen-Kickoff auf LinkedIn: Der Kommunikationschef eines Energie-Start-ups postet den Gründungsaufruf an Follower und Fachcommunity, jede Zeile mit demselben Auftakt: „Dafür stehen wir auf. Dafür arbeiten wir. Dafür treten wir an."',
   ],
   evidence: {
     studies: [],

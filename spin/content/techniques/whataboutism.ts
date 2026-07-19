@@ -8,8 +8,8 @@ import type { Technique } from '../types';
 export const whataboutism: Technique = {
   id: 'whataboutism',
   name: {
-    de: 'Whataboutism (Tu Quoque)',
-    en: 'Whataboutism (Tu Quoque)',
+    de: 'Whataboutism (tu quoque)',
+    en: 'Whataboutism (tu quoque)',
   },
   description: {
     de: 'Ablenkung von Kritik, indem statt einer Antwort ein Gegenvorwurf erhoben wird — meist mit dem Verweis auf (echtes oder behauptetes) Fehlverhalten der anderen Seite oder eines Dritten („Und was ist mit …?"). Der ursprüngliche Punkt bleibt unbeantwortet.',
@@ -27,7 +27,7 @@ export const whataboutism: Technique = {
     studies: [
       'Hansen (2015) - Fallacies (Stanford Encyclopedia of Philosophy)'
     ],
-    findings: 'Whataboutism (eine Spielart des Tu-quoque-Fehlschlusses) ist in der Fehlschluss- und Propaganda-Literatur seit Langem als Argumentationsmuster beschrieben und klar definiert (SEP/Hansen 2015). Eine quantifizierte Persuasions- oder Verhaltenswirkung ist damit jedoch nicht belegt: Die Einordnung ist taxonomisch, nicht experimentell. Wie stark der Gegenvorwurf tatsächlich ablenkt, hängt erkennbar von Publikum und Kontext ab (schwache Evidenz).',
+    findings: 'Whataboutism (eine Spielart des tu-quoque-Fehlschlusses) ist in der Fehlschluss- und Propaganda-Literatur seit Langem als Argumentationsmuster beschrieben und klar definiert (SEP/Hansen 2015). Eine quantifizierte Persuasions- oder Verhaltenswirkung ist damit jedoch nicht belegt: Die Einordnung ist taxonomisch, nicht experimentell. Wie stark der Gegenvorwurf tatsächlich ablenkt, hängt erkennbar von Publikum und Kontext ab (schwache Evidenz).',
     uncertainty: {
       confidence: 0.4,
       sampleSize: '',

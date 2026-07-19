@@ -34,7 +34,7 @@ export const fearUncertaintyDoubt: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['emotional_appeal', 'scarcity', 'scapegoating_othering', 'manufactured_crisis_exploitation', 'availability_heuristic'],
+  relatedTechniques: ['emotional_appeal', 'scarcity', 'scapegoating_othering', 'availability_heuristic'],
   warningNeurons: [
     'Unfalsifizierbare Zweifels-Formeln statt konkreter Belege („Wer weiß, ob…", „Niemand kann garantieren, dass…", „Restrisiko")',
     'Rhetorische Fragen, die Unsicherheit erzeugen, aber keine überprüfbare Behauptung aufstellen',

@@ -31,7 +31,13 @@ export const learningPaths: LearningPath[] = [
     techniqueIds: [
       'ad_hominem', 'straw_man', 'false_dichotomy', 'equivocation',
       'paltering_half_truth', 'cherry_picking', 'false_balance', 'agenda_setting',
-      'guilt_by_association',
+      'guilt_by_association', 'whataboutism', 'slippery_slope', 'red_herring',
+      'gish_gallop', 'motte_and_bailey', 'loaded_language', 'loaded_question',
+      'double_standards', 'begging_the_question', 'hasty_generalization',
+      'false_cause_post_hoc', 'appeal_to_ignorance', 'appeal_to_nature',
+      'appeal_to_tradition', 'composition_division', 'middle_ground_fallacy',
+      'scapegoating_othering', 'fear_uncertainty_doubt', 'anaphora',
+      'conspiracy_theory_narratives',
     ],
   },
   {

@@ -48,6 +48,27 @@ import { w4GuiltAppeals } from './wave4-guilt-appeals';
 import { w4GamificationVariableReward } from './wave4-gamification-variable-reward';
 import { w4DoomscrollingFomoEngineering } from './wave4-doomscrolling-fomo-engineering';
 import { w4AttentionEngagementLoops } from './wave4-attention-engagement-loops';
+// Welle R5a
+import { wave5aAnaphora } from './wave5a-anaphora';
+import { wave5aFearUncertaintyDoubt } from './wave5a-fear-uncertainty-doubt';
+import { wave5aWhataboutism } from './wave5a-whataboutism';
+import { wave5aSlipperySlope } from './wave5a-slippery-slope';
+import { wave5aRedHerring } from './wave5a-red-herring';
+import { wave5aGishGallop } from './wave5a-gish-gallop';
+import { wave5aMotteAndBailey } from './wave5a-motte-and-bailey';
+import { wave5aLoadedLanguage } from './wave5a-loaded-language';
+import { wave5aScapegoatingOthering } from './wave5a-scapegoating-othering';
+import { wave5aDoubleStandards } from './wave5a-double-standards';
+import { wave5aBeggingTheQuestion } from './wave5a-begging-the-question';
+import { wave5aHastyGeneralization } from './wave5a-hasty-generalization';
+import { wave5aFalseCausePostHoc } from './wave5a-false-cause-post-hoc';
+import { wave5aAppealToIgnorance } from './wave5a-appeal-to-ignorance';
+import { wave5aAppealToNature } from './wave5a-appeal-to-nature';
+import { wave5aAppealToTradition } from './wave5a-appeal-to-tradition';
+import { wave5aCompositionDivision } from './wave5a-composition-division';
+import { wave5aMiddleGroundFallacy } from './wave5a-middle-ground-fallacy';
+import { wave5aLoadedQuestion } from './wave5a-loaded-question';
+import { wave5aConspiracyTheoryNarratives } from './wave5a-conspiracy-theory-narratives';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -91,4 +112,25 @@ export const exercises: Exercise[] = [
   ...w4GamificationVariableReward,
   ...w4DoomscrollingFomoEngineering,
   ...w4AttentionEngagementLoops,
+  // Welle R5a
+  ...wave5aAnaphora,
+  ...wave5aFearUncertaintyDoubt,
+  ...wave5aWhataboutism,
+  ...wave5aSlipperySlope,
+  ...wave5aRedHerring,
+  ...wave5aGishGallop,
+  ...wave5aMotteAndBailey,
+  ...wave5aLoadedLanguage,
+  ...wave5aScapegoatingOthering,
+  ...wave5aDoubleStandards,
+  ...wave5aBeggingTheQuestion,
+  ...wave5aHastyGeneralization,
+  ...wave5aFalseCausePostHoc,
+  ...wave5aAppealToIgnorance,
+  ...wave5aAppealToNature,
+  ...wave5aAppealToTradition,
+  ...wave5aCompositionDivision,
+  ...wave5aMiddleGroundFallacy,
+  ...wave5aLoadedQuestion,
+  ...wave5aConspiracyTheoryNarratives,
 ];

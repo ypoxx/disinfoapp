@@ -1,0 +1,9 @@
+{
+ "entry": "whataboutism",
+ "status": "flagged",
+ "open": [
+  "Stil: wave5a-whataboutism.ts, Übung 1, explanation.en — Verstoß gegen EN-Fassungs-Regel („idiomatisches Fach-Englisch, kein wörtliches Übersetzen“). „counter-failing“ ist ein Kalke von „Gegen-Versäumnis“ und kein englisches Idiom; es liest sich als übersetzt. Zitate: „the topic is shifted via a third party's counter-failing“ und „he merely sets a ‚they do it too‘ counter-failing beside it“. Bedeutungsgleich ja, idiomatisch nein. Vorschlag: „a matching failing of their own“ bzw. „a ‚they do it too‘ countercharge“.",
+  "Stil: Terminologie-Konsistenz zwischen whataboutism.ts (name.de/en = „Whataboutism (Tu Quoque)“, Groß-Q) und wave5a-whataboutism.ts (Optionen = „Whataboutism (Tu quoque)“ / EN „tu quoque“): uneinheitliche Groß-/Kleinschreibung des lateinischen Terminus über beide Dateien. In einer technique-match-Übung sollte der korrekte Options-String exakt dem kanonischen Technik-Namen der Bibliothek entsprechen. Zitat: whataboutism.ts Z.11 „Tu Quoque“ vs. wave5a Z.21/87 „Tu quoque“. Eine Schreibweise festlegen (lat. Konvention wäre klein: „tu quoque“) und Name wie Optionen angleichen.",
+  "Stil: wave5a-whataboutism.ts, Übung 1, explanation.de — uneinheitliche Schreibung derselben Prägung innerhalb einer Erklärung: „das Thema per Gegen-Versäumnis eines Dritten verschoben“ (mit Bindestrich) vs. „stellt schlicht ein ‚die auch‘-Gegenversäumnis daneben“ (zusammengeschrieben). Eine Form durchziehen."
+ ]
+}

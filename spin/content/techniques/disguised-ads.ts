@@ -13,15 +13,15 @@ export const disguisedAds: Technique = {
   },
   description: {
     de: 'Werbung, die als redaktioneller Beitrag, Empfehlung oder Bedienelement auftritt und ihren bezahlten, kommerziellen Charakter verschleiert — etwa ein Advertorial im Redaktionslayout oder ein Download-Button, der in Wahrheit eine gebuchte Anzeige ist. Der Hebel ist das Vertrauen, das Nutzer nicht-werblichen Inhalten und Funktionen entgegenbringen.',
-    en: 'Advertising that presents itself as editorial content, a recommendation, or a piece of interface while concealing its paid, commercial nature — an advertorial in editorial styling, or a download button that is really a booked ad. It trades on the trust people extend to non-commercial content and functional elements.',
+    en: 'Advertising that presents itself as editorial content, a recommendation, or an interface element while concealing its paid, commercial nature — an advertorial in editorial styling, or a download button that is really a booked ad. It trades on the trust people extend to non-promotional content and functional elements.',
   },
   category: 'dark_patterns',
   difficulty: 'intermediate',
   effectiveness: 'moderate',
   examples: [
-    'Fachportal für Facility Management: Die Content-Marketing-Managerin eines Reinigungsmittel-Herstellers bucht beim Vermarkter des Portals einen Beitrag, der in Schrift, Bebilderung und Rubrik („Praxis-Analyse") exakt wie die redaktionellen Texte des Hauses aussieht und durchgehend die eigene Produktlinie empfiehlt — der Hinweis „Anzeige" steht ausgegraut und kleiner als die Bildunterschrift über dem oberen Bildrand.',
-    'Freeware-Downloadportal: Ein IT-Administrator sucht ein PDF-Werkzeug und landet auf der Downloadseite. Über dem kleinen grauen Textlink „Download starten" prangt ein großer grüner Button „Jetzt herunterladen" — er ist in Wahrheit eine gebuchte Anzeige und installiert eine andere, kostenpflichtige Software.',
-    'Mitglieder-Newsletter eines Branchenverbands: Zwischen zwei redaktionellen Kurzmeldungen steht im identischen Layout — gleiche Überschriftentype, gleiche Rubrik „Kurz notiert" — ein von einem Dienstleister bezahlter Textbeitrag, der dessen Seminarangebot empfiehlt; als bezahlte Platzierung ist er nirgends gekennzeichnet.',
+    'Fachportal für Logistik: Die Social-Media-Managerin eines Software-Anbieters bucht beim Vermarkter des Portals einen Beitrag, der in Autorenzeile, Bebilderung und Rubrik („Markt-Analyse") exakt wie die redaktionellen Einordnungen des Hauses aussieht und durchgehend die eigene Plattform als Testsieger darstellt; der Hinweis „Anzeige" steht in hellgrauer Kleinschrift über dem oberen Bildrand. Ein mitlesender Einkaufsleiter zitiert den Beitrag in seiner internen Beschaffungsempfehlung — für ihn eine unabhängige Einordnung der Redaktion.',
+    'Freeware-Downloadportal: Ein Werbenetzwerk platziert im Auftrag eines Software-Vermarkters auf der Downloadseite eine Anzeige, die in Form, Farbe und Beschriftung exakt wie der Download-Button des Portals gestaltet ist. Ein IT-Administrator sucht ein PDF-Werkzeug, klickt den großen grünen Button „Jetzt herunterladen" statt des kleinen grauen Portal-Links darunter — und installiert das beworbene, kostenpflichtige Fremdprodukt. Die Anzeige hat sich als Bedienelement der Seite ausgegeben.',
+    'Mitglieder-Newsletter eines Branchenverbands: Zwischen zwei redaktionellen Kurzmeldungen steht im identischen Layout — gleiche Überschriftentype, gleiche Rubrik „Kurz notiert" — ein von einem Weiterbildungsanbieter bezahlter Textbeitrag, der dessen Seminarangebot empfiehlt; die Redakteurin des Verbands hat ihn als bezahlte Platzierung nirgends gekennzeichnet. Die Mitglieder lesen ihn wie die Verbandsmeldungen daneben.',
   ],
   evidence: {
     studies: [

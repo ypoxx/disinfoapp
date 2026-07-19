@@ -191,5 +191,28 @@
       "epic": "Epic",
       "legendary": "Legendary"
     }
+  },
+  "seziertisch": {
+    "title": "Dissection Table",
+    "caseOfTheWeek": "Case of the week",
+    "multiChallenge": "Multiple choice",
+    "startCta": "Analyse the case",
+    "thePiece": "The communication piece",
+    "instruction": "Mark every persuasion technique present in this piece — then check your selection.",
+    "breakdown": "Breakdown",
+    "present": "present",
+    "absent": "not present",
+    "openTechnique": "Open technique",
+    "debrief": "Debrief",
+    "done": "Done",
+    "casesAvailable": "cases available",
+    "format": {
+      "press_release": "Press release",
+      "crisis_statement": "Crisis statement",
+      "linkedin_post": "LinkedIn post",
+      "email": "Email",
+      "ad": "Advertisement",
+      "interview": "Interview"
+    }
   }
 }

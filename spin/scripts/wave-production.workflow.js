@@ -10,8 +10,9 @@ export const meta = {
 
 const SPIN = '/home/user/disinfoapp/spin'
 const NODES_FILE = `${SPIN}/content/source/technique-id-list.txt`
-const ENTRIES = args.entries        // [{id, file}]
-const PREFIX = args.prefix          // e.g. 'wave5'
+const A = typeof args === 'string' ? JSON.parse(args) : (args || {})
+const ENTRIES = A.entries           // [{id, file}]
+const PREFIX = A.prefix             // e.g. 'wave5'
 const CHARTA = `${SPIN}/docs/sprachcharta.md`
 const camel = (id) => id.replace(/_(.)/g, (m, c) => c.toUpperCase()).replace(/^(.)/, (m, c) => c.toUpperCase())
 const constName = (id) => PREFIX.replace(/[^a-zA-Z0-9]/g, '') + camel(id)

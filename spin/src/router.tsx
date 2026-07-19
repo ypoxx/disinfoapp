@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { AppShell } from './design/layouts/app-shell';
 import { TodayPage } from './features/today/today-page';
 import { PracticePage } from './features/practice/practice-page';
+import { SeziertischPage } from './features/practice/seziertisch';
 import { ProfilePage } from './features/profile/profile-page';
 
 // Lazy load heavier pages
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <TodayPage /> },
       { path: '/practice', element: <PracticePage /> },
+      { path: '/seziertisch', element: <SeziertischPage /> },
       { path: '/library', element: <LazyWrapper><LibraryPage /></LazyWrapper> },
       { path: '/library/:techniqueId', element: <LazyWrapper><TechniqueDetailPage /></LazyWrapper> },
       { path: '/profile', element: <ProfilePage /> },

@@ -288,6 +288,46 @@ export interface Exercise {
 }
 
 // ----------------------------------------------------------
+// Seziertisch (Fall der Woche) — dissect a full comms piece
+// ----------------------------------------------------------
+
+export type CaseFormat =
+  | 'press_release'
+  | 'crisis_statement'
+  | 'linkedin_post'
+  | 'email'
+  | 'ad'
+  | 'interview';
+
+export interface CaseOption {
+  /** Candidate technique/element the user can tag */
+  label: LocalizedText;
+  /** Linked technique (for cross-reference); optional for pure distractors */
+  techniqueId?: string;
+  /** Is this technique actually present in the piece? */
+  present: boolean;
+  /** Teaching note: why it is (or isn't) in the piece */
+  note: LocalizedText;
+}
+
+/**
+ * A Seziertisch case: a realistic communication piece the user dissects by
+ * marking every technique present. The signature multi-select challenge —
+ * the "Fall der Woche". correctAnswers are derived from options[].present.
+ */
+export interface SeziertischCase {
+  id: string;
+  format: CaseFormat;
+  title: LocalizedText;
+  /** The full communication piece under the microscope */
+  piece: LocalizedText;
+  /** Candidate techniques — some present, some plausible-but-absent */
+  options: CaseOption[];
+  /** Overall debrief shown after resolving */
+  summary: LocalizedText;
+}
+
+// ----------------------------------------------------------
 // Simulator Posts
 // ----------------------------------------------------------
 

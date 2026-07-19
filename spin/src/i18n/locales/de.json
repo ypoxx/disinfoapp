@@ -191,5 +191,28 @@
       "epic": "Episch",
       "legendary": "Legendär"
     }
+  },
+  "seziertisch": {
+    "title": "Seziertisch",
+    "caseOfTheWeek": "Fall der Woche",
+    "multiChallenge": "Mehrfachauswahl",
+    "startCta": "Fall analysieren",
+    "thePiece": "Das Kommunikationsstück",
+    "instruction": "Markiere alle Überzeugungstechniken, die in diesem Stück stecken — dann prüfe deine Auswahl.",
+    "breakdown": "Aufschlüsselung",
+    "present": "enthalten",
+    "absent": "nicht enthalten",
+    "openTechnique": "Technik öffnen",
+    "debrief": "Fazit",
+    "done": "Fertig",
+    "casesAvailable": "Fälle verfügbar",
+    "format": {
+      "press_release": "Pressemitteilung",
+      "crisis_statement": "Krisenstatement",
+      "linkedin_post": "LinkedIn-Post",
+      "email": "E-Mail",
+      "ad": "Werbung",
+      "interview": "Interview"
+    }
   }
 }

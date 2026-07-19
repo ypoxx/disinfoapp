@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
@@ -12,6 +12,7 @@ export function PracticePage() {
   const { t } = useTranslation();
   const { getDueReviews, techniques: knowledgeState, answeredExercises } = useKnowledgeStore();
   const recentScores = useProgressStore((s) => s.recentScores);
+  const navigate = useNavigate();
   const [activeSession, setActiveSession] = useState<Session | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -101,6 +102,22 @@ export function PracticePage() {
         <span className="type-display text-lg block">{t('practice.quickPractice')}</span>
         <span className="flex items-center gap-1.5 text-sm font-bold mt-3 text-[var(--color-text-secondary)]">
           {t('today.startSession')}
+          <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
+        </span>
+      </button>
+
+      {/* Seziertisch — Fall der Woche, the signature multi-select challenge */}
+      <button
+        onClick={() => navigate('/seziertisch')}
+        className="w-full text-left bg-[var(--color-carbon)] text-[var(--color-chalk)] p-5 rounded-[var(--radius-md)] group"
+      >
+        <div className="flex items-center justify-between mb-2">
+          <span className="mono-label text-[var(--color-signal)]">{t('seziertisch.caseOfTheWeek')}</span>
+          <span className="mono-label opacity-70">{t('seziertisch.multiChallenge')}</span>
+        </div>
+        <span className="type-display text-lg block">{t('seziertisch.title')}</span>
+        <span className="flex items-center gap-1.5 text-sm font-bold mt-3">
+          {t('seziertisch.startCta')}
           <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden />
         </span>
       </button>

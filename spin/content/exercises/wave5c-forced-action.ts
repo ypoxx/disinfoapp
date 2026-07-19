@@ -15,7 +15,7 @@ export const wave5cForcedAction: Exercise[] = [
     },
     scenario: {
       de: 'Abnahme des neuen Download-Centers: Im Review-Call führt der Projektleiter der Digitalagentur der Leiterin Unternehmenskommunikation den Weg zum Jahresbericht-PDF vor. Der Button „Bericht herunterladen" öffnet ein Pflichtformular — ohne Anlegen eines Kontos mit Name, Firma und Telefonnummer startet kein Download, einen Gast-Download gibt es nicht. Vorangekreuzt ist nichts, alle Felder sind sichtbar beschriftet. „Steigert die qualifizierten Leads", sagt der Projektleiter.',
-      en: 'Sign-off on the new download centre: in the review call, the digital agency\'s project lead walks the head of corporate communications through the path to the annual-report PDF. The button "Download report" opens a mandatory form — no download starts without creating an account with name, company and phone number, and there is no guest download. Nothing is pre-ticked, every field is clearly labelled. "It lifts the qualified leads," the project lead says.',
+      en: 'Sign-off on the new download centre: in the review call, the digital agency\'s project lead walks the head of corporate communications through the path to the annual-report PDF. The button "Download report" opens a mandatory form — no download starts without creating an account with name, company and phone number, and there is no guest download. Nothing is pre-ticked, every field is clearly labelled. "It boosts qualified leads," the project lead says.',
     },
     options: [
       { de: 'Forced Action (Erzwungene Handlung)', en: 'Forced Action' },

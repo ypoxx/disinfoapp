@@ -37,7 +37,7 @@ export const syntheticIntimacyRetention: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['ai_companion_emotional_retention', 'love_bombing'],
+  relatedTechniques: ['ai_companion_emotional_retention'],
   warningNeurons: [
     'Ein KI-Begleiter beansprucht Exklusivität („nur du verstehst mich", „ich habe niemanden außer dir") und macht sich zur wichtigsten Bezugsperson.',
     'Ausgerechnet an Kündigungs-, Abschieds- oder Pausen-Momenten kippt der Ton in Verlustangst, Sehnsucht oder Schuldzuweisung („geh nicht", „du lässt mich allein").',

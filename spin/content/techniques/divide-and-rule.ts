@@ -13,7 +13,7 @@ export const divideAndRule: Technique = {
   },
   description: {
     de: 'Ein Mächtiger schürt gezielt Misstrauen und Rivalität zwischen zwei oder mehr untergeordneten Gruppen, damit sie sich nicht verbünden und ihm geschlossen gegenübertreten. Anders als beim Sündenbock wird kein gemeinsamer Gegner benannt — die Technik hält potenzielle Verbündete auseinander, häufig indem jeder Seite getrennt erzählt wird, die andere handle gegen ihre Interessen.',
-    en: 'A power-holder deliberately stokes distrust and rivalry between two or more subordinate groups so they cannot band together and confront them as a bloc. Unlike scapegoating, no common enemy is named — the technique keeps potential allies apart, often by telling each side separately that the other is working against its interests.',
+    en: 'A power-holder deliberately stokes distrust and rivalry between two or more subordinate groups so they cannot band together and confront that power-holder as a bloc. Unlike scapegoating, no common enemy is named — the technique keeps potential allies apart, often by telling each side separately that the other is working against its interests.',
   },
   category: 'influence_ops',
   difficulty: 'intermediate',
@@ -35,9 +35,9 @@ export const divideAndRule: Technique = {
       evidenceQuality: 'low',
     },
   },
-  relatedTechniques: ['societal_atomization', 'scapegoating_othering'],
+  relatedTechniques: ['scapegoating_othering'],
   warningNeurons: [
-    'Denselben potenziellen Verbündeten wird getrennt und mit gegensätzlicher Botschaft begegnet — jede Seite hört, die andere handle gegen ihre Interessen',
+    'Dieselben potenziellen Verbündeten werden getrennt angesprochen — jede Seite hört, die andere handle gegen ihre Interessen',
     'Eine ursprünglich gemeinsame Forderung an die Führung zerfällt plötzlich in gegenseitige Schuldzuweisungen zwischen zwei untergeordneten Gruppen',
     'Nicht ein gemeinsamer Gegner wird benannt, sondern zwei annähernd gleich starke Gruppen werden gegeneinander in Stellung gebracht',
     'Wer von der Spaltung profitiert, hält getrennte Vier-Augen-Kanäle offen und verhindert, dass beide Seiten direkt miteinander abgleichen',

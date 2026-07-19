@@ -89,6 +89,34 @@ import { wave5bPeakEndRule } from './wave5b-peak-end-rule';
 import { wave5bIkeaEffect } from './wave5b-ikea-effect';
 import { wave5bMentalAccounting } from './wave5b-mental-accounting';
 import { wave5bNemawashi } from './wave5b-nemawashi';
+// Welle R5c
+import { wave5cInteractiveAiPersuasion } from './wave5c-interactive-ai-persuasion';
+import { wave5cAiCompanionEmotionalRetention } from './wave5c-ai-companion-emotional-retention';
+import { wave5cCoordinatedInauthenticAmplification } from './wave5c-coordinated-inauthentic-amplification';
+import { wave5cAgenticDecisionCapture } from './wave5c-agentic-decision-capture';
+import { wave5cAiDeceptionScheming } from './wave5c-ai-deception-scheming';
+import { wave5cConversationalPersuasionBombing } from './wave5c-conversational-persuasion-bombing';
+import { wave5cSyntheticIntimacyRetention } from './wave5c-synthetic-intimacy-retention';
+import { wave5cConfirmshaming } from './wave5c-confirmshaming';
+import { wave5cFakeUrgencyCountdown } from './wave5c-fake-urgency-countdown';
+import { wave5cAstroturfingSockpuppets } from './wave5c-astroturfing-sockpuppets';
+import { wave5cDataVoidsSeoManipulation } from './wave5c-data-voids-seo-manipulation';
+import { wave5cSearchEngineManipulationEffect } from './wave5c-search-engine-manipulation-effect';
+import { wave5cDisguisedAds } from './wave5c-disguised-ads';
+import { wave5cDecontextualizationCheapfakes } from './wave5c-decontextualization-cheapfakes';
+import { wave5cFirehoseOfFalsehood } from './wave5c-firehose-of-falsehood';
+import { wave5cBlackGreyWhitePropaganda } from './wave5c-black-grey-white-propaganda';
+import { wave5cManufacturedCrisisExploitation } from './wave5c-manufactured-crisis-exploitation';
+import { wave5cOvertonWindowShifting } from './wave5c-overton-window-shifting';
+import { wave5cHistoricalNarrativeControl } from './wave5c-historical-narrative-control';
+import { wave5cMisdirection } from './wave5c-misdirection';
+import { wave5cFakeSocialProof } from './wave5c-fake-social-proof';
+import { wave5cForcedAction } from './wave5c-forced-action';
+import { wave5cNagging } from './wave5c-nagging';
+import { wave5cTrickWording } from './wave5c-trick-wording';
+import { wave5cIntermediateCurrency } from './wave5c-intermediate-currency';
+import { wave5cFriendSpam } from './wave5c-friend-spam';
+import { wave5cDivideAndRule } from './wave5c-divide-and-rule';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -173,4 +201,32 @@ export const exercises: Exercise[] = [
   ...wave5bIkeaEffect,
   ...wave5bMentalAccounting,
   ...wave5bNemawashi,
+  // Welle R5c
+  ...wave5cInteractiveAiPersuasion,
+  ...wave5cAiCompanionEmotionalRetention,
+  ...wave5cCoordinatedInauthenticAmplification,
+  ...wave5cAgenticDecisionCapture,
+  ...wave5cAiDeceptionScheming,
+  ...wave5cConversationalPersuasionBombing,
+  ...wave5cSyntheticIntimacyRetention,
+  ...wave5cConfirmshaming,
+  ...wave5cFakeUrgencyCountdown,
+  ...wave5cAstroturfingSockpuppets,
+  ...wave5cDataVoidsSeoManipulation,
+  ...wave5cSearchEngineManipulationEffect,
+  ...wave5cDisguisedAds,
+  ...wave5cDecontextualizationCheapfakes,
+  ...wave5cFirehoseOfFalsehood,
+  ...wave5cBlackGreyWhitePropaganda,
+  ...wave5cManufacturedCrisisExploitation,
+  ...wave5cOvertonWindowShifting,
+  ...wave5cHistoricalNarrativeControl,
+  ...wave5cMisdirection,
+  ...wave5cFakeSocialProof,
+  ...wave5cForcedAction,
+  ...wave5cNagging,
+  ...wave5cTrickWording,
+  ...wave5cIntermediateCurrency,
+  ...wave5cFriendSpam,
+  ...wave5cDivideAndRule,
 ];

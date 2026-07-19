@@ -32,7 +32,7 @@ export const wave5cSyntheticIntimacyRetention: Exercise[] = [
     },
     points: 10,
     primaryTechniqueId: 'synthetic_intimacy_retention',
-    relatedTechniques: ['synthetic_intimacy_retention', 'ai_companion_emotional_retention', 'love_bombing', 'coercive_control'],
+    relatedTechniques: ['synthetic_intimacy_retention', 'ai_companion_emotional_retention'],
   },
   {
     id: 'wave5c-synthetic_intimacy_retention-2',
@@ -71,7 +71,7 @@ export const wave5cSyntheticIntimacyRetention: Exercise[] = [
     },
     points: 10,
     primaryTechniqueId: 'synthetic_intimacy_retention',
-    relatedTechniques: ['synthetic_intimacy_retention', 'ai_companion_emotional_retention', 'coercive_control'],
+    relatedTechniques: ['synthetic_intimacy_retention', 'ai_companion_emotional_retention'],
   },
   {
     id: 'wave5c-synthetic_intimacy_retention-3',

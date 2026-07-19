@@ -74,6 +74,27 @@ export const learningPaths: LearningPath[] = [
       'gamification_variable_reward', 'doomscrolling_fomo_engineering', 'attention_engagement_loops',
       'identity_provenance_deception', 'integrity_clash_laundering',
       'automation_bias_overreliance', 'anthropomorphic_trust_cues',
+      'interactive_ai_persuasion', 'ai_companion_emotional_retention',
+      'agentic_decision_capture', 'ai_deception_scheming',
+      'conversational_persuasion_bombing', 'synthetic_intimacy_retention',
+      'confirmshaming', 'fake_urgency_countdown', 'data_voids_seo_manipulation',
+      'search_engine_manipulation_effect', 'disguised_ads', 'fake_social_proof',
+      'forced_action', 'nagging', 'trick_wording', 'intermediate_currency', 'friend_spam',
+    ],
+  },
+  {
+    id: 'kampagnen',
+    name: { de: 'Koordinierte Kampagnen', en: 'Coordinated Campaigns' },
+    description: {
+      de: 'Wie Meinungen im großen Maßstab gemacht werden — von Astroturfing bis Firehose of Falsehood.',
+      en: 'How opinion is manufactured at scale — from astroturfing to the firehose of falsehood.',
+    },
+    techniqueIds: [
+      'coordinated_inauthentic_amplification', 'astroturfing_sockpuppets',
+      'firehose_of_falsehood', 'black_grey_white_propaganda',
+      'manufactured_crisis_exploitation', 'overton_window_shifting',
+      'historical_narrative_control', 'misdirection', 'decontextualization_cheapfakes',
+      'divide_and_rule', 'agenda_setting',
     ],
   },
   {

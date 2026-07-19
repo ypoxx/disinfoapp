@@ -102,6 +102,34 @@ import { peakEndRule } from './peak-end-rule';
 import { ikeaEffect } from './ikea-effect';
 import { mentalAccounting } from './mental-accounting';
 import { nemawashi } from './nemawashi';
+// Welle R5c
+import { interactiveAiPersuasion } from './interactive-ai-persuasion';
+import { aiCompanionEmotionalRetention } from './ai-companion-emotional-retention';
+import { coordinatedInauthenticAmplification } from './coordinated-inauthentic-amplification';
+import { agenticDecisionCapture } from './agentic-decision-capture';
+import { aiDeceptionScheming } from './ai-deception-scheming';
+import { conversationalPersuasionBombing } from './conversational-persuasion-bombing';
+import { syntheticIntimacyRetention } from './synthetic-intimacy-retention';
+import { confirmshaming } from './confirmshaming';
+import { fakeUrgencyCountdown } from './fake-urgency-countdown';
+import { astroturfingSockpuppets } from './astroturfing-sockpuppets';
+import { dataVoidsSeoManipulation } from './data-voids-seo-manipulation';
+import { searchEngineManipulationEffect } from './search-engine-manipulation-effect';
+import { disguisedAds } from './disguised-ads';
+import { decontextualizationCheapfakes } from './decontextualization-cheapfakes';
+import { firehoseOfFalsehood } from './firehose-of-falsehood';
+import { blackGreyWhitePropaganda } from './black-grey-white-propaganda';
+import { manufacturedCrisisExploitation } from './manufactured-crisis-exploitation';
+import { overtonWindowShifting } from './overton-window-shifting';
+import { historicalNarrativeControl } from './historical-narrative-control';
+import { misdirection } from './misdirection';
+import { fakeSocialProof } from './fake-social-proof';
+import { forcedAction } from './forced-action';
+import { nagging } from './nagging';
+import { trickWording } from './trick-wording';
+import { intermediateCurrency } from './intermediate-currency';
+import { friendSpam } from './friend-spam';
+import { divideAndRule } from './divide-and-rule';
 
 export const techniques: Technique[] = [
   framing,
@@ -206,6 +234,34 @@ export const techniques: Technique[] = [
   ikeaEffect,
   mentalAccounting,
   nemawashi,
+  // Welle R5c
+  interactiveAiPersuasion,
+  aiCompanionEmotionalRetention,
+  coordinatedInauthenticAmplification,
+  agenticDecisionCapture,
+  aiDeceptionScheming,
+  conversationalPersuasionBombing,
+  syntheticIntimacyRetention,
+  confirmshaming,
+  fakeUrgencyCountdown,
+  astroturfingSockpuppets,
+  dataVoidsSeoManipulation,
+  searchEngineManipulationEffect,
+  disguisedAds,
+  decontextualizationCheapfakes,
+  firehoseOfFalsehood,
+  blackGreyWhitePropaganda,
+  manufacturedCrisisExploitation,
+  overtonWindowShifting,
+  historicalNarrativeControl,
+  misdirection,
+  fakeSocialProof,
+  forcedAction,
+  nagging,
+  trickWording,
+  intermediateCurrency,
+  friendSpam,
+  divideAndRule,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

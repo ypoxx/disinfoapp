@@ -38,7 +38,7 @@ export const trickWording: Technique = {
   relatedTechniques: ['equivocation', 'loaded_language', 'default_status_quo', 'sneaking'],
   warningNeurons: [
     'Doppelte oder verschachtelte Verneinung in einer Checkbox-, Schalter- oder Zustimmungszeile („nicht … keine …")',
-    'Du musst den Satz zweimal lesen, um zu wissen, welche Aktion dein „Nein" transportiert',
+    'Der Entscheidungssatz muss zweimal gelesen werden, um zu erkennen, welche Aktion das „Nein" transportiert',
     'Die intuitive Handlung (Haken entfernen, Schalter aus) führt zum Gegenteil der beabsichtigten Wahl',
     'Ankreuzen und Leerlassen tauschen durch die Formulierung die Bedeutung — Zustimmung und Ablehnung sind sprachlich verdreht',
   ],

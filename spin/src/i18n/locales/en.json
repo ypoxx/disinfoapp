@@ -214,5 +214,17 @@
       "ad": "Advertisement",
       "interview": "Interview"
     }
+  },
+  "feedback": {
+    "trigger": "Imprecise?",
+    "prompt": "What bothers you about this explanation?",
+    "thanks": "Thanks — your note feeds into the next revision.",
+    "notePlaceholder": "Optional: briefly specify",
+    "reason": {
+      "imprecise": "Too imprecise",
+      "ambiguous": "Ambiguous",
+      "wrong": "Factually wrong",
+      "generic": "Too generic"
+    }
   }
 }

@@ -214,5 +214,17 @@
       "ad": "Werbung",
       "interview": "Interview"
     }
+  },
+  "feedback": {
+    "trigger": "Ungenau?",
+    "prompt": "Was stört dich an dieser Erklärung?",
+    "thanks": "Danke — dein Hinweis fließt in die nächste Überarbeitung ein.",
+    "notePlaceholder": "Optional: kurz konkretisieren",
+    "reason": {
+      "imprecise": "Zu ungenau",
+      "ambiguous": "Mehrdeutig",
+      "wrong": "Fachlich falsch",
+      "generic": "Zu generisch"
+    }
   }
 }

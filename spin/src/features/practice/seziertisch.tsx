@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react';
 import { Button } from '@/design/components/button';
 import { Card } from '@/design/components/card';
 import { QuizBlock, type QuizResolution } from '@/design/components/quiz-block';
+import { PrecisionFeedback } from '@/design/components/precision-feedback';
 import { t as tContent } from '@content/types';
 import { caseForWeek, currentWeekIndex, getCaseById, seziertischCases } from '@content/cases';
 
@@ -121,6 +122,7 @@ export function SeziertischPage() {
               <Card variant="inverse" padding="md">
                 <p className="mono-label text-[var(--color-signal)] mb-2">{t('seziertisch.debrief')}</p>
                 <p className="text-sm leading-relaxed">{tContent(activeCase.summary, lang)}</p>
+                <PrecisionFeedback contentId={activeCase.id} surface="seziertisch" />
               </Card>
 
               <Button size="lg" variant="inverse" onClick={() => navigate('/practice')} className="w-full">

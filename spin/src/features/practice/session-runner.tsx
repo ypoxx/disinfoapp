@@ -7,6 +7,7 @@ import { Button } from '@/design/components/button';
 import { Card } from '@/design/components/card';
 import { SegmentProgress } from '@/design/components/segment-progress';
 import { QuizBlock, type QuizResolution } from '@/design/components/quiz-block';
+import { PrecisionFeedback } from '@/design/components/precision-feedback';
 import { t as tContent, type TechniqueCategory } from '@content/types';
 import { techniques as allTechniques } from '@content/techniques';
 import type { Session, SessionItem, ItemResult } from '@/engine/types';
@@ -400,6 +401,7 @@ function ItemView({ item, lang, t, resolved, onResolve, planeColor, planeInk, re
               <Card variant="inverse" padding="md">
                 <p className="mono-label text-[var(--color-signal)] mb-2">{t('practice.explanation')}</p>
                 <p className="text-sm leading-relaxed">{tContent(ex.explanation, lang)}</p>
+                <PrecisionFeedback contentId={ex.id} surface="session-exercise" />
               </Card>
             </motion.div>
           )}

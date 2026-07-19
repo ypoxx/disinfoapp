@@ -12,7 +12,7 @@ export const fakeUrgencyCountdown: Technique = {
     en: 'Fake Urgency / Countdown Timers',
   },
   description: {
-    de: 'Künstliche Dringlichkeit durch erfundene Deadlines, Countdown-Timer oder vorgetäuschte Knappheit in digitalen Interfaces, die die überlegte Prüfung verkürzen soll — anders als bei echter Verknappung steht hinter dem Zeitdruck kein nachprüfbares, für alle gleiches Angebotsende.',
+    de: 'Künstliche Dringlichkeit durch erfundene Deadlines, Countdown-Timer oder vorgetäuschte Verknappung in digitalen Interfaces, die die überlegte Prüfung verkürzen soll — anders als bei echter Verknappung steht hinter dem Zeitdruck kein nachprüfbares, für alle gleiches Angebotsende.',
     en: 'Manufactured urgency — invented deadlines, countdown timers or faked scarcity in digital interfaces — engineered to short-circuit deliberation; unlike genuine scarcity, no verifiable, universally applied cut-off sits behind the pressure.',
   },
   category: 'dark_patterns',

@@ -21,7 +21,7 @@ export const interactiveAiPersuasion: Technique = {
   examples: [
     'Kündigungsstrecke im Kundenportal eines Mobilfunkanbieters: Ein KI-Retention-Assistent chattet mit einem kündigungswilligen Bestandskunden und formt seine Gegenargumente in Echtzeit um — nennt der Kunde den Preis, rechnet der Bot einen Rabatt vor; nennt er die Netzabdeckung, wechselt der Bot zu Ausbaudaten; jede neue Antwort verschiebt das nächste Argument, statt einen festen Halte-Text abzuspulen.',
     'Beratungs-Chat auf einem Gesundheitsportal: Eine verunsicherte Nutzerin schildert einem KI-Berater ihre Bedenken gegen eine Früherkennungsuntersuchung. Der Bot greift jeden einzelnen Einwand nacheinander auf — Angst vor dem Ergebnis, Zeitaufwand, Schamgefühl — und schneidet sein Zureden fortlaufend auf genau die zuletzt geäußerte Sorge zu.',
-    'Dialog-Widget einer Kampagnen-Website vor einer Abstimmung: Ein KI-Gesprächsagent diskutiert mit unentschlossenen Besucherinnen und passt seine Argumente Zug um Zug an die im Chat vorgebrachten Zweifel an — auf einen Kosteneinwand folgt ein Kosten-Nutzen-Argument, auf einen Wertekonflikt ein anderer Deutungsrahmen; die Argumentationslinie entsteht erst im Verlauf des Gesprächs.',
+    'Dialog-Widget im Mitgliederbereich einer Genossenschaft vor der Abstimmung über eine neue Beitragsordnung: Ein KI-Gesprächsagent bespricht die Vorlage mit noch unentschlossenen Mitgliedern und passt seine Argumente Zug um Zug an die im Chat vorgebrachten Zweifel an — auf einen Kosteneinwand folgt ein Kosten-Nutzen-Argument, auf einen Einwand zum Aufwand ein Umsetzungsplan; die Argumentationslinie entsteht erst im Verlauf des Gesprächs.',
   ],
   evidence: {
     studies: [

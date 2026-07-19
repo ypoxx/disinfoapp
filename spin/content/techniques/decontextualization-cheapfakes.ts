@@ -21,7 +21,7 @@ export const decontextualizationCheapfakes: Technique = {
   examples: [
     'Krisen-Kommunikation eines Energieversorgers: Auf einem reichweitenstarken Aktivisten-Account kursiert ein echtes, unbearbeitetes Foto einer Öl-Lache an einer Pipeline, betitelt als „Leck von gestern an unserem Werk". Die Pressestelle stellt fest: Das Bild ist unverändert, stammt aber von einem anderen Betreiber und ist sechs Jahre alt.',
     'Faktencheck in der Konzernkommunikation eines Chemieunternehmens: Auf einem reichweitenstarken Account kursiert ein echtes, unbearbeitetes Foto mit aufsteigendem Rauch über dem Werk, betitelt „Störfall bei uns — wird vertuscht". Kein Pixel ist verändert; das Bild ist aber so zugeschnitten, dass das Schild „Angekündigte Brandschutzübung" und die Absperrbänder am Bildrand fehlen — erst der Beschnitt erzeugt den Störfall-Eindruck.',
-    'Produktkommunikation eines Messebauers: Ein Wettbewerber teilt ein echtes, unbearbeitetes Foto einer weitgehend leeren Halle mit der Zeile „So leer blieb der Launch von [Marke] gestern". Die Aufnahme ist authentisch, entstand aber morgens im Aufbau, Stunden vor dem Einlass — nur der behauptete Zeitpunkt ist falsch.',
+    'Produktkommunikation eines Messebauers: Ein Wettbewerber postet auf seinem Unternehmens-Account ein echtes, unbearbeitetes Foto einer weitgehend leeren Halle mit der Zeile „So leer blieb der Launch von [Marke] gestern". Die Aufnahme ist authentisch, entstand aber morgens im Aufbau, Stunden vor dem Einlass — nur der behauptete Zeitpunkt ist falsch.',
   ],
   evidence: {
     studies: [

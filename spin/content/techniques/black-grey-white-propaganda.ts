@@ -39,7 +39,7 @@ export const blackGreyWhitePropaganda: Technique = {
     'Eine Botschaft, deren wahrer Auftraggeber sich weder aus Impressum noch aus Absender oder Finanzierung erschließt (grau)',
     'Inhalte, die einer erfundenen oder fremden Quelle zugeschrieben werden, um den eigentlichen Absender zu verbergen (schwarz)',
     '„Unabhängige" Initiativen, Portale oder Bürgerforen, deren Trägerschaft und Geldgeber im Dunkeln bleiben',
-    'Je stärker das Interesse hinter einer Botschaft, desto auffälliger die vermiedene offene Urheberschaft — die Quelle wird verdeckt, nicht ausgewiesen',
+    'Starkes Interesse, aber keine offen ausgewiesene Urheberschaft — die Quelle wird verdeckt statt genannt',
   ],
   taxonomyGroups: [],
   evidenceTier: 'weak',

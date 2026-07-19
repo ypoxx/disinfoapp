@@ -8,6 +8,12 @@ import type { Technique } from '../types';
  * Frontier-Tier: als Begriffswissen lehren (Muster benennen), nicht als
  * belegten Effekt. Formulierungen bleiben vorsichtig ("soll", "ist angelegt auf"),
  * keine Wirkbehauptungen ohne belastbare Quelle.
+ *
+ * Bewusst non-seriousMode: breiter als die eng gefasste Schwester
+ * synthetic_intimacy_retention; legitime Re-Engagement-Praxis existiert. Der
+ * Ausbeutungs-Grenzfall wird in synthetic_intimacy_retention ernst behandelt.
+ * Deshalb führen alle drei Übungen den doppelten Takeaway (legitim einsetzen +
+ * erkennen & kontern) konsistent.
  */
 export const aiCompanionEmotionalRetention: Technique = {
   id: 'ai_companion_emotional_retention',

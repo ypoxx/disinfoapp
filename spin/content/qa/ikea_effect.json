@@ -1,0 +1,8 @@
+{
+ "entry": "ikea_effect",
+ "status": "flagged",
+ "open": [
+  "Stil: Datei: spin/content/exercises/wave5b-ikea-effect.ts | Feld: wave5b-ikea_effect-3 → explanation.en | Zitat: \"Mechanism: the own building work folds identity into the result and lifts its rating.\" — \"the own building work\" ist eine Wort-für-Wort-Übertragung von \"die eigene Bau-Arbeit\" und ist kein Englisch (kein Muttersprachler schreibt \"the own\"). Verstoß gegen EN-Fassung (\"Kein wörtliches Übersetzen: idiomatisches Fach-Englisch gleicher Präzision\"). Fix z. B.: \"the building work they did folds identity into the result\" oder \"their own building work …\". Umso auffälliger, weil dieselbe Aussage in Übung 1 idiomatisch gelingt (\"assembling something with your own hands folds your labour and identity into it\").",
+  "Stil: Datei: spin/content/exercises/wave5b-ikea-effect.ts | Feld: wave5b-ikea_effect-2 → explanation.en | Zitat: \"Mechanism: own labour folds in identity and lifts the rating of the result — regardless of its quality.\" — \"own labour\" ohne Possessiv/Artikel ist ein Germanismus aus \"Eigenarbeit\"; die Klausel liest sich abgehackt und nicht idiomatisch. Inkonsistent zur korrekten Fassung in Übung 1 (\"folds your labour and identity into it\"). Fix z. B.: \"your own labour folds in identity …\" oder \"the labour you put in folds in identity …\". Verstoß gegen EN-Fassung (idiomatisches Fach-Englisch gleicher Präzision, Rückübersetzungs-Check)."
+ ]
+}

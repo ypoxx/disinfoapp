@@ -54,9 +54,18 @@ Jede UI-Änderung wird per Playwright im echten Browser abgenommen: Zustandsmatr
 
 ## Statusverfolgung
 
-| Release | Status |
-|---|---|
-| R1 | in Arbeit |
-| R2–R7 | ausstehend |
+| Release | Status | Ergebnis |
+|---|---|---|
+| R1 Ehrliches Quiz | ✅ abgeschlossen | Mehrfachauswahl, sichtbares Urteil, Badge-Fix; Nutzertest-Bugs behoben |
+| R2 Kluge Session | ✅ abgeschlossen | Verdeckte Kalibrierung, Gating, No-Repeat, Flow-Korridor; Simulationstests |
+| R3 Neues Regal | ✅ abgeschlossen | Kategorien, Pfade, Evidenz-Stufen + Radar, Generator, Pilotwelle 10 |
+| R4 Welle 1 | ✅ abgeschlossen | +22 Techniken (Tier-1-Rest, Ausbau-Knoten), Detection-Sanierung |
+| R5 Welle 2 | ✅ abgeschlossen | +66 Techniken (Rhetorik, Verhaltensökonomie, Digital/KI/Kampagnen) |
+| R6 Welle 3 | ✅ abgeschlossen | +10 Zwang & Kontrolle (Ernstmodus), Seziertisch, Präzisions-Feedback, Backfill |
+| R7 Sprachen | ⏳ Kontrollpunkt beim PO | 7 Sprachen — Umfang/Staffelung zur Entscheidung vorgelegt |
+
+**Endstand Content (R1–R6):** 135 Techniken (Ziel erreicht), 472 Übungen, 0 Techniken ohne Übungen. Produktionslinie mit Doppel-Blindprüfung, Distraktor-/Fach-/Stil-Check und Revisionsschleife; Prüfprotokolle in `content/qa/`. Features: Seziertisch (Fall der Woche), Präzisions-Feedback, Lernpfade, Evidenz-Stufen + Radar-Regal, adaptive Engine.
+
+**Offene Verfeinerungen (nicht blockierend):** 16 Techniken haben je 3 Übungen in nur einem Schwierigkeitsband (Band-Diversität als optionaler Folge-Backfill); erneute adversariale Prüfung der in Spend-Limit-Läufen unverifizierten Einträge (in `content/qa/` als `revised_unverified` markiert).
 
 *Dieses Dokument wird pro Release aktualisiert (Status, Abweichungen, Audit-Ergebnisse).*

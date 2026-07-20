@@ -1,0 +1,14 @@
+{
+ "entry": "digital_influence",
+ "status": "flagged",
+ "open": [
+  "BlindA2 Szenario0: 'coordinated_inauthentic_amplification'",
+  "BlindA2 Szenario1: 'coordinated_inauthentic_amplification'",
+  "BlindA2 Szenario2: 'coordinated_inauthentic_amplification'",
+  "BlindB2 Szenario0: 'coordinated_inauthentic_amplification'",
+  "BlindB2 Szenario1: 'coordinated_inauthentic_amplification'",
+  "BlindB2 Szenario2: 'coordinated_inauthentic_amplification'",
+  "Stil: REGISTER / Du-Form-Takeaways — backfill-digital-influence.ts, Uebung 'backfill-digital_influence-3', explanation.de/.en: Die gesamte Erklaerung ist in neutraler Technik-Eintrag-Prosa (3. Person / 'uns') statt in der fuer Uebungen vorgeschriebenen Du-Anrede geschrieben; kein einziges 'du'. Der doppelte Takeaway erscheint unpersoenlich: 'Die redliche Verwandte waere eine offen abgesenderte, faktenbasierte Gegendarstellung...' (legitim) und 'Verraeterisch ist das fehlende organische Vorlauf-Wachstum...' (erkennen). Die Charta modelliert Takeaways explizit in Du-Form ('So nutzt du das professionell...', 'Daran erkennst du es'), und Ex1/Ex2 setzen das auch um ('So setzt du es sauber ein', 'Daran erkennst du es', 'Deinen professionellen Trennstrich ziehst du'). Ex3 bricht Register und Konsistenz.",
+  "Stil: EN GERMANISMUS — backfill-digital-influence.ts, Uebung 'backfill-digital_influence-2', scenario.en: 'all from one hand' ist eine woertliche Lehnuebersetzung von 'alles aus einer Hand'. Idiomatisch waere 'all from a single source/provider' bzw. 'all in one package'. 'from one hand' ist im Englischen kein etablierter Ausdruck (verstoesst gegen 'keine Germanismen')."
+ ]
+}

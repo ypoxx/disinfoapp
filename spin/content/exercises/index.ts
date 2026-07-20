@@ -128,6 +128,25 @@ import { wave6ZersetzungDecomposition } from './wave6-zersetzung-decomposition';
 import { wave6NetworkedHarassment } from './wave6-networked-harassment';
 import { wave6ProxyAttack } from './wave6-proxy-attack';
 import { wave6KompromatLeverage } from './wave6-kompromat-leverage';
+// Backfill (Alt-Techniken)
+import { backfillLiking } from './backfill-liking';
+import { backfillConsistency } from './backfill-consistency';
+import { backfillReactanceTheory } from './backfill-reactance-theory';
+import { backfillStrawMan } from './backfill-straw-man';
+import { backfillEquivocation } from './backfill-equivocation';
+import { backfillRepetition } from './backfill-repetition';
+import { backfillPacingAndLeading } from './backfill-pacing-and-leading';
+import { backfillEmbeddedCommands } from './backfill-embedded-commands';
+import { backfillMicrotargeting } from './backfill-microtargeting';
+import { backfillVisualManipulation } from './backfill-visual-manipulation';
+import { backfillAiPersuasion } from './backfill-ai-persuasion';
+import { backfillAnchoring } from './backfill-anchoring';
+import { backfillAdHominem } from './backfill-ad-hominem';
+import { backfillEmotionalAppeal } from './backfill-emotional-appeal';
+import { backfillIllusoryTruthEffect } from './backfill-illusory-truth-effect';
+import { backfillDigitalInfluence } from './backfill-digital-influence';
+import { backfillNarrativePersuasion } from './backfill-narrative-persuasion';
+import { backfillSyntheticMedia } from './backfill-synthetic-media';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -251,4 +270,23 @@ export const exercises: Exercise[] = [
   ...wave6NetworkedHarassment,
   ...wave6ProxyAttack,
   ...wave6KompromatLeverage,
+  // Backfill
+  ...backfillLiking,
+  ...backfillConsistency,
+  ...backfillReactanceTheory,
+  ...backfillStrawMan,
+  ...backfillEquivocation,
+  ...backfillRepetition,
+  ...backfillPacingAndLeading,
+  ...backfillEmbeddedCommands,
+  ...backfillMicrotargeting,
+  ...backfillVisualManipulation,
+  ...backfillAiPersuasion,
+  ...backfillAnchoring,
+  ...backfillAdHominem,
+  ...backfillEmotionalAppeal,
+  ...backfillIllusoryTruthEffect,
+  ...backfillDigitalInfluence,
+  ...backfillNarrativePersuasion,
+  ...backfillSyntheticMedia,
 ];

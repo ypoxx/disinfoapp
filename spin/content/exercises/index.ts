@@ -117,6 +117,17 @@ import { wave5cTrickWording } from './wave5c-trick-wording';
 import { wave5cIntermediateCurrency } from './wave5c-intermediate-currency';
 import { wave5cFriendSpam } from './wave5c-friend-spam';
 import { wave5cDivideAndRule } from './wave5c-divide-and-rule';
+// Welle R6 (Zwang & Kontrolle)
+import { wave6Gaslighting } from './wave6-gaslighting';
+import { wave6LoveBombing } from './wave6-love-bombing';
+import { wave6Darvo } from './wave6-darvo';
+import { wave6CoerciveControl } from './wave6-coercive-control';
+import { wave6CensorshipChillingEffects } from './wave6-censorship-chilling-effects';
+import { wave6SocietalAtomization } from './wave6-societal-atomization';
+import { wave6ZersetzungDecomposition } from './wave6-zersetzung-decomposition';
+import { wave6NetworkedHarassment } from './wave6-networked-harassment';
+import { wave6ProxyAttack } from './wave6-proxy-attack';
+import { wave6KompromatLeverage } from './wave6-kompromat-leverage';
 
 /** All exercises combined into a single array */
 export const exercises: Exercise[] = [
@@ -229,4 +240,15 @@ export const exercises: Exercise[] = [
   ...wave5cIntermediateCurrency,
   ...wave5cFriendSpam,
   ...wave5cDivideAndRule,
+  // Welle R6
+  ...wave6Gaslighting,
+  ...wave6LoveBombing,
+  ...wave6Darvo,
+  ...wave6CoerciveControl,
+  ...wave6CensorshipChillingEffects,
+  ...wave6SocietalAtomization,
+  ...wave6ZersetzungDecomposition,
+  ...wave6NetworkedHarassment,
+  ...wave6ProxyAttack,
+  ...wave6KompromatLeverage,
 ];

@@ -1,0 +1,9 @@
+{
+ "entry": "coercive_control",
+ "status": "flagged",
+ "open": [
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave6-coercive-control.ts | Feld: wave6-coercive_control-1, scenario.en | Zitat: \"reads her bank account and messages\" — Nicht idiomatisch und nicht bedeutungsgleich. Ein Konto wird überwacht/eingesehen, nicht „gelesen“; das Verb „reads“ regiert hier unsauber zugleich „bank account“ und „messages“. Die DE-Nuance von „mitlesen“ (verdeckt mitverfolgen) geht verloren. Charta §EN-Fassung verlangt „idiomatisches Fach-Englisch gleicher Präzision“. Fix: \"monitors her bank account and reads her messages\".",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave6-coercive-control.ts | Feld: wave6-coercive_control-3, scenario.en | Zitat: \"together he has almost no free decision left\" — Germanismus für DE „kaum noch eine freie Entscheidung“. „a free decision“ als zählbares Objekt, das man „left“ hat, ist kein idiomatisches Englisch und liest sich als Rückübersetzung. Fix: \"scarcely a decision of his own left\" bzw. \"almost no freedom of choice left\".",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave6-coercive-control.ts | Feld: explanation.de in wave6-coercive_control-1 UND wave6-coercive_control-3 (Distraktor-Aufklärung Stalking) | Zitat: \"das wiederholte, aufdringliche Nachstellen und Beobachten einer Zielperson, oft aus Distanz oder nach einer Trennung\" — nahezu wortgleich in beiden Übungen; auch die Fortsetzung („umfassenden Kontrollregimes im laufenden Nahverhältnis … weit über bloßes Beobachten hinausgeht“) ist verbatim dupliziert, und die Gaslighting-Widerlegung ist parallel schablonenhaft. Für Profis, die beide Übungen durchlaufen, wirkt die Distraktor-Aufklärung copy-paste und damit platt. Die Widerlegungen pro Übung variieren (anderer Aufhänger, andere Formulierung), statt denselben Baustein zu recyceln."
+ ]
+}

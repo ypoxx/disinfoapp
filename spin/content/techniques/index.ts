@@ -130,6 +130,17 @@ import { trickWording } from './trick-wording';
 import { intermediateCurrency } from './intermediate-currency';
 import { friendSpam } from './friend-spam';
 import { divideAndRule } from './divide-and-rule';
+// Welle R6 (Zwang & Kontrolle)
+import { gaslighting } from './gaslighting';
+import { loveBombing } from './love-bombing';
+import { darvo } from './darvo';
+import { coerciveControl } from './coercive-control';
+import { censorshipChillingEffects } from './censorship-chilling-effects';
+import { societalAtomization } from './societal-atomization';
+import { zersetzungDecomposition } from './zersetzung-decomposition';
+import { networkedHarassment } from './networked-harassment';
+import { proxyAttack } from './proxy-attack';
+import { kompromatLeverage } from './kompromat-leverage';
 
 export const techniques: Technique[] = [
   framing,
@@ -262,6 +273,17 @@ export const techniques: Technique[] = [
   intermediateCurrency,
   friendSpam,
   divideAndRule,
+  // Welle R6 (Zwang & Kontrolle)
+  gaslighting,
+  loveBombing,
+  darvo,
+  coerciveControl,
+  censorshipChillingEffects,
+  societalAtomization,
+  zersetzungDecomposition,
+  networkedHarassment,
+  proxyAttack,
+  kompromatLeverage,
 ];
 
 export const techniqueMap = new Map<string, Technique>(

@@ -1,0 +1,10 @@
+{
+ "entry": "censorship_chilling_effects",
+ "status": "flagged",
+ "open": [
+  "Stil: Datei: spin/content/exercises/wave6-censorship-chilling-effects.ts | Feld: explanation.de (Übung wave6-censorship_chilling_effects-3) | Zitat: „Der Record wird entzogen, nicht um-erzählt.\" — Roher Anglizismus im deutschen Text. „Record\" steht nicht auf der Liste bewusst englisch bleibender Begriffe (Terminologie-Abschnitt) und ist nicht aufgelöst. Ein PR-Profi stolpert. Deutsch führend: „Der Nachweis / die Aufzeichnung wird entzogen, nicht umgedeutet.\"",
+  "Stil: Datei: spin/content/exercises/wave6-censorship-chilling-effects.ts | Feld: explanation.de UND explanation.en (Übung -3) | Zitat DE: „…ist der Zensur-Kern des Knotens\" / EN: „…is the censorship core of the node\" — Interne Taxonomie-Architektur („Knoten\"/„node\", vgl. persuasion_taxonomy_v21_0_1.json „jedes Knotens\") leckt in den lesernahen Erklärungstext. Für die Zielgruppe (Kommunikationsprofis, keine Taxonomie-Ingenieure) bedeutungslos und platt. Besser: „…ist der Zensur-Kern dieser Technik\" bzw. streichen; EN analog „…is the censorship core of this technique\".",
+  "Stil: Datei: spin/content/exercises/wave6-censorship-chilling-effects.ts | Feld: options[2].de (Übung -2) | Zitat: „…den Kanal gefälligst wieder zu nutzen…\" — Umgangssprachlich-schnippisches „gefälligst\" bricht das nüchtern/ernste seriousMode-Register (Zwang & Kontrolle). Telegrafiert zudem die falsche Option zu laut und schwächt sie als plausiblen Distraktor (Distraktor-Regel: keine Füll-Distraktoren). Neutral: „…den Kanal wieder zu nutzen…\".",
+  "Stil: Datei: spin/content/exercises/wave6-censorship-chilling-effects.ts | Feld: explanation.en (Übung -1: „…rolling back the per-person analysis\"; Übung -2: „…withdraw the per-person analysis\") | Das DE „personenbezogene Auswertung\" trägt bewusst die DSGVO-Präzision (personenbezogen). „per-person analysis\" ist locker und verliert diese Fachresonanz — verstößt gegen „idiomatisches Fach-Englisch gleicher Präzision\". Besser: „individual-level analysis\" bzw. „analysis that identifies individuals\"."
+ ]
+}

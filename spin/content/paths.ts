@@ -98,6 +98,20 @@ export const learningPaths: LearningPath[] = [
     ],
   },
   {
+    id: 'zwang_kontrolle',
+    name: { de: 'Zwang & Kontrolle', en: 'Coercion & Control' },
+    description: {
+      de: 'Ernste Muster zwischenmenschlicher und struktureller Kontrolle — hier geht es ums Erkennen und Schützen, nicht ums Anwenden.',
+      en: 'Serious patterns of interpersonal and structural control — this is about recognising and protecting, not applying.',
+    },
+    techniqueIds: [
+      'gaslighting', 'love_bombing', 'darvo', 'coercive_control',
+      'censorship_chilling_effects', 'societal_atomization',
+      'zersetzung_decomposition', 'networked_harassment', 'proxy_attack',
+      'kompromat_leverage',
+    ],
+  },
+  {
     id: 'radar',
     name: { de: 'Radar', en: 'Radar' },
     description: {

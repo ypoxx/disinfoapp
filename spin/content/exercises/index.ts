@@ -149,6 +149,24 @@ import { backfillNarrativePersuasion } from './backfill-narrative-persuasion';
 import { backfillSyntheticMedia } from './backfill-synthetic-media';
 
 /** All exercises combined into a single array */
+// Band-Diversität (je 1 Übung im komplementären Schwierigkeitsband)
+import { bandAiDeceptionScheming } from './band-ai-deception-scheming';
+import { bandAppealToTradition } from './band-appeal-to-tradition';
+import { bandAstroturfingSockpuppets } from './band-astroturfing-sockpuppets';
+import { bandCoerciveControl } from './band-coercive-control';
+import { bandConfirmshaming } from './band-confirmshaming';
+import { bandDarvo } from './band-darvo';
+import { bandDisguisedAds } from './band-disguised-ads';
+import { bandFakeSocialProof } from './band-fake-social-proof';
+import { bandGaslighting } from './band-gaslighting';
+import { bandLoadedLanguage } from './band-loaded-language';
+import { bandLoveBombing } from './band-love-bombing';
+import { bandMentalAccounting } from './band-mental-accounting';
+import { bandMisdirection } from './band-misdirection';
+import { bandPeakEndRule } from './band-peak-end-rule';
+import { bandRedHerring } from './band-red-herring';
+import { bandWhataboutism } from './band-whataboutism';
+
 export const exercises: Exercise[] = [
   ...quickChecks,
   ...techniqueMatches,
@@ -289,4 +307,21 @@ export const exercises: Exercise[] = [
   ...backfillDigitalInfluence,
   ...backfillNarrativePersuasion,
   ...backfillSyntheticMedia,
+  // Band-Diversität (komplementäre Schwierigkeitsbänder)
+  ...bandAiDeceptionScheming,
+  ...bandAppealToTradition,
+  ...bandAstroturfingSockpuppets,
+  ...bandCoerciveControl,
+  ...bandConfirmshaming,
+  ...bandDarvo,
+  ...bandDisguisedAds,
+  ...bandFakeSocialProof,
+  ...bandGaslighting,
+  ...bandLoadedLanguage,
+  ...bandLoveBombing,
+  ...bandMentalAccounting,
+  ...bandMisdirection,
+  ...bandPeakEndRule,
+  ...bandRedHerring,
+  ...bandWhataboutism,
 ];

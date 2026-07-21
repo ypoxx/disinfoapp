@@ -1,0 +1,60 @@
+{
+ "entry": "paltering_half_truth",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "equivocation"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "equivocation"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "equivocation"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "paltering_half_truth",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "objections": [],
+   "pass": true
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [],
+ "status": "passed_round1",
+ "finalStatus": "passed_round1"
+}

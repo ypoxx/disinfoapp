@@ -16,6 +16,8 @@ interface ProgressState {
   totalPracticeTime: number; // seconds
   sessionsCompleted: number;
   totalQuestionsAnswered: number;
+  /** Rolling item scores (0..1), most recent last — flow-corridor signal (cap 20) */
+  recentScores: number[];
 
   addXP: (amount: number) => void;
   /** Count today as active (idempotent per day, handles week rollover) */
@@ -24,6 +26,8 @@ interface ProgressState {
   addPracticeTime: (seconds: number) => void;
   completeSession: () => void;
   addQuestionsAnswered: (count: number) => void;
+  /** Append this session's item scores to the rolling window */
+  pushRecentScores: (scores: number[]) => void;
 
   /** Streak as it should be DISPLAYED (lapsed streaks show 0) */
   getDisplayStreak: () => number;
@@ -48,6 +52,7 @@ export const useProgressStore = create<ProgressState>()(
       totalPracticeTime: 0,
       sessionsCompleted: 0,
       totalQuestionsAnswered: 0,
+      recentScores: [],
 
       addXP: (amount) => set((s) => ({ xp: s.xp + amount })),
 
@@ -71,6 +76,9 @@ export const useProgressStore = create<ProgressState>()(
       addQuestionsAnswered: (count) =>
         set((s) => ({ totalQuestionsAnswered: s.totalQuestionsAnswered + count })),
 
+      pushRecentScores: (scores) =>
+        set((s) => ({ recentScores: [...s.recentScores, ...scores].slice(-20) })),
+
       getDisplayStreak: () => displayStreak(get().streak),
       getWeeklyProgress: () => displayWeeklyProgress(get().streak),
       getDaysSinceLastActive: () => daysSinceLastActive(get().streak),
@@ -88,6 +96,9 @@ export const useProgressStore = create<ProgressState>()(
         }
         if (state.totalQuestionsAnswered === undefined) {
           state.totalQuestionsAnswered = 0;
+        }
+        if (state.recentScores === undefined) {
+          state.recentScores = [];
         }
         return state as ProgressState;
       },

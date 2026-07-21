@@ -1,0 +1,118 @@
+{
+ "entry": "decoy_effect",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "decoy_effect",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "decoy_effect",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "decoy_effect",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/techniques/decoy-effect.ts, Feld description.en: \"A deliberately inferior add-on option — the decoy —\" — \"add-on option\" liest sich im Pricing-Kontext als Zubuchoption/Upsell zu einem Basispaket, nicht als zusätzliche eigenständige Alternative im Optionsset (DE: \"Zusatzoption\"). Bedeutungsverschiebung gegenüber DE; idiomatischer z. B. \"a deliberately inferior extra option added to the set — the decoy —\" oder \"a deliberately inferior third option\".",
+    "spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-2, Feld explanation.en: \"tiered packages with genuine use cases are craft\" — wörtliche Übertragung von \"sind Handwerk\", im Englischen unidiomatisch. Fix z. B. \"tiered packages with genuine use cases are simply good craft\" oder \"are standard professional practice\".",
+    "spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-2, Feld explanation.en: \"sponsors recalculate packages\" — Calque von \"Sponsoren kalkulieren Pakete nach\"; \"recalculate\" setzt eine frühere eigene Kalkulation voraus und trifft \"nachkalkulieren\" nicht. Idiomatisch z. B. \"sponsors run the numbers on the packages\" oder \"sponsors will cost the packages out\".",
+    "spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-3, Feld explanation.en: \"it would work through a first-set reference number\" — \"first-set\" ist ein Calque von \"zuerst gesetzte Referenzzahl\" und kein gängiges englisches Kompositum. Idiomatisch z. B. \"a reference figure set at the outset\" oder wie in Übung 1 gelöst \"a first-mentioned reference number\".",
+    "spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-1, Feld explanation.en: \"The comparison with the decoy is effortless to decide\" — im Englischen \"decides\" man keinen comparison; die DE-Konstruktion (\"ist mühelos zu entscheiden\") wurde 1:1 gespiegelt. Idiomatisch z. B. \"The decoy comparison takes no effort to settle\" oder \"The comparison with the decoy is easy to call\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/techniques/decoy-effect.ts, Feld description.en: \"A deliberately inferior add-on option — the decoy —\" — \"add-on option\" liest sich im Pricing-Kontext als Zubuchoption/Upsell zu einem Basispaket, nicht als zusätzliche eigenständige Alternative im Optionsset (DE: \"Zusatzoption\"). Bedeutungsverschiebung gegenüber DE; idiomatischer z. B. \"a deliberately inferior extra option added to the set — the decoy —\" oder \"a deliberately inferior third option\".",
+  "Stil: spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-2, Feld explanation.en: \"tiered packages with genuine use cases are craft\" — wörtliche Übertragung von \"sind Handwerk\", im Englischen unidiomatisch. Fix z. B. \"tiered packages with genuine use cases are simply good craft\" oder \"are standard professional practice\".",
+  "Stil: spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-2, Feld explanation.en: \"sponsors recalculate packages\" — Calque von \"Sponsoren kalkulieren Pakete nach\"; \"recalculate\" setzt eine frühere eigene Kalkulation voraus und trifft \"nachkalkulieren\" nicht. Idiomatisch z. B. \"sponsors run the numbers on the packages\" oder \"sponsors will cost the packages out\".",
+  "Stil: spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-3, Feld explanation.en: \"it would work through a first-set reference number\" — \"first-set\" ist ein Calque von \"zuerst gesetzte Referenzzahl\" und kein gängiges englisches Kompositum. Idiomatisch z. B. \"a reference figure set at the outset\" oder wie in Übung 1 gelöst \"a first-mentioned reference number\".",
+  "Stil: spin/content/exercises/pilot-decoy-effect.ts, Übung p3-decoy_effect-1, Feld explanation.en: \"The comparison with the decoy is effortless to decide\" — im Englischen \"decides\" man keinen comparison; die DE-Konstruktion (\"ist mühelos zu entscheiden\") wurde 1:1 gespiegelt. Idiomatisch z. B. \"The decoy comparison takes no effort to settle\" oder \"The comparison with the decoy is easy to call\"."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "decoy_effect",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "decoy_effect",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "decoy_effect",
+    "confident": true,
+    "secondGuess": "anchoring"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  },
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "passed_round2"
+}

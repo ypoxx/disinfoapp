@@ -1,0 +1,86 @@
+{
+ "entry": "price_comparison_prevention",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true,
+    "secondGuess": "decoy_effect"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true,
+    "secondGuess": "sludge"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "price_comparison_prevention",
+    "confident": true,
+    "secondGuess": "drip_pricing"
+   }
+  ],
+  "distraktor": {
+   "objections": [
+    "w4-price_comparison_prevention-1: Distraktor 'Sludge' ist ernsthaft als ebenfalls richtig verteidigbar. Die Verweigerung der Referenzpreis-Auskunft durch Anbieter C ist gezielte Reibung gegen eine für den Einkauf vorteilhafte Handlung, und in der gängigen Taxonomie (Mathur et al., Kategorie 'Obstruction') ist Price Comparison Prevention ein Unterfall von Obstruction/Sludge — Kategorie-vs.-Unterkategorie-Ambiguität. Fix: 'Sludge' durch einen sauber ausgeschlossenen, aber plausiblen Nachbarn ersetzen, z. B. 'Köder-Effekt (Decoy)' (drei Angebote wirken decoy-verdächtig, aber es fehlt das von einem Anbieter konstruierte dominierte Lockangebot).",
+    "w4-price_comparison_prevention-3: Lexikalischer Giveaway im Stem. Das Zitat 'dann kann uns kein Vergleichsportal und kein Wettbewerber mehr neben sein Preisblatt legen' benennt die Absicht praktisch wortgleich zur korrekten Option 'Vergleichsverhinderung' — reines Wort-Matching genügt, die Distraktoren (Decoy, Drip Pricing) werden funktionslos. Fix: Begründung ohne Vergleichs-Vokabular formulieren, z. B. 'dann redet keiner mehr über den Preis pro Teilnehmer', sodass die Technik aus dem Mechanismus (Einzelpreise abschaffen, Fantasienamen, Jahreskontingente) erschlossen werden muss.",
+    "w4-price_comparison_prevention-3: Nur 3 Antwortoptionen statt 4 wie in Übung 1 (Ratewahrscheinlichkeit 33 % statt 25 %). Fix: vierte plausible, aber sauber falsche Option ergänzen, z. B. 'Versteckte Kosten (Hidden Fees)' — im Preiskontext attraktiv, aber klar falsch, da im Szenario keine nachträglich auftauchenden Kosten vorkommen."
+   ],
+   "pass": false
+  },
+  "fach": {
+   "objections": [],
+   "pass": true
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-price-comparison-prevention.ts, Übung 2 (w4-price_comparison_prevention-2), scenario.en und options[0].en: \"with no itemised positions\" / \"price exactly that scenario with itemised positions\" — \"positions\" ist die wörtliche Übersetzung von \"Posten/Positionen\" (falscher Freund); idiomatisch wäre \"with no itemised breakdown\" bzw. \"with every line item broken out\". Verstößt gegen die EN-Regel (kein wörtliches Übersetzen).",
+    "spin/content/exercises/wave4-price-comparison-prevention.ts, explanation.de/en von Übung 1 UND Übung 2: dieselbe Pointe zweimal hintereinander — Ü1: \"eine Weigerung ist kein Hindernis, sondern ein Bewertungsergebnis, das in die Entscheidung eingeht\", Ü2: \"wird nicht zum Hindernis, sondern zum dokumentierten Bewertungsergebnis\" (EN jeweils analog: \"not an obstacle but an evaluation result\" / \"not an obstacle but a documented evaluation result\"); zusätzlich paraphrasiert in Ü2, options[0] (\"geht mit genau diesem Ergebnis in die Bewertung ein\"). Beim zweiten Auftreten in Folge wirkt die Formel abgegriffen — einmal umformulieren (z. B. Ü2 auf den Dokumentations-/Vergabeakten-Aspekt drehen).",
+    "spin/content/exercises/wave4-price-comparison-prevention.ts, Übung 3 (w4-price_comparison_prevention-3), explanation.de: Der Legitim-Takeaway ist komplett unpersönlich formuliert (\"Differenzierung über Pakete ist professionell vertretbar, solange … und wer Vergleichbarkeit anbietet, erspart sich den Verdacht, sie zu fürchten\") — die Charta verlangt Takeaways in Du-Form (\"So nutzt du das professionell…\"); Ü1 und Ü2 halten das ein, Ü3 nicht. Die EN-Fassung hat die direkte Anrede bereits (\"offering comparability spares YOU the suspicion\") — DE angleichen, z. B. \"…und wenn du Vergleichbarkeit anbietest, ersparst du dir den Verdacht, sie zu fürchten.\""
+   ]
+  }
+ },
+ "objections": [
+  "Distraktor: w4-price_comparison_prevention-1: Distraktor 'Sludge' ist ernsthaft als ebenfalls richtig verteidigbar. Die Verweigerung der Referenzpreis-Auskunft durch Anbieter C ist gezielte Reibung gegen eine für den Einkauf vorteilhafte Handlung, und in der gängigen Taxonomie (Mathur et al., Kategorie 'Obstruction') ist Price Comparison Prevention ein Unterfall von Obstruction/Sludge — Kategorie-vs.-Unterkategorie-Ambiguität. Fix: 'Sludge' durch einen sauber ausgeschlossenen, aber plausiblen Nachbarn ersetzen, z. B. 'Köder-Effekt (Decoy)' (drei Angebote wirken decoy-verdächtig, aber es fehlt das von einem Anbieter konstruierte dominierte Lockangebot).",
+  "Distraktor: w4-price_comparison_prevention-3: Lexikalischer Giveaway im Stem. Das Zitat 'dann kann uns kein Vergleichsportal und kein Wettbewerber mehr neben sein Preisblatt legen' benennt die Absicht praktisch wortgleich zur korrekten Option 'Vergleichsverhinderung' — reines Wort-Matching genügt, die Distraktoren (Decoy, Drip Pricing) werden funktionslos. Fix: Begründung ohne Vergleichs-Vokabular formulieren, z. B. 'dann redet keiner mehr über den Preis pro Teilnehmer', sodass die Technik aus dem Mechanismus (Einzelpreise abschaffen, Fantasienamen, Jahreskontingente) erschlossen werden muss.",
+  "Distraktor: w4-price_comparison_prevention-3: Nur 3 Antwortoptionen statt 4 wie in Übung 1 (Ratewahrscheinlichkeit 33 % statt 25 %). Fix: vierte plausible, aber sauber falsche Option ergänzen, z. B. 'Versteckte Kosten (Hidden Fees)' — im Preiskontext attraktiv, aber klar falsch, da im Szenario keine nachträglich auftauchenden Kosten vorkommen.",
+  "Stil: spin/content/exercises/wave4-price-comparison-prevention.ts, Übung 2 (w4-price_comparison_prevention-2), scenario.en und options[0].en: \"with no itemised positions\" / \"price exactly that scenario with itemised positions\" — \"positions\" ist die wörtliche Übersetzung von \"Posten/Positionen\" (falscher Freund); idiomatisch wäre \"with no itemised breakdown\" bzw. \"with every line item broken out\". Verstößt gegen die EN-Regel (kein wörtliches Übersetzen).",
+  "Stil: spin/content/exercises/wave4-price-comparison-prevention.ts, explanation.de/en von Übung 1 UND Übung 2: dieselbe Pointe zweimal hintereinander — Ü1: \"eine Weigerung ist kein Hindernis, sondern ein Bewertungsergebnis, das in die Entscheidung eingeht\", Ü2: \"wird nicht zum Hindernis, sondern zum dokumentierten Bewertungsergebnis\" (EN jeweils analog: \"not an obstacle but an evaluation result\" / \"not an obstacle but a documented evaluation result\"); zusätzlich paraphrasiert in Ü2, options[0] (\"geht mit genau diesem Ergebnis in die Bewertung ein\"). Beim zweiten Auftreten in Folge wirkt die Formel abgegriffen — einmal umformulieren (z. B. Ü2 auf den Dokumentations-/Vergabeakten-Aspekt drehen).",
+  "Stil: spin/content/exercises/wave4-price-comparison-prevention.ts, Übung 3 (w4-price_comparison_prevention-3), explanation.de: Der Legitim-Takeaway ist komplett unpersönlich formuliert (\"Differenzierung über Pakete ist professionell vertretbar, solange … und wer Vergleichbarkeit anbietet, erspart sich den Verdacht, sie zu fürchten\") — die Charta verlangt Takeaways in Du-Form (\"So nutzt du das professionell…\"); Ü1 und Ü2 halten das ein, Ü3 nicht. Die EN-Fassung hat die direkte Anrede bereits (\"offering comparability spares YOU the suspicion\") — DE angleichen, z. B. \"…und wenn du Vergleichbarkeit anbietest, ersparst du dir den Verdacht, sie zu fürchten.\""
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "flagged",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow, Blind ×2 + Distraktor + Stil): blind eindeutig; Workflow-Revision + manuelle Rest-Behebung der Stil-/Evidenz-Beanstandungen. tsc/lint/Tests/build/audit grün."
+ }
+}

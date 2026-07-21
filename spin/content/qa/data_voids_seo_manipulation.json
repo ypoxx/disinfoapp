@@ -1,0 +1,10 @@
+{
+ "entry": "data_voids_seo_manipulation",
+ "status": "flagged",
+ "open": [
+  "Stil: EN nicht idiomatisch (schwerster Fund, Vorzeige-Übung). Datei: spin/content/exercises/wave5c-data-voids-seo-manipulation.ts, Übung wave5c-data_voids_seo_manipulation-1, Feld explanation.en. Zitat: \"...broad coverage of the single rare search phrase, so that any own result appears at all.\" — \"any own result\" ist grammatisch falsch (\"own\" verlangt ein Possessiv: \"their own\"); klarer Kalk aus dem DE \"damit überhaupt ein eigenes Ergebnis erscheint\". Ein genau lesender Kommunikationsprofi stolpert. Fix: \"...so that a result of their own appears at all.\"",
+  "Stil: EN Germanismus. Datei: spin/content/exercises/wave5c-data-voids-seo-manipulation.ts, Übung wave5c-data_voids_seo_manipulation-1, Feld explanation.en. Zitat: \"...stays fair content craft, as long as...\" — Wort-für-Wort aus \"bleibt zulässiges Content-Handwerk\"; \"stays fair content craft\" liest sich artikel-/registerschief. Fix: \"remains legitimate content craft\".",
+  "Stil: EN Kalk, unidiomatisch. Datei: spin/content/exercises/wave5c-data-voids-seo-manipulation.ts, Übung wave5c-data_voids_seo_manipulation-3, Feld explanation.en. Zitat: \"...the firm names the core itself...\" — direkte Übertragung von \"nennt den Kern selbst\"; \"names the core\" ist kein idiomatisches Fach-Englisch. Fix: \"the firm spells out the crux itself\" o. Ä.",
+  "Stil: EN Register-/Kalk-Fehler. Datei: spin/content/exercises/wave5c-data-voids-seo-manipulation.ts, Übung wave5c-data_voids_seo_manipulation-3, Feld explanation.en. Zitat: \"...as long as nothing decisive is omitted to prettify the gap.\" — \"prettify the gap\" ist Übersetzung von \"die Lücke zu schönen\", registerschief und unidiomatisch. Fix: \"to gloss over the gap\"."
+ ]
+}

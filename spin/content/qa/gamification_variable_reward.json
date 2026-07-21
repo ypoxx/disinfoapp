@@ -1,0 +1,82 @@
+{
+ "entry": "gamification_variable_reward",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "gamification_variable_reward",
+    "secondGuess": "loss_aversion",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "gamification_variable_reward",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "gamification_variable_reward",
+    "secondGuess": "attention_engagement_loops",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "gamification_variable_reward",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "gamification_variable_reward",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "gamification_variable_reward",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 3 (w4-...-3), scenario.en: \"when which prize drops is unpredictable\" ist ein wörtlicher Calque von \"wann welcher Gewinn fällt, ist nicht vorhersehbar\" — die gestapelte Interrogativkonstruktion \"when which\" existiert im idiomatischen Englisch nicht. Behebbar z. B. mit: \"which prize will drop — and when — is anyone's guess\".",
+    "spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 1 (w4-...-1), explanation.en: \"game mechanics are professional in your own formats when they are transparent\" spiegelt Wort für Wort das DE \"sind Spielmechaniken professionell\"; \"professional\" als Prädikat über Mechaniken ist unidiomatisch. Idiomatisch wäre z. B. \"game mechanics are legitimate / good professional practice in your own formats when…\".",
+    "spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 3 (w4-...-3), explanation.en: \"here a prize entices, nothing threatens\" ist ein 1:1-Spiegel von \"hier lockt ein Gewinn, nichts droht\"; das intransitive \"nothing threatens\" trägt im Englischen nicht. Idiomatisch z. B.: \"here a prize does the pulling — there is no threat in play\".",
+    "spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 2 (w4-...-2), explanation.de (und EN-Spiegel): \"interne Kommunikation lebt von Vertrauen\" (EN: \"internal communications runs on trust\") ist genau die Binsenweisheit, die einer PR-Leiterin mit 15 Jahren Erfahrung als platt auffällt — der starke zweite Halbsatz (\"das übersteht keine nachgereichte Offenlegung\") kann den Punkt allein tragen; die Stock-Phrase davor streichen oder konkretisieren (z. B. wessen Vertrauen worin verspielt wird)."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 3 (w4-...-3), scenario.en: \"when which prize drops is unpredictable\" ist ein wörtlicher Calque von \"wann welcher Gewinn fällt, ist nicht vorhersehbar\" — die gestapelte Interrogativkonstruktion \"when which\" existiert im idiomatischen Englisch nicht. Behebbar z. B. mit: \"which prize will drop — and when — is anyone's guess\".",
+  "Stil: spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 1 (w4-...-1), explanation.en: \"game mechanics are professional in your own formats when they are transparent\" spiegelt Wort für Wort das DE \"sind Spielmechaniken professionell\"; \"professional\" als Prädikat über Mechaniken ist unidiomatisch. Idiomatisch wäre z. B. \"game mechanics are legitimate / good professional practice in your own formats when…\".",
+  "Stil: spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 3 (w4-...-3), explanation.en: \"here a prize entices, nothing threatens\" ist ein 1:1-Spiegel von \"hier lockt ein Gewinn, nichts droht\"; das intransitive \"nothing threatens\" trägt im Englischen nicht. Idiomatisch z. B.: \"here a prize does the pulling — there is no threat in play\".",
+  "Stil: spin/content/exercises/wave4-gamification-variable-reward.ts, Übung 2 (w4-...-2), explanation.de (und EN-Spiegel): \"interne Kommunikation lebt von Vertrauen\" (EN: \"internal communications runs on trust\") ist genau die Binsenweisheit, die einer PR-Leiterin mit 15 Jahren Erfahrung als platt auffällt — der starke zweite Halbsatz (\"das übersteht keine nachgereichte Offenlegung\") kann den Punkt allein tragen; die Stock-Phrase davor streichen oder konkretisieren (z. B. wessen Vertrauen worin verspielt wird)."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): Blind ×2 + Distraktor + Stil in Runde 1 bestanden, keine Beanstandungen."
+ }
+}

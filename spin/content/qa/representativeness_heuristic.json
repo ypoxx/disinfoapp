@@ -1,0 +1,123 @@
+{
+ "entry": "representativeness_heuristic",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "confirmation_bias"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "/home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-1, scenario.en: \"Young, politically loud on his private channels\" ist eine wörtliche Übertragung von „politisch laut\" — im EN-Fachregister unidiomatisch. Behebbar mit \"politically outspoken on his private accounts\" oder \"loudly political online\".",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-3, scenario.en und explanation.en: „Shitstorm\" ist als EN-Wort ein falscher Freund — im Deutschen etablierter Fachbegriff für eine Social-Media-Empörungswelle, im Englischen ein Vulgarismus mit der Bedeutung „chaotische Lage\", nicht der Fachterminus. Im Szenario (\"Shitstorms hit arrogant corporations\") grenzwertig, in der App-Stimme der Erklärung (\"shitstorm judgments are often shaped by remembered blockbuster cases\") klarer Registerbruch. Behebbar mit \"social media firestorms\", \"online pile-ons\" oder \"public backlash\".",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-3, explanation.en: \"remembered blockbuster cases\" für „erinnerte Großfälle\" — „blockbuster\" ist im EN für Filme/Deals reserviert, nicht für Krisenfälle; wirkt als Übersetzungsgriff. Behebbar mit \"high-profile cases\" oder \"headline cases\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-1, scenario.en: \"Young, politically loud on his private channels\" ist eine wörtliche Übertragung von „politisch laut\" — im EN-Fachregister unidiomatisch. Behebbar mit \"politically outspoken on his private accounts\" oder \"loudly political online\".",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-3, scenario.en und explanation.en: „Shitstorm\" ist als EN-Wort ein falscher Freund — im Deutschen etablierter Fachbegriff für eine Social-Media-Empörungswelle, im Englischen ein Vulgarismus mit der Bedeutung „chaotische Lage\", nicht der Fachterminus. Im Szenario (\"Shitstorms hit arrogant corporations\") grenzwertig, in der App-Stimme der Erklärung (\"shitstorm judgments are often shaped by remembered blockbuster cases\") klarer Registerbruch. Behebbar mit \"social media firestorms\", \"online pile-ons\" oder \"public backlash\".",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-representativeness-heuristic.ts, Übung w4-representativeness_heuristic-3, explanation.en: \"remembered blockbuster cases\" für „erinnerte Großfälle\" — „blockbuster\" ist im EN für Filme/Deals reserviert, nicht für Krisenfälle; wirkt als Übersetzungsgriff. Behebbar mit \"high-profile cases\" oder \"headline cases\"."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "confirmation_bias"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "representativeness_heuristic",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-3, scenario.de: nahezu wortgleiche Wiederholung von examples[2] des Technik-Eintrags — Übung: »Sie sind der nahbare Mittelständler von nebenan«, Eintrag: »Sie sind der sympathische Mittelständler von nebenan«, identische Rollen (externer Berater → Geschäftsführerin eines Familienbetriebs) und Situation (Shitstorm-Risiko). Der Bibliothekseintrag verrät so die Quick-Check-Antwort; die recycelte Pointe fällt sofort auf. Eine der beiden Miniaturen braucht ein frisches Szenario. Abgeschwächt auch Übung -2 vs. examples[1] (beide Male Agentur-Planning mit Viral-Muster-Checkliste).",
+    "wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-1, explanation.en: Comma-Splice als durchgeschlagene deutsche Kommasyntax: »no remembered case is invoked here, a person is matched against a stereotype« — Semikolon oder Gedankenstrich setzen. Gleiches Muster in -3, explanation.en: »here no remembered example carries the judgment, the match against a victim stereotype does«.",
+    "wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-2, options[3].en: »fully modeled in advance« — US-Schreibung in einem durchgängig britisch geschriebenen Bestand (»To recognise and counter it« in allen drei Erklärungen dieser Datei, 42 von 43 Vorkommen im exercises-Ordner). Konsistent »modelled« oder umformulieren.",
+    "representativeness-heuristic.ts, evidence.studies[0]: »Tversky et al. (1974)« — das Paper hat genau zwei Autoren; die eigene findings-Prosa schreibt korrekt »Tversky und Kahneman (1974)«, und types.ts gibt als Hausformat »Tversky & Kahneman (1981)« vor. »et al.« bei zwei Autoren ist unpräzise und unterschlägt Kahneman."
+   ]
+  },
+  "stillOpen": [
+   "Stil: wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-3, scenario.de: nahezu wortgleiche Wiederholung von examples[2] des Technik-Eintrags — Übung: »Sie sind der nahbare Mittelständler von nebenan«, Eintrag: »Sie sind der sympathische Mittelständler von nebenan«, identische Rollen (externer Berater → Geschäftsführerin eines Familienbetriebs) und Situation (Shitstorm-Risiko). Der Bibliothekseintrag verrät so die Quick-Check-Antwort; die recycelte Pointe fällt sofort auf. Eine der beiden Miniaturen braucht ein frisches Szenario. Abgeschwächt auch Übung -2 vs. examples[1] (beide Male Agentur-Planning mit Viral-Muster-Checkliste).",
+   "Stil: wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-1, explanation.en: Comma-Splice als durchgeschlagene deutsche Kommasyntax: »no remembered case is invoked here, a person is matched against a stereotype« — Semikolon oder Gedankenstrich setzen. Gleiches Muster in -3, explanation.en: »here no remembered example carries the judgment, the match against a victim stereotype does«.",
+   "Stil: wave4-representativeness-heuristic.ts, w4-representativeness_heuristic-2, options[3].en: »fully modeled in advance« — US-Schreibung in einem durchgängig britisch geschriebenen Bestand (»To recognise and counter it« in allen drei Erklärungen dieser Datei, 42 von 43 Vorkommen im exercises-Ordner). Konsistent »modelled« oder umformulieren.",
+   "Stil: representativeness-heuristic.ts, evidence.studies[0]: »Tversky et al. (1974)« — das Paper hat genau zwei Autoren; die eigene findings-Prosa schreibt korrekt »Tversky und Kahneman (1974)«, und types.ts gibt als Hausformat »Tversky & Kahneman (1981)« vor. »et al.« bei zwei Autoren ist unpräzise und unterschlägt Kahneman."
+  ]
+ },
+ "status": "flagged",
+ "finalStatus": "flagged"
+}

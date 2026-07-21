@@ -1,0 +1,87 @@
+{
+ "entry": "guilt_by_association",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "guilt_by_association",
+    "confident": true,
+    "secondGuess": "ad_hominem"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "guilt_by_association",
+    "confident": true,
+    "secondGuess": "ad_hominem"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "guilt_by_association",
+    "confident": true,
+    "secondGuess": "ad_hominem"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "guilt_by_association",
+    "confident": true,
+    "secondGuess": "ad_hominem"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "guilt_by_association",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "guilt_by_association",
+    "confident": true,
+    "secondGuess": "ad_hominem"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-1, explanation.de: Der Takeaway „Legitim einsetzen“ steht komplett ohne Du-Anrede („Absender- und Umfeldprüfung gehört zum Handwerk — wer eine Position sonst noch vertritt, ist für die Positionierungs- und Wahrnehmungsplanung relevant …“). Die Charta verlangt Takeaways in Du-Form („So nutzt du das professionell…“); Übung 2 („ist auch dein Werkzeug“) und Übung 3 („wer deine Inhalte teilt“) halten das ein. Gleiches Problem parallel in explanation.en („vetting senders and surroundings is part of the craft“ — kein „you“ im gesamten Takeaway).",
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, explanation.en: „devalued solely through its association neighbourhood“ ist eine wörtliche Übertragung von „Verbandsnachbarschaft“ und kein idiomatisches Fach-Englisch. Die Technik-Beschreibung (guilt-by-association.ts, description.en) löst dieselbe Metapher selbst idiomatisch mit „the company it keeps“ — darauf umstellen.",
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-1, explanation.en: Doppelter „neighbourhood“-Calque („measured not … but against its neighbourhood“, „devalued solely through its neighbourhood“) plus „her demand is merely filed by proximity“ — „filed“ ist wörtlich aus „einsortiert“ übertragen; idiomatisch wäre z. B. „pigeonholed by proximity“ bzw. „judged by the company it keeps“.",
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, explanation.en: „hand the newsroom a mud-fight narrative with two players“ — „mud-fight“ ist ein Calque von „Schlammschlacht“; im EN-Sprachgebrauch heißt das „mudslinging“ (z. B. „a mudslinging story with two players“).",
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, options[3].en: „without our involvement the story will not carry“ — wörtlich aus „ohne unser Zutun trägt die Geschichte nicht“; im EN-Journalistenjargon idiomatisch: „the story has no legs“ / „won’t stick“.",
+    "spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-3, explanation.en: „reach structure matters for resonance analysis“ — „resonance analysis“ ist ein Germanismus für „Resonanzanalyse“; idiomatisch wäre „media response analysis“ oder „engagement analysis“ (auch „reach structure“ besser als „who amplifies your content“ o. ä. auflösen)."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-1, explanation.de: Der Takeaway „Legitim einsetzen“ steht komplett ohne Du-Anrede („Absender- und Umfeldprüfung gehört zum Handwerk — wer eine Position sonst noch vertritt, ist für die Positionierungs- und Wahrnehmungsplanung relevant …“). Die Charta verlangt Takeaways in Du-Form („So nutzt du das professionell…“); Übung 2 („ist auch dein Werkzeug“) und Übung 3 („wer deine Inhalte teilt“) halten das ein. Gleiches Problem parallel in explanation.en („vetting senders and surroundings is part of the craft“ — kein „you“ im gesamten Takeaway).",
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, explanation.en: „devalued solely through its association neighbourhood“ ist eine wörtliche Übertragung von „Verbandsnachbarschaft“ und kein idiomatisches Fach-Englisch. Die Technik-Beschreibung (guilt-by-association.ts, description.en) löst dieselbe Metapher selbst idiomatisch mit „the company it keeps“ — darauf umstellen.",
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-1, explanation.en: Doppelter „neighbourhood“-Calque („measured not … but against its neighbourhood“, „devalued solely through its neighbourhood“) plus „her demand is merely filed by proximity“ — „filed“ ist wörtlich aus „einsortiert“ übertragen; idiomatisch wäre z. B. „pigeonholed by proximity“ bzw. „judged by the company it keeps“.",
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, explanation.en: „hand the newsroom a mud-fight narrative with two players“ — „mud-fight“ ist ein Calque von „Schlammschlacht“; im EN-Sprachgebrauch heißt das „mudslinging“ (z. B. „a mudslinging story with two players“).",
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-2, options[3].en: „without our involvement the story will not carry“ — wörtlich aus „ohne unser Zutun trägt die Geschichte nicht“; im EN-Journalistenjargon idiomatisch: „the story has no legs“ / „won’t stick“.",
+  "Stil: spin/content/exercises/wave4-guilt-by-association.ts, w4-guilt_by_association-3, explanation.en: „reach structure matters for resonance analysis“ — „resonance analysis“ ist ein Germanismus für „Resonanzanalyse“; idiomatisch wäre „media response analysis“ oder „engagement analysis“ (auch „reach structure“ besser als „who amplifies your content“ o. ä. auflösen)."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): Blind ×2 + Distraktor + Stil in Runde 1 bestanden, keine Beanstandungen."
+ }
+}

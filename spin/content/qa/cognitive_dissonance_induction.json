@@ -1,0 +1,88 @@
+{
+ "entry": "cognitive_dissonance_induction",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "consistency",
+    "secondGuess": "cognitive_dissonance_induction",
+    "confident": false
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "cognitive_dissonance_induction",
+    "secondGuess": "consistency",
+    "confident": false
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "cognitive_dissonance_induction",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "consistency",
+    "secondGuess": "cognitive_dissonance_induction",
+    "confident": false
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "consistency",
+    "secondGuess": "cognitive_dissonance_induction",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "cognitive_dissonance_induction",
+    "secondGuess": "illusory_truth_effect",
+    "confident": true
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": false,
+   "objections": [
+    "techniques/cognitive-dissonance-induction.ts Zeile 28: 'Festinger et al. (1959)' ist als Zitat falsch — die Quelle festinger_carlsmith_1959_dissonance hat genau zwei Autoren (Festinger & Carlsmith); 'et al.' unterschlägt Carlsmith und widerspricht dem eigenen findings-Text (Zeile 31, dort korrekt 'Festinger & Carlsmith (1959)') sowie der Korpus-Konvention für Zwei-Autoren-Studien ('Freedman & Fraser (1966)'). Fix: Eintrag in evidence.studies auf 'Festinger & Carlsmith (1959) - Cognitive Consequences of Forced Compliance' ändern. Alle übrigen Prüfpunkte (Evidenz-Hedging vs. evidenceTier 'moderate', Existenz/Übereinstimmung beider Quellen mit sourceRefs, fachliche Korrektheit des Mechanismus inkl. Insufficient Justification und Counter-Attitudinal Writing, Wirkbehauptungen in den drei Wave-4-Übungen) sind ohne Beanstandung."
+   ]
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "/home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, options[3].en: »I refuse any involvement in the town hall and declare in the steering committee that I will not take part in such staging.« — ›such staging‹ ist eine wörtliche Übersetzung von ›Inszenierung‹ und trägt im Englischen nicht deren abwertende Bedeutung (klingt nach Bühnentechnik/Eventlogistik). Idiomatisch z. B.: ›… that I won't be part of that kind of stage-managed exercise‹ oder ›… such a piece of theatre‹.",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, explanation.en: »with an open separation of roles you are just as protected while staying able to act and to inform« — wörtliche Spiegelung von ›handlungs- und auskunftsfähig‹; ›to inform‹ ohne Objekt ist unidiomatisch und unklar (wen? worüber?). Idiomatisch z. B.: ›while remaining free to act and to answer questions‹.",
+    "/home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, options[1].en: »I take the part: a single presentation will not change my views …« — Calque von ›Ich übernehme den Part‹; ›take the part‹ heißt im Englischen entweder eine Theaterrolle übernehmen oder (älter) für jemanden Partei ergreifen. Idiomatisch z. B.: ›I take it on:‹ oder ›I agree to do it:‹."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer A, Beispiel 0: als 'consistency' erkannt statt 'cognitive_dissonance_induction' — Beispiel schärfen, sodass die Zieltechnik dominiert",
+  "Blindprüfer A, Beispiel 1: nur unsicher erkannt (secondGuess: consistency) — eindeutiger machen",
+  "Blindprüfer B, Beispiel 0: als 'consistency' erkannt statt 'cognitive_dissonance_induction' — Beispiel schärfen, sodass die Zieltechnik dominiert",
+  "Blindprüfer B, Beispiel 1: als 'consistency' erkannt statt 'cognitive_dissonance_induction' — Beispiel schärfen, sodass die Zieltechnik dominiert",
+  "Fachlich: techniques/cognitive-dissonance-induction.ts Zeile 28: 'Festinger et al. (1959)' ist als Zitat falsch — die Quelle festinger_carlsmith_1959_dissonance hat genau zwei Autoren (Festinger & Carlsmith); 'et al.' unterschlägt Carlsmith und widerspricht dem eigenen findings-Text (Zeile 31, dort korrekt 'Festinger & Carlsmith (1959)') sowie der Korpus-Konvention für Zwei-Autoren-Studien ('Freedman & Fraser (1966)'). Fix: Eintrag in evidence.studies auf 'Festinger & Carlsmith (1959) - Cognitive Consequences of Forced Compliance' ändern. Alle übrigen Prüfpunkte (Evidenz-Hedging vs. evidenceTier 'moderate', Existenz/Übereinstimmung beider Quellen mit sourceRefs, fachliche Korrektheit des Mechanismus inkl. Insufficient Justification und Counter-Attitudinal Writing, Wirkbehauptungen in den drei Wave-4-Übungen) sind ohne Beanstandung.",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, options[3].en: »I refuse any involvement in the town hall and declare in the steering committee that I will not take part in such staging.« — ›such staging‹ ist eine wörtliche Übersetzung von ›Inszenierung‹ und trägt im Englischen nicht deren abwertende Bedeutung (klingt nach Bühnentechnik/Eventlogistik). Idiomatisch z. B.: ›… that I won't be part of that kind of stage-managed exercise‹ oder ›… such a piece of theatre‹.",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, explanation.en: »with an open separation of roles you are just as protected while staying able to act and to inform« — wörtliche Spiegelung von ›handlungs- und auskunftsfähig‹; ›to inform‹ ohne Objekt ist unidiomatisch und unklar (wen? worüber?). Idiomatisch z. B.: ›while remaining free to act and to answer questions‹.",
+  "Stil: /home/user/disinfoapp/spin/content/exercises/wave4-cognitive-dissonance-induction.ts, Übung w4-cognitive_dissonance_induction-2, options[1].en: »I take the part: a single presentation will not change my views …« — Calque von ›Ich übernehme den Part‹; ›take the part‹ heißt im Englischen entweder eine Theaterrolle übernehmen oder (älter) für jemanden Partei ergreifen. Idiomatisch z. B.: ›I take it on:‹ oder ›I agree to do it:‹."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed_round2",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): in Runde 1 beanstandet, Revision geschrieben, in Runde 2 Blind ×2 + Distraktor + Stil bestanden. Änderung: Vier unidiomatische EN-Calques korrigiert (Ex-2: ›accompanying strategy consultancy‹→›strategy consultancy advising on the project‹, ›harnessed as star witness‹→›pressed into service as a star witness‹, ›sells your perso"
+ }
+}

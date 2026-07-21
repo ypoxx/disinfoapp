@@ -78,7 +78,20 @@
     "exitConfirmTitle": "Session wirklich beenden?",
     "exitConfirmBody": "Dein Fortschritt in dieser Session geht verloren. Sie dauert nur noch wenige Momente.",
     "exitConfirmStay": "Weitermachen",
-    "exitConfirmLeave": "Beenden"
+    "exitConfirmLeave": "Beenden",
+    "multiHint": "Mehrfachauswahl — wähle alle zutreffenden Antworten",
+    "checkAnswer": "Prüfen",
+    "verdictCorrect": "Richtig",
+    "verdictPartial": "Teilweise richtig",
+    "verdictIncorrect": "Falsch",
+    "tagYourChoice": "Deine Wahl",
+    "tagSolution": "Lösung",
+    "tagHit": "Getroffen",
+    "tagMissed": "Übersehen",
+    "tagFalsePick": "Falsch gewählt",
+    "partialDetail": "{{hits}} von {{total}} getroffen · {{falsePicks}} falsch gewählt · {{missed}} übersehen",
+    "solutionIs": "Lösung: {{letters}}",
+    "refreshSession": "Auffrischen"
   },
   "library": {
     "title": "Bibliothek",
@@ -87,7 +100,12 @@
     "techniques": "Techniken",
     "difficulty": "Schwierigkeit",
     "effectiveness": "Wirksamkeit",
-    "evidence": "Evidenz",
+    "evidence": {
+      "robust": "Robust belegt",
+      "moderate": "Moderat belegt",
+      "weak": "Schwach belegt",
+      "frontier": "Frontier — kaum geprüft"
+    },
     "examples": "Beispiele",
     "relatedTechniques": "Verwandte Techniken",
     "warningSignals": "Erkennungsmerkmale",
@@ -102,7 +120,12 @@
     "noResultsTitle": "Keine Treffer.",
     "noResultsBody": "Keine Technik passt zu deiner Suche.",
     "resetFilters": "Filter zurücksetzen",
-    "notFound": "Technik nicht gefunden"
+    "notFound": "Technik nicht gefunden",
+    "radarShelf": "Radar",
+    "radarExplainer": "Neue und noch schwach belegte Begriffe — Begriffswissen, kein Wirkversprechen.",
+    "evidenceTier": "Evidenz",
+    "paths": "Lernpfade",
+    "pathTechniques": "Techniken"
   },
   "profile": {
     "title": "Profil",
@@ -125,41 +148,21 @@
     "longestStreak": "Längste Serie",
     "signInPrompt": "Melde dich an, um deinen Fortschritt geräteübergreifend zu synchronisieren.",
     "signInWithGoogle": "Mit Google anmelden",
-    "syncError": "Synchronisierung fehlgeschlagen — dein Fortschritt ist lokal gespeichert."
+    "syncError": "Synchronisierung fehlgeschlagen — dein Fortschritt ist lokal gespeichert.",
+    "adaptiveNote": "SPIN passt Auswahl und Schwierigkeit der Übungen automatisch an dein Niveau an."
   },
   "onboarding": {
     "posterLine1": "Überzeugung ist ein",
     "posterHighlight": "Handwerk.",
     "description": "Lerne die Überzeugungstechniken, die Kommunikationsprofis kennen sollten — evidenzbasiert, in wenigen Minuten am Tag.",
     "letsGo": "Los geht's",
-    "diagnosticTitle": "Kurzer Check",
-    "diagnosticDesc": "3 Fragen, um deinen Wissensstand einzuschätzen",
-    "skip": "Überspringen",
-    "viewResult": "Ergebnis ansehen",
     "noAccountNeeded": "Kein Account nötig · Fortschritt wird lokal gespeichert",
     "benefit1Title": "27 Techniken",
     "benefit1Desc": "Evidenzbasiert und praxisnah",
     "benefit2Title": "3–5 Minuten pro Tag",
     "benefit2Desc": "Microlearning mit Spaced Repetition",
     "benefit3Title": "Adaptiv",
-    "benefit3Desc": "Passt sich deinem Wissen an",
-    "result": {
-      "title": "{{score}}/{{total}} richtig",
-      "skippedTitle": "Alles klar.",
-      "continue": "SPIN entdecken",
-      "level": {
-        "advanced": "Fortgeschritten",
-        "intermediate": "Einsteiger mit Grundwissen",
-        "beginner": "Einsteiger",
-        "skipped": "Check übersprungen"
-      },
-      "message": {
-        "advanced": "Du kennst dich bereits gut aus. SPIN bringt dich mit fortgeschrittenen Techniken und Spaced Repetition auf Expertenniveau.",
-        "intermediate": "Gute Basis! SPIN hilft dir, alle 27 Techniken systematisch zu meistern — in nur wenigen Minuten am Tag.",
-        "beginner": "Perfekter Startpunkt! SPIN führt dich Schritt für Schritt durch alle Überzeugungstechniken, die Kommunikatoren kennen sollten.",
-        "skipped": "Kein Problem — SPIN passt sich beim Üben automatisch an dein Wissen an. Starte einfach mit deiner ersten Übung."
-      }
-    }
+    "benefit3Desc": "Passt sich deinem Wissen an"
   },
   "categories": {
     "cognitive_bias": "Kognitive Verzerrungen",
@@ -167,7 +170,11 @@
     "emotional_manipulation": "Emotionale Beeinflussung",
     "logical_fallacy": "Logische Fehlschlüsse",
     "nlp": "NLP-Techniken",
-    "digital_influence": "Digitale Einflussnahme"
+    "digital_influence": "Digitale Einflussnahme",
+    "dark_patterns": "Dark Patterns",
+    "ai_influence": "KI & synthetische Medien",
+    "influence_ops": "Koordinierte Kampagnen",
+    "coercive_control": "Zwang & Kontrolle"
   },
   "difficulty": {
     "beginner": "Einsteiger",
@@ -183,6 +190,41 @@
       "rare": "Selten",
       "epic": "Episch",
       "legendary": "Legendär"
+    }
+  },
+  "seziertisch": {
+    "title": "Seziertisch",
+    "caseOfTheWeek": "Fall der Woche",
+    "multiChallenge": "Mehrfachauswahl",
+    "startCta": "Fall analysieren",
+    "thePiece": "Das Kommunikationsstück",
+    "instruction": "Markiere alle Überzeugungstechniken, die in diesem Stück stecken — dann prüfe deine Auswahl.",
+    "breakdown": "Aufschlüsselung",
+    "present": "enthalten",
+    "absent": "nicht enthalten",
+    "openTechnique": "Technik öffnen",
+    "debrief": "Fazit",
+    "done": "Fertig",
+    "casesAvailable": "Fälle verfügbar",
+    "format": {
+      "press_release": "Pressemitteilung",
+      "crisis_statement": "Krisenstatement",
+      "linkedin_post": "LinkedIn-Post",
+      "email": "E-Mail",
+      "ad": "Werbung",
+      "interview": "Interview"
+    }
+  },
+  "feedback": {
+    "trigger": "Ungenau?",
+    "prompt": "Was stört dich an dieser Erklärung?",
+    "thanks": "Danke — dein Hinweis fließt in die nächste Überarbeitung ein.",
+    "notePlaceholder": "Optional: kurz konkretisieren",
+    "reason": {
+      "imprecise": "Zu ungenau",
+      "ambiguous": "Mehrdeutig",
+      "wrong": "Fachlich falsch",
+      "generic": "Zu generisch"
     }
   }
 }

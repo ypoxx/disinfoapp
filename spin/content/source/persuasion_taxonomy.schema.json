@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kommunikation-science/persuasion_taxonomy.schema.json",
+  "title": "Persuasion/Manipulation Taxonomy",
+  "description": "Formales Schema (Draft 2020-12) für persuasion_taxonomy v15.x (schemaVersion 15.2). Validiert Struktur und kontrollierte Vokabulare. Bewusst tolerant (additionalProperties=true), weil die Taxonomie viele optionale, evidenzschärfende Felder trägt. Seit v21 trägt jeder Knoten influenceMode/harmTier/contextDependent/valenceSource.",
+  "type": "object",
+  "required": ["schemaVersion", "metaData", "scoringModel", "categoryDefinitions", "nodes", "edges", "counterMeasures", "sources", "controlledVocabularies"],
+  "additionalProperties": true,
+  "$defs": {
+    "evidenceConfidence": { "enum": ["very_low", "low", "moderate", "high"] },
+    "effectMagnitude": { "enum": ["unknown", "small", "moderate", "large", "heterogeneous", "not_applicable"] },
+    "claimType": { "enum": ["basic_effect", "mechanism_claim", "applied_risk", "intervention_claim", "ethical_claim", "boundary_condition", "detection_limitation", "speculative_extension"] },
+    "supportLevel": { "enum": ["direct", "indirect", "weak", "disputed", "none", "moderate"] },
+    "evidenceDimension": { "enum": ["capability", "real_world_effect", "attitude_change", "behavior_change", "mechanism", "correlational", "normative", "unspecified"] },
+    "replicationStatus": { "enum": ["replicated", "mixed", "failed", "untested", "contested"] },
+    "recencyTier": { "enum": ["established_classic", "recent", "current", "unspecified"] },
+    "influenceMode": { "enum": ["persuasion", "manipulation", "coercion"] },
+    "harmTier": { "enum": ["low", "medium", "high"] },
+    "claim": {
+      "type": "object",
+      "required": ["claim", "claimType", "supportLevel", "evidenceStatus", "sourceRefs"],
+      "additionalProperties": true,
+      "properties": {
+        "claim": { "type": "string", "minLength": 1 },
+        "claimType": { "$ref": "#/$defs/claimType" },
+        "supportLevel": { "$ref": "#/$defs/supportLevel" },
+        "sourceRefs": { "type": "array", "items": { "type": "string" } },
+        "limitations": { "type": "array", "items": { "type": "string" } },
+        "evidenceDimension": { "$ref": "#/$defs/evidenceDimension" },
+        "replicationStatus": { "$ref": "#/$defs/replicationStatus" },
+        "recencyTier": { "$ref": "#/$defs/recencyTier" },
+        "effectSize": {
+          "type": "object",
+          "required": ["metric", "value"],
+          "additionalProperties": true,
+          "properties": {
+            "metric": { "type": "string" },
+            "value": { "type": "number" },
+            "ci": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+            "n": { "type": ["integer", "null"] }
+          }
+        }
+      }
+    },
+    "riskProfile": {
+      "type": "object",
+      "required": ["harmPotential", "reachScalability", "evidenceConfidence", "effectMagnitude"],
+      "additionalProperties": true,
+      "properties": {
+        "harmPotential": { "type": "number", "minimum": 0, "maximum": 1 },
+        "reachScalability": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidenceConfidence": { "$ref": "#/$defs/evidenceConfidence" },
+        "effectMagnitude": { "$ref": "#/$defs/effectMagnitude" }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "name", "categoryId", "description", "riskProfile", "claimEvidenceMap"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "name": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "description": { "type": "string" },
+        "descriptionEn": { "type": "string" },
+        "riskProfile": { "$ref": "#/$defs/riskProfile" },
+        "claimEvidenceMap": { "type": "array", "items": { "$ref": "#/$defs/claim" } },
+        "sourceRefs": { "type": "array", "items": { "type": "string" } },
+        "contestation": { "type": "object" },
+        "durability": { "type": "object" },
+        "facets": { "type": "object" },
+        "influenceMode": { "$ref": "#/$defs/influenceMode" },
+        "harmTier": { "$ref": "#/$defs/harmTier" },
+        "contextDependent": { "type": "boolean" },
+        "valenceSource": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "authors", "year", "title", "type", "evidenceStrength", "sourceRole"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "year": { "type": "integer", "minimum": 1500, "maximum": 2100 },
+        "title": { "type": "string" },
+        "doi": { "type": ["string", "null"] },
+        "needsVerification": { "type": "boolean" },
+        "provisional": { "type": "boolean" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": ["source", "target", "relationship"],
+      "additionalProperties": true,
+      "properties": {
+        "source": { "type": "string" },
+        "target": { "type": "string" },
+        "relationshipStrength": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" }, "minItems": 1 },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" }, "minItems": 1 },
+    "edges": { "type": "array", "items": { "$ref": "#/$defs/edge" } },
+    "counterMeasures": { "type": "array", "items": { "type": "object", "required": ["id"] } },
+    "categoryDefinitions": { "type": "array", "items": { "type": "object", "required": ["id"] } },
+    "controlledVocabularies": { "type": "object" },
+    "lexicon": { "type": "array", "items": { "type": "object", "required": ["id","term","mapsTo","relationToEvidence"], "additionalProperties": true } }
+  }
+}

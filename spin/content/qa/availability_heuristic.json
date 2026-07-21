@@ -1,0 +1,123 @@
+{
+ "entry": "availability_heuristic",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "availability_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "availability_heuristic",
+    "secondGuess": "cherry_picking",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "availability_heuristic",
+    "secondGuess": "agenda_setting",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "availability_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "availability_heuristic",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "availability_heuristic",
+    "confident": true,
+    "secondGuess": "agenda_setting"
+   }
+  ],
+  "distraktor": {
+   "pass": false,
+   "objections": [
+    "p3-availability_heuristic-3: Option 1 (Emotionale Appelle) ist ernsthaft als ebenfalls richtig verteidigbar. Der Satz \"Fragen Sie sich ehrlich: Wann trifft es Ihr Unternehmen?\" ist ein direkter, personalisierter Angstappell — strukturgleich mit dem kanonischen Beispiel \"Denken Sie an Ihre Kinder!\" aus emotional-appeal.ts und deckungsgleich mit dessen Warnsignalen (Appell an Urängste, Dramatisierung, fehlende sachliche Argumentation). Die Verfügbarkeitsheuristik bleibt in dieser Szenario-Fassung dagegen nur implizit: Der entscheidende Schluss von Erinnerbarkeit/Berichtsfrequenz auf Häufigkeit wird nirgends ausformuliert; es bleiben nur Nachrichtenbezug plus Ubiquitätsbehauptung. Für einen Beginner-Quick-Check mit Single-Choice sind damit zwei Techniken gleichrangig belegt. Fix: Die Angstfrage streichen und den expliziten Erinnerungs-Schluss einsetzen — genau so steht es bereits in der committeten Fassung in spin/content/exercises/pilot-availability-heuristic.ts (Zeile 82: \"Man liest ja inzwischen ständig von solchen Fällen — das zeigt, wie verbreitet das Risiko längst ist.\"). Deren Explanation-Rebuttal (\"der Post argumentiert aber nicht über Gefühle, sondern über einen Erinnerungs-Schluss\") funktioniert nur für diese Fassung und ist für die hier eingereichte Variante mit direkter Angstfrage schlicht falsch — Szenario und Erklärung müssen konsistent auf die Datei-Fassung gebracht werden.",
+    "Hinweis (keine eigenständige Beanstandung): p3-availability_heuristic-1 und -2 bestehen die adversariale Prüfung. In -1 ist Cherry-Picking der stärkste Distraktor (die eigene Statistik wird ja weggelassen), aber entscheidbar: Cherry-Picking erfordert per App-Definition selektive Belegauswahl aus einer vorhandenen Datenlage (\"jede einzelne Angabe kann stimmen\"); hier wird gar keine Zahl genannt, die drei Anekdoten tragen die Häufigkeitsaussage allein über Erinnerbarkeit — die Explanation disambiguiert das explizit. Ankereffekt (kein Ausgangswert) und Verlustaversion (keine Verlust-Rahmung der Entscheidung, sondern Häufigkeitsverzerrung) sind plausible Nachbarn, keine Gimmes. In -2 sind alle drei Distraktoren echte professionelle Versuchungen mit jeweils benennbarem Denkfehler (ungefilterte Übernahme des Ausnutzungs-Kalküls; Überkorrektur per Absolutheitsbehauptung; Ebenenverwechslung Namensnennung statt Mechanismus); Option 1 dominiert eindeutig."
+   ]
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "techniques/availability-heuristic.ts, evidence.findings: „die Befunde stammen überwiegend aus WEIRD-Stichproben\" — Fachbegriff WEIRD beim ersten Auftreten im Eintrag nicht knapp aufgelöst (Charta: Register, Fachbegriff-Regel). Fix: einmalige Klammer-Auflösung, z. B. „…aus WEIRD-Stichproben (westlich, gebildet, industrialisiert, reich, demokratisch)\".",
+    "exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-2, explanation.de/en: „Basisrate nennen\" / „state the base rate\" — erster Auftritt des Fachbegriffs in diesem Eintrag ohne knappe Auflösung. Die Auflösung in Übung 1 („also die Zahl, wie oft…\") trägt nicht, weil die Engine interleaved und die Reihenfolge nicht garantiert ist; jede Übung muss den Begriff selbst einmal auflösen.",
+    "exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-2, scenario.de/en: einzige Miniatur ohne Kanal — „schlägt der Vertriebsleiter vor\" nennt Rollen und Situation, aber nicht, wo/wie der Austausch stattfindet (Beispiel-Regel: Kanal + Rollen + Situation). Fix: z. B. „Im wöchentlichen Jour fixe schlägt der Vertriebsleiter vor: …\".",
+    "exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-3, explanation.de: „weil das Szenario Cyberangriff Geschäftsführer naturgemäß beunruhigt\" — ungegliederte Nominalfolge, beim ersten Lesen doppeldeutig (Garden-Path). Fix: „weil ein Cyberangriffs-Szenario Geschäftsführer naturgemäß beunruhigt\" (EN-Fassung ist bereits sauber).",
+    "exercises/pilot-availability-heuristic.ts, Takeaway-Dopplung zwischen p3-availability_heuristic-1 („Ein aktueller Fall darf ein reales Risiko anschaulich machen — professionell wird es, wenn daneben die Basisrate steht\") und p3-availability_heuristic-3 („Ein präsenter Fall darf ein reales Risiko greifbar machen — professionell wird der Post, wenn…\") — nahezu identischer Satzbau wirkt auf genau lesende Profis als Template. Fix: einen der beiden Legitim-Takeaways inhaltlich anders aufziehen (z. B. in Übung 3 über die Auswahl des Falls statt über die Zahl)."
+   ]
+  }
+ },
+ "objections": [
+  "Distraktor: p3-availability_heuristic-3: Option 1 (Emotionale Appelle) ist ernsthaft als ebenfalls richtig verteidigbar. Der Satz \"Fragen Sie sich ehrlich: Wann trifft es Ihr Unternehmen?\" ist ein direkter, personalisierter Angstappell — strukturgleich mit dem kanonischen Beispiel \"Denken Sie an Ihre Kinder!\" aus emotional-appeal.ts und deckungsgleich mit dessen Warnsignalen (Appell an Urängste, Dramatisierung, fehlende sachliche Argumentation). Die Verfügbarkeitsheuristik bleibt in dieser Szenario-Fassung dagegen nur implizit: Der entscheidende Schluss von Erinnerbarkeit/Berichtsfrequenz auf Häufigkeit wird nirgends ausformuliert; es bleiben nur Nachrichtenbezug plus Ubiquitätsbehauptung. Für einen Beginner-Quick-Check mit Single-Choice sind damit zwei Techniken gleichrangig belegt. Fix: Die Angstfrage streichen und den expliziten Erinnerungs-Schluss einsetzen — genau so steht es bereits in der committeten Fassung in spin/content/exercises/pilot-availability-heuristic.ts (Zeile 82: \"Man liest ja inzwischen ständig von solchen Fällen — das zeigt, wie verbreitet das Risiko längst ist.\"). Deren Explanation-Rebuttal (\"der Post argumentiert aber nicht über Gefühle, sondern über einen Erinnerungs-Schluss\") funktioniert nur für diese Fassung und ist für die hier eingereichte Variante mit direkter Angstfrage schlicht falsch — Szenario und Erklärung müssen konsistent auf die Datei-Fassung gebracht werden.",
+  "Distraktor: Hinweis (keine eigenständige Beanstandung): p3-availability_heuristic-1 und -2 bestehen die adversariale Prüfung. In -1 ist Cherry-Picking der stärkste Distraktor (die eigene Statistik wird ja weggelassen), aber entscheidbar: Cherry-Picking erfordert per App-Definition selektive Belegauswahl aus einer vorhandenen Datenlage (\"jede einzelne Angabe kann stimmen\"); hier wird gar keine Zahl genannt, die drei Anekdoten tragen die Häufigkeitsaussage allein über Erinnerbarkeit — die Explanation disambiguiert das explizit. Ankereffekt (kein Ausgangswert) und Verlustaversion (keine Verlust-Rahmung der Entscheidung, sondern Häufigkeitsverzerrung) sind plausible Nachbarn, keine Gimmes. In -2 sind alle drei Distraktoren echte professionelle Versuchungen mit jeweils benennbarem Denkfehler (ungefilterte Übernahme des Ausnutzungs-Kalküls; Überkorrektur per Absolutheitsbehauptung; Ebenenverwechslung Namensnennung statt Mechanismus); Option 1 dominiert eindeutig.",
+  "Stil: techniques/availability-heuristic.ts, evidence.findings: „die Befunde stammen überwiegend aus WEIRD-Stichproben\" — Fachbegriff WEIRD beim ersten Auftreten im Eintrag nicht knapp aufgelöst (Charta: Register, Fachbegriff-Regel). Fix: einmalige Klammer-Auflösung, z. B. „…aus WEIRD-Stichproben (westlich, gebildet, industrialisiert, reich, demokratisch)\".",
+  "Stil: exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-2, explanation.de/en: „Basisrate nennen\" / „state the base rate\" — erster Auftritt des Fachbegriffs in diesem Eintrag ohne knappe Auflösung. Die Auflösung in Übung 1 („also die Zahl, wie oft…\") trägt nicht, weil die Engine interleaved und die Reihenfolge nicht garantiert ist; jede Übung muss den Begriff selbst einmal auflösen.",
+  "Stil: exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-2, scenario.de/en: einzige Miniatur ohne Kanal — „schlägt der Vertriebsleiter vor\" nennt Rollen und Situation, aber nicht, wo/wie der Austausch stattfindet (Beispiel-Regel: Kanal + Rollen + Situation). Fix: z. B. „Im wöchentlichen Jour fixe schlägt der Vertriebsleiter vor: …\".",
+  "Stil: exercises/pilot-availability-heuristic.ts, p3-availability_heuristic-3, explanation.de: „weil das Szenario Cyberangriff Geschäftsführer naturgemäß beunruhigt\" — ungegliederte Nominalfolge, beim ersten Lesen doppeldeutig (Garden-Path). Fix: „weil ein Cyberangriffs-Szenario Geschäftsführer naturgemäß beunruhigt\" (EN-Fassung ist bereits sauber).",
+  "Stil: exercises/pilot-availability-heuristic.ts, Takeaway-Dopplung zwischen p3-availability_heuristic-1 („Ein aktueller Fall darf ein reales Risiko anschaulich machen — professionell wird es, wenn daneben die Basisrate steht\") und p3-availability_heuristic-3 („Ein präsenter Fall darf ein reales Risiko greifbar machen — professionell wird der Post, wenn…\") — nahezu identischer Satzbau wirkt auf genau lesende Profis als Template. Fix: einen der beiden Legitim-Takeaways inhaltlich anders aufziehen (z. B. in Übung 3 über die Auswahl des Falls statt über die Zahl)."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "availability_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "availability_heuristic",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "availability_heuristic",
+    "confident": true
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "availability_heuristic",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "availability_heuristic",
+    "confident": true,
+    "secondGuess": "cherry_picking"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "availability_heuristic",
+    "confident": true,
+    "secondGuess": "agenda_setting"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  },
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "passed_round2"
+}

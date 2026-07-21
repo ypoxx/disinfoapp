@@ -4,10 +4,10 @@ export const spotTheFlags: Exercise[] = [
   {
     id: 'sf-1',
     type: 'spot-the-flag',
-    difficulty: 'beginner',
+    difficulty: 'advanced',
     question: {
-      de: 'Welche Überzeugungstechniken stecken in diesem Post? (Mehrfachauswahl)',
-      en: 'Which persuasion techniques are used in this post? (Multiple choice)',
+      de: 'Welche Elemente dieses Posts überschreiten die Grenze zur Manipulation? (Mehrfachauswahl)',
+      en: 'Which elements of this post cross the line into manipulation? (Multiple choice)',
     },
     scenario: {
       de: '⚠️ SCHOCKIEREND: Geheime Dokumente BEWEISEN, dass die Regierung uns belogen hat! Die Mainstream-Medien WEIGERN sich, darüber zu berichten! TEILE diesen Post, bevor er ZENSIERT wird! 🚨',
@@ -15,28 +15,29 @@ export const spotTheFlags: Exercise[] = [
     },
     options: [
       {
-        de: 'Emotionale/reißerische Sprache (SCHOCKIEREND, BEWEISEN)',
-        en: 'Emotional/sensationalist language (SHOCKING, PROVE)',
+        de: 'Beweis-Behauptung ohne prüfbare Quelle („Dokumente BEWEISEN")',
+        en: 'Proof claim without a checkable source ("documents PROVE")',
       },
       {
-        de: 'Anti-Medien-Narrativ ("Mainstream-Medien weigern sich")',
-        en: 'Anti-media narrative ("mainstream media refuse")',
+        de: 'Unbelegte Verweigerungs-Unterstellung an die Medien („WEIGERN sich")',
+        en: 'Unsubstantiated refusal accusation against the media ("REFUSE")',
       },
       {
-        de: 'Dringlichkeitsappell ("bevor er zensiert wird")',
-        en: 'Urgency appeal ("before it gets censored")',
+        de: 'Künstlicher Teilen-Druck über eine erfundene Frist („bevor er ZENSIERT wird")',
+        en: 'Artificial pressure to share via an invented deadline ("before it gets CENSORED")',
       },
       {
-        de: 'Keine konkreten Quellenangaben',
-        en: 'No concrete source references',
+        de: 'Großbuchstaben und Emojis zur Betonung',
+        en: 'Capital letters and emojis for emphasis',
       },
     ],
-    correctAnswers: [0, 1, 2, 3],
+    correctAnswers: [0, 1, 2],
     explanation: {
-      de: 'Alle vier sind Überzeugungstechniken! Dieser Post kombiniert emotionale Manipulation, Verschwörungsnarrative, künstliche Dringlichkeit und fehlende Belege — ein Lehrbuchbeispiel für manipulative Kommunikation.',
-      en: 'All four are persuasion techniques! This post combines emotional manipulation, conspiracy narratives, artificial urgency, and lack of evidence — a textbook example of manipulative communication.',
+      de: 'Drei Elemente überschreiten die Grenze: Die Beweis-Behauptung ohne prüfbare Quelle täuscht Belegbarkeit vor; die Verweigerungs-Unterstellung erfindet ein Motiv, das sich nicht prüfen lässt; die Zensur-Frist erzeugt Handlungsdruck aus dem Nichts. Auffällige Typografie (Option D) ist dagegen nur laut — aufmerksamkeitsstark, aber für sich genommen keine Täuschung; Betonung ist legitimes Handwerk. Erkennen und kontern: Prüf bei jedem Element, ob es eine nachprüfbare Tatsache transportiert oder nur Prüfung verhindert — genau das ist die Grenze.',
+      en: 'Three elements cross the line: the proof claim without a checkable source fakes verifiability; the refusal accusation invents an unverifiable motive; the censorship deadline manufactures pressure out of nothing. Loud typography (option D), by contrast, is merely loud — attention-grabbing but not deceptive in itself; emphasis is legitimate craft. To recognise and counter it: for each element, check whether it carries a verifiable fact or merely blocks verification — that is exactly where the line runs.',
     },
     points: 20,
+    primaryTechniqueId: 'emotional_appeal',
     relatedTechniques: ['emotional_appeal', 'scarcity', 'reactance_theory'],
   },
   {
@@ -75,6 +76,7 @@ export const spotTheFlags: Exercise[] = [
       en: 'The first three are persuasion techniques: Self-commissioned studies carry a conflict of interest, "5 years ago" is vague (why that specific period?), and "market leader" is claimed without definition or evidence. The neutral tone (option 4) is not a persuasion technique.',
     },
     points: 20,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority', 'framing', 'anchoring'],
   },
   {
@@ -82,8 +84,8 @@ export const spotTheFlags: Exercise[] = [
     type: 'spot-the-flag',
     difficulty: 'advanced',
     question: {
-      de: 'Welche Überzeugungstechniken stecken in diesem LinkedIn-Post? (Mehrfachauswahl)',
-      en: 'Which persuasion techniques are used in this LinkedIn post? (Multiple choice)',
+      de: 'Welche Elemente dieses LinkedIn-Posts überschreiten die professionelle Grenze? (Mehrfachauswahl)',
+      en: 'Which elements of this LinkedIn post cross the professional line? (Multiple choice)',
     },
     scenario: {
       de: 'LinkedIn-Post von einem "Change Management Berater": "Ich habe gerade gehört, dass Firma XYZ massive Entlassungen plant. Ein Freund in der Personalabteilung hat mir das vertraulich bestätigt. Wer dort arbeitet, sollte sich schon mal umsehen. #XYZEntlassungen #InsiderWissen"',
@@ -91,28 +93,29 @@ export const spotTheFlags: Exercise[] = [
     },
     options: [
       {
-        de: 'Unverifizierbarer "Insider" als Quelle',
-        en: 'Unverifiable "insider" as a source',
+        de: 'Gerücht als Tatsache verbreiten — gestützt nur auf eine anonyme Quelle',
+        en: 'Spreading a rumour as fact — backed only by an anonymous source',
       },
       {
-        de: 'Hashtag-Kampagne deutet auf Agenda hin',
-        en: 'Hashtag campaign suggests an agenda',
+        de: 'Als vertraulich markierte Information öffentlich machen',
+        en: 'Publishing information that was shared in confidence',
       },
       {
-        de: 'Potenzielle Marktmanipulation (Aktienkurs)',
-        en: 'Potential market manipulation (stock price)',
+        de: 'Handlungsempfehlung an Betroffene auf reiner Gerüchtebasis',
+        en: 'Advising affected people to act on nothing but the rumour',
       },
       {
-        de: 'Vertrauliche Information wird öffentlich geteilt',
-        en: 'Confidential information being shared publicly',
+        de: 'Hashtags nutzen, damit der Post gefunden wird',
+        en: 'Using hashtags so the post can be found',
       },
     ],
-    correctAnswers: [0, 1, 2, 3],
+    correctAnswers: [0, 1, 2],
     explanation: {
-      de: 'Alle vier sind problematisch: Anonyme "Insider"-Quellen sind nicht verifizierbar, gezielte Hashtags können koordinierte Kampagnen starten, unbelegte Entlassungsgerüchte können Aktienkurse beeinflussen (Marktmanipulation), und das Teilen "vertraulicher" Informationen ist ethisch fragwürdig.',
-      en: 'All four are problematic: Anonymous "insider" sources are unverifiable, targeted hashtags can launch coordinated campaigns, unsubstantiated layoff rumors can influence stock prices (market manipulation), and sharing "confidential" information is ethically questionable.',
+      de: 'Drei Elemente überschreiten die Grenze: Ein unbelegtes Gerücht als bestätigte Tatsache zu verbreiten, kann Kurse und Karrieren bewegen (bei börsennotierten Firmen bis zur Marktmanipulation); vertraulich Anvertrautes öffentlich zu machen bricht die Quelle; und eine Handlungsempfehlung („umsehen") verstärkt den Schaden auf reiner Gerüchtebasis. Hashtags (Option D) sind dagegen normale Auffindbarkeits-Praxis — problematisch ist hier der Inhalt, nicht das Werkzeug. Erkennen und kontern: Frag bei solchen Posts, was davon nachprüfbar ist und wem die Verbreitung nützt — und als Kommunikationsprofi der betroffenen Firma reagierst du auf das Gerücht, nie auf den Boten.',
+      en: 'Three elements cross the line: spreading an unverified rumour as confirmed fact can move share prices and careers (up to market manipulation for listed companies); publishing what was entrusted in confidence burns the source; and advising people to act ("start looking around") amplifies harm on nothing but the rumour. Hashtags (option D) are ordinary discoverability practice — the problem here is the content, not the tool. To recognise and counter it: ask what in such posts is verifiable and who benefits from the spread — and as the affected company\'s communications professional, you respond to the rumour, never to the messenger.',
     },
     points: 20,
+    primaryTechniqueId: 'authority',
     relatedTechniques: ['authority', 'social_proof', 'digital_influence'],
   },
 ];

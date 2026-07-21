@@ -1,0 +1,81 @@
+{
+ "entry": "unity_identity",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "unity_identity",
+    "confident": true,
+    "secondGuess": "liking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "unity_identity",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "unity_identity",
+    "confident": true,
+    "secondGuess": "liking"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "unity_identity",
+    "confident": true,
+    "secondGuess": "liking"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "unity_identity",
+    "confident": true,
+    "secondGuess": "framing"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "unity_identity",
+    "confident": false,
+    "secondGuess": "liking"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-unity-identity.ts, Übung w4-unity_identity-2, Feld explanation.en: ‚you stay approachable' ist keine bedeutungsgleiche Übersetzung von ‚so bleibst du anschlussfähig' — approachable beschreibt persönliche Umgänglichkeit, das DE meint aber, die Arbeitsbeziehung zum Mitglied handlungsfähig zu halten. Fix z. B.: ‚you keep the working relationship intact' oder ‚you leave the door open'.",
+    "spin/content/exercises/wave4-unity-identity.ts, Übung w4-unity_identity-3, Feld explanation.en, Schlusssatz: ‚the email works neither with reproach nor with a harm scenario … it builds up the group identity from which such pressure would only then arise' — zwei gestapelte Kalkierungen aus dem DE (‚arbeitet nicht mit Vorwurf', ‚aus der solcher Druck erst entstünde'): ‚works with' und ‚would only then arise' sind wörtlich übersetzt und lesen sich nicht wie idiomatisches Fach-Englisch. Fix z. B.: ‚the email relies on neither reproach nor a harm scenario; it lays the identity groundwork that such pressure would later draw on'."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 2: nur unsicher erkannt (secondGuess: liking) — eindeutiger machen",
+  "Stil: spin/content/exercises/wave4-unity-identity.ts, Übung w4-unity_identity-2, Feld explanation.en: ‚you stay approachable' ist keine bedeutungsgleiche Übersetzung von ‚so bleibst du anschlussfähig' — approachable beschreibt persönliche Umgänglichkeit, das DE meint aber, die Arbeitsbeziehung zum Mitglied handlungsfähig zu halten. Fix z. B.: ‚you keep the working relationship intact' oder ‚you leave the door open'.",
+  "Stil: spin/content/exercises/wave4-unity-identity.ts, Übung w4-unity_identity-3, Feld explanation.en, Schlusssatz: ‚the email works neither with reproach nor with a harm scenario … it builds up the group identity from which such pressure would only then arise' — zwei gestapelte Kalkierungen aus dem DE (‚arbeitet nicht mit Vorwurf', ‚aus der solcher Druck erst entstünde'): ‚works with' und ‚would only then arise' sind wörtlich übersetzt und lesen sich nicht wie idiomatisches Fach-Englisch. Fix z. B.: ‚the email relies on neither reproach nor a harm scenario; it lays the identity groundwork that such pressure would later draw on'."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed_round2",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): in Runde 1 beanstandet, Revision geschrieben, in Runde 2 Blind ×2 + Distraktor + Stil bestanden. Änderung: In der EN-Erklärung von w4-unity_identity-1 wurden die Translationese-/False-Friend-Stellen entidiomatisiert („similarity makes us warm to someone\", „I find him likeable\", „setting the group apart from outsiders\") und in"
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "entry": "automation_bias_overreliance",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true,
+    "secondGuess": "sycophancy"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "automation_bias_overreliance",
+    "confident": true,
+    "secondGuess": "identity_provenance_deception"
+   }
+  ],
+  "distraktor": {
+   "objections": [],
+   "pass": true
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": null
+ },
+ "objections": [
+  "Stil: Stil-Check nicht auswertbar"
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed_round2",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): in Runde 1 beanstandet, Revision geschrieben, in Runde 2 Blind ×2 + Distraktor + Stil bestanden. Änderung: Distraktor-Label und -Erklärung in Übung 1 und 3 von 'Anthropomorphic Trust Cues' auf den kanonischen DE-Namen 'Anthropomorphe Vertrauenssignale' vereinheitlicht (EN unverändert), dazu in Übung 1 der Takeaway durchgängig"
+ }
+}

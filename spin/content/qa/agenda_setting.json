@@ -1,0 +1,125 @@
+{
+ "entry": "agenda_setting",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "agenda_setting",
+    "confident": true
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "repetition"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "priming"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "repetition"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "priming"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-1, scenario.en: \"placing studies, interviews, and op-eds on production costs\" / \"employees now name production costs\" — DE sagt beide Male \"Standortkosten\". \"Production costs\" (Herstellungskosten) verengt den Begriff und verfehlt den Tarifrunden-Kontext, in dem Standortkosten (Arbeits-, Energie-, Abgabenlast am Standort) der etablierte Kampfbegriff der Arbeitgeberseite ist. Nicht bedeutungsgleich. Fix: \"the cost of doing business at domestic sites\" oder \"site/location costs\" durchgängig.",
+    "spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-1, explanation.en: \"yet the pieces here are deliberately sober\" — DE: \"die Beiträge sind hier gerade sachlich formuliert\". \"Deliberately\" unterstellt eine Absicht, die die DE-Fassung nicht behauptet, und verschiebt das Argument (der Punkt ist die Abwesenheit von Framing, nicht Nüchternheit als Taktik). Fix: \"yet the pieces here are in fact soberly written\" / \"precisely the point: the pieces are soberly written\".",
+    "spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-2, explanation.en: \"Escaping into the 'historic breakthrough' misidentifies the technique\" — wörtliche Lehnübersetzung von \"Die Flucht in den 'historischen Durchbruch'\". \"Escaping into\" ist kein idiomatisches Fach-Englisch; ein Native würde das als Übersetzung erkennen. Fix: \"Reaching for the 'historic breakthrough'\" oder \"Falling back on the 'historic breakthrough'\"."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-1, scenario.en: \"placing studies, interviews, and op-eds on production costs\" / \"employees now name production costs\" — DE sagt beide Male \"Standortkosten\". \"Production costs\" (Herstellungskosten) verengt den Begriff und verfehlt den Tarifrunden-Kontext, in dem Standortkosten (Arbeits-, Energie-, Abgabenlast am Standort) der etablierte Kampfbegriff der Arbeitgeberseite ist. Nicht bedeutungsgleich. Fix: \"the cost of doing business at domestic sites\" oder \"site/location costs\" durchgängig.",
+  "Stil: spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-1, explanation.en: \"yet the pieces here are deliberately sober\" — DE: \"die Beiträge sind hier gerade sachlich formuliert\". \"Deliberately\" unterstellt eine Absicht, die die DE-Fassung nicht behauptet, und verschiebt das Argument (der Punkt ist die Abwesenheit von Framing, nicht Nüchternheit als Taktik). Fix: \"yet the pieces here are in fact soberly written\" / \"precisely the point: the pieces are soberly written\".",
+  "Stil: spin/content/exercises/pilot-agenda-setting.ts, p3-agenda_setting-2, explanation.en: \"Escaping into the 'historic breakthrough' misidentifies the technique\" — wörtliche Lehnübersetzung von \"Die Flucht in den 'historischen Durchbruch'\". \"Escaping into\" ist kein idiomatisches Fach-Englisch; ein Native würde das als Übersetzung erkennen. Fix: \"Reaching for the 'historic breakthrough'\" oder \"Falling back on the 'historic breakthrough'\"."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "priming"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "availability_heuristic"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "repetition"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "agenda_setting",
+    "confident": true,
+    "secondGuess": "priming"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/pilot-agenda-setting.ts, Übung p3-agenda_setting-1, Feld scenario.en: \"placing studies, interviews, and op-eds on site costs — the cost of doing business at domestic sites — in regional and trade media\". \"Site costs\" ist ein wörtlicher Kalk von \"Standortkosten\" (im EN-Wirtschaftsjargon: Grundstücks-/Baustellenkosten); die eingeschobene Glosse ist das Eingeständnis, dass der Begriff allein nicht trägt, und macht die EN-Miniatur schwerfälliger als die DE-Fassung. Verstößt gegen \"Kein wörtliches Übersetzen: idiomatisches Fach-Englisch gleicher Präzision\". Fix: durchgängig \"location costs\" oder direkt \"the cost of doing business at domestic sites\" ohne Apposition verwenden — auch im Folgesatz \"employees now name site costs as the industry's most pressing problem\" (dort zudem idiomatischer: \"cite/rank ... as\").",
+    "spin/content/exercises/pilot-agenda-setting.ts, Übung p3-agenda_setting-3, Feld scenario.en: \"Afterwards, the reader survey shows: the housing shortage now ranks as the city's most important problem.\" Die Verb-plus-Doppelpunkt-Konstruktion spiegelt 1:1 die deutsche Syntax (\"Danach zeigt die Leserumfrage: ...\") und ist im Englischen unidiomatisch — ein struktureller Wörtlich-Übersetzungs-Fall. Fix: \"Afterwards, the reader survey shows that the housing shortage now ranks as the city's most important problem.\" oder Umstellung (\"Afterwards, readers rank the housing shortage as ...\")."
+   ]
+  },
+  "stillOpen": [
+   "Stil: spin/content/exercises/pilot-agenda-setting.ts, Übung p3-agenda_setting-1, Feld scenario.en: \"placing studies, interviews, and op-eds on site costs — the cost of doing business at domestic sites — in regional and trade media\". \"Site costs\" ist ein wörtlicher Kalk von \"Standortkosten\" (im EN-Wirtschaftsjargon: Grundstücks-/Baustellenkosten); die eingeschobene Glosse ist das Eingeständnis, dass der Begriff allein nicht trägt, und macht die EN-Miniatur schwerfälliger als die DE-Fassung. Verstößt gegen \"Kein wörtliches Übersetzen: idiomatisches Fach-Englisch gleicher Präzision\". Fix: durchgängig \"location costs\" oder direkt \"the cost of doing business at domestic sites\" ohne Apposition verwenden — auch im Folgesatz \"employees now name site costs as the industry's most pressing problem\" (dort zudem idiomatischer: \"cite/rank ... as\").",
+   "Stil: spin/content/exercises/pilot-agenda-setting.ts, Übung p3-agenda_setting-3, Feld scenario.en: \"Afterwards, the reader survey shows: the housing shortage now ranks as the city's most important problem.\" Die Verb-plus-Doppelpunkt-Konstruktion spiegelt 1:1 die deutsche Syntax (\"Danach zeigt die Leserumfrage: ...\") und ist im Englischen unidiomatisch — ein struktureller Wörtlich-Übersetzungs-Fall. Fix: \"Afterwards, the reader survey shows that the housing shortage now ranks as the city's most important problem.\" oder Umstellung (\"Afterwards, readers rank the housing shortage as ...\")."
+  ]
+ },
+ "status": "flagged",
+ "postFixNote": "Nach dem Prüflauf direkt behoben (Commit R3-Finalisierung): alle offenen Stil-/Idiomatik-Beanstandungen.",
+ "finalStatus": "passed_after_manual_fix"
+}

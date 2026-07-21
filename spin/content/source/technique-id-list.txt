@@ -1,0 +1,135 @@
+framing|Framing
+priming|Priming
+anchoring|Anchoring
+social_proof|Social Proof
+scarcity|Scarcity
+reciprocity|Reciprocity
+authority|Authority
+liking|Liking
+consistency|Consistency
+reactance_theory|Reactance
+ad_hominem|Ad Hominem
+false_dichotomy|False Dichotomy
+straw_man|Straw Man Fallacy
+equivocation|Equivocation
+emotional_appeal|Emotional Appeal
+repetition|Repetition
+illusory_truth_effect|Illusory Truth Effect
+pacing_and_leading|Pacing and Leading
+embedded_commands|Embedded Commands
+microtargeting|Microtargeting
+digital_influence|Digitale und algorithmische Einflussnahme
+visual_manipulation|Visuelle und audiovisuelle Manipulation
+synthetic_media|Synthetic Media & Deepfakes
+dark_patterns|Dark Patterns
+nudging|Nudging
+ai_persuasion|KI-gestützte Persuasion
+narrative_persuasion|Narrative Persuasion
+anaphora|Anapher
+interactive_ai_persuasion|Interactive AI Persuasion
+ai_companion_emotional_retention|AI Companion Emotional Retention
+anthropomorphic_trust_cues|Anthropomorphic Trust Cues
+attention_engagement_loops|Attention and Engagement Loops
+coordinated_inauthentic_amplification|Coordinated Inauthentic Amplification
+identity_provenance_deception|Identity and Provenance Deception
+consent_and_privacy_dark_patterns|Consent and Privacy Dark Patterns
+agentic_decision_capture|Agentic Decision Capture
+sycophancy|LLM Sycophancy
+ai_deception_scheming|AI Deception / Scheming
+conversational_persuasion_bombing|Conversational Persuasion Bombing
+synthetic_intimacy_retention|Synthetic Intimacy Retention
+integrity_clash_laundering|Integrity Clash / Provenance Laundering
+voice_cloning_vishing|Voice Cloning / Vishing
+sludge|Sludge / Bad Friction
+confirmshaming|Confirmshaming
+drip_pricing|Drip Pricing
+fake_urgency_countdown|Fake Urgency / Countdown Timers
+astroturfing_sockpuppets|Astroturfing / Sockpuppets
+gamification_variable_reward|Gamification / Variable Reward Schedules
+doomscrolling_fomo_engineering|Doomscrolling / FOMO Engineering
+data_voids_seo_manipulation|Data Voids / AI Search & SEO Manipulation
+search_engine_manipulation_effect|Search Engine Manipulation Effect (SEME)
+parasocial_manipulation|Parasocial Manipulation
+gaslighting|Gaslighting
+love_bombing|Love Bombing
+foot_in_the_door|Foot-in-the-Door
+door_in_the_face|Door-in-the-Face
+fear_uncertainty_doubt|Fear, Uncertainty and Doubt (FUD)
+whataboutism|Whataboutism (Tu Quoque)
+slippery_slope|Slippery Slope
+red_herring|Red Herring (Ablenkung)
+gish_gallop|Gish Gallop
+motte_and_bailey|Motte-and-Bailey
+cherry_picking|Cherry-Picking / Card-Stacking
+false_balance|False Balance / Bothsidesism
+loaded_language|Loaded Language / Euphemismus
+scapegoating_othering|Scapegoating / Othering
+unity_identity|Unity / Identitäts-Appell
+mere_exposure_effect|Mere-Exposure-Effekt
+behavioral_mimicry|Behaviorale Mimikry (Chamäleon-Effekt)
+but_you_are_free|'But You Are Free' (BYAF)
+decoy_effect|Decoy-Effekt (Asymmetrische Dominanz)
+sunk_cost_escalation|Sunk-Cost / Eskalation des Commitments
+subscription_trap_obstruction|Subscription Trap / Obstruction (Roach Motel)
+bait_and_switch|Bait-and-Switch
+disguised_ads|Disguised Ads / Getarnte Werbung
+darvo|DARVO
+coercive_control|Coercive Control
+automation_bias_overreliance|Automation Bias / Over-Reliance
+decontextualization_cheapfakes|Dekontextualisierung / Cheapfakes
+firehose_of_falsehood|Firehose of Falsehood
+agenda_setting|Agenda Setting
+stereotyping|Stereotypisierung
+cognitive_dissonance_induction|Erzeugen kognitiver Dissonanz
+primacy_order_effects|Primacy-/Reihenfolgeeffekt
+groupthink|Groupthink-Steuerung
+conditioning_classical_operant|Konditionierung (klassisch/operant)
+guilt_appeals|Schuldgefuehl-Appelle
+guilt_by_association|Kontaktschuld (Guilt by Association)
+black_grey_white_propaganda|Schwarze/Graue/Weisse Propaganda
+censorship_chilling_effects|Zensur & Chilling Effects
+salami_tactics_gradualism|Salamitaktik / Gradualismus
+manufactured_crisis_exploitation|Kuenstliche Krise / Krisenausnutzung
+overton_window_shifting|Verschieben des Overton-Fensters
+societal_atomization|Atomisierung / Vereinzelung
+zersetzung_decomposition|Zersetzung
+double_standards|Doppelstandards
+historical_narrative_control|Kontrolle des Geschichtsbildes
+begging_the_question|Zirkelschluss (Begging the Question)
+hasty_generalization|Voreilige Verallgemeinerung
+false_cause_post_hoc|Falsche Kausalitaet (Post hoc)
+appeal_to_ignorance|Argument aus Unwissen (Ad ignorantiam)
+appeal_to_nature|Argument der Natuerlichkeit (Ad naturam)
+appeal_to_tradition|Argument der Tradition (Ad antiquitatem)
+composition_division|Komposition/Division
+middle_ground_fallacy|Goldene Mitte (Ad temperantiam)
+loaded_question|Suggestiv-/Fangfrage (Complex Question)
+loss_aversion|Verlustaversion
+endowment_effect|Endowment-Effekt
+availability_heuristic|Verfuegbarkeitsheuristik
+representativeness_heuristic|Repraesentativitaetsheuristik
+default_status_quo|Default-/Status-quo-Effekt
+hyperbolic_discounting|Hyperbolische Diskontierung
+halo_effect|Halo-Effekt
+confirmation_bias|Bestaetigungsfehler
+negativity_bias|Negativitaets-Bias
+optimism_bias|Optimismus-Bias
+peak_end_rule|Peak-End-Regel
+ikea_effect|IKEA-Effekt
+mental_accounting|Mental Accounting
+conspiracy_theory_narratives|Verschwoerungsnarrative
+paltering_half_truth|Paltering (Halbwahrheit)
+networked_harassment|Koordinierte Online-Belaestigung
+sneaking|Sneaking (Verschleiern)
+misdirection|Misdirection (Fehlleitung)
+fake_social_proof|Fake Social Proof
+forced_action|Forced Action (Erzwungene Handlung)
+nagging|Nagging (Drängeln)
+trick_wording|Trick Wording (Verwirrende Formulierung)
+price_comparison_prevention|Comparison Prevention
+intermediate_currency|Intermediate Currency
+friend_spam|Friend Spam
+divide_and_rule|Divide and Rule (Teile und herrsche)
+proxy_attack|Proxy Attack (Angriff durch Stellvertreter)
+kompromat_leverage|Kompromat (kompromittierendes Material als Druckmittel)
+nemawashi|Nemawashi (vorbereitende Konsensbildung)

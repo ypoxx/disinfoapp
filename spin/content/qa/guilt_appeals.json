@@ -1,0 +1,82 @@
+{
+ "entry": "guilt_appeals",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "emotional_appeal"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "social_proof"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "emotional_appeal"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "social_proof"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "guilt_appeals",
+    "confident": true,
+    "secondGuess": "loss_aversion"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-2, Feld scenario.en: »The harder the conscience presses, the higher the participation.« ist eine wörtliche Übersetzung von »Je stärker das Gewissen drückt« — »the conscience presses« ist kein idiomatisches Englisch (ein Gewissen »weighs on you«, »nags« oder »pricks«). Als gesprochene Zeile eines Account Directors unglaubwürdig; idiomatisch z. B.: »The guiltier people feel, the more they give.« oder »The harder the guilt bites, the higher the participation.«",
+    "spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-3, Feld explanation.en: »Loss aversion seems close because a looming loss is painted — but it names the lever of a loss threatening you yourself« enthält zwei Calques: »a looming loss is painted« übersetzt »ein drohender Verlust wird ausgemalt« wörtlich (englisch braucht es »paints a picture of …«), und »the lever of a loss threatening you yourself« ist steifes Übersetzungsenglisch. Idiomatisch z. B.: »Loss aversion seems close because the message paints a picture of looming loss — but that lever works on a loss you yourself would suffer; here, other people's loss is turned into your moral burden.«",
+    "spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-1, Feld explanation.de: »hier wird keine Gegenleistung erinnert, sondern Schuld für künftige Folgen erzeugt« — transitives »erinnern« (etwas erinnern statt an etwas erinnern) ist umgangssprachlich/norddeutsch und fällt im präzisen Register der Zielgruppe auf; zudem unscharf: Bei Reziprozität wird eine erhaltene Gefälligkeit in Erinnerung gerufen, nicht eine »Gegenleistung«. Fix: »hier wird an keine erhaltene Gefälligkeit erinnert, sondern Schuld für künftige Folgen erzeugt«."
+   ]
+  }
+ },
+ "objections": [
+  "Stil: spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-2, Feld scenario.en: »The harder the conscience presses, the higher the participation.« ist eine wörtliche Übersetzung von »Je stärker das Gewissen drückt« — »the conscience presses« ist kein idiomatisches Englisch (ein Gewissen »weighs on you«, »nags« oder »pricks«). Als gesprochene Zeile eines Account Directors unglaubwürdig; idiomatisch z. B.: »The guiltier people feel, the more they give.« oder »The harder the guilt bites, the higher the participation.«",
+  "Stil: spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-3, Feld explanation.en: »Loss aversion seems close because a looming loss is painted — but it names the lever of a loss threatening you yourself« enthält zwei Calques: »a looming loss is painted« übersetzt »ein drohender Verlust wird ausgemalt« wörtlich (englisch braucht es »paints a picture of …«), und »the lever of a loss threatening you yourself« ist steifes Übersetzungsenglisch. Idiomatisch z. B.: »Loss aversion seems close because the message paints a picture of looming loss — but that lever works on a loss you yourself would suffer; here, other people's loss is turned into your moral burden.«",
+  "Stil: spin/content/exercises/wave4-guilt-appeals.ts, Übung w4-guilt_appeals-1, Feld explanation.de: »hier wird keine Gegenleistung erinnert, sondern Schuld für künftige Folgen erzeugt« — transitives »erinnern« (etwas erinnern statt an etwas erinnern) ist umgangssprachlich/norddeutsch und fällt im präzisen Register der Zielgruppe auf; zudem unscharf: Bei Reziprozität wird eine erhaltene Gefälligkeit in Erinnerung gerufen, nicht eine »Gegenleistung«. Fix: »hier wird an keine erhaltene Gefälligkeit erinnert, sondern Schuld für künftige Folgen erzeugt«."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): Blind ×2 + Distraktor + Stil in Runde 1 bestanden, keine Beanstandungen."
+ }
+}

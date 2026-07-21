@@ -78,7 +78,20 @@
     "exitConfirmTitle": "Really exit this session?",
     "exitConfirmBody": "Your progress in this session will be lost. It only takes a few more moments.",
     "exitConfirmStay": "Keep going",
-    "exitConfirmLeave": "Exit"
+    "exitConfirmLeave": "Exit",
+    "multiHint": "Multiple choice — select all that apply",
+    "checkAnswer": "Check",
+    "verdictCorrect": "Correct",
+    "verdictPartial": "Partially correct",
+    "verdictIncorrect": "Incorrect",
+    "tagYourChoice": "Your choice",
+    "tagSolution": "Solution",
+    "tagHit": "Hit",
+    "tagMissed": "Missed",
+    "tagFalsePick": "Wrong pick",
+    "partialDetail": "{{hits}} of {{total}} found · {{falsePicks}} wrong picks · {{missed}} missed",
+    "solutionIs": "Solution: {{letters}}",
+    "refreshSession": "Refresh"
   },
   "library": {
     "title": "Library",
@@ -87,7 +100,12 @@
     "techniques": "techniques",
     "difficulty": "Difficulty",
     "effectiveness": "Effectiveness",
-    "evidence": "Evidence",
+    "evidence": {
+      "robust": "Robustly evidenced",
+      "moderate": "Moderately evidenced",
+      "weak": "Weakly evidenced",
+      "frontier": "Frontier — barely tested"
+    },
     "examples": "Examples",
     "relatedTechniques": "Related techniques",
     "warningSignals": "Warning signals",
@@ -102,7 +120,12 @@
     "noResultsTitle": "No results.",
     "noResultsBody": "No technique matches your search.",
     "resetFilters": "Reset filters",
-    "notFound": "Technique not found"
+    "notFound": "Technique not found",
+    "radarShelf": "Radar",
+    "radarExplainer": "New and weakly evidenced terms — term knowledge, no effect claims.",
+    "evidenceTier": "Evidence",
+    "paths": "Learning paths",
+    "pathTechniques": "techniques"
   },
   "profile": {
     "title": "Profile",
@@ -125,41 +148,21 @@
     "longestStreak": "Longest streak",
     "signInPrompt": "Sign in to sync your progress across devices.",
     "signInWithGoogle": "Sign in with Google",
-    "syncError": "Sync failed — your progress is saved locally."
+    "syncError": "Sync failed — your progress is saved locally.",
+    "adaptiveNote": "SPIN automatically adapts exercise selection and difficulty to your level."
   },
   "onboarding": {
     "posterLine1": "Persuasion is a",
     "posterHighlight": "craft.",
     "description": "Learn the persuasion techniques communication professionals should know — evidence-based, in a few minutes a day.",
     "letsGo": "Let's go",
-    "diagnosticTitle": "Quick check",
-    "diagnosticDesc": "3 questions to assess your knowledge",
-    "skip": "Skip",
-    "viewResult": "View result",
     "noAccountNeeded": "No account needed · progress is saved locally",
     "benefit1Title": "27 techniques",
     "benefit1Desc": "Evidence-based and practical",
     "benefit2Title": "3–5 minutes a day",
     "benefit2Desc": "Microlearning with spaced repetition",
     "benefit3Title": "Adaptive",
-    "benefit3Desc": "Adapts to your knowledge level",
-    "result": {
-      "title": "{{score}}/{{total}} correct",
-      "skippedTitle": "All right.",
-      "continue": "Discover SPIN",
-      "level": {
-        "advanced": "Advanced",
-        "intermediate": "Beginner with basics",
-        "beginner": "Beginner",
-        "skipped": "Check skipped"
-      },
-      "message": {
-        "advanced": "You already know your stuff. SPIN will take you to expert level with advanced techniques and spaced repetition.",
-        "intermediate": "Good foundation! SPIN will help you systematically master all 27 techniques — in just a few minutes a day.",
-        "beginner": "Perfect starting point! SPIN will guide you step by step through all the persuasion techniques communicators should know.",
-        "skipped": "No problem — SPIN adapts to your knowledge automatically as you practice. Just start with your first session."
-      }
-    }
+    "benefit3Desc": "Adapts to your knowledge level"
   },
   "categories": {
     "cognitive_bias": "Cognitive Biases",
@@ -167,7 +170,11 @@
     "emotional_manipulation": "Emotional Influence",
     "logical_fallacy": "Logical Fallacies",
     "nlp": "NLP Techniques",
-    "digital_influence": "Digital Influence"
+    "digital_influence": "Digital Influence",
+    "dark_patterns": "Dark Patterns",
+    "ai_influence": "AI & Synthetic Media",
+    "influence_ops": "Coordinated Campaigns",
+    "coercive_control": "Coercion & Control"
   },
   "difficulty": {
     "beginner": "Beginner",
@@ -183,6 +190,41 @@
       "rare": "Rare",
       "epic": "Epic",
       "legendary": "Legendary"
+    }
+  },
+  "seziertisch": {
+    "title": "Dissection Table",
+    "caseOfTheWeek": "Case of the week",
+    "multiChallenge": "Multiple choice",
+    "startCta": "Analyse the case",
+    "thePiece": "The communication piece",
+    "instruction": "Mark every persuasion technique present in this piece — then check your selection.",
+    "breakdown": "Breakdown",
+    "present": "present",
+    "absent": "not present",
+    "openTechnique": "Open technique",
+    "debrief": "Debrief",
+    "done": "Done",
+    "casesAvailable": "cases available",
+    "format": {
+      "press_release": "Press release",
+      "crisis_statement": "Crisis statement",
+      "linkedin_post": "LinkedIn post",
+      "email": "Email",
+      "ad": "Advertisement",
+      "interview": "Interview"
+    }
+  },
+  "feedback": {
+    "trigger": "Imprecise?",
+    "prompt": "What bothers you about this explanation?",
+    "thanks": "Thanks — your note feeds into the next revision.",
+    "notePlaceholder": "Optional: briefly specify",
+    "reason": {
+      "imprecise": "Too imprecise",
+      "ambiguous": "Ambiguous",
+      "wrong": "Factually wrong",
+      "generic": "Too generic"
     }
   }
 }

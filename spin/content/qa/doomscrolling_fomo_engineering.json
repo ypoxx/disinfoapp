@@ -1,0 +1,76 @@
+{
+ "entry": "doomscrolling_fomo_engineering",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": false,
+    "secondGuess": "attention_engagement_loops"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "doomscrolling_fomo_engineering",
+    "confident": true,
+    "secondGuess": "attention_engagement_loops"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 1: nur unsicher erkannt (secondGuess: attention_engagement_loops) — eindeutiger machen"
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed_round2",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): in Runde 1 beanstandet, Revision geschrieben, in Runde 2 Blind ×2 + Distraktor + Stil bestanden. Änderung: Behebt die EN-Calques in Ex3 ('makes their pitch with'/'banking on your unease', 'constant tension', 'scarcity limits the supply of a good'), gleicht das Gloss-Tell durch einen Klammer-Zusatz an der korrekten Option in E"
+ }
+}

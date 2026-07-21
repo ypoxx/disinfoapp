@@ -1,0 +1,117 @@
+{
+ "entry": "voice_cloning_vishing",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "authority"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "authority"
+   }
+  ],
+  "distraktor": {
+   "pass": false,
+   "objections": [
+    "p3-voice_cloning_vishing-1: Option „Autorität\" (Index 2) ist unter dem wörtlichen Fragetext ernsthaft als ebenfalls richtig verteidigbar. Der Stem fragt „Welche Technik wird hier gegen den Social-Media-Manager eingesetzt?\" — und Autorität WIRD eingesetzt: Die vermeintliche Pressesprecherin „weist ihn an\", und die Taxonomie (spin/content/techniques/authority.ts) definiert Autorität genau als Gehorsam gegenüber Autoritätspersonen ohne kritische Prüfung. Die Explanation des Items räumt selbst ein: „Autorität wirkt hier mit (Anweisung der Vorgesetzten)\". Das Item ist damit zwei-schlüsselig. Fix (behebt das Problem, ohne den starken Distraktor zu opfern): Stem präzisieren, z. B. „Welche Technik bildet den Kern der Täuschung?\" oder „Mit welcher Technik wird die Identität der Sprecherin vorgetäuscht?\" — Datei: spin/content/exercises/pilot-voice-cloning-vishing.ts, question (Zeile 13/14).",
+    "p3-voice_cloning_vishing-2 (geringfügig, keine Mehrdeutigkeit): Die korrekte Option ist mit Abstand die längste und als einzige eine Doppel-Handlung (verifizieren + IT-Sicherheit informieren) — ein bekannter Längen-/Elaborations-Cue, über den testkluge Nutzer ohne Fachwissen richtig raten. Fix: Distraktoren auf vergleichbare Länge/Detailtiefe bringen (z. B. Option 2 um eine plausible Zusatzhandlung ergänzen: „…und dokumentiere den Auftrag für die Freigabe-Akte\") oder die korrekte Option straffen."
+   ]
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  }
+ },
+ "objections": [
+  "Distraktor: p3-voice_cloning_vishing-1: Option „Autorität\" (Index 2) ist unter dem wörtlichen Fragetext ernsthaft als ebenfalls richtig verteidigbar. Der Stem fragt „Welche Technik wird hier gegen den Social-Media-Manager eingesetzt?\" — und Autorität WIRD eingesetzt: Die vermeintliche Pressesprecherin „weist ihn an\", und die Taxonomie (spin/content/techniques/authority.ts) definiert Autorität genau als Gehorsam gegenüber Autoritätspersonen ohne kritische Prüfung. Die Explanation des Items räumt selbst ein: „Autorität wirkt hier mit (Anweisung der Vorgesetzten)\". Das Item ist damit zwei-schlüsselig. Fix (behebt das Problem, ohne den starken Distraktor zu opfern): Stem präzisieren, z. B. „Welche Technik bildet den Kern der Täuschung?\" oder „Mit welcher Technik wird die Identität der Sprecherin vorgetäuscht?\" — Datei: spin/content/exercises/pilot-voice-cloning-vishing.ts, question (Zeile 13/14).",
+  "Distraktor: p3-voice_cloning_vishing-2 (geringfügig, keine Mehrdeutigkeit): Die korrekte Option ist mit Abstand die längste und als einzige eine Doppel-Handlung (verifizieren + IT-Sicherheit informieren) — ein bekannter Längen-/Elaborations-Cue, über den testkluge Nutzer ohne Fachwissen richtig raten. Fix: Distraktoren auf vergleichbare Länge/Detailtiefe bringen (z. B. Option 2 um eine plausible Zusatzhandlung ergänzen: „…und dokumentiere den Auftrag für die Freigabe-Akte\") oder die korrekte Option straffen."
+ ],
+ "round2": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "authority"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "synthetic_media"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "voice_cloning_vishing",
+    "confident": true,
+    "secondGuess": "authority"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": true,
+   "objections": []
+  },
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "passed_round2"
+}

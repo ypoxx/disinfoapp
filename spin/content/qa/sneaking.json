@@ -1,0 +1,92 @@
+{
+ "entry": "sneaking",
+ "round1": {
+  "blindA": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sneaking",
+    "confident": true,
+    "secondGuess": "drip_pricing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sneaking",
+    "confident": true
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sneaking",
+    "confident": true,
+    "secondGuess": "subscription_trap_obstruction"
+   }
+  ],
+  "blindB": [
+   {
+    "exampleIndex": 0,
+    "identifiedId": "sneaking",
+    "confident": true,
+    "secondGuess": "drip_pricing"
+   },
+   {
+    "exampleIndex": 1,
+    "identifiedId": "sneaking",
+    "confident": true,
+    "secondGuess": "default_status_quo"
+   },
+   {
+    "exampleIndex": 2,
+    "identifiedId": "sneaking",
+    "confident": false,
+    "secondGuess": "subscription_trap_obstruction"
+   }
+  ],
+  "distraktor": {
+   "pass": true,
+   "objections": []
+  },
+  "fach": {
+   "pass": true,
+   "objections": []
+  },
+  "stil": {
+   "pass": false,
+   "objections": [
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.de: Satzlogik kippt am Schluss — \"gibt das berechtigte Anliegen … für eine Eskalation auf, die der schriftliche Widerspruch noch gar nicht versucht hat\". Der Relativsatz macht den Widerspruch zum Akteur, der eine Eskalation \"versucht\" — semantisch unsinnig. Gemeint ist: \"…für eine Eskalation auf, bevor der schriftliche Widerspruch überhaupt versucht wurde.\" Bei einer Zielgruppe, die genau liest, fällt der Satz auseinander.",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.en: Die defekte DE-Konstruktion ist wörtlich übernommen — \"an escalation the written dispute has not even been tried for\" ist ungrammatisch und unverständlich (Verstoß gegen \"kein wörtliches Übersetzen\"). Idiomatisch etwa: \"an escalation attempted before the written dispute has even been tried\".",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-3, options[2].en: \"incomparably bundled packages\" ist eine Fehlübersetzung von \"unvergleichbar geschnittene Pakete\" — englisch bedeutet \"incomparably\" \"unvergleichlich (im Grad)\", nicht \"nicht vergleichbar\". Der Rückübersetzungs-Check der Charta scheitert: Aus der EN-Option folgt die Zuordnung zu Comparison Prevention nicht mehr. Besser: \"packages bundled so they cannot be compared\" oder \"non-comparable bundles\".",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-3, explanation.en: \"Both patterns push cost information backwards\" ist Wort-für-Wort aus \"verschieben Kosteninformation nach hinten\" und im Englischen unidiomatisch (klingt nach räumlicher Bewegung). Idiomatisch: \"Both patterns defer cost disclosure\" oder \"push costs later in the process\".",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.de: \"Abweichungen sind kein Versehen des Zufalls\" — verunglückte Fügung (Kontamination aus \"kein Zufall\" und \"kein Versehen\"), wirkt gewollt-literarisch und fällt als schief auf. Schlicht: \"Abweichungen sind kein Zufall und kein Versehen, sondern ein Muster mit Namen.\"",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.de: Der Takeaway \"Legitim einsetzen\" steht nicht in Du-Form: \"wer eigene Angebots- oder Buchungsstrecken verantwortet, weist alle Pflichtposten im Entscheidungsweg aus\". Die Charta verlangt Takeaways in Übungs-Erklärungen in Du-Form; die EN-Fassung tut es bereits (\"if you own quote or booking flows, you disclose…\"). DE angleichen: \"Wenn du eigene Angebots- oder Buchungsstrecken verantwortest, weist du …\".",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.de + explanation.en: \"weil das böse Erwachen ebenfalls nach dem Abschluss kommt\" / \"the rude awakening also comes after signing\" — abgegriffene Stammtisch-Metapher; die einzige Stelle im Text, die eine PR-Leserin als platt markieren würde. Präziser: \"weil die Mehrkosten ebenfalls erst nach dem Abschluss sichtbar werden\" / \"because the surprise also surfaces only after signing\".",
+    "spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.en: \"a setup fee is honest craft when it sits next to the licence price\" — \"honest craft\" ist eine schiefe Kollokation und nicht bedeutungsgleich mit DE \"ist seriös\". Schlicht: \"a setup fee is legitimate (above board) when it sits next to the licence price\"."
+   ]
+  }
+ },
+ "objections": [
+  "Blindprüfer B, Beispiel 2: nur unsicher erkannt (secondGuess: subscription_trap_obstruction) — eindeutiger machen",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.de: Satzlogik kippt am Schluss — \"gibt das berechtigte Anliegen … für eine Eskalation auf, die der schriftliche Widerspruch noch gar nicht versucht hat\". Der Relativsatz macht den Widerspruch zum Akteur, der eine Eskalation \"versucht\" — semantisch unsinnig. Gemeint ist: \"…für eine Eskalation auf, bevor der schriftliche Widerspruch überhaupt versucht wurde.\" Bei einer Zielgruppe, die genau liest, fällt der Satz auseinander.",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.en: Die defekte DE-Konstruktion ist wörtlich übernommen — \"an escalation the written dispute has not even been tried for\" ist ungrammatisch und unverständlich (Verstoß gegen \"kein wörtliches Übersetzen\"). Idiomatisch etwa: \"an escalation attempted before the written dispute has even been tried\".",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-3, options[2].en: \"incomparably bundled packages\" ist eine Fehlübersetzung von \"unvergleichbar geschnittene Pakete\" — englisch bedeutet \"incomparably\" \"unvergleichlich (im Grad)\", nicht \"nicht vergleichbar\". Der Rückübersetzungs-Check der Charta scheitert: Aus der EN-Option folgt die Zuordnung zu Comparison Prevention nicht mehr. Besser: \"packages bundled so they cannot be compared\" oder \"non-comparable bundles\".",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-3, explanation.en: \"Both patterns push cost information backwards\" ist Wort-für-Wort aus \"verschieben Kosteninformation nach hinten\" und im Englischen unidiomatisch (klingt nach räumlicher Bewegung). Idiomatisch: \"Both patterns defer cost disclosure\" oder \"push costs later in the process\".",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-2, explanation.de: \"Abweichungen sind kein Versehen des Zufalls\" — verunglückte Fügung (Kontamination aus \"kein Zufall\" und \"kein Versehen\"), wirkt gewollt-literarisch und fällt als schief auf. Schlicht: \"Abweichungen sind kein Zufall und kein Versehen, sondern ein Muster mit Namen.\"",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.de: Der Takeaway \"Legitim einsetzen\" steht nicht in Du-Form: \"wer eigene Angebots- oder Buchungsstrecken verantwortet, weist alle Pflichtposten im Entscheidungsweg aus\". Die Charta verlangt Takeaways in Übungs-Erklärungen in Du-Form; die EN-Fassung tut es bereits (\"if you own quote or booking flows, you disclose…\"). DE angleichen: \"Wenn du eigene Angebots- oder Buchungsstrecken verantwortest, weist du …\".",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.de + explanation.en: \"weil das böse Erwachen ebenfalls nach dem Abschluss kommt\" / \"the rude awakening also comes after signing\" — abgegriffene Stammtisch-Metapher; die einzige Stelle im Text, die eine PR-Leserin als platt markieren würde. Präziser: \"weil die Mehrkosten ebenfalls erst nach dem Abschluss sichtbar werden\" / \"because the surprise also surfaces only after signing\".",
+  "Stil: spin/content/exercises/wave4-sneaking.ts, w4-sneaking-1, explanation.en: \"a setup fee is honest craft when it sits next to the licence price\" — \"honest craft\" ist eine schiefe Kollokation und nicht bedeutungsgleich mit DE \"ist seriös\". Schlicht: \"a setup fee is legitimate (above board) when it sits next to the licence price\"."
+ ],
+ "round2": {
+  "blindA": null,
+  "blindB": null,
+  "distraktor": null,
+  "stil": null,
+  "stillOpen": []
+ },
+ "status": "passed_round2",
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): Blind ×2 + Distraktor + Stil in Runde 1 bestanden, keine Beanstandungen."
+ }
+}

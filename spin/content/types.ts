@@ -49,7 +49,20 @@ export type TechniqueCategory =
   | 'emotional_manipulation'
   | 'logical_fallacy'
   | 'nlp'
-  | 'digital_influence';
+  | 'digital_influence'
+  | 'dark_patterns'
+  | 'ai_influence'
+  | 'influence_ops'
+  | 'coercive_control';
+
+/**
+ * Evidence tier, derived deterministically from the persuasion taxonomy
+ * (content/source/): evidenceConfidence high → robust, moderate → moderate,
+ * low → weak, very_low or majority-provisional sources → frontier.
+ * Frontier entries are taught as TERM knowledge (name the pattern), never
+ * as claimed effects (Ausbau-Plan, PO-Entscheidung #1).
+ */
+export type EvidenceTier = 'robust' | 'moderate' | 'weak' | 'frontier';
 
 // ----------------------------------------------------------
 // Evidence
@@ -89,6 +102,13 @@ export interface Technique {
   warningNeurons: string[];
   /** Taxonomy group memberships */
   taxonomyGroups: string[];
+  /** Evidence tier from the taxonomy source (undefined on legacy entries = robust-ish default display) */
+  evidenceTier?: EvidenceTier;
+  /**
+   * Serious-mode entries (coercive_control category): no playful framing,
+   * exercises are recognition/awareness only, never "apply this"
+   */
+  seriousMode?: boolean;
   /** Optional image */
   image?: {
     src: string;
@@ -123,6 +143,25 @@ export interface TechniqueRelationship {
   type: RelationshipType;
   strength: number; // 0-1
   description: LocalizedText;
+}
+
+// ----------------------------------------------------------
+// Learning Paths
+// ----------------------------------------------------------
+
+/**
+ * A curated, ordered sequence of techniques — the navigation unit for a
+ * catalogue of 135 entries (Ausbau-Plan R3). Paths drive the library
+ * shelves; the Radar path collects frontier-tier terms.
+ */
+export interface LearningPath {
+  id: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  /** Ordered technique IDs */
+  techniqueIds: string[];
+  /** Radar shelf: frontier/weakly-evidenced terms, taught as term knowledge */
+  isRadar?: boolean;
 }
 
 // ----------------------------------------------------------
@@ -237,10 +276,55 @@ export interface Exercise {
   explanation: LocalizedText;
   /** Points awarded for correct answer */
   points: number;
-  /** Optional time limit in seconds */
-  timeLimit?: number;
-  /** Related technique IDs (for adaptive learning) */
+  /**
+   * The ONE technique this exercise primarily trains. Drives gating,
+   * interleaving, mastery credit and category colour. Must be contained
+   * in relatedTechniques. Falls back to relatedTechniques[0] when unset
+   * (legacy items).
+   */
+  primaryTechniqueId?: string;
+  /** Related technique IDs (context; secondary techniques in the scenario) */
   relatedTechniques: string[];
+}
+
+// ----------------------------------------------------------
+// Seziertisch (Fall der Woche) — dissect a full comms piece
+// ----------------------------------------------------------
+
+export type CaseFormat =
+  | 'press_release'
+  | 'crisis_statement'
+  | 'linkedin_post'
+  | 'email'
+  | 'ad'
+  | 'interview';
+
+export interface CaseOption {
+  /** Candidate technique/element the user can tag */
+  label: LocalizedText;
+  /** Linked technique (for cross-reference); optional for pure distractors */
+  techniqueId?: string;
+  /** Is this technique actually present in the piece? */
+  present: boolean;
+  /** Teaching note: why it is (or isn't) in the piece */
+  note: LocalizedText;
+}
+
+/**
+ * A Seziertisch case: a realistic communication piece the user dissects by
+ * marking every technique present. The signature multi-select challenge —
+ * the "Fall der Woche". correctAnswers are derived from options[].present.
+ */
+export interface SeziertischCase {
+  id: string;
+  format: CaseFormat;
+  title: LocalizedText;
+  /** The full communication piece under the microscope */
+  piece: LocalizedText;
+  /** Candidate techniques — some present, some plausible-but-absent */
+  options: CaseOption[];
+  /** Overall debrief shown after resolving */
+  summary: LocalizedText;
 }
 
 // ----------------------------------------------------------

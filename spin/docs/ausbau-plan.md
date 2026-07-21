@@ -66,6 +66,8 @@ Jede UI-Änderung wird per Playwright im echten Browser abgenommen: Zustandsmatr
 
 **Endstand Content (R1–R6):** 135 Techniken (Ziel erreicht), 472 Übungen, 0 Techniken ohne Übungen. Produktionslinie mit Doppel-Blindprüfung, Distraktor-/Fach-/Stil-Check und Revisionsschleife; Prüfprotokolle in `content/qa/`. Features: Seziertisch (Fall der Woche), Präzisions-Feedback, Lernpfade, Evidenz-Stufen + Radar-Regal, adaptive Engine.
 
-**Offene Verfeinerungen (nicht blockierend):** 16 Techniken haben je 3 Übungen in nur einem Schwierigkeitsband (Band-Diversität als optionaler Folge-Backfill); erneute adversariale Prüfung der in Spend-Limit-Läufen unverifizierten Einträge (in `content/qa/` als `revised_unverified` markiert).
+**Verfeinerungen:**
+- ✅ **Band-Diversität abgeschlossen:** Die 16 Techniken mit Einband-Übungen haben je eine Zusatzübung im komplementären Band erhalten (adversariale Fix-Linie: Blind ×2 + Distraktor + Stil, Revisionsschleife; 3 korrektheits-kritische Fixes an loaded_language/misdirection/fake_social_proof). Audit: **135/135 Techniken mit ≥3 Übungen über ≥2 Schwierigkeitsbänder, 0 unter Ziel** (488 Übungen). Commits: Fix-Linie + Registrierung, dann komplementäre Bänder für die letzten 6.
+- ⏳ **Offen (nicht blockierend):** erneute adversariale Prüfung der 17 in Spend-Limit-Läufen unverifizierten wave4-Einträge (in `content/qa/` als `revised_unverified` markiert; Content-Lint/tsc/Tests grün, nur die erneute Blind-/Distraktor-/Stilprüfung steht aus). Verifikations-Workflow steht bereit (`scripts/recheck-verify.workflow.js`, Szenarien vorextrahiert).
 
 *Dieses Dokument wird pro Release aktualisiert (Status, Abweichungen, Audit-Ergebnisse).*

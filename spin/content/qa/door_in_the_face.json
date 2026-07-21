@@ -73,6 +73,12 @@
   "stillOpen": []
  },
  "status": "passed_round2",
- "finalStatus": "revised_unverified",
- "recheckCaveat": "HINWEIS: Runde-2-Nachprüfung wegen Spend-Limit abgebrochen — die Revision wurde geschrieben, aber die erneute Blind-/Distraktor-/Stilprüfung lief nicht mehr. Content-Lint, tsc, Tests grün; erneute adversariale Prüfung als Follow-up empfohlen, sobald Budget verfügbar."
+ "finalStatus": "verified",
+ "recheck": {
+  "date": "2026-07-21",
+  "method": "recheck-verify workflow (Blind ×2 + Distraktor + Stil, keine Neugenerierung)",
+  "workflowStatus": "passed",
+  "outcome": "verified",
+  "note": "Re-Verifikation (recheck-verify Workflow): Blind ×2 + Distraktor + Stil in Runde 1 bestanden, keine Beanstandungen."
+ }
 }

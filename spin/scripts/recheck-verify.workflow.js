@@ -10,6 +10,7 @@ export const meta = {
 const SPIN = '/home/user/disinfoapp/spin'
 const NODES_FILE = `${SPIN}/content/source/technique-id-list.txt`
 const A = typeof args === 'string' ? JSON.parse(args) : (args || {})
+// Erwartet args.entries = [{id, file, exercises:[{id, scenarioDe, hasScenario}]}] (Szenarien vorextrahiert)
 const ENTRIES = A.entries || []
 
 const BLIND_SCHEMA = {

@@ -1,9 +1,10 @@
-// Band-Übung INTERMEDIATE für gaslighting (Gaslighting).
+// Band-Übung ADVANCED für gaslighting (Gaslighting).
 // Redaktionell erstellt nach Sprachcharta (docs/sprachcharta.md).
 // Serious-Mode (Zwang & Kontrolle): nüchterner, sachlicher Ton, keine
 // spielerischen Elemente, kein "legitim einsetzen"; die Übung prüft NUR
 // Erkennen und Schutz der Betroffenen. Evidenz-Tier weak: keine Wirkbehauptungen.
-// Zielband INTERMEDIATE: Technik eingebettet, ruhiger Ton,
+// Zielband ADVANCED (komplementär zum intermediate-Band der wave6-Übungen):
+// Technik subtil/eingebettet, ruhiger Ton, keine Cue-Wörter,
 // Near-Miss-Distraktoren, Multi-Satz-Szenario, blinde Klassifikation.
 // Registrierung in index.ts erfolgt durch die Hauptsession (hier NICHT registriert).
 
@@ -13,7 +14,7 @@ export const bandGaslighting: Exercise[] = [
   {
     id: 'band-gaslighting-1',
     type: 'technique-match',
-    difficulty: 'intermediate',
+    difficulty: 'advanced',
     question: {
       de: 'Welches Muster liegt hier vor?',
       en: 'Which pattern is at work here?',

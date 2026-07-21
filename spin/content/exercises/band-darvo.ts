@@ -1,4 +1,6 @@
-// Band-Übung INTERMEDIATE für darvo (DARVO — Leugnen, Angreifen, Täter-Opfer-Umkehr).
+// Band-Übung ADVANCED für darvo (DARVO — Leugnen, Angreifen, Täter-Opfer-Umkehr).
+// Komplementär zum intermediate-Band der wave6-Übungen: hier subtil/eingebettet,
+// ohne Reizwörter, mit Near-Miss-Distraktoren und blinder Klassifikation.
 // Redaktionell erstellt nach Sprachcharta (docs/sprachcharta.md).
 // Serious-Mode (Zwang & Kontrolle): nüchterner, sachlicher Ton, keine
 // spielerischen Elemente, kein "legitim einsetzen"; die Übung prüft NUR
@@ -16,7 +18,7 @@ export const bandDarvo: Exercise[] = [
   {
     id: 'band-darvo-1',
     type: 'technique-match',
-    difficulty: 'intermediate',
+    difficulty: 'advanced',
     question: {
       de: 'Welches Muster liegt hier vor?',
       en: 'Which pattern is at work here?',

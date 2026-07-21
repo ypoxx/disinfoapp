@@ -1,6 +1,7 @@
-// Band-Übung INTERMEDIATE: 1 zusätzliche Übung für love_bombing.
+// Band-Übung ADVANCED: 1 zusätzliche Übung für love_bombing.
 // Redaktionell erstellt nach Sprachcharta (docs/sprachcharta.md).
-// Zielband INTERMEDIATE: Technik subtil/eingebettet (keine Cue-Wörter wie
+// Zielband ADVANCED (komplementär zum intermediate-Band der wave6-Übungen):
+// Technik subtil/eingebettet (keine Cue-Wörter wie
 // „Seelenverwandte"/Liebeserklärung), Distraktoren sind Near-Misses,
 // Multi-Satz-Szenario. Hebt sich von wave6-love-bombing.ts ab: dort
 // Dating-/Gruppen-Kontexte mit offenen Cue-Wörtern; hier ein beruflicher
@@ -22,7 +23,7 @@ export const bandLoveBombing: Exercise[] = [
   {
     id: 'band-love_bombing-1',
     type: 'technique-match',
-    difficulty: 'intermediate',
+    difficulty: 'advanced',
     question: {
       de: 'Welches Muster prägt das Verhalten des Inhabers?',
       en: "Which pattern shapes the owner's behaviour?",

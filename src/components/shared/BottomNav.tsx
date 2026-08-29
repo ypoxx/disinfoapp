@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Home, BookOpen, Smartphone, BarChart3, MoreHorizontal, Zap as ZapIcon } from 'lucide-react';
 import { useState } from 'react';
-import { Brain, LineChart, Sparkles } from 'lucide-react';
+import { Brain, LineChart } from 'lucide-react';
 
 export function BottomNav() {
   const { t } = useTranslation();
@@ -17,7 +17,6 @@ export function BottomNav() {
 
   const moreItems = [
     { to: '/simulator', icon: Smartphone, label: t('nav.simulator') },
-    { to: '/discover', icon: Sparkles, label: t('nav.discover') },
     { to: '/techniques', icon: Brain, label: t('nav.techniques') },
     { to: '/dashboard', icon: LineChart, label: t('nav.dashboard') },
   ];
@@ -58,7 +57,7 @@ export function BottomNav() {
       )}
 
       {/* Bottom tab bar */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 md:hidden">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background shadow-[0_-2px_8px_rgba(0,0,0,0.06)] md:hidden">
         <div className="flex items-stretch justify-around">
           {mainItems.map(({ to, icon: Icon, label }) => (
             <NavLink

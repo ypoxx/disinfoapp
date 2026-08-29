@@ -54,6 +54,19 @@
     min-height: 100vh;
   }
 
+  /* Scale Design System card styling */
+  .scale-card {
+    background: var(--telekom-color-background-surface);
+    border: 1px solid var(--telekom-color-ui-border-standard);
+    border-radius: var(--telekom-radius-large);
+    box-shadow: var(--telekom-shadow-raised-standard);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .scale-card:hover {
+    box-shadow: var(--telekom-shadow-raised-hover);
+  }
+
   /* Typography using Telekom text styles */
   h1 {
     font: var(--telekom-text-style-heading-1);
